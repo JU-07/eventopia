@@ -16,6 +16,7 @@ local.properties
 target/
 *.MF
 *.class
+DBManager.java
 # External tool builders
 .externalToolBuilders/
 
