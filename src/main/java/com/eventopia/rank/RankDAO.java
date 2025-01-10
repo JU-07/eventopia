@@ -19,7 +19,7 @@ public class RankDAO {
 		Connection con = null;
 			PreparedStatement pstmt = null; 
 			ResultSet rs = null;
-			String sql = "select * from product_test";
+			String sql = "select * from product_test order by p_count desc";
 			try {
 			con	= DBManager_dy.connect();
 				pstmt = con.prepareStatement(sql);
@@ -50,19 +50,27 @@ public class RankDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null; 
 			ResultSet rs = null;
-		String check = request.getParameter("check");
-		String sql = "UPDATE product_test SET p_count = p_count + 1 WHERE p_no = ?";
-		try {
-			con	=DBManager_dy.connect();
-			pstmt.setString(1, check);
-			rs = pstmt.executeQuery();
-			if( pstmt.executeUpdate() == 1) {
-				System.out.println("수정성공!");
-			}
+			 String[] selectedNos = request.getParameterValues("check");
+			 if (selectedNos != null && selectedNos.length > 0) {
+			 String sql = "UPDATE product_test SET p_count = p_count + 1 WHERE p_no = ?";
+			 try {
+		            con = DBManager_dy.connect();
+		            pstmt = con.prepareStatement(sql);
+		         
+		            for (String no : selectedNos) {
+		                pstmt.setString(1, no); // p_no에 해당하는 값 바인딩
+		                if (pstmt.executeUpdate() == 1) {
+		                	System.out.println("수정 성공! p_no = " + no);
+		                }
+		            }
+		              
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			DBManager_dy.close(con, pstmt, rs);
+			DBManager_dy.close(con, pstmt, null);
 		}
+	}else {
+        System.out.println("선택된 항목이 없습니다.");
+    }
 	}
 }
