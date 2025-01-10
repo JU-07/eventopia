@@ -38,8 +38,6 @@
 			<div>
 				<a href="CommunityC"> community </a>
 			</div>
-			<div>ranking</div>
-
 			<div>
 				<a href="RankC">ranking</a>
 			</div>
