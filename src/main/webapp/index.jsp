@@ -34,15 +34,19 @@
 				<div>
 					<a href="MainC"> main </a>
 				</div>
-				<div>event</div>
+				<div>
+				<a href="EventC">event</a>
+				</div>
 				<div>community</div>
 				<div>ranking</div>
-				<div>review</div>
+				<div>
+				<a href="ReviewC">review</a>
+				</div>
 				<div>map</div>
 			</div>
 			<div class="content-container">
 				<div>
-					<jsp:include page="${content }"></jsp:include>
+					<jsp:include page="${content}"></jsp:include>
 				</div>
 			</div>
 			<div class="footer"></div>
