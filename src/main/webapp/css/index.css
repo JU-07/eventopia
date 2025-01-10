@@ -14,10 +14,6 @@ a {
   color: inherit; /* a 태그 색상을 부모 요소와 동일하게 */
 }
 
-a:hover {
-  color: #fff; /* hover 시 색상 변경 */
-}
-
 /* 메인 래퍼 */
 #wrap {
   display: flex;
@@ -54,16 +50,16 @@ a:hover {
 }
 
 .side-info img {
-	color: #fff;
-    width: 24px; /* 아이콘 크기 조정 */
-    height: 24px;
-    margin: 0 10px; /* 아이콘 간격 */
-    cursor: pointer; /* 클릭 가능한 아이콘처럼 보이도록 설정 */
-    transition: transform 0.2s; /* 호버 시 애니메이션 */
+  color: #fff;
+  width: 24px; /* 아이콘 크기 조정 */
+  height: 24px;
+  margin: 0 10px; /* 아이콘 간격 */
+  cursor: pointer; /* 클릭 가능한 아이콘처럼 보이도록 설정 */
+  transition: transform 0.2s; /* 호버 시 애니메이션 */
 }
 
 .side-info img:hover {
-    transform: scale(1.2); /* 호버 시 약간 확대 */
+  transform: scale(1.2); /* 호버 시 약간 확대 */
 }
 
 /* 네비게이션 */
@@ -88,8 +84,8 @@ a:hover {
 
 .nav div:hover {
   cursor: pointer;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 /* 콘텐츠 영역 */
