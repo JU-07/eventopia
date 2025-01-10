@@ -9,44 +9,51 @@
 <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
-	<form action="HC">
-		<div id="wrap">
-			<div class="header">
+
+	<div id="wrap">
+		<div class="header">
+			<div>
+				<a href="MainC"> Eventopia </a>
+			</div>
+			<div class="side-info">
 				<div>
-					<a href="MainC"> Eventopia </a>
+					<img src="Icon/user.png" alt="User Icon" />
 				</div>
-				<div class="side-info">
-					<div>
-						<img src="Icon/user.png" alt="User Icon" />
-					</div>
-					<div>
-						<img src="Icon/heart.png" alt="Heart Icon" />
-					</div>
-					<div>
-						<img src="Icon/search.svg" alt="Search Icon" />
-					</div>
-					<div>
-						<img src="Icon/list.png" alt="Sidebar Icon" />
-					</div>
+				<div>
+					<img src="Icon/heart.png" alt="Heart Icon" />
+				</div>
+				<div>
+					<img src="Icon/search.svg" alt="Search Icon" />
+				</div>
+				<div>
+					<img src="Icon/list.png" alt="Sidebar Icon" />
 				</div>
 			</div>
-			<div class="nav">
-				<div>
-					<a href="MainC"> main </a>
-				</div>
-				<div>event</div>
-				<div>community</div>
-				<div>ranking</div>
-				<div>review</div>
-				<div>map</div>
-			</div>
-			<div class="content-container">
-				<div>
-					<jsp:include page="${content }"></jsp:include>
-				</div>
-			</div>
-			<div class="footer"></div>
 		</div>
-	</form>
+		<div class="nav">
+			<div>
+				<a href="MainC"> main </a>
+			</div>
+			<div>event</div>
+			<div>
+				<a href="CommunityC"> community </a>
+			</div>
+			<div>ranking</div>
+
+			<div>
+				<a href="RankC">ranking</a>
+			</div>
+
+			<div>review</div>
+			<div>map</div>
+		</div>
+		<div class="content-container">
+			<div>
+				<jsp:include page="${content }"></jsp:include>
+			</div>
+		</div>
+		<div class="footer"></div>
+	</div>
+
 </body>
 </html>
