@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 
 import com.eventopia.main.DBManager;
-import com.eventopia.main.DBManager_dy;
+import com.eventopia.main.DBManager;
 import com.eventopia.rank.ProductDTO;
 
 public class RankDAO {
@@ -21,7 +21,7 @@ public class RankDAO {
 			ResultSet rs = null;
 			String sql = "select * from product_test order by p_count desc";
 			try {
-			con	= DBManager_dy.connect();
+			con	= DBManager.connect();
 				pstmt = con.prepareStatement(sql);
 				rs = pstmt.executeQuery();
 				ArrayList<ProductDTO> products = new ArrayList<ProductDTO>();
@@ -39,7 +39,7 @@ public class RankDAO {
 				e.printStackTrace();
 				
 			}finally {
-				DBManager_dy.close(con, pstmt, rs);
+				DBManager.close(con, pstmt, rs);
 			}
 				
 	
@@ -54,7 +54,7 @@ public class RankDAO {
 			 if (selectedNos != null && selectedNos.length > 0) {
 			 String sql = "UPDATE product_test SET p_count = p_count + 1 WHERE p_no = ?";
 			 try {
-		            con = DBManager_dy.connect();
+		            con = DBManager.connect();
 		            pstmt = con.prepareStatement(sql);
 		         
 		            for (String no : selectedNos) {
@@ -67,7 +67,7 @@ public class RankDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			DBManager_dy.close(con, pstmt, null);
+			DBManager.close(con, pstmt, null);
 		}
 	}else {
         System.out.println("선택된 항목이 없습니다.");

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 
-public class DBManager_dy {
+public class DBManager {
 
 	private static BasicDataSource dataSource;
 	
