@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
-	<form action="HC">
+	
 		<div id="wrap">
 			<div class="header">
 				<div>
@@ -36,7 +36,7 @@
 				</div>
 				<div>event</div>
 				<div>community</div>
-				<div>ranking</div>
+				<div><a href="RankC">ranking</a></div>
 				<div>review</div>
 				<div>map</div>
 			</div>
@@ -47,6 +47,6 @@
 			</div>
 			<div class="footer"></div>
 		</div>
-	</form>
+	
 </body>
 </html>

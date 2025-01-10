@@ -10,7 +10,7 @@
 
 
 <style>
-img {
+.im {
 	position: relative;
 	top: 30px;
 }
@@ -81,7 +81,7 @@ body {
 	<c:forEach items="${product }" var="p">
 		<div class="review-row">
 			<span>${p.p_name} </span> <span> ${p.p_price }원 </span> <span>
-				${p.p_category } </span> <img src="${p.image_url}" alt="Sample Image"
+				${p.p_category } </span> <span class="im"><img src="${p.image_url}" alt="Sample Image"
 				width="70" height="70" display="column" /> </span>
 
 		</div>
@@ -96,7 +96,7 @@ body {
 				<div style="color: black;">
 					<c:forEach items="${product }" var="p">
 						<div class="review-row">
-							<span>${p.p_name}</span><span>${p.p_price }원</span> <span>${p.p_category }</span><img
+							<span>${p.p_name}</span><span>${p.p_price }원</span> <span>${p.p_category }</span><span class="im"><img
 								src="${p.image_url}" alt="Sample Image" width="70" height="70"
 								display="column" /> </span> <span><input type="checkbox"
 								name="check" value="${p.p_no }"></span>

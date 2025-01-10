@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9374c510-5ef3-46b0-ac95-c9687a27eb29" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/rank/rank.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/rank/rank.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="9374c510-5ef3-46b0-ac95-c9687a27eb29" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +60,7 @@
       <updated>1736391077034</updated>
       <workItem from="1736391078282" duration="23000" />
       <workItem from="1736391113244" duration="14000" />
-      <workItem from="1736391134707" duration="11558000" />
+      <workItem from="1736391134707" duration="12158000" />
     </task>
     <servers />
   </component>
