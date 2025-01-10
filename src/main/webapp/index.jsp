@@ -35,7 +35,9 @@
 					<a href="MainC"> main </a>
 				</div>
 				<div>event</div>
-				<div>community</div>
+				<div>
+					<a href="CommunityC"> community </a>
+				</div>
 				<div>ranking</div>
 				<div>review</div>
 				<div>map</div>
