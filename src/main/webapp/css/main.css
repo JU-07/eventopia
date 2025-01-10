@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+/* 이벤트 컨테이너 */
+.event-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 40px; /* 여백을 더 넉넉하게 */
+  gap: 40px; /* 항목 간의 간격 증가 */
+  background-color: #f9f9f9;
+}
+
+/* 개별 이벤트 아이템 */
+.event-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 200px; /* 개별 아이템의 넓이 */
+  padding: 20px; /* 아이템 내부 여백 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+  border-radius: 12px; /* 모서리를 둥글게 */
+  background-color: #fff; /* 배경 흰색 */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-item:hover {
+  transform: translateY(-5px); /* hover 시 살짝 올라가는 효과 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* hover 시 그림자 강조 */
+}
+
+/* 로고 */
+.event-logo img {
+  width: 100px; /* 로고 크기 증가 */
+  height: 100px;
+  object-fit: contain;
+}
+
+/* 이벤트 내용 */
+.event-content {
+  width: 180px; /* 이벤트 내용의 넓이 증가 */
+  height: 1000px; /* 높이를 증가시켜 내용 공간 확보 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px; /* 글자 크기 증가 */
+  font-weight: bold;
+  text-align: center;
+  word-wrap: break-word; /* 텍스트가 넘치면 줄바꿈 처리 */
+  padding: 10px; /* 내부 여백 */
+}
+
+/* 개별 이벤트 색상 */
+.lawson {
+  background-color: #04A9F3; /* 로손 색상 */
+}
+
+.seven {
+  background-color: #F54336; /* 세븐 색상 */
+}
+
+.family {
+  background-color: #00A041; /* 패밀리 색상 */
+}
