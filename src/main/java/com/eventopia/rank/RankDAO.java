@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.eventopia.main.DBManager;
+//import com.eventopia.main.DBManager;
 import com.eventopia.main.DBManager_dy;
 import com.eventopia.rank.ProductDTO;
 
