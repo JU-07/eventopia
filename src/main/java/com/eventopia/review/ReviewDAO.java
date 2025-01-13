@@ -41,7 +41,7 @@ ArrayList<ReviewDTO> reviews = null;
 		ReviewDTO review = null;
 		
 		while (rs.next()) { 
-			review = new ReviewDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)); 
+			review = new ReviewDTO(); 
 			reviews.add(review);
 		}
 	} catch (Exception e) {
@@ -67,7 +67,9 @@ ArrayList<ReviewDTO> reviews = null;
 			rs = pstmt.executeQuery();
 			
 			if (rs.next()) {
-				ReviewDTO review = new ReviewDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4));
+				ReviewDTO review = new ReviewDTO();
+				System.out.println(review);
+				request.setAttribute("reviews", review);
 			}
 		
 		

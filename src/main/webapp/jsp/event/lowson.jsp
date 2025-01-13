@@ -26,7 +26,7 @@
 				</div>
 
 				<div class="form-group">
-					<label for="actor">Name</label> <input id="Name" name="Name"
+					<label for="Name">Name</label> <input id="Name" name="Name"
 						type="text" placeholder="상품 이름" required>
 				</div>
 
@@ -40,15 +40,20 @@
 					<textarea id="story" name="story" rows="5" placeholder="상품 설명"
 						required></textarea>
 				</div>
+				<div class="form-group">
+					<button type="submit" class="movie-btn">Add Movie</button>
+				</div>
 			</div>
 		</form>
 	</div>
+
+	<!-- 제품 목록 -->
 	<div class="product-list-container">
 		<div class="product-container">
 			<c:forEach var="product" items="${product}">
 				<div class="product-wrap">
 					<div class="product-img">
-						<img alt="${product.p_title}" src="">
+						<img alt="${product.p_title}" src="" />
 					</div>
 					<div class="product-title"
 						onclick="location.href='EventDetailC?no=${product.p_no}'">
@@ -58,15 +63,13 @@
 			</c:forEach>
 		</div>
 	</div>
-	</div>
 
 	<div class="pagination">
-		<a href="EventPageC?p=1">[begin]</a>
+		<a href="ReviewPageC?p=1">[처음]</a>
 		<c:forEach begin="1" end="${pageCount}" var="i">
-			<a href="EventPageC?p=${i}">[${i}]</a>
+			<a href="ReviewPageC?p=${i}">[${i}]</a>
 		</c:forEach>
-		<a href="EventPageC?p=${pageCount}">[end]</a>
+		<a href="ReviewPageC?p=${pageCount}">[끝]</a>
 	</div>
-
 </body>
 </html>
