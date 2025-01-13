@@ -10,7 +10,7 @@ pageEncoding="UTF-8"%>
     <div class="event-container">
       <div class="event-item">
         <div class="event-logo">
-          <img src="Icon/l_logo.webp" alt="Lawson Logo" />
+          <img src="Icon/l_logo.webp" alt="Lawson Logo" onclick="location.href='jsp/event/lowson.jsp'" />
         </div>
         <div class="event-content lawson">
           <div class="event-title">이벤트 제목</div>
@@ -43,7 +43,7 @@ pageEncoding="UTF-8"%>
 
       <div class="event-item">
         <div class="event-logo">
-          <img src="Icon/s_logo.webp" alt="Seven Logo" />
+          <img src="Icon/s_logo.webp" alt="Seven Logo" onclick="location.href='jsp/event/seven.jsp'" />
         </div>
         <div class="event-content seven">
           <div class="event-title">이벤트 제목</div>
@@ -76,7 +76,7 @@ pageEncoding="UTF-8"%>
 
       <div class="event-item">
         <div class="event-logo">
-          <img src="Icon/f_logo.png" alt="Family Logo" />
+          <img src="Icon/f_logo.png" alt="Family Logo" onclick="location.href='jsp/event/seven.jsp'" />
         </div>
         <div class="event-content family">
           <div class="event-title">이벤트 제목</div>
@@ -109,3 +109,4 @@ pageEncoding="UTF-8"%>
     </div>
   </body>
 </html>
+

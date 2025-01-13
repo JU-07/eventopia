@@ -6,10 +6,8 @@ create table product_test
     p_category varchar2(20 char) not null,
     image_url  varchar2(255)
 
-);
 
-alter table product_test
-    add p_count number(5) not null;
+);
 
 create sequence product_test_seq;
 
