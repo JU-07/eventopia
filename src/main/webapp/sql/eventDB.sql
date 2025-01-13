@@ -18,3 +18,4 @@ insert into product_test values (product_test_seq.nextval,'자가리코',2500,'�
 select * from product_test;
 
 delete product_test where p_no=6;
+
