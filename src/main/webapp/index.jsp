@@ -18,7 +18,7 @@ pageEncoding="UTF-8"%>
           </div>
           <div class="side-info">
             <div>
-              <img src="Icon/user.png" alt="User Icon" />
+              <a href="LoginC"> <img src="Icon/user.png" alt="User Icon" /> </a>
             </div>
             <div>
               <img src="Icon/heart.png" alt="Heart Icon" />
