@@ -19,8 +19,12 @@
 		<h1 class="text">コミュニティ</h1>
 
 		<div class="button-container">
-			<button class="free-post">自由投稿</button>
-			<button class="share-post">情報共有</button>
+			<form action="FreePostC" method="get">
+				<button class="free-post" >自由投稿</button>
+			</form>
+			<form action="SharePostC" method="get">
+				<button class="share-post">情報共有</button>
+			</form>
 		</div>
 	</div>
 
@@ -64,7 +68,8 @@
 						</li>
 						<li class="list-item">
 							<div class="list-item">
-								<div class="list-title" data-target="list-2">2.出会い目的の利用をしない ▽</div>
+								<div class="list-title" data-target="list-2">2.出会い目的の利用をしない
+									▽</div>
 								<div class="list-content" id="list-2">
 									イベントピアコミュニティサイトでは、交際相手を探すためのサービス（出会い系サイト）ではありません。他者との実社会での交際を目的とした交際・交流を求める表現、実社会での出会いを目的とした投稿は禁止しています。また、出会いの相手紹介など、出会いを斡旋するような行為も固くお断りします。
 									<br> 不適切な例 ：
@@ -78,7 +83,7 @@
 						</li>
 						<li class="list-item">
 							<div class="list-item">
-								<div class="list-title" data-target="list-3">3.誹謗中傷をしない　▽</div>
+								<div class="list-title" data-target="list-3">3.誹謗中傷をしない ▽</div>
 								<div class="list-content" id="list-3">
 									一般的に許容される範疇を超えて相手を非難したり、一方的な主張を繰り返す行為は、相手の心をひどく傷つけ、利用者間でのトラブルの元になります。他者の人格を否定するような誹謗中傷、他者の感情を逆撫でするような挑発的な発言、争いをたきつけるような悪口は投稿しないでください。
 									<br> 不適切な例 ：
@@ -91,7 +96,8 @@
 						</li>
 						<li class="list-item">
 							<div class="list-item">
-								<div class="list-title" data-target="list-4">4.荒らし、迷惑行為をしない　▽</div>
+								<div class="list-title" data-target="list-4">4.荒らし、迷惑行為をしない
+									▽</div>
 								<div class="list-content" id="list-4">
 									記事の内容とは無関係な内容、意味不明な内容、同一の内容を繰り返し投稿するなど、明らかにコミュニケーションを阻害するような迷惑行為は、つきまといによる嫌がらせ行為と判断される場合があり、禁止しています。もし、会員がコミュニティ内でつきまとい行為にあった場合は、被害にあった当事者から事務局までご連絡ください。相手に対して警告や利用停止等の措置を検討します。
 									<br> 不適切な例 ：
@@ -104,7 +110,8 @@
 						</li>
 						<li class="list-item">
 							<div class="list-item">
-								<div class="list-title" data-target="list-5">5.なりすまし行為をしない　▽</div>
+								<div class="list-title" data-target="list-5">5.なりすまし行為をしない
+									▽</div>
 								<div class="list-content" id="list-5">
 									事務局、他の利用者、第三者の名前など、自身とは無関係なプロフィール情報で他者になりすまして投稿することを禁止しています。もし、会員がコミュニティ内でなりすまし行為にあった場合は、被害にあった当事者から事務局までご連絡ください。相手に対して警告や利用停止等の措置を検討します。
 									<br> 不適切な例 ：
