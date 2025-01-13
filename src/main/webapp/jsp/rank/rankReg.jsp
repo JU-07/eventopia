@@ -16,22 +16,24 @@
                     <input name="title">
                 </div>
             </div>
-            <div>
-                <div>Actor</div>
-                <div>
-                    <input name="actor">
-                </div>
-            </div>
-            <div>
+             <div>
                 <div>image</div>
                 <div>
                     <input name="image" >
                 </div>
             </div>
             <div>
+                <div>Actor</div>
+                <div>
+                     <textarea rows="5" cols="40" name="actor"></textarea>
+                    
+                </div>
+            </div>
+           
+            <div>
                 <div>Story</div>
                 <div>
-                    <textarea rows="5" cols="40" name="story"></textarea>
+                    <textarea rows="50" cols="130" name="story"></textarea>
                 </div>
             </div>
             <div>
