@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+/*background-color*/
+/*.post-container {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    background-color: #f4f4f4;*/
+/*    min-height: 100vh; */
+/*    padding: 20px;*/
+/*}*/
+
+/*h1 {*/
+/*    text-align: center;*/
+/*    font-size: 90px;*/
+/*}*/
+
+/*.form-container {*/
+/*    margin: 10px ;*/
+/*    padding: 100px;*/
+/*    background-color: white;*/
+/*    max-width: 600px;*/
+/*}*/
+
+/*.form-container div {*/
+/*    margin-bottom: 30px;*/
+/*}*/
+
+/*input[type="text"], textarea {*/
+/*    width: 100%;  幅を調整 */
+/*    padding: 10px;  内側の余白 */
+/*    font-size: 16px;  フォントサイズを調整 */
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 4px;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*textarea {*/
+/*    resize: vertical;  サイズ変更可能な方向を指定 */
+/*    height: 150px;  テキストエリアの初期の高さを調整 */
+/*}*/
+
+/*label {*/
+/*    font-size: 18px;  ラベルのフォントサイズを調整 */
+/*    font-weight: bold;*/
+/*    display: block;*/
+/*    margin-bottom: 5px;*/
+/*}*/
+
+/*input[type="submit"] {*/
+/*    background-color: #007bff;*/
+/*    color: #fff;*/
+/*    padding: 15px 30px;  ボタンの内側の余白を拡大 */
+/*    border: none;*/
+/*    border-radius: 4px;*/
+/*    cursor: pointer;*/
+/*    font-size: 18px;  ボタンの文字の大きさを調整 */
+/*}*/
+
+/*input[type="submit"]:hover {*/
+/*    background-color: #0056b3;*/
+/*}*/
+
+
+/*.post-list {*/
+/*    margin: 20px auto;*/
+/*    max-width: 600px;*/
+/*}*/
+
+/*.post-item {*/
+/*    padding: 15px;*/
+/*    background-color: #fff;*/
+/*    border: 1px solid #ddd;*/
+/*    border-radius: 8px;*/
+/*    margin-bottom: 15px;*/
+/*    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+/*.post-item .post-header {*/
+/*    font-weight: bold;*/
+/*    margin-bottom: 5px;*/
+/*}*/
+
+/*.post-item .post-content {*/
+/*    white-space: pre-wrap;*/
+/*    word-wrap: break-word;*/
+/*}*/
+
+/*.like-button {*/
+/*    background-color: #ffcccb;*/
+/*    border: none;*/
+/*    border-radius: 4px;*/
+/*    padding: 5px 10px;*/
+/*    cursor: pointer;*/
+/*    margin-top: 10px;*/
+/*}*/
+
+/*.like-button:hover {*/
+/*    background-color: #ff9999;*/
+/*}*/
