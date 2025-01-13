@@ -14,9 +14,15 @@ public class RankPageC extends HttpServlet {
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RankDAO.rankPageAllSelect(request);  
+	
+		request.setAttribute("content", "jsp/rank/rankPage.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	RankDAO.rankAdd(request);
+		
+	response.sendRedirect("RankPageC");
 	}
 
 }

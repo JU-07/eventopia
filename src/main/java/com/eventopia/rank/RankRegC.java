@@ -13,9 +13,15 @@ public class RankRegC extends HttpServlet {
        
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RankDAO.rankAdd(request);
+		request.setAttribute("content", "jsp/rank/rankReg.jsp");
+	request.getRequestDispatcher("index.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RankDAO.rankAdd(request);
+		
+		
 	}
 
 }

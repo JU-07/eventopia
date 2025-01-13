@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="MovieRegC" method="post" enctype="multipart/form-data">
+<form action="RnakPageC" method="post" enctype="multipart/form-data">
 <div class="movie-reg">
             <div>
                 <div>Title</div>
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div>
-                <div>File</div>
+                <div>image</div>
                 <div>
                     <input name="image" >
                 </div>

@@ -13,6 +13,9 @@ public class RankDetailC extends HttpServlet {
        
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	RankDAO.rankDetail(request);
+	request.setAttribute("content", "jsp/rank/rankDetail.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

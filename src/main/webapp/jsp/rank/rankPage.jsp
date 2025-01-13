@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,13 +9,14 @@
 </head>
 <body>
 <div style="width: 100%; display: flex; justify-content: center;">
-		<div class="movie-container">
-		<c:forEach var="movie" items="${movies }">
-		<div class="movie-wrap">
-		<div class="movie-img"><img alt="" src="jsp/movie/movieFile/${movie.m_img }"></div>
-	<div class="movie-title" onclick="location.href='MovieDetailC?no=${movie.m_no}'">${movie.m_title}</div>
-		<div class="movie-actor">${movie.m_actor }</div>
+		<div class="rnakPage-container">
+		<c:forEach var="r" items="${rankPages }">
 		
-	</div>	</c:forEach>
+		<div class="rankPage-wrap" onclick="location.href='RankDetailC?no=${r.p_no}'">
+		<div class="rankPage-img"><img alt="" src="${r.p_img }"></div>
+	<div class="movie-title">${r.p_title}</div>
+		<div class="rnakPage-actor">${r.p_actor }</div>
+		
+	</div> </div>	</c:forEach>
 </body>
 </html>
