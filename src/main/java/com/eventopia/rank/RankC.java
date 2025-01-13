@@ -14,18 +14,17 @@ public class RankC extends HttpServlet {
 			throws ServletException, IOException {
 
 		RankDAO.productAllSelect(request);
-		
-		request.setAttribute("content", "rank/rank.jsp");
+
+		request.setAttribute("content", "jsp/rank/rank.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
-		
 	}
 
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		RankDAO.productAllSelect(request);
 		RankDAO.rankCount(request);
-	request.setAttribute("content", "rank/rank.jsp");
-	request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.setAttribute("content", "jsp/rank/rank.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 }

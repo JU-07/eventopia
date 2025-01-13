@@ -21,6 +21,17 @@ h1 {
 	margin-top: 20px;
 }
 
+.container {
+  display: flex;
+  justify-content: space-between; /* 좌우 공간 나누기 */
+  margin: 20px auto;
+  width: 90%; /* 컨테이너 너비 */
+}
+
+.left, .right {
+  width: 48%; /* 좌우 영역 각각 48% */
+}
+
 .review-row {
 	display: flex;
 	align-items: center;
@@ -51,6 +62,11 @@ h1 {
 	border-radius: 8px;
 	width: 90%;
 	max-width: 400px;
+}
+
+.modal-content {
+	max-height: 400px; /* 모달 내용의 최대 높이 */
+	overflow-y: auto; /* 내용이 넘칠 경우 스크롤 활성화 */
 }
 
 .modal-overlay {
@@ -117,16 +133,31 @@ h1 {
 </head>
 <body>
 	<h1>랭킹 순위</h1>
-	<div style="text-align: center; margin-bottom: 20px; color: #666;">기간한정 Top 5</div>
+	
+	<div class="container">
+	<div class="left">
+	<div style="text-align: center;; margin-bottom: 20px; color: #666;">콜라보 Top 5</div>
 	<c:forEach items="${product }" var="p">
 		<div class="review-row">
 			<span>${p.p_name}</span>
 			<span>${p.p_price}원</span>
 			<span>${p.p_category}</span>
-			<img src="${p.image_url}" alt="Sample Image" width="70" height="70" />
+			<img src="${p.image_url}" alt="Sample Image" width="150" height="150" />
 		</div>
 	</c:forEach>
-
+	</div>
+	<div class="right">
+	<div style="text-align: center;; margin-bottom: 20px; color: #666;">기간한정 Top 5</div>
+	<c:forEach items="${product }" var="p">
+		<div class="review-row">
+			<span>${p.p_name}</span>
+			<span>${p.p_price}원</span>
+			<span>${p.p_category}</span>
+			<img src="${p.image_url}" alt="Sample Image" width="150" height="150" />
+		</div>
+	</c:forEach>
+	</div>
+</div>
 	<button class="fixed-button" onclick="openModal()">투표하기</button>
 
 	<div class="modal-overlay" id="modal-overlay"></div>
@@ -134,6 +165,7 @@ h1 {
 		<div class="modal" id="modal">
 			<div class="modal-header">투표 페이지</div>
 			<div class="modal-body">
+				<div class="modal-content">
 				<div style="color: black;">
 					<c:forEach items="${product }" var="p">
 						<div class="review-row">
@@ -144,6 +176,16 @@ h1 {
 							<span><input type="checkbox" name="check" value="${p.p_no}" /></span>
 						</div>
 					</c:forEach>
+					<c:forEach items="${product }" var="p">
+						<div class="review-row">
+							<span>${p.p_name}</span>
+							<span>${p.p_price}원</span>
+							<span>${p.p_category}</span>
+							<img src="${p.image_url}" alt="Sample Image" width="70" height="70" />
+							<span><input type="checkbox" name="check" value="${p.p_no}" /></span>
+						</div>
+					</c:forEach>
+					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" onclick="submitVote()">투표 완료</button>

@@ -42,7 +42,6 @@ pageEncoding="UTF-8"%>
         <div>
           <a href="RankC">ranking</a>
         </div>
-
         <div>review</div>
         <div>map</div>
       </div>
