@@ -51,6 +51,33 @@ ArrayList<ReviewDTO> reviews = null;
 	}
 		
 	}
+
+	public void ReviewDetail(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String no = request.getParameter("no");
+		
+		try {
+			String sql = "select * from product_test where p_no=?";
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, no);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				ReviewDTO review = new ReviewDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4));
+			}
+		
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(con, pstmt, rs);
+		}
+		
+	}
 	
 }
 	
