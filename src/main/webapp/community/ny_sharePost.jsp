@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,18 +9,7 @@
 </head>
 <body>
 
-	<h1>コミュニティー</h1>
-
-	<div>
-		<div>
-			<button>自由投稿</button>
-		</div>
-		<div>
-			<button>情報共有</button>
-		</div>
-	</div>
-	
-	<h3>Attention(注意事項)</h3>
+	<h1>情報共有</h1>
 
 </body>
 </html>
