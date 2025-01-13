@@ -27,14 +27,18 @@ a:hover {
 
 /* 헤더 */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 15px 20px;
   background-color: #cababa;
   color: #fff;
   font-size: 20px;
   font-weight: bold;
+}
+
+.header-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
 }
 
 .header div a {
@@ -54,16 +58,16 @@ a:hover {
 }
 
 .side-info img {
-	color: #fff;
-    width: 24px; /* 아이콘 크기 조정 */
-    height: 24px;
-    margin: 0 10px; /* 아이콘 간격 */
-    cursor: pointer; /* 클릭 가능한 아이콘처럼 보이도록 설정 */
-    transition: transform 0.2s; /* 호버 시 애니메이션 */
+  color: #fff;
+  width: 24px; /* 아이콘 크기 조정 */
+  height: 24px;
+  margin: 0 10px; /* 아이콘 간격 */
+  cursor: pointer; /* 클릭 가능한 아이콘처럼 보이도록 설정 */
+  transition: transform 0.2s; /* 호버 시 애니메이션 */
 }
 
 .side-info img:hover {
-    transform: scale(1.2); /* 호버 시 약간 확대 */
+  transform: scale(1.2); /* 호버 시 약간 확대 */
 }
 
 /* 네비게이션 */
