@@ -94,7 +94,7 @@ public class RankDAO {
 				rankPages.add(rankPage);
 			}
 			
-		request.setAttribute("rankPages", rankPages);
+		request.setAttribute("rank", rankPages);
 		
 				
 				
@@ -113,15 +113,19 @@ public static void rankAdd(HttpServletRequest request) throws UnsupportedEncodin
 	request.setCharacterEncoding("utf-8");
 	Connection con = null;
 	PreparedStatement pstmt = null; 
+	String sql = "insert into post_test values(post_test_seq.nextval, ?, ?, ?, ?, sysdate)";
 	try {
 		con	= DBManager.connect();
-		String sql = "insert into post_test values(post_test_seq.nextval, ?, ?, ?, sysdate)";
 		pstmt = con.prepareStatement(sql);
 		String title = request.getParameter("title");
 		String actor = request.getParameter("actor");
 		String image = request.getParameter("image");
 		String story = request.getParameter("story");
 		
+ 		System.out.println(title);
+ 		System.out.println(title);
+ 		System.out.println(title);
+ 		System.out.println(title);
  		
 		pstmt.setString(1, title);
 		pstmt.setString(2, actor);
@@ -136,7 +140,7 @@ public static void rankAdd(HttpServletRequest request) throws UnsupportedEncodin
 		e.printStackTrace();
 		
 	}finally {
-		DBManager.close(null, pstmt, null);
+		DBManager.close(con, pstmt, null);
 	}
 	
 }

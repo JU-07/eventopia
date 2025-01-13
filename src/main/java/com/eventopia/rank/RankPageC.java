@@ -20,9 +20,7 @@ public class RankPageC extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	RankDAO.rankAdd(request);
-		
-	response.sendRedirect("RankPageC");
+
 	}
 
 }

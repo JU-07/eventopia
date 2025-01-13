@@ -8,9 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href="RankRegC">게시글 등록</a>
 <div style="width: 100%; display: flex; justify-content: center;">
 		<div class="rnakPage-container">
-		<c:forEach var="r" items="${rankPages }">
+		<c:forEach var="r" items="${rank }">
 		
 		<div class="rankPage-wrap" onclick="location.href='RankDetailC?no=${r.p_no}'">
 		<div class="rankPage-img"><img alt="" src="${r.p_img }"></div>

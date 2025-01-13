@@ -132,7 +132,7 @@ h1 {
 
 </head>
 <body>
-<a href="RankPageC">역대랭킹</a> <a herf="RankRegC">게시글 등록</a>
+<a href="RankPageC">역대랭킹</a> 
 	<h1>랭킹 순위</h1>
 	
 	<div class="container">

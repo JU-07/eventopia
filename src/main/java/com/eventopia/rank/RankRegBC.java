@@ -8,18 +8,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/RankRegC")
-public class RankRegC extends HttpServlet {
+@WebServlet("/RankRegBC")
+public class RankRegBC extends HttpServlet {
        
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		request.setAttribute("content", "jsp/rank/rankReg.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RankDAO.rankAdd(request);
 		
+		response.sendRedirect("RankPageC");
 	}
 
 }

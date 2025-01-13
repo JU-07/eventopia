@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="RnakPageC" method="post" enctype="multipart/form-data">
+<form action="RankRegBC" method="post" enctype="multipart/form-data">
 <div class="movie-reg">
             <div>
                 <div>Title</div>
@@ -35,7 +36,8 @@
             </div>
             <div>
                 <div>
-                    <button class="movie-btn">Add</button>
+                <fmt:formatDate value="${rank.p_date }" />
+                    			<button>등록</button>
                 </div>
             </div>
         </div>
