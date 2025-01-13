@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/index.css" />
 <link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="css/login.css" />
 </head>
 <body>
 	<div id="wrap">
