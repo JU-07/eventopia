@@ -151,15 +151,15 @@ public static void rankAdd(HttpServletRequest request) throws UnsupportedEncodin
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String no = request.getParameter("no");
 
 		String sql = "select * from post_test where p_no=?";
 		try {
 			con =	DBManager.connect();
 			RankPageDTO rankDetail =  new RankPageDTO();
+			int no = Integer.parseInt(request.getParameter("no"));
 			
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, no);
+			pstmt.setInt(1, no);
 			rs = pstmt.executeQuery();
 			
 			
@@ -167,7 +167,7 @@ public static void rankAdd(HttpServletRequest request) throws UnsupportedEncodin
 				rankDetail.setP_no(rs.getInt(1));
 				rankDetail.setP_title(rs.getString(2));
 				rankDetail.setP_actor(rs.getString(3));
-				rankDetail.setP_img(rs.getString(rs.getString(4)));
+				rankDetail.setP_img(rs.getString(4));
 				rankDetail.setP_story(rs.getString(5));
 				rankDetail.setP_date(rs.getDate(6));
 				
@@ -177,7 +177,7 @@ public static void rankAdd(HttpServletRequest request) throws UnsupportedEncodin
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			DBManager.close(con, pstmt, null);
+			DBManager.close(con, pstmt, rs);
 		}
 	}
 

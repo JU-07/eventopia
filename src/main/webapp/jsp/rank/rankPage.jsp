@@ -14,7 +14,7 @@
 		<c:forEach var="r" items="${rank }">
 		
 		<div class="rankPage-wrap" onclick="location.href='RankDetailC?no=${r.p_no}'">
-		<div class="rankPage-img"><img alt="" src="${r.p_img }"></div>
+		<div class="rankPage-img"><img alt="" src="${r.p_img }" style="width:250px; height: 250px; object-fit: contain;"> </div>
 	<div class="movie-title">${r.p_title}</div>
 		<div class="rnakPage-actor">${r.p_actor }</div>
 		

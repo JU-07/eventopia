@@ -7,10 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-${rank }
+
 <div style="text-align: center;"><h1> 콜라보페이지 상세</h1></div>
 <div style="display: flex; justify-content: center;">
-<div class="movie-detail">
+<div class="rank-detail">
 <div>
 <div class="col-1">NO </div>
 <div class="col-2">${rank.p_no } </div>

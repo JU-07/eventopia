@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="RankRegBC" method="post" enctype="multipart/form-data">
+<form action="RankRegBC" method="post">
 <div class="movie-reg">
             <div>
                 <div>Title</div>
