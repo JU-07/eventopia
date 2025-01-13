@@ -33,7 +33,7 @@ public class EventDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String sql = "insert into ";
+		String sql = "select *from product_test ";
 		
 		
 		

@@ -7,19 +7,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
-@WebServlet("/CommunityC")
-public class CommunityC extends HttpServlet {
+@WebServlet("/SharePostC")
+public class SharePostC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("content", "community/ny_community.jsp");
+		request.setAttribute("content", "community/ny_sharePost.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
+
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+//		request.getRequestDispatcher("community/sharePost.jsp").forward(request, response);
 	}
 
 }

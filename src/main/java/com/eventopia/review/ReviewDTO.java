@@ -4,11 +4,11 @@ import com.google.gson.Gson;
 
 public class ReviewDTO {
 
-	private int p_no;
-	private String p_name;
-	private int p_price;
-	private String p_category;
-	private int p_img;
+	int p_no;
+	String p_name;
+	int p_price;
+	String p_category;
+	String image_url;
 
 	public ReviewDTO() {
 		// TODO Auto-generated constructor stub
@@ -46,33 +46,28 @@ public class ReviewDTO {
 		this.p_category = p_category;
 	}
 
-	public int getP_img() {
-		return p_img;
+	public String getImage_url() {
+		return image_url;
 	}
 
-	public void setP_img(int p_img) {
-		this.p_img = p_img;
+	public void setImage_url(String image_url) {
+		this.image_url = image_url;
 	}
 
-	public ReviewDTO(int p_no, String p_name, int p_price, String p_category, int p_img) {
+	public ReviewDTO(int p_no, String p_name, int p_price, String p_category, String image_url) {
 		super();
 		this.p_no = p_no;
 		this.p_name = p_name;
 		this.p_price = p_price;
 		this.p_category = p_category;
-		this.p_img = p_img;
+		this.image_url = image_url;
 	}
-	
 
 	@Override
 	public String toString() {
 		return "ReviewDTO [p_no=" + p_no + ", p_name=" + p_name + ", p_price=" + p_price + ", p_category=" + p_category
-				+ ", p_img=" + p_img + "]";
+				+ ", image_url=" + image_url + "]";
 	}
-
-	public String toJsonByMe() {
-		Gson gson = new Gson();
-		return gson.toJson(this);
-	}
+	
 
 }

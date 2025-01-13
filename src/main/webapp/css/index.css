@@ -2,116 +2,121 @@
 
 /* 전체 레이아웃 설정 */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
+	margin: 0;
+	font-family: Arial, sans-serif;
+	line-height: 1.6;
+	background-color: #f4f4f4;
+	color: #333;
 }
 
 a {
-  text-decoration: none; /* a 태그 기본 밑줄 제거 */
-  color: inherit; /* a 태그 색상을 부모 요소와 동일하게 */
+	text-decoration: none; /* a 태그 기본 밑줄 제거 */
+	color: inherit; /* a 태그 색상을 부모 요소와 동일하게 */
 }
 
 a:hover {
-  color: #fff; /* hover 시 색상 변경 */
+	color: #fff; /* hover 시 색상 변경 */
 }
 
 /* 메인 래퍼 */
 #wrap {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 /* 헤더 */
 .header {
-  padding: 15px 20px;
-  background-color: #cababa;
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
+	padding: 15px 20px;
+	background-color: #cababa;
+	color: #fff;
+	font-size: 20px;
+	font-weight: bold;
 }
 
 .header-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: auto;
 }
 
 .header div a {
-  color: #fff;
-  font-weight: bold;
+	color: #fff;
+	font-weight: bold;
 }
 
 .side-info {
-  display: flex;
-  gap: 20px;
-  font-size: 16px;
+	display: flex;
+	gap: 20px;
+	font-size: 16px;
 }
 
 .side-info div:hover {
-  cursor: pointer;
-  text-decoration: underline;
+	cursor: pointer;
+	text-decoration: underline;
 }
 
 .side-info img {
-  color: #fff;
-  width: 24px; /* 아이콘 크기 조정 */
-  height: 24px;
-  margin: 0 10px; /* 아이콘 간격 */
-  cursor: pointer; /* 클릭 가능한 아이콘처럼 보이도록 설정 */
-  transition: transform 0.2s; /* 호버 시 애니메이션 */
+	color: #fff;
+	width: 24px; /* 아이콘 크기 조정 */
+	height: 24px;
+	margin: 0 10px; /* 아이콘 간격 */
+	cursor: pointer; /* 클릭 가능한 아이콘처럼 보이도록 설정 */
+	transition: transform 0.2s; /* 호버 시 애니메이션 */
 }
 
 .side-info img:hover {
-  transform: scale(1.2); /* 호버 시 약간 확대 */
+	transform: scale(1.2); /* 호버 시 약간 확대 */
 }
 
 /* 네비게이션 */
 .nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-  padding: 15px 0;
-  gap: 30px;
-  border-bottom: 2px solid #ccc;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ffffff;
+	padding: 15px 0;
+	gap: 30px;
+	border-bottom: 2px solid #ccc;
 }
 
 .nav div {
-  padding: 10px 20px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  border-radius: 8px;
-  transition: background-color 0.3s, color 0.3s;
+	padding: 10px 20px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #333;
+	border-radius: 8px;
+	transition: background-color 0.3s, color 0.3s;
 }
 
 .nav div:hover {
-  cursor: pointer;
-  background-color: #007bff;
-  color: #fff;
+	cursor: pointer;
+	background-color: #007bff;
+	color: #fff;
 }
 
 /* 콘텐츠 영역 */
 .content-container {
-  flex-grow: 1;
-  padding: 40px 20px;
-  background-color: #ffffff;
-  border-top: 2px solid #ccc;
-  border-bottom: 2px solid #ccc;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	flex-grow: 1;
+	padding: 40px 20px;
+	background-color: #ffffff;
+	border-top: 2px solid #ccc;
+	border-bottom: 2px solid #ccc;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* 푸터 */
 .footer {
-  padding: 15px 20px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  font-size: 14px;
-  border-top: 2px solid #555;
+	padding: 15px 20px;
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	font-size: 14px;
+	border-top: 2px solid #555;
+}
+
+.evetopia-logo {
+	width: 30px; /* 아이콘 크기 조정 */
+	height: 30px;
 }

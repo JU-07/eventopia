@@ -13,51 +13,46 @@
 <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-
-	<!-- 헤더 -->
-	<header class="header">
-		<h1>리뷰 페이지</h1>
-	</header>
-
-
-	<section class="event-form-section" style="text-align: center">
-		<h2>리뷰 등록</h2>
-		<div class="movie-form-container">
+<div class="title" style="text-align: center">
+	<h1 style="font-size: 50px">レビュー登録</h1>
+</div>
+	<section class="event-form-section"
+		style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+	
+		<div class="movie-form-container" style="flex: 1; min-width: 300px;">
 			<form action="resultRegC" method="post" enctype="multipart/form-data">
 				<div class="movie-form">
 					<div class="form-group">
-						<label for="title">이벤트 제목</label> <input id="title" name="title"
-							type="text" placeholder="이벤트 제목" required>
+						<label for="title">イベント タイトル</label> <input id="title" name="title"
+							type="text" placeholder="イベント タイトル" required>
 					</div>
 
 					<div class="form-group">
-						<label for="Name">상품 이름</label> <input id="Name" name="Name"
-							type="text" placeholder="상품 이름" required>
+						<label for="Name">商品名</label> <input id="Name" name="Name"
+							type="text" placeholder="商品名" required>
 					</div>
 
 					<div class="form-group">
-						<label for="file">파일 업로드</label> <input id="file" name="file"
+						<label for="file">ファイルアップロード</label> <input id="file" name="file"
 							type="file" required>
 					</div>
 
 					<div class="form-group">
-						<label for="story">상품 설명</label>
+						<label for="story">商品説明</label>
 						<textarea id="story" name="story" rows="5" maxlength="200"
-							placeholder="상품 설명" required></textarea>
+							placeholder="商品説明" required></textarea>
 					</div>
 
 					<div class="form-group">
-						<button type="submit" class="movie-btn">이벤트 등록</button>
+						<button type="submit" class="movie-btn">イベント登録</button>
 					</div>
 				</div>
 			</form>
 		</div>
-	</section>
 
-
-	<section class="product-list-section" style="text-align: center">
-		<h2>상품 목록</h2>
-		<div class="product-list-container">
+		<!-- 상품 목록 -->
+		<div class="product-list-container" style="flex: 2; min-width: 500px; style="text-align: center"">
+			<h1>商品目録</h1>
 			<div class="product-container">
 				<c:forEach var="product" items="${product}">
 					<div class="product-wrap">
@@ -70,21 +65,19 @@
 						<div class="product-price">${product.p_price}원</div>
 					</div>
 				</c:forEach>
-				<section class="pagination-section">
-					<div class="pagination"
-						style="display: flex; justify-content: center; gap: 10px;">
-						<a href="ReviewPageC?p=1">[처음]</a>
-						<c:forEach begin="1" end="${pageCount}" var="i">
-							<a href="EventPageC?p=${i}">[${i}]</a>
-						</c:forEach>
-						<a href="ReviewPageC?p=${pageCount}">[끝]</a>
-					</div>
-				</section>
 			</div>
+			<section class="pagination-section">
+				<div class="pagination"
+					style="display: flex; justify-content: center; gap: 10px;">
+					<a href="ReviewPageC?p=1">初</a>
+					<c:forEach begin="1" end="${pageCount}" var="i">
+						<a href="EventPageC?p=${i}">[${i}]</a>
+					</c:forEach>
+					<a href="ReviewPageC?p=${pageCount}">末</a>
+				</div>
+			</section>
 		</div>
 	</section>
 
-
 </body>
-</html>
 </html>

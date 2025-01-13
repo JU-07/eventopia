@@ -30,7 +30,7 @@ ArrayList<ReviewDTO> reviews = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs  = null;
 		
-		String sql = "select * from ";
+		String sql = "select * from product_test";
 		
 	try {
 		con = DBManager.connect();

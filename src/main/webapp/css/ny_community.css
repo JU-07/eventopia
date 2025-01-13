@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+/*background-color*/
+.community-container,
+.attention-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 40px 20px;
+	background-color: #f4f4f4;
+}
+
+
+
+/*title*/
+.text {
+	text-align: center;
+	font-size: 90px;
+	font-family: 'Note Serif JP', serif;
+}
+
+/*button -> free,share*/
+.button-container {
+	display: flex;
+	justify-content: center;
+	gap: 60px;
+	margin: 20px 0;
+	font-family: 'Note Serif JP', serif;
+}
+
+.button-container button {
+	padding: 20px 40px;
+	font-size: 20px;
+	border-radius: 15px;
+	border: none;
+	cursor: pointer;
+}
+
+.free-post {
+	background-color: rgb(255, 189, 189);		/*聞いてみる*/
+}
+
+
+.free-post:hover {
+	background-color: hotpink;			/*聞いてみる*/
+}
+
+.share-post {
+	background-color: rgb(211, 174, 244);		/*聞いてみる*/
+	
+}
+
+.share-post:hover {
+	background-color: blueviolet;		/*聞いてみる*/
+}
+
+/*attention*/
+h3 {
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	color: red;		/*聞いてみる*/
+	text-shadow: 2px 2px 4px rgb(255, 98, 98);			/*聞いてみる*/
+	margin: 100px 0;
+	padding: 10px;
+	border: 2px solid red;			/*聞いてみる*/
+	border-radius: 10px;
+	background-color: rgb(255, 255, 255);			/*聞いてみる*/
+}
+
+.attention-content {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.1s ease, padding 0.1s ease;
+	padding: 0;
+}
+
+.attention-content.open {
+  max-height: 100%; 
+  padding: 10px 0;
+}
+
+.attention-title {
+	font-size: 24px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.attention-list {
+	list-style-type: none;
+	padding: 0;
+}
+
+.list-title {
+	font-size: 18px;
+	font-weight: bold;
+	cursor: pointer;
+	text-decoration: underline white;			/*聞いてみる*/	
+}
+
+.list-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.1s ease, padding 0.1s ease;
+  padding: 0;
+}
+
+.list-content.open {
+  max-height: 100%; 
+  padding: 10px;
+}
+
+/*돌아가기버튼*/
+#backToTop {
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+	padding: 15px 30px;
+	font-size: 15x;
+	background-color: white;		/*聞いてみる*/
+	border: 1px solid lightgray;			/*聞いてみる*/
+	border-radius: 10px;
+	cursor: pointer;
+	display: none;
+	z-index: 1000;
+}
+
+#backToTop:hover {
+	background-color: darkgray;			/*聞いてみる*/
+}
+
+
+
+

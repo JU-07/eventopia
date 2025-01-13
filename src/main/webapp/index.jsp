@@ -13,7 +13,12 @@
 		<div class="header">
 			<div class="header-item">
 				<div>
-					<a href="MainC"> Eventopia </a>
+
+					<a href="MainC"> Eventopia </a> <a href="MainC"> <img
+						alt="Eventopia logo" src="Icon/eventopia-logo.png"
+						class="evetopia-logo">
+					</a>
+
 				</div>
 				<div class="side-info">
 					<div>
@@ -42,12 +47,15 @@
 				<a href="CommunityC"> community </a>
 			</div>
 			<div>
-				<a href="RankC">ranking</a>
+				<a href="RankC"> ranking </a>
 			</div>
 			<div>
-				<a href="ReviewC">review</a>
+				<a href="ReviewC"> review</a>
 			</div>
-			<div>map</div>
+			<div>
+				<a href="MapC"> map </a>
+			</div>
+
 		</div>
 		<div class="content-container">
 			<div>
