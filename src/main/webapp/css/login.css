@@ -1,0 +1,59 @@
+
+/* 전체 컨테이너 */
+#container {
+    text-align: center;
+}
+
+/* 로고 이미지 */
+#logo {
+    margin-bottom: 20px;
+}
+
+/* 로그인 입력창 */
+#login-form {
+    margin-bottom: 20px;
+}
+
+#login-form input {
+    padding: 8px;
+    margin: 5px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* 로그인 및 회원가입 버튼 */
+#login-buttons {
+    margin-bottom: 20px;
+}
+
+#login-buttons div {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#login-buttons div:hover {
+    background-color: #0056b3;
+}
+
+/* 소셜 로그인 아이콘 */
+#social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#social-icons img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+#social-icons img:hover {
+    opacity: 0.8;
+}
