@@ -1,16 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>SEVEN EVENT PAGE</title>
 </head>
 <body>
-<div class="header"><h1>세븐일레븐 이벤트 페이지</h1></div>
-<div class="title"></div>
-<div class="img"></div>
-<div class="text"></div>
-<div></div>
+	<div><h1>Seven Event Page</h1></div>
+
+	<div class="event-title">이벤트 제목</div>
+	<div class="event-img">사진</div>
+	<div class="event-txt">이벤트 내용</div>
+	<div class="event-user">
 </body>
 </html>
