@@ -15,7 +15,7 @@
 			<div class="header-item">
 				<div>
 
-					<a href="MainC"> Eventopia </a> <a href="MainC"> <img
+					<a href="MainC"> Eventopia </a> <img
 						alt="Eventopia logo" src="Icon/eventopia-logo.png"
 						class="evetopia-logo">
 					</a>
@@ -23,7 +23,7 @@
 				</div>
 				<div class="side-info">
 					<div>
-						<img src="Icon/user.png" alt="User Icon" />
+						<img src="Icon/user.png" alt="User Icon" onclick="location.href='LoginC'" />
 					</div>
 					<div>
 						<img src="Icon/heart.png" alt="Heart Icon" />
