@@ -16,7 +16,7 @@
   flex-direction: column; /* 내부 요소를 세로 정렬 */
   align-items: center;
   gap: 15px;
-  width: 340px; /* 개별 항목 너비 */
+  width: 320px; /* 개별 항목 너비 */
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
@@ -35,6 +35,7 @@
   height: 80px;
   object-fit: contain;
   transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 35px;
 }
 
 .event-logo img:hover {

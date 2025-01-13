@@ -13,7 +13,7 @@
 		<div class="header">
 			<div class="header-item">
 				<div>
-					<a href="MainC"> <img alt="Eventopia logo"
+					<a href="MainC" class="Elogo"> <img alt="Eventopia logo"
 						src="Icon/eventopia-logo.png" class="evetopia-logo">
 						Eventopia
 					</a>

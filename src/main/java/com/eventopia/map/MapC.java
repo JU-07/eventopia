@@ -12,6 +12,7 @@ public class MapC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setAttribute("content", "jsp/map/mapMain.jsp");
+		
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 	}

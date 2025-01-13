@@ -7,6 +7,8 @@ body {
 	line-height: 1.6;
 	background-color: #f4f4f4;
 	color: #333;
+	display: flex;
+	justify-content: center;
 }
 
 a {
@@ -23,6 +25,8 @@ a:hover {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	min-width: 1380px;
+	max-width: 1380px
 }
 
 /* 헤더 */
@@ -34,11 +38,16 @@ a:hover {
 	font-weight: bold;
 }
 
+.Elogo {
+	display: flex;
+	align-items: center;
+}
+
 .header-item {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: auto;
+	margin: 0px 60px;
 }
 
 .header div a {
