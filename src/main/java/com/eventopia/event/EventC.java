@@ -17,7 +17,7 @@ public class EventC extends HttpServlet {
 		EventDAO.EDAO.showAllEvent(request);
 		
 		
-		request.setAttribute("content", "jh_event/jh_event.jsp");
+		request.setAttribute("content", "event/event.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 		

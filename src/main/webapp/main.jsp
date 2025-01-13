@@ -11,7 +11,7 @@
 	<div class="event-container">
 		<div class="event-item">
 			<div class="event-logo">
-				<img src="Icon/l_logo.webp" alt="Lawson Logo" />
+				<img src="Icon/l_logo.webp" alt="Lawson Logo" onclick="location.href='event/lowson.jsp'" />
 			</div>
 			<div class="event-content lawson">
 				<div class="event-title">로손 이벤트</div>
@@ -20,7 +20,7 @@
 
 		<div class="event-item">
 			<div class="event-logo">
-				<img src="Icon/s_logo.webp" alt="Seven Logo" />
+				<img src="Icon/s_logo.webp" alt="Seven Logo" onclick="location.href='event/seven.jsp'" />
 			</div>
 			<div class="event-content seven">
 				<div class="event-title">세븐 이벤트</div>
@@ -29,7 +29,7 @@
 
 		<div class="event-item">
 			<div class="event-logo">
-				<img src="Icon/f_logo.png" alt="Family Logo" />
+				<img src="Icon/f_logo.png" alt="Family Logo" onclick="location.href='event/family.jsp'" />
 			</div>
 			<div class="event-content family">
 				<div class="event-title">로손 이벤트</div>
