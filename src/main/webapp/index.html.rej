@@ -1,0 +1,9 @@
+diff a/src/main/webapp/index.html b/src/main/webapp/index.html	(rejected hunks)
+@@ -6,7 +6,6 @@
+ </head>
+ <body>
+ 
+-	<form action="HC">
+ 
+ 		<div id="wrap">
+ 			<div class="header">

@@ -1,4 +1,4 @@
-package com.eventopia.main;
+package com.eventopia.event;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,19 +7,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/HC")
-public class HC extends HttpServlet {
+
+@WebServlet("/EventC")
+public class EventC extends HttpServlet {
+	
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		EventDAO.EDAO.showAllEvent(request);
 		
-		request.setAttribute("content", "main.jsp");
 		
+		request.setAttribute("content", "jsp/event/event.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
+		
+		
+		
 		
 	}
 
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	
 	}
 
 }
- 
