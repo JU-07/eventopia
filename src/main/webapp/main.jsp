@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%> <%@taglib uri="http://java.sun.com/jsp/jstl/core"
+prefix="c"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,7 +11,11 @@ pageEncoding="UTF-8"%>
     <div class="event-container">
       <div class="event-item">
         <div class="event-logo">
-          <img src="Icon/l_logo.webp" alt="Lawson Logo" onclick="location.href='LowsonC'" />
+          <img
+            src="Icon/l_logo.webp"
+            alt="Lawson Logo"
+            onclick="location.href='LowsonC'"
+          />
         </div>
         <div class="event-content lawson">
           <div class="event-title">이벤트 제목</div>
@@ -43,7 +48,11 @@ pageEncoding="UTF-8"%>
 
       <div class="event-item">
         <div class="event-logo">
-          <img src="Icon/s_logo.webp" alt="Seven Logo" onclick="location.href='SevenC'" />
+          <img
+            src="Icon/s_logo.webp"
+            alt="Seven Logo"
+            onclick="location.href='SevenC'"
+          />
         </div>
         <div class="event-content seven">
           <div class="event-title">이벤트 제목</div>
@@ -76,7 +85,11 @@ pageEncoding="UTF-8"%>
 
       <div class="event-item">
         <div class="event-logo">
-          <img src="Icon/f_logo.png" alt="Family Logo" onclick="location.href='FamilyC'" />
+          <img
+            src="Icon/f_logo.png"
+            alt="Family Logo"
+            onclick="location.href='FamilyC'"
+          />
         </div>
         <div class="event-content family">
           <div class="event-title">이벤트 제목</div>
@@ -109,4 +122,3 @@ pageEncoding="UTF-8"%>
     </div>
   </body>
 </html>
-

@@ -11,15 +11,13 @@
 </head>
 <body>
 	<div id="wrap">
-
-
 		<!-- 헤더 -->
 		<div class="header-bg">
 			<div class="header">
 				<!-- 왼쪽: 로고 -->
 				<div class="logo-container">
 					<a href="MainC" class="Elogo"> <img
-						src="Icon/eventopia-logo.png" alt="Eventopia logo"
+						src="Icon/eventopia_logo.png" alt="Eventopia logo"
 						class="evetopia-logo" /> <span>Eventopia</span>
 
 					</a>
