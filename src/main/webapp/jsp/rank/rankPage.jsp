@@ -7,25 +7,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-body {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-	background-color: #f9f9f9;
-}
-
 .rnakPage-container {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	gap: 16px;
-	padding: 20px;
 	max-width: 1280px;
 	width: 100%;
-	margin-left: 50px;
-	margin-right: 50px;
+	margin: 0 auto;
 }
 
 .rankPage-wrap {
