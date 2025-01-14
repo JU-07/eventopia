@@ -70,7 +70,7 @@ ArrayList<ReviewDTO> reviews = null;
 			String sql = "select * from post_test where p_no=?";
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, no);
+//			pstmt.setString(1, no);
 			rs = pstmt.executeQuery();
 			
 			if (rs.next()) {
