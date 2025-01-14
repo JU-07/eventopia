@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	<!-- 이벤트 1 -->
 	<div class="event-container">
 		<div class="head">
-			<h1 onclick="'EventDetailC'">Event Page 1</h1>
+			<h1 onclick="location.href='EventDetailC'">Event Page 1</h1>
 		</div>
 		<div class="content">
 			<div class="date">
