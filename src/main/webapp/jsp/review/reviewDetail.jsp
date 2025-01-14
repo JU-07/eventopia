@@ -47,7 +47,7 @@
 			</div>
 			<div>
 				<div>
-					<fmt:formatDate value="${review.p_date }" />
+					<fmt:formatDate value="${review.p_sysdate }" />
 				</div>
 			</div>
 		</div>

@@ -1,5 +1,6 @@
 package com.eventopia.review;
 
+import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -30,7 +31,7 @@ ArrayList<ReviewDTO> reviews = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs  = null;
 		
-		String sql = "select * from product_test";
+		String sql = "select * from product_test order by p_count desc";
 		
 	try {
 		con = DBManager.connect();
@@ -44,6 +45,12 @@ ArrayList<ReviewDTO> reviews = null;
 			review = new ReviewDTO(); 
 			reviews.add(review);
 		}
+		request.setAttribute("reviews", review);
+		
+		
+		
+		
+		
 	} catch (Exception e) {
 		e.printStackTrace();
 	}finally {
@@ -57,10 +64,10 @@ ArrayList<ReviewDTO> reviews = null;
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String no = request.getParameter("no");
+		int no = Integer.parseInt("no");
 		
 		try {
-			String sql = "select * from product_test where p_no=?";
+			String sql = "select * from post_test where p_no=?";
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, no);
@@ -79,6 +86,35 @@ ArrayList<ReviewDTO> reviews = null;
 			DBManager.close(con, pstmt, rs);
 		}
 		
+	}
+
+	public void addReview(HttpServletRequest request) throws UnsupportedEncodingException {
+		request.setCharacterEncoding("UTF-8");
+		
+		PreparedStatement pstmt = null;
+		String sql = "insert into product_test values(product_test_seq.nextval,?,?,?,?)";
+	try {
+		String title = request.getParameter("name");
+		String actor = request.getParameter("actor");
+		String image = request.getParameter("image");
+		String story = request.getParameter("story");
+		
+		pstmt.setString(1, title);
+		pstmt.setString(2, actor);
+		pstmt.setString(3, image);
+		pstmt.setString(4, story);
+		
+		if (pstmt.executeUpdate() == 1) {
+			System.out.println("등록 성공");
+		}
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	}finally {
+		DBManager.close(con, pstmt, null);
+	}
+	
+	
 	}
 	
 }

@@ -10,7 +10,7 @@
 <body>
 <div class="review-form-container"
 			style="flex: 1; min-width: 300px; height: 500px; display: flex; flex-direction: column; justify-content: space-between;">
-			<form action="ResultRegC" method="post" enctype="multipart/form-data">
+			<form action="ReviewC" method="post" enctype="multipart/form-data">
 				<div class="review-form">
 					<div class="form-group">
 						<label for="title">イベント タイトル</label> <input id="title"
