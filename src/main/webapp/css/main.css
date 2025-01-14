@@ -16,7 +16,7 @@
   flex-direction: column; /* 내부 요소를 세로 정렬 */
   align-items: center;
   gap: 15px;
-  width: 340px; /* 개별 항목 너비 */
+  width: 320px; /* 개별 항목 너비 */
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
@@ -35,11 +35,13 @@
   height: 80px;
   object-fit: contain;
   transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 40px;
 }
 
 .event-logo img:hover {
   transform: translateY(-5px); /* hover 시 살짝 올라가는 효과 */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 /* 이벤트 내용 */
@@ -119,13 +121,13 @@
 
 /* 개별 이벤트 색상 */
 .lawson {
-  background-color: #04a9f3; /* 로손 색상 */
+  background-color: #82c8f7; /* 로손 색상 */
 }
 
 .seven {
-  background-color: #f54336; /* 세븐 색상 */
+  background-color: #f8958f /* 세븐 색상 */
 }
 
 .family {
-  background-color: #00a041; /* 패밀리 색상 */
+  background-color: #a1cba9; /* 패밀리 색상 */
 }

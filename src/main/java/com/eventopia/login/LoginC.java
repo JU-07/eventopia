@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginC extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		request.setAttribute("content", "jsp/login/login.jsp");
 		
 		request.getRequestDispatcher("index.jsp").forward(request, response);
