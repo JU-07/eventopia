@@ -5,12 +5,12 @@ import java.util.Date;
 import com.google.gson.Gson;
 
 public class EventDTO {
-
+	
 	private String title;
-	private Date sysdate;
 	private String name;
 	private String text;
 	private String link;
+	private Date sysdate;
 	
 	public EventDTO() {
 		// TODO Auto-generated constructor stub
