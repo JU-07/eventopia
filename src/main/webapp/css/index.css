@@ -1,122 +1,160 @@
 @charset "UTF-8";
 
-/* 전체 레이아웃 설정 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 전체 레이아웃 */
 body {
 	margin: 0;
 	font-family: Arial, sans-serif;
-	line-height: 1.6;
 	background-color: #f4f4f4;
 	color: #333;
 }
 
 a {
-	text-decoration: none; /* a 태그 기본 밑줄 제거 */
-	color: inherit; /* a 태그 색상을 부모 요소와 동일하게 */
+	text-decoration: none; /* 밑줄 제거 */
+	color: inherit; /* 부모 요소의 색상 계승 */
 }
 
 a:hover {
-	color: #fff; /* hover 시 색상 변경 */
+	text-decoration: none; /* 호버 시에도 밑줄 제거 유지 */
+	color: inherit; /* 호버 시에도 부모 요소의 색상 유지 */
 }
 
-/* 메인 래퍼 */
-#wrap {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+/* 헤더 배경 */
+.header-bg {
+	background-color: #cababa;
+	width: 100%;
 }
 
 /* 헤더 */
 .header {
-	padding: 15px 20px;
-	background-color: #cababa;
-	color: #fff;
-	font-size: 20px;
-	font-weight: bold;
-}
-
-.header-item {
+	max-width: 1280px;
+	margin: 0 auto;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-between; /* 양쪽 끝 정렬 */
 	align-items: center;
-	margin: auto;
+	padding: 15px 20px; /* 여백 추가 */
 }
 
-.header div a {
-	color: #fff;
-	font-weight: bold;
-}
-
-.side-info {
+/* 로고 */
+.logo-container {
 	display: flex;
-	gap: 20px;
-	font-size: 16px;
-}
-
-.side-info div:hover {
-	cursor: pointer;
-	text-decoration: underline;
-}
-
-.side-info img {
-	color: #fff;
-	width: 24px; /* 아이콘 크기 조정 */
-	height: 24px;
-	margin: 0 10px; /* 아이콘 간격 */
-	cursor: pointer; /* 클릭 가능한 아이콘처럼 보이도록 설정 */
-	transition: transform 0.2s; /* 호버 시 애니메이션 */
-}
-
-.side-info img:hover {
-	transform: scale(1.2); /* 호버 시 약간 확대 */
-}
-
-/* 네비게이션 */
-.nav {
-	display: flex;
-	justify-content: center;
 	align-items: center;
-	background-color: #ffffff;
-	padding: 15px 0;
-	gap: 30px;
-	border-bottom: 2px solid #ccc;
-}
-
-.nav div {
-	padding: 10px 20px;
-	font-size: 18px;
-	font-weight: bold;
-	color: #333;
-	border-radius: 8px;
-	transition: background-color 0.3s, color 0.3s;
-}
-
-.nav div:hover {
-	cursor: pointer;
-	background-color: #007bff;
-	color: #fff;
-}
-
-/* 콘텐츠 영역 */
-.content-container {
-	flex-grow: 1;
-	padding: 40px 20px;
-	background-color: #ffffff;
-	border-top: 2px solid #ccc;
-	border-bottom: 2px solid #ccc;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* 푸터 */
-.footer {
-	padding: 15px 20px;
-	background-color: #333;
-	color: #fff;
-	text-align: center;
-	font-size: 14px;
-	border-top: 2px solid #555;
+	gap: 10px; /* 로고와 텍스트 사이 간격 */
 }
 
 .evetopia-logo {
-	width: 30px; /* 아이콘 크기 조정 */
-	height: 30px;
+	width: 40px;
+	height: 40px;
+}
+
+.Elogo {
+	display: flex;
+	align-items: center;	
+}
+
+.Elogo span {
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+/* 아이콘 그룹 */
+.side-info {
+	display: flex;
+	gap: 30px; /* 아이콘 사이 간격 */
+}
+
+.side-info img {
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+	transition: transform 0.2s ease;
+}
+
+.side-info img:hover {
+	transform: scale(1.2); /* 호버 시 확대 효과 */
+}
+
+/* 네비게이션 */
+.nav-bg {
+	background-color: #ffffff;
+	border-bottom: 2px solid #ccc;
+}
+
+.nav {
+	max-width: 1280px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	gap: 70px; /* 메뉴 간격 */
+	padding: 15px 0;
+}
+
+.nav div {
+	font-size: 18px;
+	font-weight: bold;
+	color: #333;
+}
+
+.nav div:hover {
+	color: #007bff;
+	cursor: pointer;
+}
+
+/* 콘텐츠 */
+.content-bg {
+	background-color: #ffffff;
+	border-top: 2px solid #ccc;
+	border-bottom: 2px solid #ccc;
+}
+
+.content-container {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 40px 20px;
+}
+
+/* 푸터 배경 */
+.footer-bg {
+    background-color: #333;
+    border-top: 2px solid #555;
+    padding: 20px 0; /* 위아래 여백을 좀 더 추가 */
+}
+
+/* 푸터 내용 */
+.footer {
+    max-width: 1280px;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 14px; /* 텍스트 크기 조정 */
+}
+
+/* 저작권 텍스트 */
+.footer p {
+    margin: 5px 0; /* 텍스트 간 여백 */
+}
+
+/* 링크 스타일 */
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: none; /* 호버 시 밑줄 추가 */
+    color: #007bff; /* 호버 시 색상 변경 */
+}
+
+/* 모바일에서 푸터 텍스트 크기 조정 */
+@media (max-width: 768px) {
+    .footer {
+        font-size: 12px; /* 작은 화면에서는 텍스트 크기 줄이기 */
+        padding: 10px; /* 여백 조정 */
+    }
 }
