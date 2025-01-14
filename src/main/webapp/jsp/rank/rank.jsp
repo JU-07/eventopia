@@ -132,6 +132,7 @@ h1 {
 
 </head>
 <body>
+<a href="RankPageC">역대랭킹</a> 
 	<h1>랭킹 순위</h1>
 	
 	<div class="container">

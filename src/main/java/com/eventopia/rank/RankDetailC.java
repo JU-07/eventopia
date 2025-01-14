@@ -7,21 +7,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/RankC")
-public class RankC extends HttpServlet {
+
+@WebServlet("/RankDetailC")
+public class RankDetailC extends HttpServlet {
        
+   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		RankDAO.RDAO.productAllSelect(request);
-		request.setAttribute("content", "jsp/rank/rank.jsp");
-	request.getRequestDispatcher("index.jsp").forward(request, response);
+	RankDAO.RDAO.rankDetail(request);
+	request.setAttribute("content", "jsp/rank/rankDetail.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RankDAO.RDAO.productAllSelect(request);
-		RankDAO.RDAO.rankCount(request);
-	request.setAttribute("content", "jsp/rank/rank.jsp");
-	request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 }
