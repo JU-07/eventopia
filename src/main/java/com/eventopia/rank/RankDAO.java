@@ -4,6 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,15 +12,25 @@ import javax.servlet.http.HttpServletRequest;
 import com.eventopia.rank.RankPageDTO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
 import com.eventopia.main.DBManager;
 import com.eventopia.rank.ProductDTO;
 
 public class RankDAO {
+	public static final RankDAO RDAO = new RankDAO();
+	private Connection con = null; 
+private RankDAO() {
+		try {
+			con = DBManager.connect();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+}
 	
-	
-	public static void productAllSelect(HttpServletRequest request) throws UnsupportedEncodingException {
+	public void productAllSelect(HttpServletRequest request) throws UnsupportedEncodingException {
 		request.setCharacterEncoding("utf-8");	
-		Connection con = null;
+		 
 			PreparedStatement pstmt = null; 
 			ResultSet rs = null;
 			String sql = "select * from product_test order by p_count desc";
@@ -35,7 +46,7 @@ public class RankDAO {
 			}
 			
 		request.setAttribute("product", products);
-		System.out.println(products);
+		
 				
 				
 			} catch (Exception e) {
@@ -48,9 +59,9 @@ public class RankDAO {
 	
 }
 
-	public static void rankCount(HttpServletRequest request) throws UnsupportedEncodingException {
+	public void rankCount(HttpServletRequest request) throws UnsupportedEncodingException {
 		request.setCharacterEncoding("utf-8");	
-		Connection con = null;
+		
 		PreparedStatement pstmt = null; 
 			ResultSet rs = null;
 			 String[] selectedNos = request.getParameterValues("check");
@@ -77,9 +88,9 @@ public class RankDAO {
     }
 	}
 
-	public static void rankPageAllSelect(HttpServletRequest request) throws UnsupportedEncodingException {
+	public void rankPageAllSelect(HttpServletRequest request) throws UnsupportedEncodingException {
 		request.setCharacterEncoding("utf-8");	
-		Connection con = null;
+		
 			PreparedStatement pstmt = null; 
 			ResultSet rs = null;
 			String sql = "select * from post_test";
@@ -108,10 +119,10 @@ public class RankDAO {
 		
 	}
 
-public static void rankAdd(HttpServletRequest request) throws UnsupportedEncodingException {
+public void rankAdd(HttpServletRequest request) throws UnsupportedEncodingException {
 		
 	request.setCharacterEncoding("utf-8");
-	Connection con = null;
+	
 	PreparedStatement pstmt = null; 
 	String sql = "insert into post_test values(post_test_seq.nextval, ?, ?, ?, ?, sysdate)";
 	try {
@@ -147,8 +158,8 @@ public static void rankAdd(HttpServletRequest request) throws UnsupportedEncodin
 
 	
 	
-	public static void rankDetail(HttpServletRequest request) {
-		Connection con = null;
+	public void rankDetail(HttpServletRequest request) {
+		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 

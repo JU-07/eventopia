@@ -13,7 +13,7 @@ public class RankDetailC extends HttpServlet {
        
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	RankDAO.rankDetail(request);
+	RankDAO.RDAO.rankDetail(request);
 	request.setAttribute("content", "jsp/rank/rankDetail.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}

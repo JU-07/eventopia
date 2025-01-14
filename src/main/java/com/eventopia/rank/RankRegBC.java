@@ -17,7 +17,7 @@ public class RankRegBC extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RankDAO.rankAdd(request);
+		RankDAO.RDAO.rankAdd(request);
 		
 		response.sendRedirect("RankPageC");
 	}
