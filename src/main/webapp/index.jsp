@@ -19,6 +19,7 @@
 					<a href="MainC" class="Elogo"> <img
 						src="Icon/eventopia_logo.png" alt="Eventopia logo"
 						class="evetopia-logo" /> <span>Eventopia</span>
+
 					</a>
 				</div>
 
