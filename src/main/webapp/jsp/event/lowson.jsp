@@ -13,7 +13,7 @@
 </head>
 <body>
 	<div class="header" style="text-align: center; margin-top: 20px;">
-		<h1>로손 이벤트 페이지</h1>
+		<h1>ローソンイベントページ</h1>
 	</div>
 
 

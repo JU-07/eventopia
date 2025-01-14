@@ -18,10 +18,9 @@
 	</div>
 
 	<div>
-	<button<a href="'ReviewRegC'">리뷰 등록하기</a>></button>
+		<a href="ReviewRegC">리뷰 등록</a>
 	</div>
-
-
+	<br>
 	<div class="product-list-container"
 		style="flex: 1; min-width: 500px; height: 500px; display: flex; flex-direction: column; justify-content: space-between; text-align: center;">
 		<h1>コラボ·レビュー目録</h1>
@@ -49,8 +48,7 @@
 			</div>
 		</section>
 	</div>
-	</section>
-
+	
 </body>
 </html>
 

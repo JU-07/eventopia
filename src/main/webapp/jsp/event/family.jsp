@@ -7,26 +7,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>로손 이벤트 페이지</title>
+<title>패밀리마트 이벤트 페이지</title>
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/event.css">
 </head>
 <body>
 	<div class="header" style="text-align: center; margin-top: 20px;">
-		<h1>ローソン·イベント·ページ</h1>
+		<h1>ファミリーマートイベントページ</h1>
 	</div>
 
 
 	<section class="event-info-section"
-		style="display: flex; justify-content: center; gap: 20px; margin: 40px auto;">
-		<div class="movie-info-container" style="flex: 1; min-width: 350px;">
-			<div class="movie-info">
+		style="display: flex; justify-content: center; gap: 20px; margin: 40px auto; border: 1px solid black">
+		<div class="event-info-container" style="flex: 1; min-width: 350px;" >
+			<div class="event-info">
 				<div class="form-group">
 					<label for="title">이벤트 제목</label>
 					<p>${event.title}</p>
-			
 				</div>
-
 				<div class="form-group">
 					<label for="Name">상품 이름</label>
 					<p>${event.name}</p>

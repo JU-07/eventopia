@@ -18,7 +18,7 @@ public class ReviewRegC extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setAttribute("content", "jsp/event/reviewReg.jsp");
+		request.setAttribute("content", "jsp/review/reviewReg.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

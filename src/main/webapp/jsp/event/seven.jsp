@@ -7,13 +7,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>로손 이벤트 페이지</title>
+<title>세븐일레븐 이벤트 페이지</title>
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/event.css">
+<style>
+.form-group {
+    border: 1px solid black; 
+    border-width: 1px; 
+    padding: 10px;
+    border-radius: 5px; 
+    margin-bottom: 20px; 
+}
+</style>
 </head>
 <body>
 	<div class="header" style="text-align: center; margin-top: 20px;">
-		<h1>로손 이벤트 페이지</h1>
+		<h1>セブン-イレブン イベントページ</h1>
 	</div>
 
 

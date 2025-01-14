@@ -8,8 +8,7 @@
 <link rel="stylesheet" href="css/review.css">
 </head>
 <body>
-
-		<div class="review-form-container"
+<div class="review-form-container"
 			style="flex: 1; min-width: 300px; height: 500px; display: flex; flex-direction: column; justify-content: space-between;">
 			<form action="ResultRegC" method="post" enctype="multipart/form-data">
 				<div class="review-form">
@@ -33,12 +32,14 @@
 						<textarea id="story" name="story" rows="5" maxlength="200"
 							placeholder="商品説明" required style="width: 100%; height: 150px;"></textarea>
 					</div>
-
+					<br>
 					<div class="form-group">
 						<button type="submit" class="review-btn">登録</button>
 					</div>
 				</div>
 			</form>
 		</div>
+
+
 </body>
 </html>
