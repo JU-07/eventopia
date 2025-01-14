@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class LowsonDetailC
  */
-@WebServlet("/LowsonDetailC")
+@WebServlet("/SevenDetailC")
 public class SevenDetailC extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

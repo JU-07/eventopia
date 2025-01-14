@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/LowsonDetailC")
+@WebServlet("/FamilyDetailC")
 public class FamilyDetailC extends HttpServlet {
 	
        
