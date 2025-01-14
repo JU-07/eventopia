@@ -25,5 +25,10 @@ values (product_test_seq.nextval, '자가리코', 2500, '과자',
 select *
 from product_test;
 
+<<<<<<< HEAD
+delete product_test where p_no=6;
+
+=======
 delete product_test
 where p_no = 6;
+>>>>>>> 0aa9708a628d26b3e352e2341e3e1adbb7bf36c0
