@@ -10,14 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/ReviewC")
 public class ReviewC extends HttpServlet {
-	
-    
-    
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ReviewDAO.RDAO.showAllReview(request);
 
-		
 		request.setAttribute("content", "jsp/review/review.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		

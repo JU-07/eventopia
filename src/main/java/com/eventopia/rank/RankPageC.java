@@ -10,13 +10,13 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/RankPageC")
 public class RankPageC extends HttpServlet {
-     
-   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		RankDAO.RDAO.rankPageAllSelect(request);  
 	
 		request.setAttribute("content", "jsp/rank/rankPage.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
