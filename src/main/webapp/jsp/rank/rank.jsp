@@ -47,6 +47,22 @@ h1 {
 
 .review-row img {
 	border-radius: 4px;
+	
+}
+.span-container {
+    display: flex;
+    flex-direction: column; /* 세로로 텍스트 배치 */
+    gap: 10px; /* 각 텍스트 간 간격 */
+    justify-content: center; /* 컨테이너 내부에서 중앙 정렬 */
+    min-width: 200px; /* 모든 텍스트 컨테이너 너비를 고정 */
+    padding-left: 10px; /* 텍스트 시작점 보정 */
+}
+
+@media (max-width: 600px) {
+    .span-container {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 .modal {
@@ -141,10 +157,12 @@ h1 {
 				Top 5</div>
 			<c:forEach items="${product }" var="p">
 				<div class="review-row">
-					<span>${p.p_name}</span> <span>${p.p_price}원</span> <span>${p.p_category}</span>
-					<img src="${p.image_url}" alt="Sample Image" width="150"
-						height="150" />
-				</div>
+					<img src="${p.image_url}" alt="Sample Image" width="200"height="200" />
+					<div class="span-container">
+					<span>${p.p_name}</span>
+					 <span>${p.p_price}원</span> 
+					 <span>${p.p_category}</span>
+				</div></div>
 			</c:forEach>
 		</div>
 		<div class="right">
@@ -152,10 +170,12 @@ h1 {
 				Top 5</div>
 			<c:forEach items="${product }" var="p">
 				<div class="review-row">
-					<span>${p.p_name}</span> <span>${p.p_price}원</span> <span>${p.p_category}</span>
-					<img src="${p.image_url}" alt="Sample Image" width="150"
-						height="150" />
-				</div>
+					<img src="${p.image_url}" alt="Sample Image" width="200"height="200" />
+					<div class="span-container">
+					<span>${p.p_name}</span>
+					 <span>${p.p_price}원</span> 
+					 <span>${p.p_category}</span>
+				</div></div>
 			</c:forEach>
 		</div>
 	</div>
