@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 public class CommunityC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("content", "community/ny_community.jsp");
+		request.setAttribute("content", "jsp/community/ny_community.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

@@ -1,100 +1,121 @@
 @charset "UTF-8";
 
-/*background-color*/
-/*.post-container {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*    background-color: #f4f4f4;*/
-/*    min-height: 100vh; */
-/*    padding: 20px;*/
-/*}*/
+/* コンテナ全体を左右に分ける */
+.container {
+	display: flex;
+	gap: 20px;
+	padding: 20px;
+	background-color: #f4f4f4;
+}
 
-/*h1 {*/
-/*    text-align: center;*/
-/*    font-size: 90px;*/
-/*}*/
+/* 投稿フォームセクション */
+.form-container {
+	flex: 1;
+	/* フレキシブルにサイズ調整 */
+/*	min-width: 300px;*/
+	max-width: 30%;
+	padding: 20px;
+	background-color: white;
+	border: 1px solid #ccc;
+}
 
-/*.form-container {*/
-/*    margin: 10px ;*/
-/*    padding: 100px;*/
-/*    background-color: white;*/
-/*    max-width: 600px;*/
-/*}*/
+.form-container h1 {
+	font-size: 30px;
+	margin-bottom: 20px;
+	color: #333;
+}
 
-/*.form-container div {*/
-/*    margin-bottom: 30px;*/
-/*}*/
+.form-container form label {
+	font-weight: bold;
+	margin-bottom: 5px;
+	display: block;
+}
 
-/*input[type="text"], textarea {*/
-/*    width: 100%;  幅を調整 */
-/*    padding: 10px;  内側の余白 */
-/*    font-size: 16px;  フォントサイズを調整 */
-/*    border: 1px solid #ccc;*/
-/*    border-radius: 4px;*/
-/*    box-sizing: border-box;*/
-/*}*/
+.form-container form input,
+.form-container form textarea {
+	width: 93%;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #ddd;
+	font-size: 12px;
+}
 
-/*textarea {*/
-/*    resize: vertical;  サイズ変更可能な方向を指定 */
-/*    height: 150px;  テキストエリアの初期の高さを調整 */
-/*}*/
+.form-container form button {
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	background-color: darksalmon;
+	color: white;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
 
-/*label {*/
-/*    font-size: 18px;  ラベルのフォントサイズを調整 */
-/*    font-weight: bold;*/
-/*    display: block;*/
-/*    margin-bottom: 5px;*/
-/*}*/
+.form-container form button:hover {
+	background-color: lightsalmon;
+}
 
-/*input[type="submit"] {*/
-/*    background-color: #007bff;*/
-/*    color: #fff;*/
-/*    padding: 15px 30px;  ボタンの内側の余白を拡大 */
-/*    border: none;*/
-/*    border-radius: 4px;*/
-/*    cursor: pointer;*/
-/*    font-size: 18px;  ボタンの文字の大きさを調整 */
-/*}*/
+/* 投稿一覧セクション */
+.posts-container {
+	flex: 1;
+	min-width: 400px;
+	max-width: 100%;
+	padding: 20px;
+	background-color: white;
+	border: 1px solid #ccc;
+}
 
-/*input[type="submit"]:hover {*/
-/*    background-color: #0056b3;*/
-/*}*/
+.posts-container h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: #333;
+	border-bottom: 2px solid lightgray;
+	padding-bottom: 10px;
+}
 
+.posts-container table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 14px;
+	text-align: left;
+}
 
-/*.post-list {*/
-/*    margin: 20px auto;*/
-/*    max-width: 600px;*/
-/*}*/
+.posts-container th {
+	background-color: darksalmon;
+	color: white;
+	padding: 10px;
+	border: 1px solid #ddd;
+}
 
-/*.post-item {*/
-/*    padding: 15px;*/
-/*    background-color: #fff;*/
-/*    border: 1px solid #ddd;*/
-/*    border-radius: 8px;*/
-/*    margin-bottom: 15px;*/
-/*    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
-/*}*/
+.posts-container td {
+	padding: 10px;
+	border: 1px solid #ddd;
+	vertical-align: middle;
+}
 
-/*.post-item .post-header {*/
-/*    font-weight: bold;*/
-/*    margin-bottom: 5px;*/
-/*}*/
+.posts-container img {
+	width: 50px;
+	height: 50px;
+}
 
-/*.post-item .post-content {*/
-/*    white-space: pre-wrap;*/
-/*    word-wrap: break-word;*/
-/*}*/
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+	.container {
+		flex-direction: column;
+		/* 縦に並べる */
+	}
 
-/*.like-button {*/
-/*    background-color: #ffcccb;*/
-/*    border: none;*/
-/*    border-radius: 4px;*/
-/*    padding: 5px 10px;*/
-/*    cursor: pointer;*/
-/*    margin-top: 10px;*/
-/*}*/
+	.form-container,
+	.posts-container {
+		max-width: 100%;
+		/* 画面幅いっぱいに */
+	}
 
-/*.like-button:hover {*/
-/*    background-color: #ff9999;*/
-/*}*/
+	.form-container form button {
+		font-size: 14px;
+	}
+
+	.posts-container table {
+		font-size: 12px;
+	}
+}
