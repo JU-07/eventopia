@@ -48,32 +48,29 @@
 .img {
 	font-size: 5px;
 }
+.p{
+text-align: center;
+}
 </style>
 
-<c:forEach var="e" items="${event }">
-	<div class="event-info-container">
-		<div class="event-info">
-			<div class="form-group">
-				<label for="title">タイトル</label>
-				<p>${event.e_title}</p>
+<div class="review-container">
+		<c:forEach var="r" items="${reviews}">
+			<div class="review-wrap"
+				onclick="location.href='ReviewDetailC?no=${r.r_no}'">
+				<div class="review-img">
+					<img alt="" src="${r.r_img}">
+				</div>
+				<div class="review-title">${r.r_title}</div>
+				<div class="review-name">${r.r_name}</div>
+				<div class="review-sub">${r.r_sub}</div>
+				<div class="review-text">${r.r_text}</div>
 			</div>
-			<div class="form-group">
-				<label for="Name">商品名</label>
-				<p>${event.e_name}</p>
-			</div>
-			<div class="form-group">
-				<label for="file">イメージ</label>
-				<p>
-					<img src="${event.e_img}" />
-				</p>
-			</div>
-			<div class="form-group">
-				<label for="story">説明</label>
-				<p>${event.e_story}</p>
-			</div>
-		</div>
+		</c:forEach>
+		<c:if test="${empty reviews}">
+			<p style="text-align: center"><h1>現在進行中のコラボはありません。</h1></p>
+		</c:if>
+
 	</div>
-</c:forEach>
 <section class="pagination-section"
 	style="text-align: center; margin-top: 40px;">
 	<div class="pagination"

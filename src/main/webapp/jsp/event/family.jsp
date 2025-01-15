@@ -41,25 +41,25 @@
 	<div class="event-info">
 		<div class="form-group">
 			<label for="title">이벤트 제목</label>
-			<p>${product.p_title}</p>
+			<p>${event.e_title}</p>
 		</div>
 
 		<div class="form-group">
 			<label for="Name">상품 이름</label>
-			<p>${product.p_name}</p>
+			<p>${event.e_name}</p>
 		</div>
 
 		<div class="form-group">
 			<label for="file">파일</label>
 			<p>
-				<img src="${product.p_filePath}" alt="상품 이미지"
+				<img src="${event.e_filePath}" alt="상품 이미지"
 					style="max-width: 100%; height: auto;" />
 			</p>
 		</div>
 
 		<div class="form-group">
 			<label for="story">상품 설명</label>
-			<p>${product.p_story}</p>
+			<p>${event.e_story}</p>
 		</div>
 	</div>
 </div>
@@ -67,11 +67,11 @@
 		style="text-align: center; margin-top: 40px;">
 		<div class="pagination"
 			style="display: flex; justify-content: center; gap: 10px;">
-			<a href="ReviewPageC?p=1">[처음]</a>
+			<a href="LowsonPageC?p=1">[처음]</a>
 			<c:forEach begin="1" end="${pageCount}" var="i">
-				<a href="ReviewPageC?p=${i}">[${i}]</a>
+				<a href="LowsonPageC?p=${i}">[${i}]</a>
 			</c:forEach>
-			<a href="ReviewPageC?p=${pageCount}">[끝]</a>
+			<a href="LowsonC?p=${pageCount}">[끝]</a>
 		</div>
 	</section>
 </body>
