@@ -23,30 +23,30 @@ h1 {
 
 .container {
 	display: flex;
-	justify-content: space-between; /* 좌우 공간 나누기 */
-	margin: 20px auto;
+ 	justify-content:space-between;
+ 	margin: 20px auto;
 	width: 90%; /* 컨테이너 너비 */
 }
 
-.left, .right {
-	width: 48%; /* 좌우 영역 각각 48% */
-}
+
 
 .review-row {
-	display: flex;
+ 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 80%;
-	margin: 10px auto;
+	width: 100%;
+	 margin: 3px auto; 
 	padding: 10px;
 	background-color: #fff;
 	border: 1px solid #ddd;
 	border-radius: 8px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+	
+	
 }
 
 .review-row img {
-	border-radius: 4px;
+	 border-radius: 4px; 
 	
 }
 .span-container {
@@ -55,7 +55,9 @@ h1 {
     gap: 10px; /* 각 텍스트 간 간격 */
     justify-content: center; /* 컨테이너 내부에서 중앙 정렬 */
     min-width: 200px; /* 모든 텍스트 컨테이너 너비를 고정 */
-    padding-left: 10px; /* 텍스트 시작점 보정 */
+    padding-left: 10px; /* 텍스트 시작점 보정 */ 
+    
+   
 }
 
 @media (max-width: 600px) {
@@ -152,7 +154,7 @@ h1 {
 	<h1>랭킹 순위</h1>
 
 	<div class="container">
-		<div class="left">
+		<div >
 			<div style="text-align: center;; margin-bottom: 20px; color: #666;">콜라보
 				Top 5</div>
 			<c:forEach items="${product }" var="p">
@@ -160,24 +162,12 @@ h1 {
 					<img src="${p.image_url}" alt="Sample Image" width="200"height="200" />
 					<div class="span-container">
 					<span>${p.p_name}</span>
-					 <span>${p.p_price}원</span> 
-					 <span>${p.p_category}</span>
+					 <span>${p.p_price}円</span> 
+					 <span>${p.p_exp}</span>
 				</div></div>
 			</c:forEach>
 		</div>
-		<div class="right">
-			<div style="text-align: center;; margin-bottom: 20px; color: #666;">기간한정
-				Top 5</div>
-			<c:forEach items="${product }" var="p">
-				<div class="review-row">
-					<img src="${p.image_url}" alt="Sample Image" width="200"height="200" />
-					<div class="span-container">
-					<span>${p.p_name}</span>
-					 <span>${p.p_price}원</span> 
-					 <span>${p.p_category}</span>
-				</div></div>
-			</c:forEach>
-		</div>
+	
 	</div>
 	<button class="fixed-button" onclick="openModal()">투표하기</button>
 
