@@ -93,21 +93,21 @@ ArrayList<ReviewDTO> reviews = null;
 		
 		PreparedStatement pstmt = null;
 		String sql = "insert into review_test values(review_test_seq.nextval,?,?,?,sysdate)";
-	try {
 		String title = request.getParameter("title");
 		String name = request.getParameter("name");
 		String img = request.getParameter("img");
 		String sub = request.getParameter("sub");
 		String text = request.getParameter("text");
-		String date = request.getParameter("date");
-		
+		try {
+		con = DBManager.connect();
+		pstmt = con.prepareStatement(sql);
 		
 		pstmt.setString(1, title);
 		pstmt.setString(2, name);
 		pstmt.setString(3, img);
 		pstmt.setString(4, sub);
 		pstmt.setString(5, text);
-		pstmt.setString(6, date);
+
 
 		
 		if (pstmt.executeUpdate() == 1) {

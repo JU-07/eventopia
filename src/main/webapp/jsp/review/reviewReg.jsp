@@ -28,17 +28,17 @@
 }
 
 .form-group input, .form-group textarea {
-	width: 105%; /* 너비 최대화 */
-	padding: 6px; /* 내부 여백 줄임 */
+	width: 100%; /* 너비를 100%로 수정 */
+	padding: 6px; /* 내부 여백 */
 	font-size: 14px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
-	box-sizing: border-box;
+	box-sizing: border-box; /* 패딩과 테두리 포함 */
 }
 
 .form-group textarea {
 	resize: none;
-	height: 100px; /* 텍스트 영역 높이 더 줄임 */
+	height: 50px; /* 텍스트 영역 높이를 조금 더 줄임 */
 }
 
 .submit-btn {
@@ -65,19 +65,20 @@
 	</div>
 	<div class="container">
 
-		<form action="'ReviewRegC'" method="post">
+		<form action="ReviewRegC" method="post">
 			<div class="form-group">
-				<label for="title">Title</label> <input type="text" id="title"
+				<label for="title">Event Title</label> <input type="text" id="title"
 					name="title">
 			</div>
 
 			<div class="form-group">
-				<label for="name">Name</label> <input type="text" id="name"
-					name="name">
+				<label for="company">Company</label> <input type="text" id="company"
+					name="company">
 			</div>
 
 			<div class="form-group">
-				<label for="img">Image</label> <img alt="" src="${review.r_img }">
+				<label for="img">Image</label> <input type="file" id="img"
+					name="img">
 			</div>
 
 			<div class="form-group">
@@ -90,7 +91,7 @@
 				<textarea id="text" name="text"></textarea>
 			</div>
 
-			<button class="submit-btn" onclick="location.href='jsp/review/review.jsp'">Add</button>
+			<button type="submit" class="submit-btn">Add</button>
 		</form>
 	</div>
 </body>

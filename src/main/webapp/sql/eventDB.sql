@@ -35,3 +35,22 @@ insert into post_test values (post_test_seq.nextval,'제목3','~와의 콜라보
 select * from post_test;
 
 delete from post_test where p_no=7;
+
+create table review_test(
+  r_no number(3) primary key,
+  r_name varchar2(50 char) not null,
+  r_title varchar2(50 char) not null,
+  r_img varchar2(500 char) not null,
+  r_sub varchar2(50 char) not null,
+  r_text varchar2(50 char) not null,
+  r_date date not null
+);
+
+create sequence review_test_seq;
+
+insert into review_test values (review_test_seq.nextval,'로손','극장판 프로젝트 세카이 깨진 세카이와 노래 할 수없는 미쿠','https://www.lawson.co.jp/lab/campaign/pjsekai_movie/img/main_keyvisual.png','극장판 프로젝트 콜라보','극장판 프로젝트 세카이 깨진 세카이와 노래 할 수없는 미쿠와 로손의 콜라보','sysdate');
+
+select * from review_test;
+
+
+
