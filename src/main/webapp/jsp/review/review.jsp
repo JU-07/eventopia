@@ -111,7 +111,7 @@
 				<div class="review-img">
 					<img alt="" src="${r.r_img}">
 				</div>
-				<div class="review-title">${r.r_title}</div>
+				<div class="review-title" onclick="location.href='ReviewDetailC?no=${r.r_no}'">${r.r_title}</div>
 				<div class="review-name">${r.r_name}</div>
 				<div class="review-sub">${r.r_sub}</div>
 				<div class="review-text">${r.r_text}</div>
