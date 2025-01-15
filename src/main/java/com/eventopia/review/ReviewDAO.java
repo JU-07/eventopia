@@ -92,7 +92,7 @@ ArrayList<ReviewDTO> reviews = null;
 		request.setCharacterEncoding("UTF-8");
 		
 		PreparedStatement pstmt = null;
-		String sql = "insert into product_test values(product_test_seq.nextval,?,?,?,sysdate)";
+		String sql = "insert into review_test values(review_test_seq.nextval,?,?,?,sysdate)";
 	try {
 		String title = request.getParameter("title");
 		String name = request.getParameter("name");
