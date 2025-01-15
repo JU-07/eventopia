@@ -45,7 +45,7 @@ ArrayList<ReviewDTO> reviews = null;
 			review = new ReviewDTO(); 
 			reviews.add(review);
 		}
-		request.setAttribute("reviews", review);
+		
 		
 		
 		
@@ -92,7 +92,8 @@ ArrayList<ReviewDTO> reviews = null;
 		request.setCharacterEncoding("UTF-8");
 		
 		PreparedStatement pstmt = null;
-		String sql = "insert into review_test values(review_test_seq.nextval,?,?,?,sysdate)";
+		String sql = "insert into review_test values(review_test_seq.nextval,?,?,?,?,sysdate)";
+		
 		String title = request.getParameter("title");
 		String name = request.getParameter("name");
 		String img = request.getParameter("img");

@@ -106,15 +106,15 @@
 
 
     <div class="review-container">
-        <c:forEach var="review" items="${reviews}">
+        <c:forEach var="r" items="${reviews}">
             <div class="review-wrap" onclick="location.href='ReviewDetailC?no=${review.r_no}'">
                 <div class="review-img">
-                    <img alt="${review.r_img}" src="${review.r_img}">
+                    <img alt="" src="${r.r_img}">
                 </div>
-                <div class="review-title">${review.r_title}</div>
-                <div class="review-name">${review.r_name}</div>
-                <div class="review-sub">${review.r_sub}</div>
-                <div class="review-text">${review.r_text}</div>
+                <div class="review-title">${r.r_title}</div>
+                <div class="review-name">${r.r_name}</div>
+                <div class="review-sub">${r.r_sub}</div>
+                <div class="review-text">${r.r_text}</div>
             </div>
         </c:forEach>
     </div>
