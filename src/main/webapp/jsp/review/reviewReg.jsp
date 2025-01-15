@@ -14,7 +14,7 @@
 				<div class="review-form">
 					<div class="form-group">
 						<label for="title">イベント タイトル</label> <input id="title"
-							name="title" type="text" placeholder="イベント タイトル" required>
+							name="title" type="text" placeholder="イベント タイトル"25933121>
 					</div>
 
 					<div class="form-group">
@@ -23,8 +23,7 @@
 					</div>
 
 					<div class="form-group">
-						<label for="file">ファイルアップロード</label> <input id="file" name="file"
-							type="file" required>
+					<label>image</label><input name="img">
 					</div>
 
 					<div class="form-group">

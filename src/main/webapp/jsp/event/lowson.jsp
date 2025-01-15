@@ -44,42 +44,45 @@
 	max-width: 80%;
 	height: auto;
 }
-.img{
-font-size : 5px;
+
+.img {
+	font-size: 5px;
 }
 </style>
 
-<div class="event-info-container">
-	<div class="event-info">
-		<div class="form-group">
-			<label for="title">이벤트 제목</label>
-			<p>${product.p_title}</p>
-		</div>
-		<div class="form-group">
-			<label for="Name">상품 이름</label>
-			<p>${product.p_name}</p>
-		</div>
-		<div class="form-group">
-			<label for="file">이미지</label>
-			<p>
-				<img src="${product.p_img}" />
-			</p>
-		</div>
-		<div class="form-group">
-			<label for="story">상품 설명</label>
-			<p>${product.p_story}</p>
+<c:forEach var="e" items="${event }">
+	<div class="event-info-container">
+		<div class="event-info">
+			<div class="form-group">
+				<label for="title">タイトル</label>
+				<p>${event.e_title}</p>
+			</div>
+			<div class="form-group">
+				<label for="Name">商品名</label>
+				<p>${event.e_name}</p>
+			</div>
+			<div class="form-group">
+				<label for="file">イメージ</label>
+				<p>
+					<img src="${event.e_img}" />
+				</p>
+			</div>
+			<div class="form-group">
+				<label for="story">説明</label>
+				<p>${event.e_story}</p>
+			</div>
 		</div>
 	</div>
-</div>
+</c:forEach>
 <section class="pagination-section"
 	style="text-align: center; margin-top: 40px;">
 	<div class="pagination"
 		style="display: flex; justify-content: center; gap: 10px;">
-		<a href="ReviewPageC?p=1">[처음]</a>
+		<a href="ReviewPageC?p=1">[始]</a>
 		<c:forEach begin="1" end="${pageCount}" var="i">
 			<a href="ReviewPageC?p=${i}">[${i}]</a>
 		</c:forEach>
-		<a href="ReviewPageC?p=${pageCount}">[끝]</a>
+		<a href="ReviewPageC?p=${pageCount}">[終]</a>
 	</div>
 </section>
 </body>

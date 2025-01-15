@@ -13,7 +13,6 @@ public class ReviewDTO {
 	private String sub;
 	private String text;
 	private Date date;
-	private String good;
 
 	public ReviewDTO() {
 		// TODO Auto-generated constructor stub
@@ -28,7 +27,7 @@ public class ReviewDTO {
 		this.sub = sub;
 		this.text = text;
 		this.date = date;
-		this.good = good;
+
 	}
 
 	public int getNo() {
@@ -87,23 +86,15 @@ public class ReviewDTO {
 		this.date = date;
 	}
 
-	public String getGood() {
-		return good;
-	}
-
-	public void setGood(String good) {
-		this.good = good;
-	}
-
 	@Override
 	public String toString() {
 		return "ReviewDTO [no=" + no + ", title=" + title + ", name=" + name + ", img=" + img + ", sub=" + sub
-				+ ", text=" + text + ", date=" + date + ", good=" + good + "]";
+				+ ", text=" + text + ", date=" + date + "]";
 	}
+
 	public String toJsonByMe() {
 		Gson gson = new Gson();
 		return gson.toJson(this);
 	}
-	
-}
 
+}

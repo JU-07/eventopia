@@ -92,7 +92,7 @@ ArrayList<ReviewDTO> reviews = null;
 		request.setCharacterEncoding("UTF-8");
 		
 		PreparedStatement pstmt = null;
-		String sql = "insert into product_test values(product_test_seq.nextval,?,?,?,?)";
+		String sql = "insert into product_test values(product_test_seq.nextval,?,?,?,sysdate)";
 	try {
 		String title = request.getParameter("title");
 		String name = request.getParameter("name");
@@ -100,7 +100,7 @@ ArrayList<ReviewDTO> reviews = null;
 		String sub = request.getParameter("sub");
 		String text = request.getParameter("text");
 		String date = request.getParameter("date");
-		String good = request.getParameter("good");
+		
 		
 		pstmt.setString(1, title);
 		pstmt.setString(2, name);
@@ -108,7 +108,7 @@ ArrayList<ReviewDTO> reviews = null;
 		pstmt.setString(4, sub);
 		pstmt.setString(5, text);
 		pstmt.setString(6, date);
-		pstmt.setString(7, good);
+
 		
 		if (pstmt.executeUpdate() == 1) {
 			System.out.println("등록 성공");
