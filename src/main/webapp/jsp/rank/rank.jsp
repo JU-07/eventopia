@@ -8,14 +8,11 @@
 <title>Insert title here</title>
 
 <style>
-body.rank-page .content-container {
-   background-color: rgb(255, 243, 219); /* 원하는 색상 */
-}
 body {
 	font-family: Arial, sans-serif;
-	/* margin: 0;
-	padding: 0; */
-	background-color: rgb(255, 243, 219);
+	margin: 0;
+	padding: 0;
+	background-color: #f9f9f9;
 }
 
 h1 {
@@ -32,7 +29,7 @@ h1 {
 }
 
 .left, .right {
-  width: 60%; /* 좌우 영역 각각 48% */
+  width: 48%; /* 좌우 영역 각각 48% */
 }
 
 .review-row {
@@ -47,20 +44,9 @@ h1 {
 	border-radius: 8px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.review-row2 {
-	
-	flex-direction: column;
-	gap: 10px;
-	
-
-}
 
 .review-row img {
-	
-	  width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 4px;
+	border-radius: 4px;
 }
 
 .modal {
@@ -145,8 +131,7 @@ h1 {
 </style>
 
 </head>
-<body class="rank-page">
-<div id="wrap">
+<body>
 <a href="RankPageC">역대랭킹</a> 
 	<h1>랭킹 순위</h1>
 	
@@ -155,16 +140,23 @@ h1 {
 	<div style="text-align: center;; margin-bottom: 20px; color: #666;">콜라보 Top 5</div>
 	<c:forEach items="${product }" var="p">
 		<div class="review-row">
-			<div class="review-row2">
-			<div>${p.p_title}</div>
-			<div>${p.p_actor}</div>
-			</div>
-			<img src="${p.p_img}" alt="Sample Image" width="150" height="150" />
+			<span>${p.p_name}</span>
+			<span>${p.p_price}원</span>
+			<span>${p.p_category}</span>
+			<img src="${p.image_url}" alt="Sample Image" width="150" height="150" />
 		</div>
 	</c:forEach>
 	</div>
-	 <div class="right">
-	
+	<div class="right">
+	<div style="text-align: center;; margin-bottom: 20px; color: #666;">기간한정 Top 5</div>
+	<c:forEach items="${product }" var="p">
+		<div class="review-row">
+			<span>${p.p_name}</span>
+			<span>${p.p_price}원</span>
+			<span>${p.p_category}</span>
+			<img src="${p.image_url}" alt="Sample Image" width="150" height="150" />
+		</div>
+	</c:forEach>
 	</div>
 </div>
 	<button class="fixed-button" onclick="openModal()">투표하기</button>
@@ -178,18 +170,19 @@ h1 {
 				<div style="color: black;">
 					<c:forEach items="${product }" var="p">
 						<div class="review-row">
-							<span>${p.p_title}</span>
-							<span>${p.p_actor}원</span>
-							
-							<img src="${p.p_img}" alt="Sample Image" width="70" height="70" />
+							<span>${p.p_name}</span>
+							<span>${p.p_price}원</span>
+							<span>${p.p_category}</span>
+							<img src="${p.image_url}" alt="Sample Image" width="70" height="70" />
 							<span><input type="checkbox" name="check" value="${p.p_no}" /></span>
 						</div>
 					</c:forEach>
 					<c:forEach items="${product }" var="p">
 						<div class="review-row">
-							<span>${p.p_title}</span>
-							<span>${p.p_actor}원</span>
-							<img src="${p.p_img}" alt="Sample Image"/>
+							<span>${p.p_name}</span>
+							<span>${p.p_price}원</span>
+							<span>${p.p_category}</span>
+							<img src="${p.image_url}" alt="Sample Image" width="70" height="70" />
 							<span><input type="checkbox" name="check" value="${p.p_no}" /></span>
 						</div>
 					</c:forEach>
@@ -202,8 +195,7 @@ h1 {
 			</div>
 		</div>
 	</form>
-</div>
-</body>
+
 	<script>
 		// 모달 열기 함수
 		function openModal() {
@@ -222,4 +214,5 @@ h1 {
 			form.submit();
 		}
 	</script>
+</body>
 </html>

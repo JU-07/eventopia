@@ -36,7 +36,6 @@
                     <textarea rows="50" cols="130" name="story"></textarea>
                 </div>
             </div>
-
             <div>
                 <div>
                 <fmt:formatDate value="${rank.p_date }" />
