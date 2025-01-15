@@ -7,6 +7,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+body.rank-page .content-container {
+   background-color: rgb(255, 243, 219); /* 원하는 색상 */
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -14,7 +17,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    background-color: #f9f9f9;
+    background-color: rgb(255, 243, 219);
 }
 
 .rnakPage-container {
@@ -24,8 +27,7 @@ body {
     padding: 20px;
     max-width: 1280px;
     width: 100%;
-    margin-left: 50px;
-    margin-right: 50px;
+   
 }
 
 .rankPage-wrap {
@@ -69,8 +71,9 @@ body {
 
 </style>
 </head>
-<body>
-<a href="RankRegC">게시글 등록</a>
+<body class="rank-page">
+<div id="wrap">
+      <a href="RankRegC">게시글 등록</a>
 <div class="rnakPage-container">
     <c:forEach var="r" items="${rank}">
         <div class="rankPage-wrap" onclick="location.href='RankDetailC?no=${r.p_no}'">
@@ -82,6 +85,6 @@ body {
         </div>
     </c:forEach>
 </div>
-
+</div>
 </body>
 </html>

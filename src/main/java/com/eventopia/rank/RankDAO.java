@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -33,15 +34,15 @@ private RankDAO() {
 		 
 			PreparedStatement pstmt = null; 
 			ResultSet rs = null;
-			String sql = "select * from product_test order by p_count desc";
+			String sql = "select * from post_test order by p_count desc";
 			try {
 			con	= DBManager.connect();
 				pstmt = con.prepareStatement(sql);
 				rs = pstmt.executeQuery();
-				ArrayList<ProductDTO> products = new ArrayList<ProductDTO>();
-				ProductDTO product = null;
+				ArrayList<RankPageDTO> products = new ArrayList<RankPageDTO>();
+				RankPageDTO product = null;
 			while (rs.next()) {
-					 product = new ProductDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5) );
+					 product = new RankPageDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getDate(6) );
 				products.add(product);
 			}
 			
@@ -66,7 +67,7 @@ private RankDAO() {
 			ResultSet rs = null;
 			 String[] selectedNos = request.getParameterValues("check");
 			 if (selectedNos != null && selectedNos.length > 0) {
-			 String sql = "UPDATE product_test SET p_count = p_count + 1 WHERE p_no = ?";
+			 String sql = "UPDATE post_test SET p_count = p_count + 1 WHERE p_no = ?";
 			 try {
 		            con = DBManager.connect();
 		            pstmt = con.prepareStatement(sql);
@@ -132,16 +133,14 @@ public void rankAdd(HttpServletRequest request) throws UnsupportedEncodingExcept
 		String actor = request.getParameter("actor");
 		String image = request.getParameter("image");
 		String story = request.getParameter("story");
-		
- 		System.out.println(title);
- 		System.out.println(title);
- 		System.out.println(title);
- 		System.out.println(title);
+	
+ 
  		
 		pstmt.setString(1, title);
 		pstmt.setString(2, actor);
 		pstmt.setString(3, image);
 		pstmt.setString(4, story );
+		
 		
 		if (pstmt.executeUpdate() == 1) {
 			System.out.println("등록성공");
