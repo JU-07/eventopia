@@ -31,7 +31,7 @@ ArrayList<ReviewDTO> reviews = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs  = null;
 		
-		String sql = "select * from product_test order by p_count desc";
+		String sql = "select * from review_test";
 		
 	try {
 		con = DBManager.connect();
@@ -64,10 +64,10 @@ ArrayList<ReviewDTO> reviews = null;
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		int no = Integer.parseInt("no");
+		String no = request.getParameter("no");
 		
 		try {
-			String sql = "select * from post_test where p_no=?";
+			String sql = "select * from review_test where r_no=?";
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 //			pstmt.setString(1, no);
@@ -94,15 +94,21 @@ ArrayList<ReviewDTO> reviews = null;
 		PreparedStatement pstmt = null;
 		String sql = "insert into product_test values(product_test_seq.nextval,?,?,?,?)";
 	try {
-		String title = request.getParameter("name");
-		String actor = request.getParameter("actor");
-		String image = request.getParameter("image");
-		String story = request.getParameter("story");
+		String title = request.getParameter("title");
+		String name = request.getParameter("name");
+		String img = request.getParameter("img");
+		String sub = request.getParameter("sub");
+		String text = request.getParameter("text");
+		String date = request.getParameter("date");
+		String good = request.getParameter("good");
 		
 		pstmt.setString(1, title);
-		pstmt.setString(2, actor);
-		pstmt.setString(3, image);
-		pstmt.setString(4, story);
+		pstmt.setString(2, name);
+		pstmt.setString(3, img);
+		pstmt.setString(4, sub);
+		pstmt.setString(5, text);
+		pstmt.setString(6, date);
+		pstmt.setString(7, good);
 		
 		if (pstmt.executeUpdate() == 1) {
 			System.out.println("등록 성공");

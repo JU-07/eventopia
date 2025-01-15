@@ -5,24 +5,38 @@ import java.util.Date;
 import com.google.gson.Gson;
 
 public class EventDTO {
-	
+
+	private int no;
 	private String title;
 	private String name;
+	private String img;
+	private String sub;
 	private String text;
-	private String link;
-	private Date sysdate;
-	
+	private Date date;
+	private String good;
+
 	public EventDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public EventDTO(String title, Date sysdate, String name, String text, String link) {
+	public EventDTO(int no, String title, String name, String img, String sub, String text, Date date, String good) {
 		super();
+		this.no = no;
 		this.title = title;
-		this.sysdate = sysdate;
 		this.name = name;
+		this.img = img;
+		this.sub = sub;
 		this.text = text;
-		this.link = link;
+		this.date = date;
+		this.good = good;
+	}
+
+	public int getNo() {
+		return no;
+	}
+
+	public void setNo(int no) {
+		this.no = no;
 	}
 
 	public String getTitle() {
@@ -33,20 +47,28 @@ public class EventDTO {
 		this.title = title;
 	}
 
-	public Date getSysdate() {
-		return sysdate;
-	}
-
-	public void setSysdate(Date sysdate) {
-		this.sysdate = sysdate;
-	}
-
 	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
+	public String getSub() {
+		return sub;
+	}
+
+	public void setSub(String sub) {
+		this.sub = sub;
 	}
 
 	public String getText() {
@@ -57,24 +79,31 @@ public class EventDTO {
 		this.text = text;
 	}
 
-	public String getLink() {
-		return link;
+	public Date getDate() {
+		return date;
 	}
 
-	public void setLink(String link) {
-		this.link = link;
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public String getGood() {
+		return good;
+	}
+
+	public void setGood(String good) {
+		this.good = good;
 	}
 
 	@Override
 	public String toString() {
-		return "EventDTO [title=" + title + ", sysdate=" + sysdate + ", name=" + name + ", text=" + text + ", link="
-				+ link + "]";
+		return "EventDTO [no=" + no + ", title=" + title + ", name=" + name + ", img=" + img + ", sub=" + sub
+				+ ", text=" + text + ", date=" + date + ", good=" + good + "]";
 	}
+
 	public String toJsonByMe() {
 		Gson gson = new Gson();
 		return gson.toJson(this);
 	}
 
-
-	
 }

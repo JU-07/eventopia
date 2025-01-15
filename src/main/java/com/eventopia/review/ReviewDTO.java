@@ -1,73 +1,109 @@
 package com.eventopia.review;
 
+import java.util.Date;
+
 import com.google.gson.Gson;
 
 public class ReviewDTO {
 
-	int p_no;
-	String p_name;
-	int p_price;
-	String p_category;
-	String image_url;
+	private int no;
+	private String title;
+	private String name;
+	private String img;
+	private String sub;
+	private String text;
+	private Date date;
+	private String good;
 
 	public ReviewDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getP_no() {
-		return p_no;
-	}
-
-	public void setP_no(int p_no) {
-		this.p_no = p_no;
-	}
-
-	public String getP_name() {
-		return p_name;
-	}
-
-	public void setP_name(String p_name) {
-		this.p_name = p_name;
-	}
-
-	public int getP_price() {
-		return p_price;
-	}
-
-	public void setP_price(int p_price) {
-		this.p_price = p_price;
-	}
-
-	public String getP_category() {
-		return p_category;
-	}
-
-	public void setP_category(String p_category) {
-		this.p_category = p_category;
-	}
-
-	public String getImage_url() {
-		return image_url;
-	}
-
-	public void setImage_url(String image_url) {
-		this.image_url = image_url;
-	}
-
-	public ReviewDTO(int p_no, String p_name, int p_price, String p_category, String image_url) {
+	public ReviewDTO(int no, String title, String name, String img, String sub, String text, Date date, String good) {
 		super();
-		this.p_no = p_no;
-		this.p_name = p_name;
-		this.p_price = p_price;
-		this.p_category = p_category;
-		this.image_url = image_url;
+		this.no = no;
+		this.title = title;
+		this.name = name;
+		this.img = img;
+		this.sub = sub;
+		this.text = text;
+		this.date = date;
+		this.good = good;
+	}
+
+	public int getNo() {
+		return no;
+	}
+
+	public void setNo(int no) {
+		this.no = no;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
+	public String getSub() {
+		return sub;
+	}
+
+	public void setSub(String sub) {
+		this.sub = sub;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public String getGood() {
+		return good;
+	}
+
+	public void setGood(String good) {
+		this.good = good;
 	}
 
 	@Override
 	public String toString() {
-		return "ReviewDTO [p_no=" + p_no + ", p_name=" + p_name + ", p_price=" + p_price + ", p_category=" + p_category
-				+ ", image_url=" + image_url + "]";
+		return "ReviewDTO [no=" + no + ", title=" + title + ", name=" + name + ", img=" + img + ", sub=" + sub
+				+ ", text=" + text + ", date=" + date + ", good=" + good + "]";
+	}
+	public String toJsonByMe() {
+		Gson gson = new Gson();
+		return gson.toJson(this);
 	}
 	
-
 }
+
