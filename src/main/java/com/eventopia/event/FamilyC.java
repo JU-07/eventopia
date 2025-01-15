@@ -1,4 +1,4 @@
-package com.eventopia.map;
+package com.eventopia.event;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,16 +7,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/MapC")
-public class MapC extends HttpServlet {
+
+@WebServlet("/FamilyC")
+public class FamilyC extends HttpServlet {
+	
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		request.setAttribute("content", "jsp/map/mapMain.jsp");
+	
+		request.setAttribute("content", "jsp/event/family.jsp");
 		
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 	}
 
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	}

@@ -22,14 +22,14 @@ h1 {
 }
 
 .container {
-  display: flex;
-  justify-content: space-between; /* 좌우 공간 나누기 */
-  margin: 20px auto;
-  width: 90%; /* 컨테이너 너비 */
+	display: flex;
+	justify-content: space-between; /* 좌우 공간 나누기 */
+	margin: 20px auto;
+	width: 90%; /* 컨테이너 너비 */
 }
 
 .left, .right {
-  width: 48%; /* 좌우 영역 각각 48% */
+	width: 48%; /* 좌우 영역 각각 48% */
 }
 
 .review-row {
@@ -132,32 +132,33 @@ h1 {
 
 </head>
 <body>
+	<a href="RankPageC">역대랭킹</a>
 	<h1>랭킹 순위</h1>
-	
+
 	<div class="container">
-	<div class="left">
-	<div style="text-align: center;; margin-bottom: 20px; color: #666;">콜라보 Top 5</div>
-	<c:forEach items="${product }" var="p">
-		<div class="review-row">
-			<span>${p.p_name}</span>
-			<span>${p.p_price}원</span>
-			<span>${p.p_category}</span>
-			<img src="${p.image_url}" alt="Sample Image" width="150" height="150" />
+		<div class="left">
+			<div style="text-align: center;; margin-bottom: 20px; color: #666;">콜라보
+				Top 5</div>
+			<c:forEach items="${product }" var="p">
+				<div class="review-row">
+					<span>${p.p_name}</span> <span>${p.p_price}원</span> <span>${p.p_category}</span>
+					<img src="${p.image_url}" alt="Sample Image" width="150"
+						height="150" />
+				</div>
+			</c:forEach>
 		</div>
-	</c:forEach>
-	</div>
-	<div class="right">
-	<div style="text-align: center;; margin-bottom: 20px; color: #666;">기간한정 Top 5</div>
-	<c:forEach items="${product }" var="p">
-		<div class="review-row">
-			<span>${p.p_name}</span>
-			<span>${p.p_price}원</span>
-			<span>${p.p_category}</span>
-			<img src="${p.image_url}" alt="Sample Image" width="150" height="150" />
+		<div class="right">
+			<div style="text-align: center;; margin-bottom: 20px; color: #666;">기간한정
+				Top 5</div>
+			<c:forEach items="${product }" var="p">
+				<div class="review-row">
+					<span>${p.p_name}</span> <span>${p.p_price}원</span> <span>${p.p_category}</span>
+					<img src="${p.image_url}" alt="Sample Image" width="150"
+						height="150" />
+				</div>
+			</c:forEach>
 		</div>
-	</c:forEach>
 	</div>
-</div>
 	<button class="fixed-button" onclick="openModal()">투표하기</button>
 
 	<div class="modal-overlay" id="modal-overlay"></div>
@@ -166,25 +167,23 @@ h1 {
 			<div class="modal-header">투표 페이지</div>
 			<div class="modal-body">
 				<div class="modal-content">
-				<div style="color: black;">
-					<c:forEach items="${product }" var="p">
-						<div class="review-row">
-							<span>${p.p_name}</span>
-							<span>${p.p_price}원</span>
-							<span>${p.p_category}</span>
-							<img src="${p.image_url}" alt="Sample Image" width="70" height="70" />
-							<span><input type="checkbox" name="check" value="${p.p_no}" /></span>
-						</div>
-					</c:forEach>
-					<c:forEach items="${product }" var="p">
-						<div class="review-row">
-							<span>${p.p_name}</span>
-							<span>${p.p_price}원</span>
-							<span>${p.p_category}</span>
-							<img src="${p.image_url}" alt="Sample Image" width="70" height="70" />
-							<span><input type="checkbox" name="check" value="${p.p_no}" /></span>
-						</div>
-					</c:forEach>
+					<div style="color: black;">
+						<c:forEach items="${product }" var="p">
+							<div class="review-row">
+								<span>${p.p_name}</span> <span>${p.p_price}원</span> <span>${p.p_category}</span>
+								<img src="${p.image_url}" alt="Sample Image" width="70"
+									height="70" /> <span><input type="checkbox"
+									name="check" value="${p.p_no}" /></span>
+							</div>
+						</c:forEach>
+						<c:forEach items="${product }" var="p">
+							<div class="review-row">
+								<span>${p.p_name}</span> <span>${p.p_price}원</span> <span>${p.p_category}</span>
+								<img src="${p.image_url}" alt="Sample Image" width="70"
+									height="70" /> <span><input type="checkbox"
+									name="check" value="${p.p_no}" /></span>
+							</div>
+						</c:forEach>
 					</div>
 				</div>
 				<div class="modal-footer">

@@ -1,4 +1,4 @@
-package com.eventopia.review;
+package com.eventopia.rank;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,21 +7,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/ReviewDetailC")
-public class ReviewDetailC extends HttpServlet {
+@WebServlet("/RankRegBC")
+public class RankRegBC extends HttpServlet {
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		ReviewDAO.RDAO.ReviewDetail(request);
-
-		request.setAttribute("content", "jsp/review/review.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
 
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		RankDAO.RDAO.rankAdd(request);
 
+		response.sendRedirect("RankPageC");
+		
 	}
 
 }
