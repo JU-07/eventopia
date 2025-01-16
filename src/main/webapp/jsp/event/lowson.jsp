@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </style>
 </head>
 <body>
-<h2>ローソンイベントページ</h2>
+	<h2>ローソンイベントページ</h2>
 	<div class="event-container">
 		<c:forEach var="e" items="${event}">
 			<div class="event-wrap"
@@ -91,16 +91,17 @@ document.addEventListener('DOMContentLoaded', () => {
 				<div class="event-text">${event.e_text}</div>
 			</div>
 		</c:forEach>
-	<c:if test="${empty events}">
-		<p style="text-align: center">
-		<h2>すみません、現在進行中のコラボはありません。</h2>
+		<c:if test="${empty events}">
+			<p style="text-align: center">
+
+				<h2>すみません、現在進行中のコラボはありません。</h2>
 		</p>
 	</c:if>
 	</div>
 	<section class="pagination-section"
-		style="text-align: center; margin-top: 40px;">
-		<div class="pagination"
-			style="display: flex; justify-content: center; gap: 10px;">
+					style="text-align: center; margin-top: 40px;">
+					<div class="pagination"
+						style="display: flex; justify-content: center; gap: 10px;">
 			<a href="ReviewPageC?p=1">始</a>
 			<c:forEach begin="1" end="${pageCount}" var="i">
 				<a href="ReviewPageC?p=${i}">[${i}]</a>
@@ -108,7 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			<a href="ReviewPageC?p=${pageCount}">終</a>
 		</div>
 	</section>
-	<div class="SNS"
+	
+			<div class="SNS"
 		style="font-size: 10pt; text-align: center; margin-top: 20px;">
 		<button type="button" class="btn-share-tw" data-url="${event.link}"
 			style="padding: 0; border: none;">

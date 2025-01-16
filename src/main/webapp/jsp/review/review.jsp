@@ -128,40 +128,40 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .SNS {
-	display: flex; /* 버튼 나란히 배치 */
+	display: flex;
+	justify-content: center; /* 가운데 정렬 */
 	gap: 10px; /* 버튼 간 간격 */
-	justify-content: center; /* 중앙 정렬 */
 	margin-top: 20px;
-	margin-bottom: 20px;
 }
 
 /* SNS 버튼 스타일 */
 .SNS button {
 	background-color: #fff;
 	border: none;
-	padding: 10px;
+	padding: 0;
 	cursor: pointer;
-	margin: 5px 0; /* 상하 여백 제거 */
-	border-radius: 5px;
+	border-radius: 50%; /* 원형 버튼 만들기 */
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 150px;
+	width: 50px; /* 버튼 크기 */
+	height: 50px; /* 버튼 크기 */
 	font-size: 14px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	transition: background-color 0.3s;
 }
 
+/* SNS 버튼 이미지 크기 */
+.SNS button img {
+	width: 24px; /* 이미지 크기 조정 */
+	height: 24px; /* 이미지 크기 조정 */
+}
+
+/* 호버 효과 */
 .SNS button:hover {
 	background-color: #f0f0f0;
 }
 
-/* SNS 버튼 이미지 스타일 */
-.SNS button img {
-	width: 16px; /* 이미지 가로 크기 */
-	height: 16px; /* 이미지 세로 크기 */
-	margin-right: 10px; /* 텍스트와의 간격 */
-}
 </style>
 </head>
 <body>
@@ -189,22 +189,25 @@ document.addEventListener('DOMContentLoaded', () => {
 			<h2 style="text-align: center">すみません、現在レビューがありません。</h2>
 			</p>
 		</c:if>
-	</div><div class="SNS" style="font-size: 10pt">
-		<!-- SNS 공유 버튼 -->
-		<button type="button" class="btn-share-tw" data-url="${event.link}">
+	</div><div class="SNS"
+		style="font-size: 10pt; text-align: center; margin-top: 20px;">
+		<button type="button" class="btn-share-tw" data-url="${event.link}"
+			style="padding: 0; border: none;">
 			<img
-				src="https://cdn2.iconfinder.com/data/icons/threads-by-instagram/24/x-logo-twitter-new-brand-512.png"
-				alt="X"> X（旧ツイッター）
+				src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/X_icon.svg/2048px-X_icon.svg.png"
+				alt="X" style="width: 100%; height: 100%; object-fit: cover;">
 		</button>
-		<button type="button" class="btn-share-fb" data-url="${event.link}">
+		<button type="button" class="btn-share-fb" data-url="${event.link}"
+			style="padding: 0; border: none;">
 			<img
 				src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-				alt="Facebook"> フェイスブック
+				alt="Facebook" style="width: 100%; height: 100%; object-fit: cover;">
 		</button>
-		<button type="button" class="btn-share-ln" data-url="${event.link}">
+		<button type="button" class="btn-share-ln" data-url="${event.link}"
+			style="padding: 0; border: none;">
 			<img
 				src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/LINE_logo.svg/1024px-LINE_logo.svg.png"
-				alt="Line"> ライン
+				alt="Line" style="width: 100%; height: 100%; object-fit: cover;">
 		</button>
 	</div>
 
