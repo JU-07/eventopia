@@ -33,37 +33,22 @@
 	<div class="review-wrap">
 		<div>
 			<div>
-				<div class="review-reg-col">Name</div>
+				<div class="review-reg-col">title</div>
 				<div class="review-reg-col2">
-					<input name="title" value="${review.r_name }" disabled="disabled">
+					<input name="title" value="${review.p_title }" disabled="disabled">
 				</div>
 			</div>
 			<div>
-				<div class="review-reg-col">Img</div>
+				<div class="review-reg-col">text</div>
 				<div class="review-reg-col2">
-					<img alt="" src="${review.r_img }">
+					<textarea name="txt" maxlength="100" disabled="disabled">${review.p_txt }</textarea>
+					<br> <span id="cntSpan">0</span> /200
 				</div>
 			</div>
 			<div>
-				<div class="review-reg-col">Title</div>
-				<div class="review-reg-col2">
-					<input name="title" value="${review.r_title }" disabled="disabled">
+				<div>
+					<fmt:formatDate value="${review.p_sysdate }" />
 				</div>
-			</div>
-			<div>
-				<div class="review-reg-col">Sub</div>
-				<div class="review-reg-col2">
-					<input name="title" value="${review.r_sub }" disabled="disabled">
-				</div>
-			</div>
-			<div>
-				<div class="review-reg-col">Text</div>
-				<div class="review-reg-col2">
-					<input name="title" value="${review.r_text }" disabled="disabled">
-				</div>
-			</div>
-			<div>
-				<fmt:formatDate value="${review.r_date }" />
 			</div>
 		</div>
 	</div>

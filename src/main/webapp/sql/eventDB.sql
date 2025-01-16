@@ -35,7 +35,3 @@ insert into post_test values (post_test_seq.nextval,'제목3','~와의 콜라보
 select * from post_test;
 
 delete from post_test where p_no=7;
-
-
-
-
