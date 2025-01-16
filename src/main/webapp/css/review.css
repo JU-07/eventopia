@@ -24,7 +24,7 @@ body {
 	background-color: white;
 	padding: 30px;
 	margin: 20px auto;
-	max-width: 800px;
+	max-width: 1500px;
 	border-radius: 8px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -47,7 +47,7 @@ body {
 .form-group {
 	flex: 1;
     min-width: 500px; 
-    height: 500px; 
+    height: 95px; 
     display: flex;
     flex-direction: column;
 }
@@ -66,6 +66,7 @@ body {
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	box-sizing: border-box;
+	size: 80px;
 }
 
 .form-group textarea {
