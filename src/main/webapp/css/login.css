@@ -1,64 +1,141 @@
 
-/* 전체 컨테이너 */
-#container {
+/* 메인 컨테이너 */
+.container-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    width: 800px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* 왼쪽 패널 */
+.left-panel {
+    width: 50%;
+    background-color: #cababa;
+    color: #4B3621;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
-/* 로고 이미지 */
-#logo {
-    margin-bottom: 20px;
-}
-
-#logo img {
-    width: 200px; /* 로고 이미지 너비 조절 */
-    height: auto; /* 비율 유지 */
-}
-
-/* 로그인 입력창 */
-#login-form {
-    margin-bottom: 20px;
-}
-
-#login-form input {
-    padding: 8px;
-    margin: 5px;
-    width: 200px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-/* 로그인 및 회원가입 버튼 */
-#login-buttons {
-    margin-bottom: 20px;
-}
-
-#login-buttons div {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 5px;
-    background-color: #007BFF;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#login-buttons div:hover {
-    background-color: #0056b3;
-}
-
-/* 소셜 로그인 아이콘 */
-#social-icons {
+/* 로고를 투명한 동그란 흰색 배경으로 감싸기 */
+.left-panel .logo-wrapper {
+    width: 180px;
+    height: 180px;
+    background-color:#F8F1EB; /* 반투명 흰색 배경 */
+    border-radius: 50%; /* 동그라미 형태 */
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    margin-top : 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-#social-icons img {
-    width: 40px;
-    height: 40px;
+.left-panel img {
+    width: 100%; /* 로고가 배경 안에 꽉 차도록 설정 */
+    height: 100%;
+    object-fit: cover; /* 비율 유지하며 꽉 차게 */
+    border-radius: 50%; /* 로고도 둥글게 */
+}
+
+/* 오른쪽 패널 */
+.right-panel {
+    width: 50%;
+    padding: 50px;
+}
+
+.right-panel h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+h2 {
+	color:#4B3621;
+}
+
+/* 입력 그룹 */
+.input-group {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.input-group i {
+    margin-right: 10px;
+    color: #888;
+}
+
+.input-group input {
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    padding: 10px;
+}
+
+/* 로그인 버튼 */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #cababa;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
+    font-weight: 600;
 }
 
-#social-icons img:hover {
-    opacity: 0.8;
+.login-btn:hover {
+    background-color: #574b90;
+}
+
+/* 소셜 로그인 */
+.social-login {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-login p {
+    margin-bottom: 15px; /* 문구와 아이콘 간의 간격 추가 */
+    font-size: 14px;
+    color: #555;
+}
+
+.social-icons i {
+    margin: 0 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+}
+
+.social-icons i:hover {
+    color: #cababa;
+}
+
+/* 회원가입 링크 */
+.signup-link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: #cababa;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
 }
