@@ -11,27 +11,20 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-@WebServlet("/RankC")
-public class RankC extends HttpServlet {
+@WebServlet("/ChartAPI")
+public class ChartAPI extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		RankDAO.RDAO.productAllSelect(request, response);
+		RankDAO.RDAO.chartData(request, response);
 		  
-		request.setAttribute("content", "jsp/rank/rank.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		RankDAO.RDAO.productAllSelect(request, response);
-		RankDAO.RDAO.rankCount(request);
-		
-		request.setAttribute("content", "jsp/rank/rank.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 	}
 

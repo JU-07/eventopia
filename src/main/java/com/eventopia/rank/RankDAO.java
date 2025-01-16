@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -25,7 +26,7 @@ public class RankDAO {
 
 	public static final RankDAO RDAO = new RankDAO();
 	private Connection con = null;
-
+	ArrayList<ProductDTO> products = null;
 	private RankDAO() {
 		try {
 			con = DBManager.connect();
@@ -35,33 +36,42 @@ public class RankDAO {
 		}
 	}
 
-	public void productAllSelect(HttpServletRequest request) throws IOException {
+	public void productAllSelect(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		request.setCharacterEncoding("utf-8");
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select * from product_test order by p_count desc";
-		ArrayList<ProductDTO> products = new ArrayList<ProductDTO>();
+		products = new ArrayList<ProductDTO>();
 		ProductDTO product = null;
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				product = new ProductDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6), rs.getInt(7));
+				product = new ProductDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5),
+						rs.getString(6), rs.getInt(7));
 				products.add(product);
 			}
 
 			request.setAttribute("product", products);
-
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 
 		} finally {
 			DBManager.close(con, pstmt, rs);
 		}
-	
+
 	}
+	
+	public void chartData(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		Gson gson = new Gson();
+		String jsonResponse = gson.toJson(products);
+		response.setContentType("application/json; charset=utf-8");
+		response.getWriter().write(jsonResponse);
+	}
+	
 
 	public void rankCount(HttpServletRequest request) throws UnsupportedEncodingException {
 		request.setCharacterEncoding("utf-8");
