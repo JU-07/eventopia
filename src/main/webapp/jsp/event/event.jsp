@@ -57,13 +57,21 @@ document.addEventListener('DOMContentLoaded', () => {
 	font-family: Arial, sans-serif;
 }
 
+/* SNS 버튼 컨테이너 */
+.SNS {
+	display: flex; /* Flexbox로 버튼 나란히 정렬 */
+	gap: 10px; /* 버튼 간 간격 */
+	justify-content: center; /* 가운데 정렬 */
+	margin-top: 20px; /* 위 콘텐츠와 간격 */
+}
+
 /* SNS 버튼 스타일 */
 .SNS button {
 	background-color: #fff;
 	border: none;
 	padding: 10px;
 	cursor: pointer;
-	margin: 5px;
+	margin: 5px 0; /* 상하 여백 제거 */
 	border-radius: 5px;
 	display: flex;
 	align-items: center;
@@ -85,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	margin-right: 10px;
 }
 </style>
-
 <div class="head" style="text-align: center">
 	<h2>全てコラボレーションイベント</h2>
 </div>
@@ -111,12 +118,12 @@ document.addEventListener('DOMContentLoaded', () => {
 				</div>
 			</div>
 		</c:forEach>
-		<div class="SNS">
+		<div class="SNS" style="font-size: 10pt">
 			<!-- SNS 공유 버튼 -->
 			<button type="button" class="btn-share-tw" data-url="${event.link}">
 				<img
-					src="https://upload.wikimedia.org/wikipedia/commons/6/60/Twitter_Logo_2012.svg"
-					alt="Twitter"> ツイッター
+					src="https://cdn2.iconfinder.com/data/icons/threads-by-instagram/24/x-logo-twitter-new-brand-512.png"
+					alt="X"> X（旧ツイッター）
 			</button>
 			<button type="button" class="btn-share-fb" data-url="${event.link}">
 				<img
@@ -125,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			</button>
 			<button type="button" class="btn-share-ln" data-url="${event.link}">
 				<img
-					src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Line_Logo_2011.svg"
+					src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/LINE_logo.svg/1024px-LINE_logo.svg.png"
 					alt="Line"> ライン
 			</button>
 		</div>
