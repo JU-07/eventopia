@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
+</head>
 <style>
 /* 부모 컨테이너를 Flexbox로 설정 */
 .event-row {
@@ -71,72 +72,87 @@ document.addEventListener('DOMContentLoaded', () => {
 	border: none;
 	padding: 10px;
 	cursor: pointer;
-	margin: 5px 0; /* 상하 여백 제거 */
-	border-radius: 5px;
+	margin: 5px;
+	border-radius: 50%; /* 원형 버튼 만들기 */
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 150px;
+	width: 50px; /* 버튼 크기 */
+	height: 50px; /* 버튼 크기 */
 	font-size: 14px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	transition: background-color 0.3s;
 }
 
+/* SNS 버튼 이미지 크기 */
+.SNS button img {
+	width: 24px; /* 이미지 크기 조정 */
+	height: 24px; /* 이미지 크기 조정 */
+}
+
+/* 호버 효과 */
 .SNS button:hover {
 	background-color: #f0f0f0;
 }
-
-/* SNS 버튼 이미지 */
-.SNS button img {
-	width: 20px;
-	height: 20px;
-	margin-right: 10px;
-}
 </style>
-<div class="head" style="text-align: center">
-	<h2>全てコラボレーションイベント</h2>
-</div>
-<br>
-<div class="event-row">
-	<!-- 이벤트 1 -->
-	<div class="event-container">
-		<c:forEach items="${event}" var="e">
-			<div class="content">
-				<div class="title">
-					<strong>題目</strong> <input onclick="location.href='EventDetailC'">${event.title}</input>
-				</div>
-				<div class="date">
-					<strong>作成日</strong>
-					<fmt:formatDate value="${event.e_date}" pattern="yyyy-MM-dd" />
-				</div>
-				<div class="img">
-					<strong>イメージ</strong> <img alt="Event Image" src="${event.e_img}" />
-				</div>
-				<div class="text">
-					<strong>イベント内容</strong>
-					<textarea rows="5" cols="50" readonly>${event.e_text}</textarea>
-				</div>
-			</div>
-		</c:forEach>
-		<div class="SNS" style="font-size: 10pt">
-			<!-- SNS 공유 버튼 -->
-			<button type="button" class="btn-share-tw" data-url="${event.link}">
-				<img
-					src="https://cdn2.iconfinder.com/data/icons/threads-by-instagram/24/x-logo-twitter-new-brand-512.png"
-					alt="X"> X（旧ツイッター）
-			</button>
-			<button type="button" class="btn-share-fb" data-url="${event.link}">
-				<img
-					src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-					alt="Facebook"> フェイスブック
-			</button>
-			<button type="button" class="btn-share-ln" data-url="${event.link}">
-				<img
-					src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/LINE_logo.svg/1024px-LINE_logo.svg.png"
-					alt="Line"> ライン
-			</button>
-		</div>
+<body>
+	<div class="head" style="text-align: center">
+		<h2>全てコラボレーションイベント</h2>
 	</div>
-</div>
+	<br>
+	<div class="event-row">
+		<!-- 이벤트 1 -->
+		<div class="event-container">
+			<c:forEach items="${event}" var="e">
+				<div class="content">
+					<div class="title">
+						<strong>題目</strong> <input onclick="location.href='EventDetailC'">${event.title}</input>
+					</div>
+					<div class="date">
+						<strong>作成日</strong>
+						<fmt:formatDate value="${event.e_date}" pattern="yyyy-MM-dd" />
+					</div>
+					<div class="img">
+						<strong>イメージ</strong> <img alt="Event Image" src="${event.e_img}" />
+					</div>
+					<div class="text">
+						<strong>イベント内容</strong>
+						<textarea rows="5" cols="50" readonly>${event.e_text}</textarea>
+					</div>
+				</div>
+			</c:forEach>
+		</div>
+
+	</div>
+
+	<c:if test="${empty event}">
+		<div style="text-align: center; margin-bottom: 20px;">
+			<h2>すみません、現在進行中のコラボはありません。</h2>
+		</div>
+	</c:if>
+	<!-- SNS 공유 버튼 -->
+	<div class="SNS"
+		style="font-size: 10pt; text-align: center; margin-top: 20px;">
+		<button type="button" class="btn-share-tw" data-url="${event.link}"
+			style="padding: 0; border: none;">
+			<img
+				src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/X_icon.svg/2048px-X_icon.svg.png"
+				alt="X" style="width: 100%; height: 100%; object-fit: cover;">
+		</button>
+		<button type="button" class="btn-share-fb" data-url="${event.link}"
+			style="padding: 0; border: none;">
+			<img
+				src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+				alt="Facebook" style="width: 100%; height: 100%; object-fit: cover;">
+		</button>
+		<button type="button" class="btn-share-ln" data-url="${event.link}"
+			style="padding: 0; border: none;">
+			<img
+				src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/LINE_logo.svg/1024px-LINE_logo.svg.png"
+				alt="Line" style="width: 100%; height: 100%; object-fit: cover;">
+		</button>
+	</div>
+
+
 </body>
 </html>

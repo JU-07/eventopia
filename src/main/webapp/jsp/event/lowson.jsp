@@ -10,77 +10,125 @@
 <title>로손 이벤트 페이지</title>
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/event.css">
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+    // 트위터 공유
+    document.querySelectorAll('.btn-share-tw').forEach(button => {
+        button.addEventListener('click', (event) => {
+            const sendText = '편의점 콜라보';
+            const pageUrl = event.target.dataset.url;
+            window.open(`https://twitter.com/intent/tweet?text=${sendText}&url=${pageUrl}`);
+        });
+    });
+
+    // 페이스북 공유
+    document.querySelectorAll('.btn-share-fb').forEach(button => {
+        button.addEventListener('click', (event) => {
+            const pageUrl = event.target.dataset.url;
+            window.open(`http://www.facebook.com/sharer/sharer.php?u=${pageUrl}`);
+        });
+    });
+
+    // 라인 공유
+    document.querySelectorAll('.btn-share-ln').forEach(button => {
+        button.addEventListener('click', (event) => {
+            const pageUrl = event.target.dataset.url;
+            window.open(`https://social-plugins.line.me/lineit/share?url=${pageUrl}`);
+        });
+    });
+});
+</script>
 <style>
-.event-info-container {
-	border: 1px solid black;
-	border-radius: 5px;
-	width: 300px;
-	height: auto; /* 높이는 내용에 따라 자동 조정 */
+/* SNS 버튼 컨테이너를 Flexbox로 설정 */
+.SNS {
 	display: flex;
-	flex-direction: column;
+	justify-content: center; /* 가운데 정렬 */
+	gap: 10px; /* 버튼 간 간격 */
+	margin-top: 20px;
+}
+
+/* SNS 버튼 스타일 */
+.SNS button {
+	background-color: #fff;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	border-radius: 50%; /* 원형 버튼 만들기 */
+	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 20px;
-	margin: 20px auto;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	width: 50px; /* 버튼 크기 */
+	height: 50px; /* 버튼 크기 */
+	font-size: 14px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.3s;
 }
 
-/* 개별 요소들 간 간격 유지 */
-.form-group {
-	margin-bottom: 20px; /* 요소들 간 여백 */
-	text-align: center;
-	width: 100%;
+/* SNS 버튼 이미지 크기 */
+.SNS button img {
+	width: 24px; /* 이미지 크기 조정 */
+	height: 24px; /* 이미지 크기 조정 */
 }
 
-/* 구분선 스타일 */
-.form-group:not(:last-child) {
-	border-bottom: 1px solid #ddd; /* 구분선 추가 */
-	padding-bottom: 10px; /* 구분선 위 여백 */
-	margin-bottom: 20px; /* 구분선 아래 여백 */
-}
-
-/* 이미지 크기 제한 */
-.event-info img {
-	max-width: 80%;
-	height: auto;
-}
-
-.img {
-	font-size: 5px;
-}
-.p{
-text-align: center;
+/* 호버 효과 */
+.SNS button:hover {
+	background-color: #f0f0f0;
 }
 </style>
-
-<div class="event-container">
-		<c:forEach var="e" items="${events}">
+</head>
+<body>
+<h2>ローソンイベントページ</h2>
+	<div class="event-container">
+		<c:forEach var="e" items="${event}">
 			<div class="event-wrap"
-				onclick="location.href='EventDetailC?no=${r.r_no}'">
+				onclick="location.href='EventDetailC?no=${event.e_no}'">
 				<div class="event-img">
-					<img alt="" src="${e.e_img}">
+					<img alt="" src="${event.e_img}">
 				</div>
-				<div class="event-title">${e.e_title}</div>
-				<div class="event-name">${e.e_name}</div>
-				<div class="event-sub">${e.e_sub}</div>
-				<div class="event-text">${e.e_text}</div>
+				<div class="event-title">${event.e_title}</div>
+				<div class="event-name">${event.e_name}</div>
+				<div class="event-sub">${event.e_sub}</div>
+				<div class="event-text">${event.e_text}</div>
 			</div>
 		</c:forEach>
-		<c:if test="${empty events}">
-			<p style="text-align: center"><h2>すみません、現在進行中のコラボはありません。</h2></p>
-		</c:if>
-
+	<c:if test="${empty events}">
+		<p style="text-align: center">
+		<h2>すみません、現在進行中のコラボはありません。</h2>
+		</p>
+	</c:if>
 	</div>
-<section class="pagination-section"
-	style="text-align: center; margin-top: 40px;">
-	<div class="pagination"
-		style="display: flex; justify-content: center; gap: 10px;">
-		<a href="ReviewPageC?p=1">始</a>
-		<c:forEach begin="1" end="${pageCount}" var="i">
-			<a href="ReviewPageC?p=${i}">[${i}]</a>
-		</c:forEach>
-		<a href="ReviewPageC?p=${pageCount}">終</a>
+	<section class="pagination-section"
+		style="text-align: center; margin-top: 40px;">
+		<div class="pagination"
+			style="display: flex; justify-content: center; gap: 10px;">
+			<a href="ReviewPageC?p=1">始</a>
+			<c:forEach begin="1" end="${pageCount}" var="i">
+				<a href="ReviewPageC?p=${i}">[${i}]</a>
+			</c:forEach>
+			<a href="ReviewPageC?p=${pageCount}">終</a>
+		</div>
+	</section>
+	<div class="SNS"
+		style="font-size: 10pt; text-align: center; margin-top: 20px;">
+		<button type="button" class="btn-share-tw" data-url="${event.link}"
+			style="padding: 0; border: none;">
+			<img
+				src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/X_icon.svg/2048px-X_icon.svg.png"
+				alt="X" style="width: 100%; height: 100%; object-fit: cover;">
+		</button>
+		<button type="button" class="btn-share-fb" data-url="${event.link}"
+			style="padding: 0; border: none;">
+			<img
+				src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+				alt="Facebook" style="width: 100%; height: 100%; object-fit: cover;">
+		</button>
+		<button type="button" class="btn-share-ln" data-url="${event.link}"
+			style="padding: 0; border: none;">
+			<img
+				src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/LINE_logo.svg/1024px-LINE_logo.svg.png"
+				alt="Line" style="width: 100%; height: 100%; object-fit: cover;">
+		</button>
 	</div>
-</section>
 </body>
 </html>
+
