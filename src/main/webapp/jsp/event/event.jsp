@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /* 각 이벤트 카드 크기 */
 .event-container {
 	flex: 1; /* 동일한 크기로 확장 */
-	max-width: 45%; /* 각 카드가 차지하는 최대 너비 */
+	max-width: 100%; /* 각 카드가 차지하는 최대 너비 */
 	border: 1px solid #ddd;
 	padding: 20px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -101,35 +101,31 @@ document.addEventListener('DOMContentLoaded', () => {
 	</div>
 	<br>
 	<div class="event-row">
-		<!-- 이벤트 1 -->
 		<div class="event-container">
 			<c:forEach items="${event}" var="e">
 				<div class="content">
-					<div class="title">
-						<strong>題目</strong> <input onclick="location.href='EventDetailC'">${event.title}</input>
+					<div class="event-content">
+						<div class="event-title">이벤트 제목</div>
+						<div>${event.e_title }</div>
+						<div class="event-img">사진</div>
+						<div>${event.e_img }</div>
+						<div class="event-txt">이벤트 내용</div>
+						<div>${event.e_text }</div>
+						<div class="event-user">
+							<div>좋아요</div>
+							<div>공유</div>
+						</div>
 					</div>
-					<div class="date">
-						<strong>作成日</strong>
-						<fmt:formatDate value="${event.e_date}" pattern="yyyy-MM-dd" />
-					</div>
-					<div class="img">
-						<strong>イメージ</strong> <img alt="Event Image" src="${event.e_img}" />
-					</div>
-					<div class="text">
-						<strong>イベント内容</strong>
-						<textarea rows="5" cols="50" readonly>${event.e_text}</textarea>
-					</div>
-				</div>
 			</c:forEach>
+			<c:if test="${empty event}">
+				<div style="text-align: center; margin-bottom: 20px;">
+					<h2>すみません、現在進行中のコラボはありません。</h2>
+				</div>
+			</c:if>
 		</div>
+
 
 	</div>
-
-	<c:if test="${empty event}">
-		<div style="text-align: center; margin-bottom: 20px;">
-			<h2>すみません、現在進行中のコラボはありません。</h2>
-		</div>
-	</c:if>
 	<!-- SNS 공유 버튼 -->
 	<div class="SNS"
 		style="font-size: 10pt; text-align: center; margin-top: 20px;">

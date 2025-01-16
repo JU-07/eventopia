@@ -161,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
 .SNS button:hover {
 	background-color: #f0f0f0;
 }
-
 </style>
 </head>
 <body>
@@ -183,13 +182,14 @@ document.addEventListener('DOMContentLoaded', () => {
 			<div class="review-name">${review.r_name}</div>
 			<div class="review-sub">${review.r_sub}</div>
 			<div class="review-text">${review.r_text}</div>
-	</c:forEach>
+		</c:forEach>
 		<c:if test="${empty review}">
 			<p style="text-align: center">
 			<h2 style="text-align: center">すみません、現在レビューがありません。</h2>
 			</p>
 		</c:if>
-	</div><div class="SNS"
+	</div>
+	<div class="SNS"
 		style="font-size: 10pt; text-align: center; margin-top: 20px;">
 		<button type="button" class="btn-share-tw" data-url="${event.link}"
 			style="padding: 0; border: none;">
