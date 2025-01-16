@@ -118,7 +118,7 @@
 			</div>
 		</c:forEach>
 		<c:if test="${empty reviews}">
-			<p><h1>現在レビューがありません。</h1></p>
+			<p><h2>現在レビューがありません。</h2></p>
 		</c:if>
 
 	</div>

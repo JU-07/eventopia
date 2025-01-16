@@ -67,16 +67,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		<div class="content">
 			<div class="date">
 				<strong>作成日</strong>
-				<fmt:formatDate value="${event.sysdate}" pattern="yyyy-MM-dd" />
+				<fmt:formatDate value="${event.e_date}" pattern="yyyy-MM-dd" />
 			</div>
 			<div class="img">
-				<strong>イメージ</strong> <a href="${event.imageLink}"> <img
-					alt="Event Image" src="${event.imageSrc}" />
-				</a>
+				<strong>イメージ</strong> <img alt="Event Image" src="${event.e_img}" />
+
 			</div>
 			<div class="text">
 				<strong>イベント内容</strong>
-				<textarea rows="5" cols="50" readonly>${event.description}</textarea>
+				<textarea rows="5" cols="50" readonly>${event.text}</textarea>
 			</div>
 			<div class="link">
 				<strong>イベントリンク</strong> <a href="${event.link}" target="_blank">イベントをよく見る</a>
@@ -129,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		<div class="content">
 			<div class="date">
 				<strong>作成日</strong>
-				<fmt:formatDate value="${event.sysdate}" pattern="yyyy-MM-dd" />
+				<fmt:formatDate value="${event.e_date}" pattern="yyyy-MM-dd" />
 			</div>
 			<div class="img">
 				<strong>イメージ</strong> <a href="${event.imageLink}"> <img
