@@ -28,20 +28,29 @@ li {
 /* 버튼 스타일 */
 .slider-btn {
 	position: absolute;
-	top: 40%; /* 슬라이드 중앙에 위치 */
-	z-index: 100; /* 슬라이드 위로 버튼 표시 */
+	top: 390px; /* 슬라이드 중앙에 위치 */
+	z-index: 10; /* 슬라이드 위로 버튼 표시 */
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+
+.left-btn:hover {
+	transform: scale(1.5) rotate(180deg); /* 이미지 살짝 확대 */
+}
+
+.right-btn:hover {
+	transform: scale(1.5); /* 이미지 살짝 확대 */
 }
 
 .left-btn {
 	transform: rotate(180deg);
-	left: 10px; /* 왼쪽 여백 */
+	left: 50px; /* 왼쪽 여백 */
 }
 
 .right-btn {
-	right: 10px; /* 오른쪽 여백 */
+	right: 50px; /* 오른쪽 여백 */
 }
 
 /* 이벤트 컨테이너 */
@@ -62,8 +71,8 @@ li {
 	gap: 15px;
 	width: 320px; /* 개별 항목 너비 */
 	padding: 20px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
-	            0 1px 3px rgba(0, 0, 0, 0.06); /* 자연스러운 입체감 */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+	/* 자연스러운 입체감 */
 	border-radius: 12px;
 	background-color: #fff;
 	transition: transform 0.3s, box-shadow 0.3s ease-in-out;
@@ -71,8 +80,8 @@ li {
 
 .event-item:hover {
 	transform: translateY(-5px); /* hover 시 살짝 올라가는 효과 */
-	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 
-	            0 4px 6px rgba(0, 0, 0, 0.08); /* hover 시 더 깊은 그림자 */
+	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px
+		rgba(0, 0, 0, 0.08); /* hover 시 더 깊은 그림자 */
 }
 
 /* 로고 */

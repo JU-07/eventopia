@@ -8,31 +8,21 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<button class="slider-btn left-btn">
+		<img src="icon/arr_visual.png" alt="" />
+	</button>
 	<div class="slider-container">
-		<button class="slider-btn left-btn">
-			<img
-				src="icon/arr_visual.png"
-				alt="" />
-		</button>
 		<div class="slider">
-			<img
-				src="icon/famima_event1.jpg"
-				alt="Slide 1" /> <img
-				src="icon/seven_event1.jpg"
-				alt="Slide 2" /> <img
-				src="icon/seven_event2.jpg"
-				alt="Slide 3" /> <img
-				src="icon/lawson_event1.jpg"
-				alt="Slide 4" /> <img
-				src="icon/famima_event2.jpg"
-				alt="Slide 5" />
+			<img src="icon/famima_event1.jpg" alt="Slide 1" /> <img
+				src="icon/seven_event1.jpg" alt="Slide 2" /> <img
+				src="icon/seven_event2.jpg" alt="Slide 3" /> <img
+				src="icon/lawson_event1.jpg" alt="Slide 4" /> <img
+				src="icon/famima_event2.jpg" alt="Slide 5" />
 		</div>
-		<button class="slider-btn right-btn">
-			<img
-				src="icon/arr_visual.png"
-				alt="" />
-		</button>
 	</div>
+	<button class="slider-btn right-btn">
+		<img src="icon/arr_visual.png" alt="" />
+	</button>
 	<div class="event-container">
 		<div class="event-item">
 			<div class="event-logo">

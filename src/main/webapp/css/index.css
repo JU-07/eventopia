@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 /* 전체 레이아웃 */
@@ -115,18 +115,20 @@ a:hover {
 	display: flex;
 	justify-content: center;
 	gap: 70px; /* 메뉴 간격 */
-	padding: 23.5px 0;
+	padding: 24.5px 0;
 }
 
 .nav div {
 	font-size: 18px;
 	font-weight: bold;
 	color: #333;
+	transition: transform 0.3s ease; /* 기본 상태에서도 transition을 적용 */
 }
 
 .nav div:hover {
-	color: #007bff;
 	cursor: pointer;
+	transition: transform 0.3s ease;
+	transform: scale(1.2); /* 이미지 살짝 확대 */
 }
 
 /* 콘텐츠 */
@@ -142,41 +144,41 @@ a:hover {
 
 /* 푸터 배경 */
 .footer-bg {
-    background-color: #333;
-    border-top: 2px solid #555;
-    padding: 20px 0; /* 위아래 여백을 좀 더 추가 */
+	background-color: #333;
+	border-top: 2px solid #555;
+	padding: 20px 0; /* 위아래 여백을 좀 더 추가 */
 }
 
 /* 푸터 내용 */
 .footer {
-    max-width: 1280px;
-    margin: 0 auto;
-    color: white;
-    text-align: center;
-    padding: 15px 20px;
-    font-size: 14px; /* 텍스트 크기 조정 */
+	max-width: 1280px;
+	margin: 0 auto;
+	color: white;
+	text-align: center;
+	padding: 15px 20px;
+	font-size: 14px; /* 텍스트 크기 조정 */
 }
 
 /* 저작권 텍스트 */
 .footer p {
-    margin: 5px 0; /* 텍스트 간 여백 */
+	margin: 5px 0; /* 텍스트 간 여백 */
 }
 
 /* 링크 스타일 */
 .footer a {
-    color: #fff;
-    text-decoration: none;
+	color: #fff;
+	text-decoration: none;
 }
 
 .footer a:hover {
-    text-decoration: none; /* 호버 시 밑줄 추가 */
-    color: #007bff; /* 호버 시 색상 변경 */
+	text-decoration: none; /* 호버 시 밑줄 추가 */
+	color: #007bff; /* 호버 시 색상 변경 */
 }
 
 /* 모바일에서 푸터 텍스트 크기 조정 */
-@media (max-width: 768px) {
-    .footer {
-        font-size: 12px; /* 작은 화면에서는 텍스트 크기 줄이기 */
-        padding: 10px; /* 여백 조정 */
-    }
+@media ( max-width : 768px) {
+	.footer {
+		font-size: 12px; /* 작은 화면에서는 텍스트 크기 줄이기 */
+		padding: 10px; /* 여백 조정 */
+	}
 }
