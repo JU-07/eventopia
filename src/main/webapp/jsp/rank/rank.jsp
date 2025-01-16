@@ -206,14 +206,7 @@ h1 {
 									name="check" value="${p.p_no}" /></span>
 							</div>
 						</c:forEach>
-						<c:forEach items="${product }" var="p">
-							<div class="review-row">
-								<span>${p.p_name}</span> <span>${p.p_price}원</span> <span>${p.p_category}</span>
-								<img src="${p.image_url}" alt="Sample Image" width="70"
-									height="70" /> <span><input type="checkbox"
-									name="check" value="${p.p_no}" /></span>
-							</div>
-						</c:forEach>
+						
 					</div>
 				</div>
 
