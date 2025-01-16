@@ -15,7 +15,10 @@ public class EventDetailC extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setAttribute("content", "jsp/event/event.jsp");
+		
+		EventDAO.EDAO.EventDetail(request);
+		
+		request.setAttribute("content", "jsp/event/eventdetail.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 	}

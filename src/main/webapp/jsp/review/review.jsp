@@ -102,7 +102,7 @@
 
 
 		<div class="review-title">
-			<a href="ReviewRegC"><h1>리뷰 목록</h1></a>
+			<a href="ReviewRegC"><h2>レビューリスト</h2></a>
 		</div>
 	<div class="review-container">
 		<c:forEach var="r" items="${review}">
@@ -124,7 +124,7 @@
 			</p>
 		</c:if>
 	<div class="add-review">
-		<a href="ReviewRegC">리뷰 등록</a>
+		<a href="ReviewRegC">レビュー登録</a>
 	</div>
 
 </body>

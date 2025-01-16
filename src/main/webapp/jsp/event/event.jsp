@@ -56,118 +56,78 @@ document.addEventListener('DOMContentLoaded', () => {
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 	font-family: Arial, sans-serif;
 }
+
+/* SNS 버튼 스타일 */
+.SNS button {
+	background-color: #fff;
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+	margin: 5px;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 150px;
+	font-size: 14px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.3s;
+}
+
+.SNS button:hover {
+	background-color: #f0f0f0;
+}
+
+/* SNS 버튼 이미지 */
+.SNS button img {
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+}
 </style>
 
+<div class="head" style="text-align: center">
+	<h2>全てコラボレーションイベント</h2>
+</div>
+<br>
 <div class="event-row">
 	<!-- 이벤트 1 -->
 	<div class="event-container">
-		<div class="head">
-			<h1 onclick="location.href='EventDetailC'">Event Page 1</h1>
-		</div>
-		<div class="content">
-			<div class="date">
-				<strong>作成日</strong>
-				<fmt:formatDate value="${event.e_date}" pattern="yyyy-MM-dd" />
+		<c:forEach items="${event}" var="e">
+			<div class="content">
+				<div class="title">
+					<strong>題目</strong> <input onclick="location.href='EventDetailC'">${event.title}</input>
+				</div>
+				<div class="date">
+					<strong>作成日</strong>
+					<fmt:formatDate value="${event.e_date}" pattern="yyyy-MM-dd" />
+				</div>
+				<div class="img">
+					<strong>イメージ</strong> <img alt="Event Image" src="${event.e_img}" />
+				</div>
+				<div class="text">
+					<strong>イベント内容</strong>
+					<textarea rows="5" cols="50" readonly>${event.e_text}</textarea>
+				</div>
 			</div>
-			<div class="img">
-				<strong>イメージ</strong> <img alt="Event Image" src="${event.e_img}" />
-
-			</div>
-			<div class="text">
-				<strong>イベント内容</strong>
-				<textarea rows="5" cols="50" readonly>${event.text}</textarea>
-			</div>
-			<div class="SNS">
-				<button type="button" class="btn-share-tw" data-url="${event.link}">ツイッター共有</button>
-				<button type="button" class="btn-share-fb" data-url="${event.link}">フェイスブック共有</button>
-				<button type="button" class="btn-share-ln" data-url="${event.link}">ライン共有</button>
-			</div>
-		</div>
-	</div>
-
-	<!-- 이벤트 2 -->
-	<div class="event-container">
-		<div class="head">
-			<h1>Event Page 2</h1>
-		</div>
-		<div class="content">
-			<div class="date">
-				<strong>作成日</strong>
-				<fmt:formatDate value="${event.sysdate}" pattern="yyyy-MM-dd" />
-			</div>
-			<div class="img">
-				<strong>イメージ</strong> <a href="${event.imageLink}"> <img
-					alt="Event Image" src="${event.imageSrc}" />
-				</a>
-			</div>
-			<div class="text">
-				<strong>イベント内容</strong>
-				<textarea rows="5" cols="50" readonly>${event1.description}</textarea>
-			</div>
-			<div class="SNS">
-				<button type="button" class="btn-share-tw" data-url="${event.link}">ツイッター共有</button>
-				<button type="button" class="btn-share-fb" data-url="${event.link}">フェイスブック共有</button>
-				<button type="button" class="btn-share-ln" data-url="${event.link}">ライン共有</button>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="event-row">
-	<!-- 이벤트 3 -->
-	<div class="event-container">
-		<div class="head">
-			<h1>Event Page 3</h1>
-		</div>
-		<div class="content">
-			<div class="date">
-				<strong>作成日</strong>
-				<fmt:formatDate value="${event.e_date}" pattern="yyyy-MM-dd" />
-			</div>
-			<div class="img">
-				<strong>イメージ</strong> <a href="${event.imageLink}"> <img
-					alt="Event Image" src="${event.imageSrc}" />
-				</a>
-			</div>
-			<div class="text">
-				<strong>イベント内容</strong>
-				<textarea rows="5" cols="50" readonly>${event.description}</textarea>
-			</div>
-			<div class="SNS">
-				<button type="button" class="btn-share-tw" data-url="${event.link}">ツイッター共有</button>
-				<button type="button" class="btn-share-fb" data-url="${event.link}">フェイスブック共有</button>
-				<button type="button" class="btn-share-ln" data-url="${event.link}">ライン共有</button>
-			</div>
-		</div>
-	</div>
-
-	<div class="event-container">
-		<div class="head">
-			<h1>Event Page 4</h1>
-		</div>
-		<!-- 이벤트 4 내용 -->
-		<div class="content">
-			<div class="date">
-				<strong>作成日</strong>
-				<fmt:formatDate value="${event1.sysdate}" pattern="yyyy-MM-dd" />
-			</div>
-			<div class="img">
-				<strong>イメージ</strong> <a href="${event1.imageLink}"> <img
-					alt="Event Image" src="${event1.imageSrc}" />
-				</a>
-			</div>
-			<div class="text">
-				<strong>イベント内容</strong>
-				<textarea rows="5" cols="50" readonly>${event1.description}</textarea>
-			</div>
-			<div class="link">
-				<strong>イベントリンク</strong> <a href="${event1.link}" target="_blank">イベントをよく見る</a>
-			</div>
-			<div class="SNS">
-				<button type="button" class="btn-share-tw" data-url="${event.link}">ツイッター共有</button>
-				<button type="button" class="btn-share-fb" data-url="${event.link}">フェイスブック共有</button>
-				<button type="button" class="btn-share-ln" data-url="${event.link}">ライン共有</button>
-			</div>
+		</c:forEach>
+		<div class="SNS">
+			<!-- SNS 공유 버튼 -->
+			<button type="button" class="btn-share-tw" data-url="${event.link}">
+				<img
+					src="https://upload.wikimedia.org/wikipedia/commons/6/60/Twitter_Logo_2012.svg"
+					alt="Twitter"> ツイッター
+			</button>
+			<button type="button" class="btn-share-fb" data-url="${event.link}">
+				<img
+					src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+					alt="Facebook"> フェイスブック
+			</button>
+			<button type="button" class="btn-share-ln" data-url="${event.link}">
+				<img
+					src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Line_Logo_2011.svg"
+					alt="Line"> ライン
+			</button>
 		</div>
 	</div>
 </div>
