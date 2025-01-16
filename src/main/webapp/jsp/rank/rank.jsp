@@ -6,6 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"
+		integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+
 
 <style>
 body {
@@ -146,8 +150,26 @@ h1 {
 .fixed-button:hover {
 	background-color: #0056b3;
 }
-</style>
+.progress-bar {
+    width: 100%; /* 전체 너비 */
+    background-color: #f0f0f0; /* 배경색 */
+    border: 1px solid #ddd; /* 테두리 */
+    border-radius: 10px;
+    overflow: hidden;
+    height: 20px; /* 높이 */
+    margin-top: 10px;
+}
 
+.progress {
+    height: 100%; /* 내부 진행 상태 */
+    background-color: #4CAF50; /* 진행 색상 */
+    text-align: center;
+    line-height: 20px; /* 텍스트 정렬 */
+    color: white;
+    font-weight: bold;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 	<a href="RankPageC">역대랭킹</a>
@@ -164,6 +186,18 @@ h1 {
 					<span>${p.p_name}</span>
 					 <span>${p.p_price}円</span> 
 					 <span>${p.p_exp}</span>
+<%-- 					   <div>
+                <!-- 득표율 그래프 -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: ${p.p_count}%;"></div>
+                </div>
+                <span>${p.p_count}% 득표</span>
+            </div>
+					 <div>
+                <!-- 각 상품에 대한 차트를 표시할 Canvas -->
+                <canvas id="chart-" width="200" height="200"></canvas>
+</div> --%>
+            
 				</div></div>
 			</c:forEach>
 		</div>
@@ -203,7 +237,6 @@ h1 {
 			</div>
 		</div>
 	</form>
-
 	<script>
 		// 모달 열기 함수
 		function openModal() {
@@ -221,6 +254,44 @@ h1 {
 			const form = document.getElementById('voteForm');
 			form.submit();
 		}
-	</script>
+		
+		
+		
+ 	</script>
+<!-- <script type="text/javascript">
+//JSP 페이지에서 서버 데이터를 JSON으로 변환 후 전달
+
+
+const productData = ${product}; // 서버에서 전달받은 product 리스트
+
+
+ document.addEventListener("DOMContentLoaded", () => {
+    productData.forEach(product => {
+        const ctx = document.getElementById(`chart-${product.p_no}`).getContext("2d");
+
+        // Chart.js를 사용하여 차트 생성
+        new Chart(ctx, {
+            type: 'doughnut', // 도넛형 차트
+            data: {
+                labels: ['득표 수', '잔여 수'], // 득표 수와 다른 값을 비교
+                datasets: [{
+                    data: [product.p_count, 100 - product.p_count], // 득표 수 기반 데이터
+                    backgroundColor: ['#4CAF50', '#E0E0E0'],
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { enabled: true }
+                }
+            }
+        });
+    });
+}); 
+
+
+</script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 </body>
 </html>

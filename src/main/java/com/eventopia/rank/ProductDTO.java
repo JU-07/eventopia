@@ -7,6 +7,7 @@ public class ProductDTO {
 	int p_price;
 	String p_category;
 	String image_url;
+	int p_count;
 	
 	
 	public ProductDTO() {
@@ -14,7 +15,8 @@ public class ProductDTO {
 	}
 
 
-	public ProductDTO(int p_no, String p_name, String p_exp, int p_price, String p_category, String image_url) {
+	public ProductDTO(int p_no, String p_name, String p_exp, int p_price, String p_category, String image_url,
+			int p_count) {
 		super();
 		this.p_no = p_no;
 		this.p_name = p_name;
@@ -22,6 +24,7 @@ public class ProductDTO {
 		this.p_price = p_price;
 		this.p_category = p_category;
 		this.image_url = image_url;
+		this.p_count = p_count;
 	}
 
 
@@ -83,7 +86,17 @@ public class ProductDTO {
 	public void setImage_url(String image_url) {
 		this.image_url = image_url;
 	}
-	
+
+
+	public int getP_count() {
+		return p_count;
+	}
+
+
+	public void setP_count(int p_count) {
+		this.p_count = p_count;
+	}
+
 	
 	
 }

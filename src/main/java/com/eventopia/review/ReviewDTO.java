@@ -1,6 +1,6 @@
 package com.eventopia.review;
 
-import com.google.gson.Gson;
+
 
 public class ReviewDTO {
 

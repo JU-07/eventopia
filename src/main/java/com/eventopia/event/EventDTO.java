@@ -2,8 +2,6 @@ package com.eventopia.event;
 
 import java.util.Date;
 
-import com.google.gson.Gson;
-
 public class EventDTO {
 	
 	private String title;
@@ -70,10 +68,7 @@ public class EventDTO {
 		return "EventDTO [title=" + title + ", sysdate=" + sysdate + ", name=" + name + ", text=" + text + ", link="
 				+ link + "]";
 	}
-	public String toJsonByMe() {
-		Gson gson = new Gson();
-		return gson.toJson(this);
-	}
+	
 
 
 	

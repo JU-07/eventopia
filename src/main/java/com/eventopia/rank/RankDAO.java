@@ -1,5 +1,6 @@
 package com.eventopia.rank;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,8 +9,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.catalina.connector.Response;
 
 import com.eventopia.rank.RankPageDTO;
+import com.google.gson.Gson;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -30,20 +35,20 @@ public class RankDAO {
 		}
 	}
 
-	public void productAllSelect(HttpServletRequest request) throws UnsupportedEncodingException {
+	public void productAllSelect(HttpServletRequest request) throws IOException {
 		request.setCharacterEncoding("utf-8");
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select * from product_test order by p_count desc";
+		ArrayList<ProductDTO> products = new ArrayList<ProductDTO>();
+		ProductDTO product = null;
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			ArrayList<ProductDTO> products = new ArrayList<ProductDTO>();
-			ProductDTO product = null;
 			while (rs.next()) {
-				product = new ProductDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6));
+				product = new ProductDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6), rs.getInt(7));
 				products.add(product);
 			}
 
@@ -55,7 +60,7 @@ public class RankDAO {
 		} finally {
 			DBManager.close(con, pstmt, rs);
 		}
-
+	
 	}
 
 	public void rankCount(HttpServletRequest request) throws UnsupportedEncodingException {
