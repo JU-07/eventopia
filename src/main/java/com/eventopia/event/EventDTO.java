@@ -2,40 +2,25 @@ package com.eventopia.event;
 
 import java.util.Date;
 
-import com.google.gson.Gson;
-
 public class EventDTO {
-
-	private int no;
+	
 	private String title;
 	private String name;
-	private String img;
-	private String sub;
 	private String text;
-	private Date date;
-
+	private String link;
+	private Date sysdate;
+	
 	public EventDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public EventDTO(int no, String title, String name, String img, String sub, String text, Date date) {
+	public EventDTO(String title, Date sysdate, String name, String text, String link) {
 		super();
-		this.no = no;
 		this.title = title;
+		this.sysdate = sysdate;
 		this.name = name;
-		this.img = img;
-		this.sub = sub;
 		this.text = text;
-		this.date = date;
-
-	}
-
-	public int getNo() {
-		return no;
-	}
-
-	public void setNo(int no) {
-		this.no = no;
+		this.link = link;
 	}
 
 	public String getTitle() {
@@ -46,28 +31,20 @@ public class EventDTO {
 		this.title = title;
 	}
 
+	public Date getSysdate() {
+		return sysdate;
+	}
+
+	public void setSysdate(Date sysdate) {
+		this.sysdate = sysdate;
+	}
+
 	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getImg() {
-		return img;
-	}
-
-	public void setImg(String img) {
-		this.img = img;
-	}
-
-	public String getSub() {
-		return sub;
-	}
-
-	public void setSub(String sub) {
-		this.sub = sub;
 	}
 
 	public String getText() {
@@ -78,23 +55,25 @@ public class EventDTO {
 		this.text = text;
 	}
 
-	public Date getDate() {
-		return date;
+	public String getLink() {
+		return link;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setLink(String link) {
+		this.link = link;
 	}
 
 	@Override
 	public String toString() {
-		return "EventDTO [no=" + no + ", title=" + title + ", name=" + name + ", img=" + img + ", sub=" + sub
-				+ ", text=" + text + ", date=" + date + "]";
+		return "EventDTO [title=" + title + ", sysdate=" + sysdate + ", name=" + name + ", text=" + text + ", link="
+				+ link + "]";
 	}
+	
 
-	public String toJsonByMe() {
-		Gson gson = new Gson();
-		return gson.toJson(this);
-	}
 
+<<<<<<< HEAD
 }
+=======
+	
+}
+>>>>>>> 5a3827279526cbe657cff672aae1b7031d9a66e7
