@@ -18,7 +18,7 @@ public class EventDTO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public EventDTO(int no, String title, String name, String img, String sub, String text, Date date, String good) {
+	public EventDTO(int no, String title, String name, String img, String sub, String text, Date date) {
 		super();
 		this.no = no;
 		this.title = title;
