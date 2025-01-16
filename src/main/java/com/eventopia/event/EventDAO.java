@@ -26,7 +26,6 @@ public class EventDAO {
 	}
 
 	ArrayList<EventDTO> events = null;
-	EventDTO event = null;
 
 	public void showAllEvent(HttpServletRequest request) {
 
@@ -41,7 +40,11 @@ public class EventDAO {
 			rs = pstmt.executeQuery();
 
 			events = new ArrayList<EventDTO>();
-			events.add(event);
+			EventDTO event = null;
+			while (rs.next()) {
+				events = new ArrayList<EventDTO>();
+				events.add(event);
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -63,7 +66,6 @@ public class EventDAO {
 		String sub = request.getParameter("sub");
 		String text = request.getParameter("text");
 		String date = request.getParameter("date");
-		String good = request.getParameter("good");
 
 		String sql = "insert into event_test values(event_test_seq.nextval,?,?,?,?,?,?,?) ";
 		try {
@@ -75,7 +77,6 @@ public class EventDAO {
 			pstmt.setString(4, sub);
 			pstmt.setString(5, text);
 			pstmt.setString(6, date);
-			pstmt.setString(7, good);
 
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("Registation complete");
@@ -83,8 +84,38 @@ public class EventDAO {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			DBManager.close(con, pstmt, null);
+		}
+
+	}
+
+	public void EventDetail(HttpServletRequest request) {
+
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String no = request.getParameter("no");
+
+		try {
+			String sql = "select * from event_test where e_no=?";
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, no);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				EventDTO event = new EventDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
+						rs.getString(5), rs.getString(6), rs.getDate(7));
+				System.out.println(event);
+				request.setAttribute("event", event);
+
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, rs);
 		}
 
 	}
