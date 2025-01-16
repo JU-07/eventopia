@@ -12,7 +12,7 @@ prefix="c"%>
       <div class="event-item">
         <div class="event-logo">
           <img
-            src="Icon/l_logo.webp"
+            src="icon/l_logo.webp"
             alt="Lawson Logo"
             onclick="location.href='LowsonC'"
           />
@@ -49,7 +49,7 @@ prefix="c"%>
       <div class="event-item">
         <div class="event-logo">
           <img
-            src="Icon/s_logo.webp"
+            src="icon/s_logo.webp"
             alt="Seven Logo"
             onclick="location.href='SevenC'"
           />
@@ -86,7 +86,7 @@ prefix="c"%>
       <div class="event-item">
         <div class="event-logo">
           <img
-            src="Icon/f_logo.png"
+            src="icon/f_logo.png"
             alt="Family Logo"
             onclick="location.href='FamilyC'"
           />

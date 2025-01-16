@@ -17,7 +17,7 @@
 				<!-- 왼쪽: 로고 -->
 				<div class="logo-container">
 					<a href="MainC" class="Elogo"> <img
-						src="Icon/eventopia_logo.png" alt="Eventopia logo"
+						src="icon/eventopia_logo.png" alt="Eventopia logo"
 						class="evetopia-logo" /> <span>Eventopia</span>
 
 					</a>
@@ -26,16 +26,16 @@
 				<!-- 오른쪽: 아이콘 그룹 -->
 				<div class="side-info">
 					<div>
-						<a href="LoginC"><img src="Icon/user.png" alt="User Icon" /></a>
+						<a href="LoginC"><img src="icon/user.png" alt="User Icon" /></a>
 					</div>
 					<div>
-						<img src="Icon/heart.png" alt="Heart Icon" />
+						<img src="icon/heart.png" alt="Heart Icon" />
 					</div>
 					<div>
-						<img src="Icon/search.svg" alt="Search Icon" />
+						<img src="icon/search.svg" alt="Search Icon" />
 					</div>
 					<div>
-						<img src="Icon/list.png" alt="Menu Icon" />
+						<img src="icon/list.png" alt="Menu Icon" />
 					</div>
 				</div>
 			</div>
