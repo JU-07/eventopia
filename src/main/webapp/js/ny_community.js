@@ -1,76 +1,70 @@
-//내용
+// 指定した要素のクリックイベントを設定
 document.querySelectorAll(".attention-title").forEach((title) => {
-	title.addEventListener("click", () => {
+	if (title) {
+		title.addEventListener("click", () => {
+			const targetId = title.getAttribute("data-target");
+			const content = document.getElementById(targetId);
 
-		const targetId = title.getAttribute("data-target");
-		const content = document.getElementById(targetId);
-
-		if (content) {
-
-			content.classList.toggle("open");
-
-			if (content.classList.contains("open")) {
-				title.textContent = title.textContent.replace("▽", "△");
-			} else {
-				title.textContent = title.textContent.replace("△", "▽");
+			if (content) {
+				content.classList.toggle("open");
+				title.textContent = content.classList.contains("open")
+					? title.textContent.replace("▽", "△")
+					: title.textContent.replace("△", "▽");
 			}
-		}
-	});
+		});
+	}
 });
 
-document.querySelectorAll('.list-title').forEach((title) => {
-	title.addEventListener('click', () => {
-		const targetId = title.dataset.target;
-		const content = document.getElementById(targetId);
-
-		if (content.classList.contains('open')) {
-			content.classList.remove('open');
-			title.innerHTML = title.innerHTML.replace('△', '▽');
-		} else {
-			content.classList.add('open');
-			title.innerHTML = title.innerHTML.replace('▽', '△');
-		}
-	});
-});
-
-
-
-//위에 돌아가기
+// 上に戻るボタンの設定
 const backToTopButton = document.getElementById('backToTop');
 
-// スクロール時のイベント
-window.addEventListener('scroll', function () {
-    // スクロール位置が300px以上の場合にボタンを表示
-    if (window.scrollY > 300) {
-        backToTopButton.style.display = 'block';
-    } else {
-        backToTopButton.style.display = 'none';
-    }
-});
+if (backToTopButton) {
+	// スクロール位置に応じてボタンを表示・非表示
+	window.addEventListener('scroll', function() {
+		backToTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
+	});
 
-// 上に戻るボタンのクリックイベント
-backToTopButton.addEventListener('click', function () {
-    // スムーズにページの先頭までスクロール
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
+	// クリックでスムーズスクロール
+	backToTopButton.addEventListener('click', function() {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+	});
+}
 
+// 投稿一覧の更新
+function updatePosts() {
+	fetch('/PostsTable') // 必要なエンドポイントに変更してください
+		.then(response => {
+			if (!response.ok) {
+				throw new Error("投稿一覧の更新に失敗しました");
+			}
+			return response.text();
+		})
+		.then(html => {
+			document.getElementById('postsContainer').innerHTML = html;
+		})
+		.catch(err => console.error('投稿一覧の更新でエラーが発生しました:', err));
+}
 
-//free-post
-document.getElementById("postForm").addEventListener("submit", function(e) {
-	e.preventDefault(); // ページリロードを防ぐ
+// 投稿フォームの送信処理
+document.getElementById("postForm").addEventListener("submit", function(event) {
+	event.preventDefault(); // デフォルトのフォーム送信を防止
 
 	const formData = new FormData(this);
-	fetch("BulletboardC", {
+
+	fetch("FreePostC", {
 		method: "POST",
-		body: formData,
+		body: formData
 	})
-		.then(response => response.text())
+		.then(response => response.text()) // サーバーからのHTMLレスポンスを取得
 		.then(html => {
+			// 投稿一覧のHTMLを更新
 			document.getElementById("postsContainer").innerHTML = html;
+			this.reset(); // フォームをリセット
 		})
-		.catch(error => console.error("Error:", error));
+		.catch(error => console.error("投稿処理でエラーが発生しました:", error));
 });
+
 

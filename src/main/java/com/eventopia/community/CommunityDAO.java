@@ -16,7 +16,7 @@ public class CommunityDAO {
 
 	// 全ての投稿を取得するメソッド
 	public static void showAllPost(HttpServletRequest request) {
-		String sql = "SELECT p_name, p_img, p_content, p_date FROM community_post";
+		String sql = "SELECT p_name, p_img, p_content, p_date FROM community_post ORDER BY p_date DESC";
 
 		try (Connection con = DBManager.connect();
 				PreparedStatement pstmt = con.prepareStatement(sql);
@@ -41,6 +41,7 @@ public class CommunityDAO {
 	}
 
 	public static void addPost(HttpServletRequest request) {
+
 		Connection con = null;
 		PreparedStatement pstmt = null;
 

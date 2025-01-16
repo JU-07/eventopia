@@ -11,15 +11,31 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/FreePostC")
 @MultipartConfig(fileSizeThreshold = 1024 * 1024 * 1, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 15)
 public class FreePostC extends HttpServlet {
+	private CommunityDAO dao = new CommunityDAO();
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // "content" に ny_freePost.jsp を埋め込む
-        request.setAttribute("content", "jsp/community/ny_freePost.jsp");
-        // index.jsp を表示
-        request.getRequestDispatcher("index.jsp").forward(request, response);
-    }
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
-    }
+		// 文字コード設定
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+
+		dao.showAllPost(request);
+		request.setAttribute("content", "jsp/community/ny_freePost.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		// 文字コード設定
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+
+		dao.addPost(request);
+		dao.showAllPost(request);
+
+		// jsp/community/postsTable.jsp をレスポンスとして返す
+		request.getRequestDispatcher("jsp/community/postsTable.jsp").forward(request, response);
+	}
 }

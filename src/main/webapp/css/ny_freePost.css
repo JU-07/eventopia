@@ -12,11 +12,13 @@
 .form-container {
 	flex: 1;
 	/* フレキシブルにサイズ調整 */
-/*	min-width: 300px;*/
+	/*	min-width: 300px;*/
 	max-width: 30%;
 	padding: 20px;
-	background-color: white;
-	border: 1px solid #ccc;
+/*	background-color: rgba(255, 255, 255, 0.8);*/
+/*	 白色で80%透明 */
+/*	border: 1px solid rgba(204, 204, 204, 0.8);*/
+/*	 枠線も少し透明に */
 }
 
 .form-container h1 {
@@ -33,11 +35,12 @@
 
 .form-container form input,
 .form-container form textarea {
-	width: 93%;
+	width: 94%;
 	padding: 10px;
 	margin-bottom: 15px;
 	border: 1px solid #ddd;
 	font-size: 12px;
+	background-color: white;
 }
 
 .form-container form button {
@@ -57,12 +60,18 @@
 
 /* 投稿一覧セクション */
 .posts-container {
-	flex: 1;
+	flex: 2;
+	/* 比率を増やして投稿掲示板を大きくする */
+	min-height: 600px;
+	/* 高さを固定または最低値を設定 */
+	/* 全体の最低高さを設定 */
 	min-width: 400px;
 	max-width: 100%;
 	padding: 20px;
 	background-color: white;
 	border: 1px solid #ccc;
+	overflow-y: auto;
+	/* 内容が多い場合スクロールを可能にする */
 }
 
 .posts-container h2 {

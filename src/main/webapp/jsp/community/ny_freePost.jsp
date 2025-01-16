@@ -9,7 +9,9 @@
 <meta charset="UTF-8">
 <title>自由投稿</title>
 <link rel="stylesheet" href="css/ny_freePost.css">
-<script src="js/ny_community.js"></script>
+<link rel="stylesheet" href="css/ny_postsTable.css">
+<script src="js/ny_community.js" defer></script>
+
 </head>
 <body>
 	<div class="container">
@@ -48,25 +50,10 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="post" items="${posts}">
-						<tr>
-							<td>${post.name}</td>
-							<td><c:choose>
-									<c:when test="${post.img != '画像なし'}">
-										<img src="${pageContext.request.contextPath}${post.img}"
-											alt="画像" width="50" height="50">
-									</c:when>
-									<c:otherwise>画像なし</c:otherwise>
-								</c:choose></td>
-							<td>${post.content}</td>
-							<td><fmt:formatDate value="${post.date}"
-									pattern="MM/dd HH:mm:ss" /></td>
-						</tr>
-					</c:forEach>
+					<jsp:include page="postsTable.jsp" />
 				</tbody>
 			</table>
 		</div>
 	</div>
-
 </body>
 </html>
