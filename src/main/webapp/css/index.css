@@ -25,18 +25,18 @@ a:hover {
 
 /* 헤더 배경 */
 .header-bg {
-	background-color: #cababa;
+	background-color: #0A152F;
 	width: 100%;
 }
 
 /* 헤더 */
 .header {
-	max-width: 1150px;
+	max-width: 1200px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between; /* 양쪽 끝 정렬 */
 	align-items: center;
-	padding: 15px 20px; /* 여백 추가 */
+	padding: 15px 0; /* 여백 추가 */
 }
 
 /* 로고 */
@@ -54,19 +54,37 @@ a:hover {
 
 .Elogo {
 	display: flex;
-	align-items: center;	
+	align-items: center;
+	text-decoration: none; /* 링크 밑줄 제거 */
+	color: white; /* 기본 텍스트 색상 */
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Elogo:hover {
+	transform: scale(1.07); /* 호버 시 확대 효과 */
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* hover 시 그림자 추가 */
+}
+
+.Elogo img {
+	width: 40px; /* 로고 이미지 크기 조정 */
+	transition: transform 0.3s ease; /* 이미지에 부드러운 효과 추가 */
+}
+
+.Elogo:hover img {
+	transform: scale(1.0); /* 이미지 살짝 확대 */
 }
 
 .Elogo span {
-	color: white;
-	font-weight: bold;
-	font-size: 20px;
+	font-size: 18px; /* 텍스트 크기 */
+	font-weight: bold; /* 텍스트 강조 */
+	color: white; /* 텍스트 색상 고정 */
 }
 
 /* 아이콘 그룹 */
 .side-info {
 	display: flex;
 	gap: 30px; /* 아이콘 사이 간격 */
+	align-items: center;
 }
 
 .side-info img {
@@ -76,6 +94,11 @@ a:hover {
 	transition: transform 0.2s ease;
 }
 
+.side-info .sidebar-img {
+	width: 27px !important;
+	height: 27px !important;
+}
+
 .side-info img:hover {
 	transform: scale(1.2); /* 호버 시 확대 효과 */
 }
@@ -83,11 +106,11 @@ a:hover {
 /* 네비게이션 */
 .nav-bg {
 	background-color: #ffffff;
-	border-bottom: 2px solid #ccc;
+	border-bottom: 1px solid #0A152F;
 }
 
 .nav {
-	max-width: 1280px;
+	max-width: 1200px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: center;
@@ -109,14 +132,12 @@ a:hover {
 /* 콘텐츠 */
 .content-bg {
 	background-color: #ffffff;
-	border-top: 2px solid #ccc;
-	border-bottom: 2px solid #ccc;
 }
 
 .content-container {
-	max-width: 1280px;
+	max-width: 1200px;
 	margin: 0 auto;
-	padding: 40px 20px;
+	padding: 70px 0;
 }
 
 /* 푸터 배경 */
