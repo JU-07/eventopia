@@ -30,49 +30,42 @@
 	margin-bottom: 20px; /* 요소들 간 여백 */
 	text-align: center;
 }
-.event-info img {
-    max-width: 80%; 
-    height: auto;
-}
 
+.event-info img {
+	max-width: 80%;
+	height: auto;
+}
 </style>
 
-<div class="event-info-container">
-	<div class="event-info">
-		<div class="form-group">
-			<label for="title">이벤트 제목</label>
-			<p>${product.p_title}</p>
+<div class="event-container">
+	<c:forEach var="e" items="${events}">
+		<div class="event-wrap"
+			onclick="location.href='EventDetailC?no=${r.r_no}'">
+			<div class="event-img">
+				<img alt="" src="${e.e_img}">
+			</div>
+			<div class="event-title">${e.e_title}</div>
+			<div class="event-name">${e.e_name}</div>
+			<div class="event-sub">${e.e_sub}</div>
+			<div class="event-text">${e.e_text}</div>
 		</div>
+	</c:forEach>
+	<c:if test="${empty events}">
+		<p style="text-align: center"><h2>すみません、現在進行中のコラボはありません。</h2></p>
+		</c:if>
 
-		<div class="form-group">
-			<label for="Name">상품 이름</label>
-			<p>${product.p_name}</p>
-		</div>
-
-		<div class="form-group">
-			<label for="file">파일</label>
-			<p>
-				<img src="${product.p_filePath}" alt="상품 이미지"
-					style="max-width: 100%; height: auto;" />
-			</p>
-		</div>
-
-		<div class="form-group">
-			<label for="story">상품 설명</label>
-			<p>${product.p_story}</p>
-		</div>
 	</div>
-</div>
 <section class="pagination-section"
-		style="text-align: center; margin-top: 40px;">
-		<div class="pagination"
-			style="display: flex; justify-content: center; gap: 10px;">
-			<a href="ReviewPageC?p=1">[처음]</a>
-			<c:forEach begin="1" end="${pageCount}" var="i">
-				<a href="ReviewPageC?p=${i}">[${i}]</a>
-			</c:forEach>
-			<a href="ReviewPageC?p=${pageCount}">[끝]</a>
-		</div>
-	</section>
-</body>
-</html>
+	style="text-align: center; margin-top: 40px;">
+	<div class="pagination"
+		style="display: flex; justify-content: center; gap: 10px;">
+		<a href="EventPageC?p=1">始</a>
+		<c:forEach begin="1" end="${pageCount}" var="i">
+			<a href="EventPageC?p=${i}">[${i}]</a>
+		</c:forEach>
+		<a href="EventPageC?p=${pageCount}">終</a>
+	</div>
+
+			</body>
+
+		</html>

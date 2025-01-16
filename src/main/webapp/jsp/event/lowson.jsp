@@ -53,21 +53,21 @@ text-align: center;
 }
 </style>
 
-<div class="review-container">
-		<c:forEach var="r" items="${reviews}">
-			<div class="review-wrap"
-				onclick="location.href='ReviewDetailC?no=${r.r_no}'">
-				<div class="review-img">
-					<img alt="" src="${r.r_img}">
+<div class="event-container">
+		<c:forEach var="e" items="${events}">
+			<div class="event-wrap"
+				onclick="location.href='EventDetailC?no=${r.r_no}'">
+				<div class="event-img">
+					<img alt="" src="${e.e_img}">
 				</div>
-				<div class="review-title">${r.r_title}</div>
-				<div class="review-name">${r.r_name}</div>
-				<div class="review-sub">${r.r_sub}</div>
-				<div class="review-text">${r.r_text}</div>
+				<div class="event-title">${e.e_title}</div>
+				<div class="event-name">${e.e_name}</div>
+				<div class="event-sub">${e.e_sub}</div>
+				<div class="event-text">${e.e_text}</div>
 			</div>
 		</c:forEach>
-		<c:if test="${empty reviews}">
-			<p style="text-align: center"><h1>現在進行中のコラボはありません。</h1></p>
+		<c:if test="${empty events}">
+			<p style="text-align: center"><h2>すみません、現在進行中のコラボはありません。</h2></p>
 		</c:if>
 
 	</div>
@@ -75,11 +75,11 @@ text-align: center;
 	style="text-align: center; margin-top: 40px;">
 	<div class="pagination"
 		style="display: flex; justify-content: center; gap: 10px;">
-		<a href="ReviewPageC?p=1">[始]</a>
+		<a href="ReviewPageC?p=1">始</a>
 		<c:forEach begin="1" end="${pageCount}" var="i">
 			<a href="ReviewPageC?p=${i}">[${i}]</a>
 		</c:forEach>
-		<a href="ReviewPageC?p=${pageCount}">[終]</a>
+		<a href="ReviewPageC?p=${pageCount}">終</a>
 	</div>
 </section>
 </body>

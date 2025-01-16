@@ -77,9 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				<strong>イベント内容</strong>
 				<textarea rows="5" cols="50" readonly>${event.text}</textarea>
 			</div>
-			<div class="link">
-				<strong>イベントリンク</strong> <a href="${event.link}" target="_blank">イベントをよく見る</a>
-			</div>
 			<div class="SNS">
 				<button type="button" class="btn-share-tw" data-url="${event.link}">ツイッター共有</button>
 				<button type="button" class="btn-share-fb" data-url="${event.link}">フェイスブック共有</button>
@@ -106,9 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			<div class="text">
 				<strong>イベント内容</strong>
 				<textarea rows="5" cols="50" readonly>${event1.description}</textarea>
-			</div>
-			<div class="link">
-				<strong>イベントリンク</strong> <a href="${lowson.link}" target="_blank">イベントをよく見る</a>
 			</div>
 			<div class="SNS">
 				<button type="button" class="btn-share-tw" data-url="${event.link}">ツイッター共有</button>
@@ -138,9 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			<div class="text">
 				<strong>イベント内容</strong>
 				<textarea rows="5" cols="50" readonly>${event.description}</textarea>
-			</div>
-			<div class="link">
-				<strong>イベントリンク</strong> <a href="${event.link}" target="_blank">イベントをよく見る</a>
 			</div>
 			<div class="SNS">
 				<button type="button" class="btn-share-tw" data-url="${event.link}">ツイッター共有</button>

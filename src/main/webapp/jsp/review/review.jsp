@@ -99,29 +99,30 @@
 </head>
 <body>
 
-	<div class="header">
-		<h1>리뷰 목록</h1>
-	</div>
 
 
+		<div class="review-title">
+			<a href="ReviewRegC"><h1>리뷰 목록</h1></a>
+		</div>
 	<div class="review-container">
-		<c:forEach var="r" items="${reviews}">
-			<div class="review-wrap"
-				onclick="location.href='ReviewDetailC?no=${r.r_no}'">
+		<c:forEach var="r" items="${review}">
+			<div class="review-wrap">
+				<span onclick="location.href='ReviewDetailC?no=${review.r_no}'"></span>
+				</div>				
+				<div class="review-title">${review.r_title}</div>
 				<div class="review-img">
-					<img alt="" src="${r.r_img}">
+					<img alt="" src="${review.r_img}">
 				</div>
-				<div class="review-title" onclick="location.href='ReviewDetailC?no=${r.r_no}'">${r.r_title}</div>
-				<div class="review-name">${r.r_name}</div>
-				<div class="review-sub">${r.r_sub}</div>
-				<div class="review-text">${r.r_text}</div>
+				<div class="review-name">${review.r_name}</div>
+				<div class="review-sub">${review.r_sub}</div>
+				<div class="review-text">${review.r_text}</div>
 			</div>
 		</c:forEach>
-		<c:if test="${empty reviews}">
-			<p><h2>現在レビューがありません。</h2></p>
+		<c:if test="${empty review}">
+			<p style="text-align: center">
+			<h2 style="text-align: center">すみません、現在レビューがありません。</h2>
+			</p>
 		</c:if>
-
-	</div>
 	<div class="add-review">
 		<a href="ReviewRegC">리뷰 등록</a>
 	</div>
