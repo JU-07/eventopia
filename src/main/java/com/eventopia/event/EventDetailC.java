@@ -7,19 +7,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/EventDetailC")
+@WebServlet("/EventSearchC")
 public class EventDetailC extends HttpServlet {
 
     
    
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		EventDAO.EDAO.EventDetail(request);
-		
-		request.setAttribute("content", "jsp/event/eventdetail.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 	}
 
