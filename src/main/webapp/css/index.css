@@ -76,8 +76,10 @@ a:hover {
 
 .Elogo span {
 	font-size: 18px; /* 텍스트 크기 */
-	font-weight: bold; /* 텍스트 강조 */
+	font-weight: 600; /* 텍스트 강조 */
+	letter-spacing: 1.5px;
 	color: white; /* 텍스트 색상 고정 */
+	font-family: 'Poppins', sans-serif;
 }
 
 /* 아이콘 그룹 */
@@ -94,9 +96,19 @@ a:hover {
 	transition: transform 0.2s ease;
 }
 
+.side-info .user-img {
+	width: 27px;
+	height: 27px;
+}
+
+.side-info .search-img {
+	width: 27px;
+	height: 27px;
+}
+
 .side-info .sidebar-img {
-	width: 27px !important;
-	height: 27px !important;
+	width: 27px;
+	height: 27px;
 }
 
 .side-info img:hover {
@@ -119,8 +131,8 @@ a:hover {
 }
 
 .nav div {
-	font-size: 18px;
-	font-weight: bold;
+	font-size: 19px;
+	font-weight: 800;
 	color: #333;
 	transition: transform 0.3s ease; /* 기본 상태에서도 transition을 적용 */
 }

@@ -8,25 +8,27 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div style="position: relative;">
 	<button class="slider-btn left-btn">
-		<img src="icon/arr_visual.png" alt="" />
+		<img src="icon/main/arr_visual.png" alt="" />
 	</button>
 	<div class="slider-container">
 		<div class="slider">
-			<img src="icon/famima_event1.jpg" alt="Slide 1" /> <img
-				src="icon/seven_event1.jpg" alt="Slide 2" /> <img
-				src="icon/seven_event2.jpg" alt="Slide 3" /> <img
-				src="icon/lawson_event1.jpg" alt="Slide 4" /> <img
-				src="icon/famima_event2.jpg" alt="Slide 5" />
+			<img src="icon/main/famima_event1.jpg" alt="Slide 1" /> <img
+				src="icon/main/seven_event1.jpg" alt="Slide 2" /> <img
+				src="icon/main/seven_event2.jpg" alt="Slide 3" /> <img
+				src="icon/main/lawson_event1.jpg" alt="Slide 4" /> <img
+				src="icon/main/famima_event2.jpg" alt="Slide 5" />
 		</div>
 	</div>
 	<button class="slider-btn right-btn">
-		<img src="icon/arr_visual.png" alt="" />
+		<img src="icon/main/arr_visual.png" alt="" />
 	</button>
+</div>
 	<div class="event-container">
 		<div class="event-item">
 			<div class="event-logo">
-				<img src="icon/l_logo.webp" alt="Lawson Logo"
+				<img src="icon/logo/l_logo.webp" alt="Lawson Logo"
 					onclick="location.href='LowsonC'" />
 			</div>
 			<div class="event-content lawson">
@@ -60,7 +62,7 @@
 
 		<div class="event-item">
 			<div class="event-logo">
-				<img src="icon/s_logo.webp" alt="Seven Logo"
+				<img src="icon/logo/s_logo.webp" alt="Seven Logo"
 					onclick="location.href='SevenC'" />
 			</div>
 			<div class="event-content seven">
@@ -94,7 +96,7 @@
 
 		<div class="event-item">
 			<div class="event-logo">
-				<img src="icon/f_logo.png" alt="Family Logo"
+				<img src="icon/logo/f_logo.png" alt="Family Logo"
 					onclick="location.href='FamilyC'" />
 			</div>
 			<div class="event-content family">

@@ -3,13 +3,13 @@ package com.eventopia.event;
 import java.util.Date;
 
 public class EventDTO {
-	
+
 	private String title;
 	private String name;
 	private String text;
 	private String link;
 	private Date sysdate;
-	
+
 	public EventDTO() {
 		// TODO Auto-generated constructor stub
 	}
@@ -68,12 +68,4 @@ public class EventDTO {
 		return "EventDTO [title=" + title + ", sysdate=" + sysdate + ", name=" + name + ", text=" + text + ", link="
 				+ link + "]";
 	}
-	
-
-
-<<<<<<< HEAD
 }
-=======
-	
-}
->>>>>>> 5a3827279526cbe657cff672aae1b7031d9a66e7

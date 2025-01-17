@@ -44,7 +44,7 @@ function initMap() {
 		center: current,
 		zoom: 16,
 	});
-	let companies = [{ name: 'セブンイレブン', imgURL: 'icon/s_logo.webp' }, { name: 'gs편의점', imgURL: 'icon/l_logo.webp' }, { name: 'CU편의점', imgURL: 'icon/f_logo.png' }];
+	let companies = [{ name: 'セブンイレブン', imgURL: 'icon/logo/s_logo.webp' }, { name: 'gs편의점', imgURL: 'icon/logo/l_logo.webp' }, { name: 'CU편의점', imgURL: 'icon/logo/f_logo.png' }];
 	const request = {
 		keyword: "",
 		fields: ["name", "geometry"],
