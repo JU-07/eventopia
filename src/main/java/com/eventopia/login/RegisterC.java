@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 public class RegisterC extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setAttribute("content", "jsp/login/register.jsp");
+		
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	
 	
 	}

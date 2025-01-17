@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 .container {
@@ -27,24 +28,23 @@
     text-align: center;
 }
 
-/* 로고를 투명한 동그란 흰색 배경으로 감싸기 */
 .left-panel .logo-wrapper {
     width: 180px;
     height: 180px;
-    background-color:#F8F1EB; /* 반투명 흰색 배경 */
-    border-radius: 50%; /* 동그라미 형태 */
+    background-color: #F8F1EB;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top : 40px;
+    margin-top: 40px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .left-panel img {
-    width: 100%; /* 로고가 배경 안에 꽉 차도록 설정 */
+    width: 100%;
     height: 100%;
-    object-fit: cover; /* 비율 유지하며 꽉 차게 */
-    border-radius: 50%; /* 로고도 둥글게 */
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 /* 오른쪽 패널 */
@@ -56,10 +56,7 @@
 .right-panel h2 {
     margin-bottom: 20px;
     font-weight: 600;
-}
-
-h2 {
-	color:#4B3621;
+    color: #4B3621;
 }
 
 /* 입력 그룹 */
@@ -85,8 +82,8 @@ h2 {
     padding: 10px;
 }
 
-/* 로그인 버튼 */
-.login-btn {
+/* 회원가입 버튼 */
+.signup-btn {
     width: 100%;
     padding: 12px;
     background-color: #cababa;
@@ -94,47 +91,68 @@ h2 {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 400;
 }
 
-.login-btn:hover {
+.signup-btn:hover {
     background-color: #8f6f6f ;
 }
 
-/* 소셜 로그인 */
-.social-login {
-    margin-top: 30px;
-    text-align: center;
-}
-
-.social-login p {
-    margin-bottom: 15px; /* 문구와 아이콘 간의 간격 추가 */
-    font-size: 14px;
-    color: #555;
-}
-
-.social-icons i {
-    margin: 0 10px;
-    font-size: 20px;
-    cursor: pointer;
-    color: #555;
-}
-
-.social-icons i:hover {
-    color: #cababa;
-}
-
-/* 회원가입 링크 */
-.signup-link {
+/* 로그인 링크 */
+.login-link {
     margin-top: 15px;
     font-size: 14px;
 }
 
-.signup-link a {
+.login-link a {
     color: #cababa;
     text-decoration: none;
 }
 
-.signup-link a:hover {
+.login-link a:hover {
     text-decoration: underline;
+}
+
+
+/* Check ID 버튼 둥글게 */
+.round-btn {
+    background-color: #cababa;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px; /* 둥글게 */
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.round-btn:hover {
+    background-color: #8f6f6f ;
+}
+
+/* 파일 업로드 버튼 디자인 */
+.upload-btn {
+    background-color: #cababa;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 400;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.upload-btn:hover {
+    background-color: #8f6f6f ;
+}
+
+#profilePic {
+    display: none; /* 기본 파일 선택 버튼 숨기기 */
+}
+
+/* 선택된 파일명 */
+#fileName {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #555;
 }

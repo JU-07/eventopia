@@ -39,7 +39,7 @@
                     <p id="errorMsg" style="color:red;"></p>
 
                     <button type="submit" class="login-btn">Login</button>
-                    <p class="signup-link">Don't have an account? <a href="register.jsp">Sign Up</a></p>
+                    <p class="signup-link">Don't have an account? <a href="RegisterC">Sign Up</a></p>
 
                     <!-- Social Login -->
                     <div class="social-login">
