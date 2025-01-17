@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
-</head>
 <style>
 /* 부모 컨테이너를 Flexbox로 설정 */
 .event-row {
@@ -57,44 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 	font-family: Arial, sans-serif;
 }
-
-/* SNS 버튼 컨테이너 */
-.SNS {
-	display: flex; /* Flexbox로 버튼 나란히 정렬 */
-	gap: 10px; /* 버튼 간 간격 */
-	justify-content: center; /* 가운데 정렬 */
-	margin-top: 20px; /* 위 콘텐츠와 간격 */
-}
-
-/* SNS 버튼 스타일 */
-.SNS button {
-	background-color: #fff;
-	border: none;
-	padding: 10px;
-	cursor: pointer;
-	margin: 5px;
-	border-radius: 50%; /* 원형 버튼 만들기 */
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 50px; /* 버튼 크기 */
-	height: 50px; /* 버튼 크기 */
-	font-size: 14px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	transition: background-color 0.3s;
-}
-
-/* SNS 버튼 이미지 크기 */
-.SNS button img {
-	width: 24px; /* 이미지 크기 조정 */
-	height: 24px; /* 이미지 크기 조정 */
-}
-
-/* 호버 효과 */
-.SNS button:hover {
-	background-color: #f0f0f0;
-}
 </style>
+<<<<<<< HEAD
 <body>
 	<div class="head" style="text-align: center">
 		<h2>全てコラボレーションイベント</h2>
@@ -148,5 +111,131 @@ document.addEventListener('DOMContentLoaded', () => {
 				alt="Line" style="width: 100%; height: 100%; object-fit: cover;">
 		</button>
 	</div>
+=======
+
+<div class="event-row">
+	<!-- 이벤트 1 -->
+	<div class="event-container">
+		<div class="head">
+			<h1 onclick="'EventDetailC'">Event Page 1</h1>
+		</div>
+		<div class="content">
+			<div class="date">
+				<strong>作成日</strong>
+				<fmt:formatDate value="${event.sysdate}" pattern="yyyy-MM-dd" />
+			</div>
+			<div class="img">
+				<strong>イメージ</strong> <a href="${event.imageLink}"> <img
+					alt="Event Image" src="${event.imageSrc}" />
+				</a>
+			</div>
+			<div class="text">
+				<strong>イベント内容</strong>
+				<textarea rows="5" cols="50" readonly>${event.description}</textarea>
+			</div>
+			<div class="link">
+				<strong>イベントリンク</strong> <a href="${event.link}" target="_blank">イベントをよく見る</a>
+			</div>
+			<div class="SNS">
+				<button type="button" class="btn-share-tw" data-url="${event.link}">ツイッター共有</button>
+				<button type="button" class="btn-share-fb" data-url="${event.link}">フェイスブック共有</button>
+				<button type="button" class="btn-share-ln" data-url="${event.link}">ライン共有</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- 이벤트 2 -->
+	<div class="event-container">
+		<div class="head">
+			<h1>Event Page 2</h1>
+		</div>
+		<div class="content">
+			<div class="date">
+				<strong>作成日</strong>
+				<fmt:formatDate value="${event.sysdate}" pattern="yyyy-MM-dd" />
+			</div>
+			<div class="img">
+				<strong>イメージ</strong> <a href="${event.imageLink}"> <img
+					alt="Event Image" src="${event.imageSrc}" />
+				</a>
+			</div>
+			<div class="text">
+				<strong>イベント内容</strong>
+				<textarea rows="5" cols="50" readonly>${event1.description}</textarea>
+			</div>
+			<div class="link">
+				<strong>イベントリンク</strong> <a href="${lowson.link}" target="_blank">イベントをよく見る</a>
+			</div>
+			<div class="SNS">
+				<button type="button" class="btn-share-tw" data-url="${event.link}">ツイッター共有</button>
+				<button type="button" class="btn-share-fb" data-url="${event.link}">フェイスブック共有</button>
+				<button type="button" class="btn-share-ln" data-url="${event.link}">ライン共有</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="event-row">
+	<!-- 이벤트 3 -->
+	<div class="event-container">
+		<div class="head">
+			<h1>Event Page 3</h1>
+		</div>
+		<div class="content">
+			<div class="date">
+				<strong>作成日</strong>
+				<fmt:formatDate value="${event.sysdate}" pattern="yyyy-MM-dd" />
+			</div>
+			<div class="img">
+				<strong>イメージ</strong> <a href="${event.imageLink}"> <img
+					alt="Event Image" src="${event.imageSrc}" />
+				</a>
+			</div>
+			<div class="text">
+				<strong>イベント内容</strong>
+				<textarea rows="5" cols="50" readonly>${event.description}</textarea>
+			</div>
+			<div class="link">
+				<strong>イベントリンク</strong> <a href="${event.link}" target="_blank">イベントをよく見る</a>
+			</div>
+			<div class="SNS">
+				<button type="button" class="btn-share-tw" data-url="${event.link}">ツイッター共有</button>
+				<button type="button" class="btn-share-fb" data-url="${event.link}">フェイスブック共有</button>
+				<button type="button" class="btn-share-ln" data-url="${event.link}">ライン共有</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="event-container">
+		<div class="head">
+			<h1>Event Page 4</h1>
+		</div>
+		<!-- 이벤트 4 내용 -->
+		<div class="content">
+			<div class="date">
+				<strong>作成日</strong>
+				<fmt:formatDate value="${event1.sysdate}" pattern="yyyy-MM-dd" />
+			</div>
+			<div class="img">
+				<strong>イメージ</strong> <a href="${event1.imageLink}"> <img
+					alt="Event Image" src="${event1.imageSrc}" />
+				</a>
+			</div>
+			<div class="text">
+				<strong>イベント内容</strong>
+				<textarea rows="5" cols="50" readonly>${event1.description}</textarea>
+			</div>
+			<div class="link">
+				<strong>イベントリンク</strong> <a href="${event1.link}" target="_blank">イベントをよく見る</a>
+			</div>
+			<div class="SNS">
+				<button type="button" class="btn-share-tw" data-url="${event.link}">ツイッター共有</button>
+				<button type="button" class="btn-share-fb" data-url="${event.link}">フェイスブック共有</button>
+				<button type="button" class="btn-share-ln" data-url="${event.link}">ライン共有</button>
+			</div>
+		</div>
+	</div>
+</div>
+>>>>>>> 5a3827279526cbe657cff672aae1b7031d9a66e7
 </body>
 </html>

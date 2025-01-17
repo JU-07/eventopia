@@ -7,10 +7,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>리뷰 페이지</title>
+<title>로손 이벤트 페이지</title>
 <link rel="stylesheet" href="css/review.css">
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/index.css">
+<<<<<<< HEAD
 <script src="https://code.jquery.com/jquery-3.7.1.js"
 	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 	crossorigin="anonymous"></script>
@@ -162,14 +163,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	background-color: #f0f0f0;
 }
 </style>
+=======
+>>>>>>> 5a3827279526cbe657cff672aae1b7031d9a66e7
 </head>
 <body>
-
-
-
-	<div class="review-title">
-		<a href="ReviewRegC"><h2>レビューリスト</h2></a>
+	<div class="title" style="text-align: center">
+		<h1 style="font-size: 50px">レビュー登録</h1>
 	</div>
+<<<<<<< HEAD
 	<div class="review-container">
 		<c:forEach var="review" items="${reviews}">
 			<div class="review-wrap">
@@ -213,6 +214,42 @@ document.addEventListener('DOMContentLoaded', () => {
 	<div class="add-review">
 		<a href="ReviewRegC">レビュー登録</a>
 	</div>
+=======
+
+	<div>
+		<a href="ReviewRegC">리뷰 등록</a>
 	</div>
+	<br>
+	<div class="product-list-container"
+		style="flex: 1; min-width: 500px; height: 500px; display: flex; flex-direction: column; justify-content: space-between; text-align: center;">
+		<h1>コラボ·レビュー目録</h1>
+		<div class="product-container">
+			<c:forEach var="product" items="${product}">
+				<div class="product-wrap">
+					<div class="product-img">
+						<img alt="${product.p_title}" src="">
+					</div>
+					<div class="product-title"
+						onclick="location.href='EventDetailC?no=${product.p_no}'">
+						${product.p_title}</div>
+					<div class="product-price">${product.p_price}円</div>
+				</div>
+			</c:forEach>
+		</div>
+		<section class="pagination-section">
+			<div class="pagination"
+				style="display: flex; justify-content: center; gap: 10px;">
+				<a href="ReviewPageC?p=1">初</a>
+				<c:forEach begin="1" end="${pageCount}" var="i">
+					<a href="EventPageC?p=${i}">[${i}]</a>
+				</c:forEach>
+				<a href="ReviewPageC?p=${pageCount}">末</a>
+			</div>
+		</section>
+>>>>>>> 5a3827279526cbe657cff672aae1b7031d9a66e7
+	</div>
+	
 </body>
 </html>
+
+
