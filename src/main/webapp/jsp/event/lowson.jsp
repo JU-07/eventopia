@@ -44,42 +44,42 @@
 	max-width: 80%;
 	height: auto;
 }
-
-.img {
-	font-size: 5px;
-}
-.p{
-text-align: center;
+.img{
+font-size : 5px;
 }
 </style>
 
-<div class="review-container">
-		<c:forEach var="r" items="${reviews}">
-			<div class="review-wrap"
-				onclick="location.href='ReviewDetailC?no=${r.r_no}'">
-				<div class="review-img">
-					<img alt="" src="${r.r_img}">
-				</div>
-				<div class="review-title">${r.r_title}</div>
-				<div class="review-name">${r.r_name}</div>
-				<div class="review-sub">${r.r_sub}</div>
-				<div class="review-text">${r.r_text}</div>
-			</div>
-		</c:forEach>
-		<c:if test="${empty reviews}">
-			<p style="text-align: center"><h1>現在進行中のコラボはありません。</h1></p>
-		</c:if>
-
+<div class="event-info-container">
+	<div class="event-info">
+		<div class="form-group">
+			<label for="title">이벤트 제목</label>
+			<p>${product.p_title}</p>
+		</div>
+		<div class="form-group">
+			<label for="Name">상품 이름</label>
+			<p>${product.p_name}</p>
+		</div>
+		<div class="form-group">
+			<label for="file">이미지</label>
+			<p>
+				<img src="${product.p_img}" />
+			</p>
+		</div>
+		<div class="form-group">
+			<label for="story">상품 설명</label>
+			<p>${product.p_story}</p>
+		</div>
 	</div>
+</div>
 <section class="pagination-section"
 	style="text-align: center; margin-top: 40px;">
 	<div class="pagination"
 		style="display: flex; justify-content: center; gap: 10px;">
-		<a href="ReviewPageC?p=1">[始]</a>
+		<a href="ReviewPageC?p=1">[처음]</a>
 		<c:forEach begin="1" end="${pageCount}" var="i">
 			<a href="ReviewPageC?p=${i}">[${i}]</a>
 		</c:forEach>
-		<a href="ReviewPageC?p=${pageCount}">[終]</a>
+		<a href="ReviewPageC?p=${pageCount}">[끝]</a>
 	</div>
 </section>
 </body>

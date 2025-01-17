@@ -33,7 +33,7 @@ public class EventDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
-		String sql = "select *from event_test ";
+		String sql = "select *from product_test ";
 
 		try {
 			con = DBManager.connect();
@@ -56,35 +56,32 @@ public class EventDAO {
 		PreparedStatement pstmt = null;
 
 		String path = request.getServletContext().getRealPath("");
-
-		String title = request.getParameter("title");
-		String name = request.getParameter("name");
-		String img = request.getParameter("img");
-		String sub = request.getParameter("sub");
-		String text = request.getParameter("text");
-		String date = request.getParameter("date");
-		String good = request.getParameter("good");
-
-		String sql = "insert into event_test values(event_test_seq.nextval,?,?,?,?,?,?,?) ";
 		try {
+			MultipartRequest mr = new MultipartRequest(request, path, 1024 * 1024 * 60, "UTF-8",
+					new DefaultFileRenamePolicy());
+
+			String title = mr.getParameter("title");
+			String Date = mr.getParameter("date");
+			String name = mr.getParameter("name");
+			String text = mr.getParameter("text");
+			String link = mr.getParameter("link");
+
+			String sql = "";
+
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, title);
-			pstmt.setString(2, name);
-			pstmt.setString(3, img);
-			pstmt.setString(4, sub);
-			pstmt.setString(5, text);
-			pstmt.setString(6, date);
-			pstmt.setString(7, good);
+			pstmt.setString(2, Date);
+			pstmt.setString(3, name);
+			pstmt.setString(4, text);
+			pstmt.setString(5, link);
 
 			if (pstmt.executeUpdate() == 1) {
-				System.out.println("Registation complete");
+				System.out.println("update complete");
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
-		}finally {
-			DBManager.close(con, pstmt, null);
+			// TODO: handle exception
 		}
 
 	}

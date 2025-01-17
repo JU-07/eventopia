@@ -36,6 +36,16 @@ select * from post_test;
 
 delete from post_test where p_no=7;
 
+create table event_test(
+    e_no number(3) primary key ,
+    e_name varchar2(30 char) not null ,
+    e_title varchar2(30 char) not null ,
+    e_image_url varchar2(500 char) not null ,
+    e_short_story varchar2(300 char) not null ,
+    e_story varchar2(5000 char) not null ,
+    e_date date not null ,
+    e_good number(5) NOT NULL
+);
 
-
+create sequence event_test_seq;
 

@@ -1,133 +1,225 @@
 @charset "UTF-8";
 
+/* 슬라이더 */
+li {
+	list-style: none;
+}
+
+.slider-container {
+	position: relative; /* 버튼 배치를 위해 relative 설정 */
+	width: 1200px;
+	height: 430px;
+	overflow: hidden;
+	margin: 0 auto;
+	z-index: 2;
+}
+
+.slider {
+	display: flex;
+	width: calc(1200px * 7);
+	transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+	position: relative;
+	width: 1200px;
+	height: 430px;
+}
+
+/* 버튼 스타일 */
+.slider-btn {
+	position: absolute;
+	top: 40%; /* 슬라이드 중앙에 위치 */
+	z-index: 2; /* 슬라이드 위로 버튼 표시 */
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+
+.left-btn:hover {
+	transform: scale(1.5) rotate(180deg); /* 이미지 살짝 확대 */
+}
+
+.right-btn:hover {
+	transform: scale(1.5); /* 이미지 살짝 확대 */
+}
+
+.left-btn {
+	transform: rotate(180deg);
+	left: -80px; /* 왼쪽 여백 */
+}
+
+.right-btn {
+	right: -80px; /* 오른쪽 여백 */
+}
+
+.EMoving {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	overflow: hidden;
+	min-width: 1100px;
+	width: 100%;
+	white-space: nowrap;
+	transform: translateX(-50%);
+	transform-origin: 50% 50%;
+	z-index: 1;
+}
+
+.EMoving span {
+	display: inline-block;
+	font-weight: 700;
+	font-size: 400px;
+	color: #F5F5F5;
+	line-height: 1em;
+	letter-spacing: -0.01em;
+	white-space: nowrap;
+	animation: movebg 10s linear infinite;
+}
+
+@keyframes movebg {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
 /* 이벤트 컨테이너 */
 .event-container {
-  display: flex;
-  justify-content: space-around; /* 가로로 나란히 정렬 */
-  align-items: flex-start;
-  padding: 40px;
-  gap: 20px; /* 항목 간 간격 */
-  background-color: #f9f9f9;
+	position:relative;
+	display: flex;
+	justify-content: space-between; /* 가로로 나란히 정렬 */
+	align-items: flex-start;
+	padding-top: 100px;
+	gap: 20px; /* 항목 간 간격 */
+	background-color: #ffffff;
 }
 
 /* 개별 이벤트 아이템 */
 .event-item {
-  display: flex;
-  flex-direction: column; /* 내부 요소를 세로 정렬 */
-  align-items: center;
-  gap: 15px;
-  width: 320px; /* 개별 항목 너비 */
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  background-color: #fff;
-  transition: transform 0.3s, box-shadow 0.3s;
+	display: flex;
+	flex-direction: column; /* 내부 요소를 세로 정렬 */
+	align-items: center;
+	gap: 15px;
+	width: 320px; /* 개별 항목 너비 */
+	padding: 20px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+	/* 자연스러운 입체감 */
+	border-radius: 12px;
+	background-color: #fff;
+	transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+	z-index: 2;
 }
 
 .event-item:hover {
-  transform: translateY(-5px); /* hover 시 살짝 올라가는 효과 */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+	transform: translateY(-5px); /* hover 시 살짝 올라가는 효과 */
+	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px
+		rgba(0, 0, 0, 0.08); /* hover 시 더 깊은 그림자 */
 }
 
 /* 로고 */
 .event-logo img {
-  width: 80px; /* 로고 크기 */
-  height: 80px;
-  object-fit: contain;
-  transition: transform 0.3s, box-shadow 0.3s;
-  border-radius: 40px;
+	width: 80px; /* 로고 크기 */
+	height: 80px;
+	object-fit: contain;
+	transition: transform 0.3s, box-shadow 0.3s;
+	border-radius: 40px;
 }
 
 .event-logo img:hover {
-  transform: translateY(-5px); /* hover 시 살짝 올라가는 효과 */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
+	transform: translateY(-5px); /* hover 시 살짝 올라가는 효과 */
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
 }
 
 /* 이벤트 내용 */
 .event-content {
-  display: flex;
-  flex-direction: column; /* 내용물을 세로로 정렬 */
-  align-items: center;
-  width: 300px; /* 부모 너비에 맞춤 */
-  border-radius: 10px;
-  color: white;
-  font-size: 18px; /* 글자 크기 */
-  font-weight: bold;
-  text-align: center;
-  padding: 20px;
-  gap: 10px; /* 내용 간 간격 */
-  transition: transform 0.3s, box-shadow 0.3s;
+	display: flex;
+	flex-direction: column; /* 내용물을 세로로 정렬 */
+	align-items: center;
+	width: 300px; /* 부모 너비에 맞춤 */
+	border-radius: 10px;
+	color: white;
+	font-size: 18px; /* 글자 크기 */
+	font-weight: bold;
+	text-align: center;
+	padding: 20px;
+	gap: 10px; /* 내용 간 간격 */
+	transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .event-content:hover {
-  transform: translateY(-5px); /* hover 시 살짝 올라가는 효과 */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+	transform: translateY(-5px); /* hover 시 살짝 올라가는 효과 */
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* 제목 */
 .event-title {
-  font-size: 22px; /* 제목 크기 */
-  font-weight: bold;
+	font-size: 22px; /* 제목 크기 */
+	font-weight: bold;
 }
 
 /* 이미지 */
 .event-img {
-  width: 100%; /* 이미지가 부모에 맞게 채워짐 */
-  height: 200px; /* 고정 높이 */
-  background-color: #ddd; /* 임시 배경색 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  overflow: hidden;
+	width: 100%; /* 이미지가 부모에 맞게 채워짐 */
+	height: 200px; /* 고정 높이 */
+	background-color: #ddd; /* 임시 배경색 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 8px;
+	overflow: hidden;
 }
 
 /* 텍스트 */
 .event-txt {
-  font-size: 16px;
-  color: #333;
-  text-align: left;
-  word-wrap: break-word;
+	font-size: 16px;
+	color: #333;
+	text-align: left;
+	word-wrap: break-word;
 }
 
 /* 사용자 버튼 */
 .event-user {
-  display: flex;
-  justify-content: space-between; /* 버튼 간격 확보 */
-  width: 100%; /* 부모 너비에 맞춤 */
-  margin-top: 10px;
-  padding: 10px;
-  gap: 10px;
+	display: flex;
+	justify-content: space-between; /* 버튼 간격 확보 */
+	width: 100%; /* 부모 너비에 맞춤 */
+	margin-top: 10px;
+	padding: 10px;
+	gap: 10px;
 }
 
 .event-user div {
-  flex: 1; /* 버튼 크기 동일하게 설정 */
-  text-align: center;
-  padding: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #fff;
-  color: #333;
-  font-size: 16px;
-  transition: background-color 0.3s, color 0.3s;
+	flex: 1; /* 버튼 크기 동일하게 설정 */
+	text-align: center;
+	padding: 8px 0;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	background-color: #fff;
+	color: #333;
+	font-size: 16px;
+	transition: background-color 0.3s, color 0.3s;
 }
 
 .event-user div:hover {
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
+	background-color: #007bff;
+	color: #fff;
+	cursor: pointer;
 }
 
 /* 개별 이벤트 색상 */
 .lawson {
-  background-color: #82c8f7; /* 로손 색상 */
+	background-color: #82c8f7; /* 로손 색상 */
 }
 
 .seven {
-  background-color: #f8958f /* 세븐 색상 */
+	background-color: #f8958f /* 세븐 색상 */
 }
 
 .family {
-  background-color: #a1cba9; /* 패밀리 색상 */
+	background-color: #a1cba9; /* 패밀리 색상 */
 }
