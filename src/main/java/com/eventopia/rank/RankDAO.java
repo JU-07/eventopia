@@ -38,10 +38,11 @@ public class RankDAO {
 
 	public void productAllSelect(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		request.setCharacterEncoding("utf-8");
-
+				
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select * from product_test order by p_count desc";
+		
 		products = new ArrayList<ProductDTO>();
 		ProductDTO product = null;
 		try {
