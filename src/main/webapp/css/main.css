@@ -97,7 +97,6 @@ li {
 	padding-top: 100px;
 	gap: 20px; /* 항목 간 간격 */
 	background-color: #ffffff;
-	z-index: 2;
 }
 
 /* 개별 이벤트 아이템 */
@@ -113,6 +112,7 @@ li {
 	border-radius: 12px;
 	background-color: #fff;
 	transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+	z-index: 2;
 }
 
 .event-item:hover {
