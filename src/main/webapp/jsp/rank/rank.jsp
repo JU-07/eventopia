@@ -222,7 +222,7 @@ h1 {
 			</div>
 		</div>
 	</form>
-	<canvas id="myChart" width="400" height="400"></canvas>
+	<canvas id="myChart" width="200px" height="200px"></canvas>
 	<script>
 		// 모달 열기 
 		function openModal() {
@@ -252,7 +252,7 @@ h1 {
         .then(response => response.json()) // JSON 데이터 파싱
         .then(data => {
         	
-        console.log(data)
+        
             // 데이터를 차트 형식으로 변환
             const labels = data.map(product => product.p_name); 
             const counts = data.map(product => product.p_count); 
