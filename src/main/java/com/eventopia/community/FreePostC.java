@@ -21,7 +21,7 @@ public class FreePostC extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 
 		dao.showAllPost(request);
-		request.setAttribute("content", "jsp/community/ny_freePost.jsp");
+		request.setAttribute("content", "jsp/community/ny_freePost2.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
