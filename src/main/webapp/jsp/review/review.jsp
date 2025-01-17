@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="css/review.css">
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/index.css">
-<<<<<<< HEAD
 <script src="https://code.jquery.com/jquery-3.7.1.js"
 	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 	crossorigin="anonymous"></script>
@@ -163,26 +162,27 @@ document.addEventListener('DOMContentLoaded', () => {
 	background-color: #f0f0f0;
 }
 </style>
-=======
->>>>>>> 5a3827279526cbe657cff672aae1b7031d9a66e7
 </head>
 <body>
 	<div class="title" style="text-align: center">
-		<h1 style="font-size: 50px">レビュー登録</h1>
+		<h1 style="font-size: 50px">全てのコレボレビュ-</h1>
 	</div>
-<<<<<<< HEAD
 	<div class="review-container">
-		<c:forEach var="review" items="${reviews}">
+		<c:forEach var="r" items="${reviews }">
 			<div class="review-wrap">
-				<div class="review-title">${review.r_title}</div>
+				<div class="review-title" onclick="location.herf='ReviewDetailC?no=${r_r_no}'">${r.r_title}</div>
 				<div class="review-img">
-					<img alt="" src="${review.r_img}">
+					<img alt="" src="${r.r_img}">
 				</div>
-				<div class="review-name">${review.r_name}</div>
-				<div class="review-text">${review.r_text}</div>
+				<div class="review-name">${r.r_name}</div>
+				<div class="review-sub">${r.r_sub}</div>
+				<div class="review-text">${r.r_text}</div>
+				<div class="review-date">
+					<fmt:formatDate value="${r.r_date }" />
+				</div>
 			</div>
 		</c:forEach>
-		<c:if test="${empty review}">
+		<c:if test="${empty reviews}">
 			<p style="text-align: center">
 			<h2 style="text-align: center">すみません、現在レビューがありません。</h2>
 			</p>
@@ -214,41 +214,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	<div class="add-review">
 		<a href="ReviewRegC">レビュー登録</a>
 	</div>
-=======
 
-	<div>
-		<a href="ReviewRegC">리뷰 등록</a>
-	</div>
 	<br>
-	<div class="product-list-container"
-		style="flex: 1; min-width: 500px; height: 500px; display: flex; flex-direction: column; justify-content: space-between; text-align: center;">
-		<h1>コラボ·レビュー目録</h1>
-		<div class="product-container">
-			<c:forEach var="product" items="${product}">
-				<div class="product-wrap">
-					<div class="product-img">
-						<img alt="${product.p_title}" src="">
-					</div>
-					<div class="product-title"
-						onclick="location.href='EventDetailC?no=${product.p_no}'">
-						${product.p_title}</div>
-					<div class="product-price">${product.p_price}円</div>
-				</div>
-			</c:forEach>
-		</div>
-		<section class="pagination-section">
-			<div class="pagination"
-				style="display: flex; justify-content: center; gap: 10px;">
-				<a href="ReviewPageC?p=1">初</a>
-				<c:forEach begin="1" end="${pageCount}" var="i">
-					<a href="EventPageC?p=${i}">[${i}]</a>
-				</c:forEach>
-				<a href="ReviewPageC?p=${pageCount}">末</a>
-			</div>
-		</section>
->>>>>>> 5a3827279526cbe657cff672aae1b7031d9a66e7
-	</div>
-	
 </body>
 </html>
 
