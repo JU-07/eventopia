@@ -171,17 +171,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		<a href="ReviewRegC"><h2>レビューリスト</h2></a>
 	</div>
 	<div class="review-container">
-		<c:forEach var="r" items="${review}">
+		<c:forEach var="review" items="${reviews}">
 			<div class="review-wrap">
-				<span onclick="location.href='ReviewDetailC?no=${review.r_no}'"></span>
+				<div class="review-title">${review.r_title}</div>
+				<div class="review-img">
+					<img alt="" src="${review.r_img}">
+				</div>
+				<div class="review-name">${review.r_name}</div>
+				<div class="review-text">${review.r_text}</div>
 			</div>
-			<div class="review-title">${review.r_title}</div>
-			<div class="review-img">
-				<img alt="" src="${review.r_img}">
-			</div>
-			<div class="review-name">${review.r_name}</div>
-			<div class="review-sub">${review.r_sub}</div>
-			<div class="review-text">${review.r_text}</div>
 		</c:forEach>
 		<c:if test="${empty review}">
 			<p style="text-align: center">

@@ -85,7 +85,7 @@ public class ReviewDAO {
 		request.setCharacterEncoding("UTF-8");
 
 		PreparedStatement pstmt = null;
-		String sql = "insert into review_test values(review_test_seq.nextval,?,?,?,?,?,sysdate);";
+		String sql = "insert into review_test values(review_test_seq.nextval,?,?,?,?,?,sysdate)";
 
 		try {
 			con = DBManager.connect();
@@ -95,6 +95,7 @@ public class ReviewDAO {
 			String img = request.getParameter("img");
 			String sub = request.getParameter("sub");
 			String text = request.getParameter("text");
+			String date = request.getParameter("date");
 
 			System.out.println(title);
 			System.out.println(name);

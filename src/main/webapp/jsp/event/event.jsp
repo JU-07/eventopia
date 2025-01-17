@@ -148,7 +148,5 @@ document.addEventListener('DOMContentLoaded', () => {
 				alt="Line" style="width: 100%; height: 100%; object-fit: cover;">
 		</button>
 	</div>
-
-
 </body>
 </html>
