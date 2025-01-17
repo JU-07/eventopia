@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	<div class="review-container">
 		<c:forEach var="r" items="${reviews }">
 			<div class="review-wrap">
-				<div class="review-title" onclick="location.herf='ReviewDetailC?no=${r_r_no}'">${r.r_title}</div>
+				<div class="review-title" onclick="location.href='ReviewDetailC?no=${r.r_no}'">${r.r_title}</div>
 				<div class="review-img">
 					<img alt="" src="${r.r_img}">
 				</div>

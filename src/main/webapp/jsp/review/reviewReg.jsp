@@ -27,13 +27,13 @@
 				</div>
 
 				<div class="form-group">
-					<label for="file">ファイルアップロード</label> <input id="file" name="file"
-						type="file" required>
+					<label for="file">ファイルアップロード</label> <input id="file" name="img"
+						type="file" value="${r.r_img }">
 				</div>
 
 				<div class="form-group">
 					<label for="story" style="display: block; margin-bottom: 8px;">レビュー</label>
-					<textarea id="story" name="story" rows="5" maxlength="200"
+					<textarea id="story" name="text" rows="5" maxlength="200"
 						placeholder="商品説明" required style="width: 100%; height: 150px;"></textarea>
 				</div>
 				<br>

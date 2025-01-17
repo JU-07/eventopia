@@ -168,16 +168,37 @@ document.addEventListener('DOMContentLoaded', () => {
 		<h2 style="font-size: 50px">全てコラボレーション</h2>
 	</div>
 	<div class="event-container">
-		<c:forEach var="event" items="${event}">
-			<div class="review-wrap">
-				<div class="event-title">${event.e_title}</div>
-				<div class="event-img">
-					<img alt="" src="${event.e_img}">
+		<c:forEach var="e" items="${events }">
+			<div class="event-wrap">
+				<div class="event-name">
+					<h3>편의점이름</h3>
+					<div>${e.e_name}</div>
 				</div>
-				<div class="event-name">${event.e_name}</div>
-				<div class="event-text">${event.e_text}</div>
-				<div class="event-date" ${event.e_date}></div>
+				<div class="event-title">
+				<h3>제목</h3>
+					<div>${e.e_title}</div>
+				</div>
+				<div class="event-img">
+					<div>
+						<h3>이미지</h3>
+						 <img alt="" src="${e.e_image_url}">
+					</div>
+				</div>
+				<div class="event-text">
+				<h3>내용</h3>
+				${e.e_story}
+				</div>
+				<div class="event-text">
+				<h3>요약내용</h3>
+				${e.e_short_story}
+				</div>
+				<h3>날짜</h3>
+				<fmt:formatDate value="${e.e_date }" />
 			</div>
+			<div class="event-text">
+				<h3>좋아요</h3>
+				${e.e_good}
+				</div>
 		</c:forEach>
 		<c:if test="${empty event}">
 			<p style="text-align: center">
@@ -217,5 +238,10 @@ document.addEventListener('DOMContentLoaded', () => {
 				alt="Line" style="width: 100%; height: 100%; object-fit: cover;">
 		</button>
 	</div>
+	<div class="add-event">
+		<a href="EventRegC">登録</a>
+	</div>
+
+	<br>
 </body>
 </html>

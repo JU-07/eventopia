@@ -91,32 +91,32 @@
 
 <div class="event-info-container">
 	<div class="event-info">
-		<c:forEach items="${event }" var="e">
+		<c:forEach items="${events }" var="e">
 			<div class="form-group">
-				<label for="title">이벤트 제목</label>
-				<p>${event.e_title}</p>
+				<label for="title">이벤트 이름</label>
+				<p onclick="location.href='EventDetailC?no=${e.e_no}'">${e.e_title}</p>
 			</div>
 			<div class="form-group">
 				<label for="Name">상품 이름</label>
-				<p>${event.e_name}</p>
+				<p>${e.e_name}</p>
 			</div>
 			<div class="form-group">
 				<label for="file">이미지</label>
 				<p>
-					<img src="${event.e_img}" />
+					<img src="${e.e_img}" />
 				</p>
 			</div>
 			<div class="form-group">
 				<label for="story">상품 설명</label>
-				<p>${event.e_text}</p>
+				<p>${e.e_story}</p>
 			</div>
 			<div class="form-group">
-				<label for="sub">상품 요약 설명</label>
-				<p>${event.e_sub}</p>
+				<label for="short_story">상품 요약 설명</label>
+				<p>${e.e_short_story}</p>
 			</div>
 			<div class="form-group">
 				<label for="date">날짜</label>
-				<p>${ sysdate}</p>
+				<p>${e.e_date}</p>
 			</div>
 
 		</c:forEach>

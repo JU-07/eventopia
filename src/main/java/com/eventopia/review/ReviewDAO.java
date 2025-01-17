@@ -71,8 +71,8 @@ public class ReviewDAO {
 			if (rs.next()) {
 				ReviewDTO review = new ReviewDTO();
 				System.out.println(review);
+				request.setAttribute("reviews", reviews);
 			}
-			request.setAttribute("reviews", review);
 
 		} catch (Exception e) {
 			e.printStackTrace();
