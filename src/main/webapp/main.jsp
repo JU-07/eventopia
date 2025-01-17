@@ -9,7 +9,6 @@ prefix="c"%>
   </head>
   <body>
   
-  asdasd
     <div class="event-container">
       <div class="event-item">
         <div class="event-logo">
