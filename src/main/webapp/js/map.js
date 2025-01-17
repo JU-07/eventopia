@@ -1,98 +1,64 @@
-let map;
-let service;
-let infowindow;
-let latitude;
-let longitude;
+const convenienceStores = [
+	{ name: "세븐일레븐 신주쿠", lat: 35.6895, lng: 139.6917, type: "seven" },
+	{ name: "로손 시부야", lat: 35.6581, lng: 139.7017, type: "lawson" },
+	{ name: "패밀리마트 이케부쿠로", lat: 35.7323, lng: 139.7109, type: "family" }
+];
 
-// 현재 위치를 비동기로 가져온 후 initMap 호출
-async function getCurrentLoc() {
-	return new Promise((resolve, reject) => {
-		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(
-				function(position) {
-					latitude = position.coords.latitude; // 위도
-					longitude = position.coords.longitude; // 경도
-					console.log(`위도: ${latitude}, 경도: ${longitude}`);
-					resolve(); // 위치를 성공적으로 가져온 경우
-				},
-				function(error) {
-					console.error("위치를 가져올 수 없습니다:", error);
-					reject(error); // 위치 가져오기에 실패한 경우
-				}
-			);
-		} else {
-			console.error("이 브라우저는 Geolocation API를 지원하지 않습니다.");
-			reject(new Error("Geolocation API not supported."));
-		}
-	});
-}
+let map; // 지도 객체를 전역 변수로 선언
 
-async function initApp() {
-	try {
-		await getCurrentLoc(); // 현재 위치 가져오기
-		initMap(); // 지도 초기화
-	} catch (error) {
-		console.error("앱 초기화 중 오류 발생:", error);
-	}
-}
-
+// Google 지도 초기화 함수
 function initMap() {
-	const current = new google.maps.LatLng(latitude, longitude);
+	const defaultCenter = { lat: 35.6895, lng: 139.6917 }; // 도쿄 중심 좌표
 
-	infowindow = new google.maps.InfoWindow();
+	// 지도 생성
 	map = new google.maps.Map(document.getElementById("map"), {
-		center: current,
-		zoom: 16,
+		center: defaultCenter,
+		zoom: 12
 	});
-	let companies = [{ name: 'セブンイレブン', imgURL: 'icon/logo/s_logo.webp' }, { name: 'gs편의점', imgURL: 'icon/logo/l_logo.webp' }, { name: 'CU편의점', imgURL: 'icon/logo/f_logo.png' }];
-	const request = {
-		keyword: "",
-		fields: ["name", "geometry"],
-		radius: 100, // 검색 반경 (단위: 미터)
-		location: { lat: latitude, lng: longitude },
-	};
 
-	service = new google.maps.places.PlacesService(map);
-	for (let i = 0; i < 3; i++) {
-		request.keyword = companies[i].name;
+	// 편의점 마커 추가
+	convenienceStores.forEach(store => {
+		new google.maps.Marker({
+			position: { lat: store.lat, lng: store.lng },
+			map: map,
+			title: store.name
+		});
+	});
 
-		companyMarkers(service, map, request, companies[i].imgURL);
-	}
-
+	// Geolocation으로 현재 위치 가져오기
+	getCurrentLocation();
 }
 
+// Geolocation API로 현재 위치 가져오기
+function getCurrentLocation() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(
+			(position) => {
+				const currentLocation = {
+					lat: position.coords.latitude,
+					lng: position.coords.longitude
+				};
 
-function companyMarkers(service, map, request, imgURL) {
-	service.nearbySearch(request, (results, status) => {
-		if (status === google.maps.places.PlacesServiceStatus.OK && results) {
-			for (let i = 0; i < results.length; i++) {
-				createMarker(results[i], imgURL);
-				console.log(results[i])
+				// 현재 위치를 지도 중심으로 설정
+				map.setCenter(currentLocation);
+
+				// 현재 위치 마커 추가
+				new google.maps.Marker({
+					position: currentLocation,
+					map: map,
+					title: "현재 위치",
+					icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png" // 파란색 마커
+				});
+			},
+			(error) => {
+				console.error("현재 위치를 가져올 수 없습니다: ", error.message);
+				alert("현재 위치를 가져올 수 없습니다.");
 			}
-			map.setCenter(results[0].geometry.location);
-		}
-	});
+		);
+	} else {
+		alert("이 브라우저는 Geolocation API를 지원하지 않습니다.");
+	}
 }
 
-function createMarker(place, imgURL) {
-	console.log(imgURL);
-	if (!place.geometry || !place.geometry.location) return;
-
-	const marker = new google.maps.Marker({
-		map,
-		position: place.geometry.location,
-		icon: {
-			url: imgURL, // 이미지 경로 사용
-			scaledSize: new google.maps.Size(30, 30), // 마커 크기 설정
-		},
-	});
-
-	google.maps.event.addListener(marker, "click", () => {
-		let content = `<b>${place.name}</b><hr/><img src="${imgURL}" style="width: 50px; height: 50px; border-radius: 50%;"><br>${place.vicinity}`;
-		infowindow.setContent(content);
-		infowindow.open(map, marker);
-	});
-}
-
-// 앱 초기화
-initApp();
+// 페이지 로드 시 지도 초기화
+window.onload = initMap;

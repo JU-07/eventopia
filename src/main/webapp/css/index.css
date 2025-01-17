@@ -1,17 +1,16 @@
 @charset "UTF-8";
 
 * {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /* 전체 레이아웃 */
 body {
 	margin: 0;
 	font-family: Arial, sans-serif;
-	/* background-color: #f4f4f4; */
-	/* color: #333; */
-	overflow-x: hidden; /* x축 스크롤 숨김 */
+	background-color: #f4f4f4;
+	color: #333;
 }
 
 a {
@@ -26,18 +25,18 @@ a:hover {
 
 /* 헤더 배경 */
 .header-bg {
-	background-color: #0A152F;
+	background-color: #cababa;
 	width: 100%;
 }
 
 /* 헤더 */
 .header {
-	max-width: 1200px;
+	max-width: 1150px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between; /* 양쪽 끝 정렬 */
 	align-items: center;
-	padding: 15px 0; /* 여백 추가 */
+	padding: 15px 20px; /* 여백 추가 */
 }
 
 /* 로고 */
@@ -55,39 +54,19 @@ a:hover {
 
 .Elogo {
 	display: flex;
-	align-items: center;
-	text-decoration: none; /* 링크 밑줄 제거 */
-	color: white; /* 기본 텍스트 색상 */
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.Elogo:hover {
-	transform: scale(1.07); /* 호버 시 확대 효과 */
-	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* hover 시 그림자 추가 */
-}
-
-.Elogo img {
-	width: 40px; /* 로고 이미지 크기 조정 */
-	transition: transform 0.3s ease; /* 이미지에 부드러운 효과 추가 */
-}
-
-.Elogo:hover img {
-	transform: scale(1.0); /* 이미지 살짝 확대 */
+	align-items: center;	
 }
 
 .Elogo span {
-	font-size: 18px; /* 텍스트 크기 */
-	font-weight: 600; /* 텍스트 강조 */
-	letter-spacing: 1.5px;
-	color: white; /* 텍스트 색상 고정 */
-	font-family: 'Poppins', sans-serif;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
 }
 
 /* 아이콘 그룹 */
 .side-info {
 	display: flex;
 	gap: 30px; /* 아이콘 사이 간격 */
-	align-items: center;
 }
 
 .side-info img {
@@ -97,21 +76,6 @@ a:hover {
 	transition: transform 0.2s ease;
 }
 
-.side-info .user-img {
-	width: 27px;
-	height: 27px;
-}
-
-.side-info .search-img {
-	width: 27px;
-	height: 27px;
-}
-
-.side-info .sidebar-img {
-	width: 27px;
-	height: 27px;
-}
-
 .side-info img:hover {
 	transform: scale(1.2); /* 호버 시 확대 효과 */
 }
@@ -119,80 +83,79 @@ a:hover {
 /* 네비게이션 */
 .nav-bg {
 	background-color: #ffffff;
-	border-bottom: 1px solid #0A152F;
+	border-bottom: 2px solid #ccc;
 }
 
 .nav {
-	max-width: 1200px;
+	max-width: 1280px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: center;
 	gap: 70px; /* 메뉴 간격 */
-	padding: 24.5px 0;
+	padding: 23.5px 0;
 }
 
 .nav div {
-	font-size: 19px;
-	font-weight: 800;
+	font-size: 18px;
+	font-weight: bold;
 	color: #333;
-	transition: transform 0.3s ease; /* 기본 상태에서도 transition을 적용 */
 }
 
 .nav div:hover {
+	color: #007bff;
 	cursor: pointer;
-	transition: transform 0.3s ease;
-	transform: scale(1.2); /* 이미지 살짝 확대 */
 }
 
 /* 콘텐츠 */
 .content-bg {
 	background-color: #ffffff;
-	flex: 1; /* 남는 공간을 채우도록 설정 */
+	border-top: 2px solid #ccc;
+	border-bottom: 2px solid #ccc;
 }
 
 .content-container {
-	max-width: 1200px;
+	max-width: 1280px;
 	margin: 0 auto;
-	padding: 70px 0;
+	padding: 40px 20px;
 }
 
 /* 푸터 배경 */
 .footer-bg {
-	background-color: #333;
-	border-top: 2px solid #555;
-	padding: 20px 0; /* 위아래 여백을 좀 더 추가 */
+    background-color: #333;
+    border-top: 2px solid #555;
+    padding: 20px 0; /* 위아래 여백을 좀 더 추가 */
 }
 
 /* 푸터 내용 */
 .footer {
-	max-width: 1280px;
-	margin: 0 auto;
-	color: white;
-	text-align: center;
-	padding: 15px 20px;
-	font-size: 14px; /* 텍스트 크기 조정 */
+    max-width: 1280px;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 14px; /* 텍스트 크기 조정 */
 }
 
 /* 저작권 텍스트 */
 .footer p {
-	margin: 5px 0; /* 텍스트 간 여백 */
+    margin: 5px 0; /* 텍스트 간 여백 */
 }
 
 /* 링크 스타일 */
 .footer a {
-	color: #fff;
-	text-decoration: none;
+    color: #fff;
+    text-decoration: none;
 }
 
 .footer a:hover {
-	text-decoration: none; /* 호버 시 밑줄 추가 */
-	color: #007bff; /* 호버 시 색상 변경 */
+    text-decoration: none; /* 호버 시 밑줄 추가 */
+    color: #007bff; /* 호버 시 색상 변경 */
 }
 
 /* 모바일에서 푸터 텍스트 크기 조정 */
-@media ( max-width : 768px) {
-	.footer {
-		font-size: 12px; /* 작은 화면에서는 텍스트 크기 줄이기 */
-		padding: 10px; /* 여백 조정 */
-	}
+@media (max-width: 768px) {
+    .footer {
+        font-size: 12px; /* 작은 화면에서는 텍스트 크기 줄이기 */
+        padding: 10px; /* 여백 조정 */
+    }
 }
