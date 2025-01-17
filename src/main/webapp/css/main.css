@@ -2,12 +2,13 @@
 
 /* 이벤트 컨테이너 */
 .event-container {
+  position: relative;
   display: flex;
-  justify-content: space-around; /* 가로로 나란히 정렬 */
+  justify-content: space-between; /* 가로로 나란히 정렬 */
   align-items: flex-start;
-  padding: 40px;
+  padding-top: 100px;
   gap: 20px; /* 항목 간 간격 */
-  background-color: #f9f9f9;
+  background-color: #ffffff;
 }
 
 /* 개별 이벤트 아이템 */
@@ -18,10 +19,12 @@
   gap: 15px;
   width: 320px; /* 개별 항목 너비 */
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  /* 자연스러운 입체감 */
   border-radius: 12px;
   background-color: #fff;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+  z-index: 2;
 }
 
 .event-item:hover {
@@ -125,7 +128,7 @@
 }
 
 .seven {
-  background-color: #f8958f /* 세븐 색상 */
+  background-color: #f8958f; /* 세븐 색상 */
 }
 
 .family {
