@@ -92,7 +92,7 @@ ArrayList<ReviewDTO> reviews = null;
 		request.setCharacterEncoding("UTF-8");
 		
 		PreparedStatement pstmt = null;
-<<<<<<< HEAD
+
 		String sql = "insert into review_test values(review_test_seq.nextval,?,?,?,?,?,sysdate)";
 
 		try {
@@ -125,34 +125,10 @@ ArrayList<ReviewDTO> reviews = null;
 			e.printStackTrace();
 		} finally {
 			DBManager.close(con, pstmt, null);
-=======
-		String sql = "insert into product_test values(product_test_seq.nextval,?,?,?,?)";
-	try {
-		String title = request.getParameter("name");
-		String actor = request.getParameter("actor");
-		String image = request.getParameter("image");
-		String story = request.getParameter("story");
-		
-		pstmt.setString(1, title);
-		pstmt.setString(2, actor);
-		pstmt.setString(3, image);
-		pstmt.setString(4, story);
-		
-		if (pstmt.executeUpdate() == 1) {
-			System.out.println("등록 성공");
->>>>>>> 5a3827279526cbe657cff672aae1b7031d9a66e7
 		}
-		
-	} catch (Exception e) {
-		e.printStackTrace();
-	}finally {
-		DBManager.close(con, pstmt, null);
+	}
 	}
 	
-	
-	}
-	
-}
 	
 	
 	
