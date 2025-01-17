@@ -23,7 +23,7 @@ public class ReviewDAO {
 		}
 	}
 
-	ReviewDTO reviews = null;
+	ArrayList<ReviewDTO> reviews = null;
 
 	public void showAllReview(HttpServletRequest request) {
 
@@ -59,20 +59,20 @@ public class ReviewDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		int no = Integer.parseInt("no");
+		String no = request.getParameter("no");
 
 		try {
 			String sql = "select * from review_test where r_no=?";
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
-//			pstmt.setString(1, no);
+			pstmt.setString(1, no);
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-				reviews = new ReviewDTO(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getDate(7));
-				System.out.println(reviews);
+				ReviewDTO review = new ReviewDTO();
+				System.out.println(review);
 			}
-			request.setAttribute("reviews", reviews);
+			request.setAttribute("reviews", review);
 
 		} catch (Exception e) {
 			e.printStackTrace();
