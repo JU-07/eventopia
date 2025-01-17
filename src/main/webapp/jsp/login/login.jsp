@@ -24,7 +24,7 @@
 				<h2>Welcome to Eventopia!</h2>
 				<p>Join us and explore the best events around you.</p>
 				<div class="logo-wrapper">
-					<img src="icon/eventopia-logo.png" alt="Eventopia Logo">
+					<img src="icon/logo/eventopia-logo.png" alt="Eventopia Logo">
 				</div>
 				<!-- <img src="Icon/eventopia-logo.png" alt="Eventopia Illustration"> -->
 			</div>

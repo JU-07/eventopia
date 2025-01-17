@@ -6,11 +6,12 @@ li {
 }
 
 .slider-container {
+	position: relative; /* 버튼 배치를 위해 relative 설정 */
 	width: 1200px;
 	height: 430px;
 	overflow: hidden;
 	margin: 0 auto;
-	position: relative; /* 버튼 배치를 위해 relative 설정 */
+	z-index: 2;
 }
 
 .slider {
@@ -20,16 +21,16 @@ li {
 }
 
 .slider img {
+	position: relative;
 	width: 1200px;
 	height: 430px;
-	position: relative;
 }
 
 /* 버튼 스타일 */
 .slider-btn {
 	position: absolute;
 	top: 40%; /* 슬라이드 중앙에 위치 */
-	z-index: 1000; /* 슬라이드 위로 버튼 표시 */
+	z-index: 2; /* 슬라이드 위로 버튼 표시 */
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
@@ -53,14 +54,50 @@ li {
 	right: -80px; /* 오른쪽 여백 */
 }
 
+.EMoving {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	overflow: hidden;
+	min-width: 1100px;
+	width: 100%;
+	white-space: nowrap;
+	transform: translateX(-50%);
+	transform-origin: 50% 50%;
+	z-index: 1;
+}
+
+.EMoving span {
+	display: inline-block;
+	font-weight: 700;
+	font-size: 400px;
+	color: #F5F5F5;
+	line-height: 1em;
+	letter-spacing: -0.01em;
+	white-space: nowrap;
+	animation: movebg 10s linear infinite;
+}
+
+@keyframes movebg {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
 /* 이벤트 컨테이너 */
 .event-container {
+	position:relative;
 	display: flex;
 	justify-content: space-between; /* 가로로 나란히 정렬 */
 	align-items: flex-start;
 	padding-top: 100px;
 	gap: 20px; /* 항목 간 간격 */
 	background-color: #ffffff;
+	z-index: 2;
 }
 
 /* 개별 이벤트 아이템 */

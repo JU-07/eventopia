@@ -16,7 +16,7 @@
 	rel="stylesheet">
 <script type="text/javascript" src="js/main.js" defer></script>
 </head>
-<body>
+<body style="position: relative; z-index: 0;">
 	<div id="wrap">
 		<!-- 헤더 -->
 		<div class="header-bg">
