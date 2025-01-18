@@ -42,174 +42,166 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
-<style type="text/css">
-.review-container {
+<style>
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f9f9f9;
+	color: #333;
+}
+
+div.title {
+	text-align: center;
+	padding: 20px 0;
+	background-color: #007bff;
+	color: white;
+	margin-bottom: 30px;
+}
+
+div.event-container {
 	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	gap: 20px;
-	padding: 40px;
+	padding: 20px;
 	max-width: 1200px;
 	margin: 0 auto;
-	background-color: #fff;
-	border-radius: 8px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.review-wrap {
-	background: #ffffff;
+div.event-wrap {
+	background: #fff;
 	border: 1px solid #e0e0e0;
 	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	overflow: hidden;
-	text-align: center;
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
-	cursor: pointer;
-	padding: 15px;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	padding: 20px;
 }
 
-.review-wrap:hover {
+div.event-wrap:hover {
 	transform: translateY(-5px);
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.review-img img {
+div.event-wrap img {
 	width: 100%;
-	height: 180px;
-	object-fit: cover;
+	height: auto;
 	border-radius: 4px;
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 }
 
-.review-title {
+div.event-wrap h3 {
 	font-size: 18px;
 	font-weight: bold;
-	color: #333;
-	margin: 10px 0;
-	cursor: pointer;
-}
-
-.review-name {
-	font-size: 14px;
-	color: #777;
+	color: #007bff;
 	margin-bottom: 10px;
 }
 
-.review-sub {
-	font-size: 12px;
-	color: #888;
+div.event-wrap div {
 	margin-bottom: 15px;
-	word-wrap: break-word;
-	text-overflow: ellipsis;
-}
-
-.review-text {
 	font-size: 14px;
 	color: #555;
-	line-height: 1.5;
 }
 
-.add-review {
-	display: flex;
-	justify-content: center;
-	margin: 20px 0;
+.pagination-section {
+	text-align: center;
+	margin-top: 30px;
 }
 
-.add-review a {
+.pagination a {
 	display: inline-block;
-	padding: 10px 20px;
+	padding: 8px 12px;
 	background-color: #007bff;
-	color: #fff;
+	color: white;
 	text-decoration: none;
-	border-radius: 5px;
-	transition: background-color 0.3s ease;
+	border-radius: 4px;
+	margin: 0 5px;
+	transition: background-color 0.3s;
 }
 
-.add-review a:hover {
+.pagination a:hover {
 	background-color: #0056b3;
 }
 
 .SNS {
 	display: flex;
-	justify-content: center; /* 가운데 정렬 */
-	gap: 10px; /* 버튼 간 간격 */
-	margin-top: 20px;
+	justify-content: center;
+	gap: 10px;
+	margin: 20px 0;
 }
 
-/* SNS 버튼 스타일 */
 .SNS button {
 	background-color: #fff;
-	border: none;
-	padding: 0;
-	cursor: pointer;
-	border-radius: 50%; /* 원형 버튼 만들기 */
+	border: 1px solid #ddd;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 50px; /* 버튼 크기 */
-	height: 50px; /* 버튼 크기 */
-	font-size: 14px;
+	cursor: pointer;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	transition: background-color 0.3s;
 }
 
-/* SNS 버튼 이미지 크기 */
-.SNS button img {
-	width: 24px; /* 이미지 크기 조정 */
-	height: 24px; /* 이미지 크기 조정 */
-}
-
-/* 호버 효과 */
 .SNS button:hover {
 	background-color: #f0f0f0;
+}
+
+.SNS button img {
+	width: 20px;
+	height: 20px;
+}
+
+.add-event {
+	text-align: center;
+	margin: 30px 0;
+}
+
+.add-event a {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #28a745;
+	color: white;
+	text-decoration: none;
+	border-radius: 5px;
+	transition: background-color 0.3s;
+}
+
+.add-event a:hover {
+	background-color: #218838;
 }
 </style>
 </head>
 <body>
-	<div class="title" style="text-align: center">
-		<h2 style="font-size: 50px">全てコラボレーション</h2>
+	<div class="title">
+		<h2>全てコラボレーション</h2>
 	</div>
 	<div class="event-container">
 		<c:forEach var="e" items="${events }">
 			<div class="event-wrap">
-				<div class="event-name">
-					<h3>편의점이름</h3>
-					<div>${e.e_name}</div>
-				</div>
-				<div class="event-title">
+				<h3>편의점 이름</h3>
+				<div>${e.e_name}</div>
 				<h3>제목</h3>
-					<div>${e.e_title}</div>
-				</div>
-				<div class="event-img">
-					<div>
-						<h3>이미지</h3>
-						 <img alt="" src="${e.e_image_url}">
-					</div>
-				</div>
-				<div class="event-text">
+				<div>${e.e_title}</div>
+				<h3>이미지</h3>
+				<img alt="" src="${e.e_image_url}">
 				<h3>내용</h3>
-				${e.e_story}
-				</div>
-				<div class="event-text">
+				<div>${e.e_story}</div>
 				<h3>요약내용</h3>
-				${e.e_short_story}
-				</div>
+				<div>${e.e_short_story}</div>
 				<h3>날짜</h3>
 				<fmt:formatDate value="${e.e_date }" />
-			</div>
-			<div class="event-text">
 				<h3>좋아요</h3>
-				${e.e_good}
-				</div>
+				<div>${e.e_good}</div>
+			</div>
 		</c:forEach>
 		<c:if test="${empty event}">
-			<p style="text-align: center">
 			<h2 style="text-align: center">すみません、現在レビューがありません。</h2>
-			</p>
 		</c:if>
 	</div>
-	<section class="pagination-section"
-		style="text-align: center; margin-top: 40px;">
-		<div class="pagination"
-			style="display: flex; justify-content: center; gap: 10px;">
+	<section class="pagination-section">
+		<div class="pagination">
 			<a href="EventPageC?p=1">初</a>
 			<c:forEach begin="1" end="${pageCount}" var="i">
 				<a href="EventPageC?p=${i}">[${i}]</a>
@@ -217,31 +209,25 @@ document.addEventListener('DOMContentLoaded', () => {
 			<a href="EventPageC?p=${pageCount}">終</a>
 		</div>
 	</section>
-	<div class="SNS"
-		style="font-size: 10pt; text-align: center; margin-top: 20px;">
-		<button type="button" class="btn-share-tw" data-url="${event.link}"
-			style="padding: 0; border: none;">
+	<div class="SNS">
+		<button type="button" class="btn-share-tw" data-url="${event.link}">
 			<img
 				src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/X_icon.svg/2048px-X_icon.svg.png"
-				alt="X" style="width: 100%; height: 100%; object-fit: cover;">
+				alt="X">
 		</button>
-		<button type="button" class="btn-share-fb" data-url="${event.link}"
-			style="padding: 0; border: none;">
+		<button type="button" class="btn-share-fb" data-url="${event.link}">
 			<img
 				src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-				alt="Facebook" style="width: 100%; height: 100%; object-fit: cover;">
+				alt="Facebook">
 		</button>
-		<button type="button" class="btn-share-ln" data-url="${event.link}"
-			style="padding: 0; border: none;">
+		<button type="button" class="btn-share-ln" data-url="${event.link}">
 			<img
 				src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/LINE_logo.svg/1024px-LINE_logo.svg.png"
-				alt="Line" style="width: 100%; height: 100%; object-fit: cover;">
+				alt="Line">
 		</button>
 	</div>
 	<div class="add-event">
 		<a href="EventRegC">登録</a>
 	</div>
-
-	<br>
 </body>
 </html>

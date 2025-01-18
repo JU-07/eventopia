@@ -4,46 +4,115 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>レビュー登録</title>
 <link rel="stylesheet" href="css/review.css">
+<style>
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f9f9f9;
+	margin: 0;
+	padding: 20px;
+}
+
+.review-form-container {
+	max-width: 600px;
+	margin: 0 auto;
+	background: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.review-form-container h2 {
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 24px;
+	color: #333;
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+.form-group label {
+	display: block;
+	margin-bottom: 8px;
+	font-weight: bold;
+	color: #555;
+}
+
+.form-group input, .form-group textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 14px;
+}
+
+.form-group textarea {
+	resize: none;
+	height: 100px;
+}
+
+.form-group button {
+	width: 100%;
+	padding: 10px;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.form-group button:hover {
+	background-color: #0056b3;
+}
+</style>
 </head>
 <body>
 	<div style="text-align: center">
 		<h2 style="font-size: 30pt">レビュー登録</h2>
 	</div>
-	<br>
-	<div class="review-form-container"
-		style="flex: 1; min-width: 300px; height: 500px; display: flex; flex-direction: column; justify-content: space-between;">
-		<form action="ReviewC" method="post" enctype="multipart/form-data">
-			<div class="review-form">
-				<div class="form-group">
-					<label for="title">イベント タイトル</label> <input id="title" name="title"
-						type="text" placeholder="イベント タイトル" required>
+	<div class="review-form-container">
+		<form action="ReviewRegC" method="post">
+			<div class="form-group">
+				<label for="title">편의점</label> <input id="name" name="name"
+					type="text" placeholder="イベント タイトル" value="${r.r_name }">
+			</div>
+
+			<div class="form-group">
+				<label for="name">商品名</label> <input id="title" name="title"
+					type="text" placeholder="商品名" required>
+			</div>
+
+			<div class="form-group">
+				<label for="file">ファイルアップロード</label> <input id="file" name="img"
+					type="file">
+			</div>
+
+			<div class="form-group">
+				<label for="sub">요약</label>
+				<textarea id="sub" name="sub" placeholder="요약설명" maxlength="200"
+					required></textarea>
+			</div>
+
+			<div class="form-group">
+				<label for="text">내용</label>
+				<textarea id="text" name="text" placeholder="商品説明" maxlength="200"
+					required></textarea>
+			</div>
+
+			<div class="form-group">
+					<label for="date">날짜</label>
+					<textarea id="date" name="date" placeholder="날짜" required></textarea>
 				</div>
 
-				<div class="form-group">
-					<label for="Name">商品名</label> <input id="Name" name="Name"
-						type="text" placeholder="商品名" required>
-				</div>
-
-				<div class="form-group">
-					<label for="file">ファイルアップロード</label> <input id="file" name="img"
-						type="file" value="${r.r_img }">
-				</div>
-
-				<div class="form-group">
-					<label for="story" style="display: block; margin-bottom: 8px;">レビュー</label>
-					<textarea id="story" name="text" rows="5" maxlength="200"
-						placeholder="商品説明" required style="width: 100%; height: 150px;"></textarea>
-				</div>
-				<br>
-				<div class="form-group">
-					<button type="submit" class="review-btn">登録</button>
-				</div>
+			<div class="form-group">
+				<button type="submit">登録</button>
 			</div>
 		</form>
 	</div>
-
-
 </body>
 </html>

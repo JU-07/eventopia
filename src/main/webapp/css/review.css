@@ -46,8 +46,8 @@ body {
 
 .form-group {
 	flex: 1;
-    min-width: 500px; 
-    height: 500px; 
+    min-width: 300px; 
+    height: 100px; 
     display: flex;
     flex-direction: column;
 }

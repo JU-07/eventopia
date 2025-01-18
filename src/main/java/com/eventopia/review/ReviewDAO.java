@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 
 import com.eventopia.main.DBManager;
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 public class ReviewDAO {
 
@@ -86,26 +88,31 @@ public class ReviewDAO {
 		request.setCharacterEncoding("UTF-8");
 
 		PreparedStatement pstmt = null;
+		String sql = "insert insert into review_test values(review_test_seq.nextval,?,?,?,?,?,sysdate)";
 
-		String sql = "insert into review_test values(review_test_seq.nextval,?,?,?,?,?,sysdate)";
-
+		String path = request.getServletContext().getRealPath("");
+		System.out.println(path);
+		
 		try {
+			MultipartRequest mr = new MultipartRequest(request, path, 1024 * 1024 * 30,"UTF-8", new DefaultFileRenamePolicy());
+			
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
-			String title = request.getParameter("title");
+			
 			String name = request.getParameter("name");
+			String title = request.getParameter("title");
 			String img = request.getParameter("img");
 			String sub = request.getParameter("sub");
 			String text = request.getParameter("text");
 
-			System.out.println(title);
 			System.out.println(name);
+			System.out.println(title);
 			System.out.println(img);
 			System.out.println(sub);
 			System.out.println(text);
 
-			pstmt.setString(1, title);
-			pstmt.setString(2, name);
+			pstmt.setString(1, name);
+			pstmt.setString(2, title);
 			pstmt.setString(3, img);
 			pstmt.setString(4, sub);
 			pstmt.setString(5, text);
