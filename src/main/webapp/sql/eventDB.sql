@@ -38,14 +38,53 @@ delete from post_test where p_no=7;
 
 create table event_test(
     e_no number(3) primary key ,
-    e_name varchar2(30 char) not null ,
-    e_title varchar2(30 char) not null ,
-    e_image_url varchar2(500 char) not null ,
-    e_short_story varchar2(300 char) not null ,
-    e_story varchar2(5000 char) not null ,
-    e_date date not null ,
+    e_name varchar2(300 char) not null ,
+    e_title varchar2(300 char) not not null,
+    e_image_url varchar2(500 char) not null,
+    e_short_story varchar2(300 char) not null,
+    e_story varchar2(5000 char) not null,
+    e_date date not null,
     e_good number(5) NOT NULL
 );
 
+alter table event_test modify e_title varchar(300);
+alter table event_test modify e_story varchar(300);
+
 create sequence event_test_seq;
 
+insert into event_test values(event_test_seq.nextval,'1','2','3','4','5',sysdate,'6');
+
+create table review_test(
+  r_no number(3) primary key,
+  r_name varchar2(20 char) not null,
+  r_title varchar2(50 char) not null,
+  r_img varchar2(500 char) not null,
+  r_sub varchar2(20 char) not null,
+  r_text varchar2(20 char) not null,
+  r_date date not null
+);
+ALTER TABLE review_test MODIFY  r_text VARCHAR2(200);
+ALTER TABLE review_test MODIFY  r_sub varchar2(200);
+alter table review_test modify  r_img varchar2(1000);
+ALTER TABLE review_test MODIFY r_sub VARCHAR2(200);
+ALTER TABLE review_test MODIFY r_text VARCHAR2(200);
+
+create sequence review_test_seq;
+
+insert into review_test values(review_test_seq.nextval,'세븐일레븐','mr.greenapple','https://www.lawson.co.jp/lab/campaign/mrsgreenapple/img/main_keyvisual01.png','mr.greenapple과의 콜라보','로손과 mr.greenapple콜라보',sysdate);
+
+select * from review_test;
+
+drop table review_test cascade constraint purge;
+DROP SEQUENCE review_test_seq CASCADE CONSTRAINTS PURGE;
+
+CREATE SEQUENCE review_test_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE;
+
+create table event_test(
+
+
+                 );

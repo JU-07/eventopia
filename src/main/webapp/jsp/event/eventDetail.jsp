@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,46 +33,52 @@
 </head>
 <body>
 	<div class="review-wrap">
-		<c:forEach var="r" items="${reveiws }">
+		<c:forEach var="e" items="${events }">
+		<div>
 			<div>
-				<div>
-					<div class="review-reg-col">NAME</div>
-					<div class="review-reg-col2">
-						<input name="title" value="${r.r_name }" disabled="disabled">
-					</div>
-				</div>
-				<div>
-					<div class="review-reg-col">title</div>
-					<div class="review-reg-col2">
-						<input name="title" value="${r.r_title }" disabled="disabled">
-					</div>
-				</div>
-				<div>
-					<div class="review-reg-col">img</div>
-					<div class="review-reg-col2">
-						<input name="title" value="${r.r_img }" disabled="disabled">
-					</div>
-				</div>
-				<div>
-					<div class="review-reg-col">sub</div>
-					<div class="review-reg-col2">
-						<input name="title" value="${r.r_sub }" disabled="disabled">
-					</div>
-				</div>
-				<div>
-					<div class="review-reg-col">text</div>
-					<div class="review-reg-col2">
-						<textarea name="txt" maxlength="100" disabled="disabled">${r.r_text }</textarea>
-						<br> <span id="cntSpan">0</span> /200
-					</div>
-				</div>
-				<div>
-					<div>
-						<fmt:formatDate value="${r.r_date }" />
-					</div>
+				<div class="review-reg-col">NAME</div>
+				<div class="review-reg-col2">
+					<input name="title" value="${e.e_name }" disabled="disabled">
 				</div>
 			</div>
-		</c:forEach>
+			<div>
+				<div class="review-reg-col">title</div>
+				<div class="review-reg-col2">
+					<input name="title" value="${e.e_title }" disabled="disabled">
+				</div>
+			</div>
+			<div>
+				<div class="review-reg-col">img</div>
+				<div class="review-reg-col2">
+					<input name="title" value="${e.e_img }" disabled="disabled">
+				</div>
+			</div>
+			<div>
+				<div class="review-reg-col">sub</div>
+				<div class="review-reg-col2">
+					<input name="title" value="${e.e_short_story }" disabled="disabled">
+				</div>
+			</div>
+			<div>
+				<div class="review-reg-col">story</div>
+				<div class="review-reg-col2">
+					<textarea name="txt" maxlength="100" disabled="disabled">${e.e_story }</textarea>
+					<br> <span id="cntSpan">0</span> /200
+				</div>
+			</div>
+			<div>
+				<div>
+					<fmt:formatDate value="${r.r_date }" />
+				</div>
+			</div>
+			<div>
+				<div class="review-reg-col">GOOD</div>
+				<div class="review-reg-col2">
+					<input name="title" value="${e.e_good }" disabled="disabled">
+				</div>
+			</div>
+		</div>
+			</c:forEach>
 	</div>
 </body>
 </html>
