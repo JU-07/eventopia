@@ -1,5 +1,6 @@
 package com.eventopia.event;
 
+import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,7 +15,8 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 public class EventDAO {
 
-	public final static EventDAO EDAO = new EventDAO();
+	public static final  EventDAO EDAO = new EventDAO();
+
 
 	private Connection con = null;
 
@@ -34,7 +36,8 @@ public class EventDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
-		String sql = "select *from product_test ";
+		String sql = "select * from event_test order by e_date";
+
 
 		try {
 			con = DBManager.connect();
@@ -42,7 +45,14 @@ public class EventDAO {
 			rs = pstmt.executeQuery();
 
 			events = new ArrayList<EventDTO>();
-			events.add(event);
+
+			EventDTO event = null;
+
+			while (rs.next()) {
+				event = new EventDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getDate(7), rs.getInt(8));
+				events.add(event);
+			}
+			request.setAttribute("events", events);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -52,39 +62,51 @@ public class EventDAO {
 
 	}
 
-	public void addEvent(HttpServletRequest request) {
-
+	public void addEvent(HttpServletRequest request) throws UnsupportedEncodingException {
+		request.setCharacterEncoding("UTF-8");
+		
+		
 		PreparedStatement pstmt = null;
+		String sql = "insert into event_test values(event_test_seq.nextval,?,?,?,?,?,sysdate,0)";
 
 		String path = request.getServletContext().getRealPath("");
+		System.out.println(path);
+		
+
 		try {
-			MultipartRequest mr = new MultipartRequest(request, path, 1024 * 1024 * 60, "UTF-8",
-					new DefaultFileRenamePolicy());
-
-			String title = mr.getParameter("title");
-			String Date = mr.getParameter("date");
-			String name = mr.getParameter("name");
-			String text = mr.getParameter("text");
-			String link = mr.getParameter("link");
-
-			String sql = "";
-
+			MultipartRequest mr = new MultipartRequest(request, path, 1024 * 1024 * 30,"UTF-8", new DefaultFileRenamePolicy());
+			
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, title);
-			pstmt.setString(2, Date);
-			pstmt.setString(3, name);
-			pstmt.setString(4, text);
-			pstmt.setString(5, link);
+
+			String name = request.getParameter("name");
+			String title = request.getParameter("title");
+			String image_url = request.getParameter("image_url");
+			String short_story = request.getParameter("short_story");
+			String story = request.getParameter("story");
+			System.out.println(name);
+			System.out.println(title);
+			System.out.println(image_url);
+			System.out.println(short_story);
+			System.out.println(story);
+			
+			pstmt.setString(1, name);
+			pstmt.setString(2, title);
+			pstmt.setString(3, image_url);
+			pstmt.setString(4, short_story);
+			pstmt.setString(5, story);
+	
 
 			if (pstmt.executeUpdate() == 1) {
-				System.out.println("update complete");
+				System.out.println("Registion complete");
 			}
 
 		} catch (Exception e) {
-			// TODO: handle exception
-		}
+			e.printStackTrace();
+		}finally {
+			DBManager.close(con, pstmt, null);
 
 	}
-
-}
+	
+	}
+	}
