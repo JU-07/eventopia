@@ -26,7 +26,7 @@
 		</button>
 	</div>
 	<div class="EMoving">
-		<span>EVENTOPIA </span><span>EVENTOPIA </span><span>EVENTOPIA </span>
+		<span>EVENTOPIA</span><span>EVENTOPIA</span><span>EVENTOPIA</span>
 	</div>
 	<div class="event-container">
 		<div class="event-item">
