@@ -20,6 +20,22 @@ public class LoginC extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+
+        request.setCharacterEncoding("UTF-8");
+
+        String id = request.getParameter("id");
+        String pw = request.getParameter("pw");
+
+        // 로그인 처리
+        String result = LoginDAO.login(id, pw);
+
+        if ("Login Success".equals(result)) {
+            request.getSession().setAttribute("userId", id);
+            response.sendRedirect("login.jsp");
+        } else {
+            response.sendRedirect("login?error=" + result);  // 다시 로그인 페이지로
+        }
 	}
 
 }
