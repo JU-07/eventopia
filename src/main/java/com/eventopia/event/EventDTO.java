@@ -2,6 +2,8 @@ package com.eventopia.event;
 
 import java.util.Date;
 
+import com.google.gson.Gson;
+
 public class EventDTO {
 
 	private String title;
