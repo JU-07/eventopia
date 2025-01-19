@@ -6,8 +6,7 @@
 	gap: 20px;
 	padding: 20px;
 	background-color: #f4f4f4;
-	min-height: 400px;
-	height: auto;
+	height: 400px;
 }
 
 /* 投稿フォームセクション */
@@ -64,6 +63,8 @@
 .posts-container {
 	flex: 2;
 	/* 比率を増やして投稿掲示板を大きくする */
+	min-height: 600px;
+	/* 高さを固定または最低値を設定 */
 	/* 全体の最低高さを設定 */
 	min-width: 400px;
 	max-width: 100%;
@@ -72,7 +73,6 @@
 	border: 1px solid #ccc;
 	overflow-y: auto;
 	/* 内容が多い場合スクロールを可能にする */
-	height: auto;
 }
 
 .posts-container h2 {

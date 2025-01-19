@@ -27,4 +27,18 @@
 	height: 50px;
 	border-radius: 5px;
 }
+.chat-btn{
+	position: absolute;
+	left: 45%;
+	top: 50%;
+	padding: 20px 10px;
+	z-index: 9;
+}
 
+
+/* chat */
+.chat-container{
+	width: 100%;
+	opacity: 0.1;
+	height: 100%;
+}

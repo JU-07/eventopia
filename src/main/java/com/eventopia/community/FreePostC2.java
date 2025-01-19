@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/FreePostC")
+@WebServlet("/FreePostC2")
 @MultipartConfig(fileSizeThreshold = 1024 * 1024 * 1, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 15)
-public class FreePostC extends HttpServlet {
+public class FreePostC2 extends HttpServlet {
 	private CommunityDAO dao = new CommunityDAO();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -21,7 +21,7 @@ public class FreePostC extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 
 		dao.showAllPost(request);
-		request.setAttribute("content", "jsp/community/ny_freePost.jsp");
+		request.setAttribute("content", "jsp/community/ny_freePost2.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

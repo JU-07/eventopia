@@ -14,10 +14,10 @@
 		<h1 class="text">コミュニティ</h1>
 
 		<div class="button-container">
-			<form action="FreePostC" method="get">
+			<form action="FreePostC2" method="get">
 				<button class="free-post" >自由投稿</button>
 			</form>
-			<form action="SharePostC" method="get">
+			<form action="FreePostC" method="get">
 				<button class="share-post">情報共有</button>
 			</form>
 		</div>

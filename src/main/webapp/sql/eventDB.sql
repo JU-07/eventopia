@@ -36,6 +36,23 @@ select * from post_test;
 
 delete from post_test where p_no=7;
 
+-----
+
+-- community_postテーブルの作成
+CREATE TABLE community_post (
+                                p_id INT AUTO_INCREMENT PRIMARY KEY,         -- 投稿ID (主キー、自動採番)
+                                p_name VARCHAR(255) NOT NULL,                -- 名前
+                                p_img VARCHAR(500) DEFAULT '画像なし',        -- 画像パス (デフォルト値: 画像なし)
+                                p_content TEXT NOT NULL,                     -- 投稿内容
+                                p_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP   -- 投稿日時 (デフォルトで現在時刻)
+);
+
+-- 初期データ挿入 (必要なら削除または変更可能)
+INSERT INTO community_post (p_name, p_img, p_content, p_date)
+VALUES
+    ('User1', '画像なし', 'This is a sample post.', '2025-01-17 17:41:29'),
+    ('User2', '/uploads/sample.jpg', 'Another example post.', '2025-01-17 17:41:34');
+
 
 
 

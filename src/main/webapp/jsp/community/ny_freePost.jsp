@@ -41,14 +41,6 @@
 		<div class="posts-container" id="postsContainer">
 			<h2>投稿一覧</h2>
 			<table>
-				<thead>
-					<tr>
-						<th>名前</th>
-						<th>画像</th>
-						<th>内容</th>
-						<th>日付</th>
-					</tr>
-				</thead>
 				<tbody>
 					<jsp:include page="postsTable.jsp" />
 				</tbody>
