@@ -223,8 +223,5 @@ div.event-wrap div {
 				alt="Line">
 		</button>
 	</div>
-	<div class="add-event">
-		<a href="EventRegC">登録</a>
-	</div>
 </body>
 </html>

@@ -1,211 +1,188 @@
 @charset "UTF-8";
 
-textarea#story {
-	font-size: 14px;
-	resize: none;
-	width: 300px;
-	height: 100px;
-	padding: 10px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	background-color: #f9f9f9;
-	color: #333;
-}
-
 body {
-	font-family: 'Arial', sans-serif;
-	background-color: #f4f4f9;
-	color: #333;
+	font-family: Arial, sans-serif;
 	margin: 0;
 	padding: 0;
+	background-color: #f9f9f9;
+	color: #333;
 }
 
-.review-form-container {
-	background-color: white;
-	padding: 30px;
-	margin: 20px auto;
-	max-width: 800px;
-	border-radius: 8px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.review-form {
+.review-content {
 	display: flex;
-	flex-direction: column;
-	border: 1px solid #ddd;
-	/* 기존 스타일 */
-	background-color: #f9f9f9;
-	/* 밝은 배경색 */
-	padding: 20px;
-	/* 내부 여백 */
-	font-size: 16px;
-	/* 텍스트 크기 */
+	flex-direction: column; /* 내용물을 세로로 정렬 */
+	align-items: center;
+	width: 255px; /* 부모 너비에 맞춤 */
 	border-radius: 10px;
-	/* 모서리 둥글게 */
-}
-
-.form-group {
-	flex: 1;
-    min-width: 300px; 
-    height: 100px; 
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-	font-size: 1.1em;
-	margin-bottom: 5px;
-	color: #555;
-}
-
-.form-group input,
-.form-group textarea {
-	padding: 10px;
-	font-size: 1em;
-	width: 100%;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-}
-
-.form-group textarea {
-	resize: vertical;
-}
-
-.review-btn {
-	background-color: #4CAF50;
-	color: white;
-	padding: 10px 20px;
-	font-size: 1.1em;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-}
-
-.review-btn:hover {
-	background-color: #45a049;
-}
-
-/* 제품 목록 */
-/* コラボ·レビュー目録 스타일 복사 */
-.product-list-container {
-	border: 1px solid #ddd;
-	/* 기존 스타일 */
-	background-color: #f9f9f9;
-	/* 밝은 배경색 */
+	color: gray;
+	font-size: 18px; /* 글자 크기 */
+	font-weight: bold;
+	text-align: center;
 	padding: 20px;
-	/* 내부 여백 */
-	font-size: 16px;
-	/* 텍스트 크기 */
-	border-radius: 8px;
-	/* 모서리 둥글게 */
+	gap: 10px; /* 내용 간 간격 */
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+.review-content:hover {
+	transform: translateY(-5px); /* hover 시 살짝 올라가는 효과 */
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+/* 제목 */
+.review-title {
+	font-size: 22px; /* 제목 크기 */
+	font-weight: bold;
 }
 
-/* <textarea> 동일 스타일 적용 */
-textarea {
-	width: 100%;
-	/* 부모 컨테이너에 맞춤 */
-	height: 150px;
-	/* 적절한 높이 설정 */
-	border: 1px solid #ddd;
-	/* 테두리 색상 */
-	background-color: #f9f9f9;
-	/* 배경색 동일 */
-	padding: 20px;
-	/* 텍스트 내부 여백 */
-	font-size: 16px;
-	/* 텍스트 크기 */
-	border-radius: 8px;
-	/* 모서리 둥글게 */
-	box-sizing: border-box;
-	/* 패딩 포함 크기 */
-	resize: none;
-	/* 크기 조정 비활성화 */
-}
-
-
-.product-container {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	gap: 20px;
-}
-
-.product-wrap {
-	border: 1px solid #ddd;
+/* 이미지 */
+.review-img {
+	width: 100%; /* 이미지가 부모에 맞게 채워짐 */
+	height: 250px; /* 고정 높이 */
+	background-color: #ddd; /* 임시 배경색 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	border-radius: 8px;
 	overflow: hidden;
-	background-color: #fff;
-	transition: transform 0.3s ease;
 }
 
-.product-wrap:hover {
-	transform: translateY(-10px);
-}
-
-.product-img img {
-	width: 100%;
-	height: 200px;
-	object-fit: cover;
-}
-
-.product-title {
-	font-size: 1.2em;
-	padding: 10px;
-	background-color: #f4f4f4;
+/* 텍스트 */
+.review-txt {
+	font-size: 16px;
 	color: #333;
-	text-align: center;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
+	text-align: left;
+	word-wrap: break-word;
 }
 
-.product-title:hover {
-	background-color: #ddd;
-}
-
-.product-price {
-	font-size: 1.1em;
+/* 사용자 버튼 */
+.review-user {
+	display: flex;
+	justify-content: space-between; /* 버튼 간격 확보 */
+	width: 100%; /* 부모 너비에 맞춤 */
+	margin-top: 10px;
 	padding: 10px;
-	text-align: center;
-	color: #777;
-	background-color: #f9f9f9;
+	gap: 10px;
 }
 
-/* 페이지네이션 */
-.pagination {
+.review-user div {
+	flex: 1; /* 버튼 크기 동일하게 설정 */
 	text-align: center;
-	margin-top: 40px;
+	padding: 8px 0;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	background-color: #fff;
+	color: #333;
+	font-size: 16px;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.review-user div:hover {
+	background-color: #007bff;
+	color: #fff;
+	cursor: pointer;
+}
+.review-content {
+	background-color: darkgoldenrod; /* 로손 색상 */
+	padding: 20px;
+    margin-bottom: 20px; /* 아래쪽에 여백 추가 */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.SNS {
+	display: flex;
+	justify-content: center;
+	gap: 15px; /* 버튼 간격 */
+	margin: 20px 0;
+}
+
+.SNS button {
+	width: 50px; /* 버튼 크기 */
+	height: 50px;
+	border-radius: 50%; /* 원형 버튼 */
+	background-color: #f5f5f5; /* 버튼 배경색 */
+	border: none; /* 테두리 제거 */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+	transition: all 0.3s ease; /* 부드러운 전환 효과 */
+	cursor: pointer;
+}
+
+.SNS button img {
+	width: 24px; /* 아이콘 크기 */
+	height: 24px;
+}
+
+.SNS button:hover {
+	background-color: #007bff; /* 호버 시 배경색 */
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 호버 시 그림자 확대 */
+	transform: translateY(-3px); /* 살짝 떠오르는 효과 */
+}
+
+.SNS button:active {
+	transform: translateY(0); /* 클릭 시 원상 복구 */
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* 클릭 시 그림자 약화 */
+}
+/* 기본적인 레이아웃 설정 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.pagination-section {
+    padding: 20px;
+    text-align: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.pagination {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .pagination a {
-	padding: 10px 15px;
-	margin: 0 5px;
-	background-color: #4CAF50;
-	color: white;
-	text-decoration: none;
-	border-radius: 4px;
-	transition: background-color 0.3s ease;
+    text-decoration: none;
+    color: #007bff;
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
 .pagination a:hover {
-	background-color: #45a049;
+    background-color: #007bff;
+    color: white;
 }
 
-.pagination a:active {
-	background-color: #388e3c;
+.pagination a:first-child,
+.pagination a:last-child {
+    font-weight: bold;
 }
 
-.form-group label {
-	display: block;
-	font-weight: bold;
-	margin-bottom: 8px;
-	font-size: 14px;
+.add-review {
+    text-align: center;
+    margin: 20px 0;
 }
 
-.form-group textarea {
-	width: 100%;
-	height: 150px;
-	box-sizing: border-box;
-	resize: none;
-	font-size: 16px;
+.add-review a {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #28a745;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
+
+.add-review a:hover {
+    background-color: #218838;
+}
+

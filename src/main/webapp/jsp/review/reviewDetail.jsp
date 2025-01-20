@@ -6,74 +6,79 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.btn-share-tw').forEach(button => {
-        button.addEventListener('click', (event) => {
-            const sendText = '편의점 콜라보';
-            const pageUrl = event.target.dataset.url;
-            window.open(`https://twitter.com/intent/tweet?text=${sendText}&url=${pageUrl}`);
-        });
-    });
-    document.querySelectorAll('.btn-share-fb').forEach(button => {
-        button.addEventListener('click', (event) => {
-            const pageUrl = event.target.dataset.url;
-            window.open(`http://www.facebook.com/sharer/sharer.php?u=${pageUrl}`);
-        });
-    });
-    document.querySelectorAll('.btn-share-ln').forEach(button => {
-        button.addEventListener('click', (event) => {
-            const pageUrl = event.target.dataset.url;
-            window.open(`https://social-plugins.line.me/lineit/share?url=${pageUrl}`);
-        });
-    });
-});
-</script>
+<title>Review Page</title>
+<link rel="stylesheet" href="css/reviewDetail.css">
+<script type="text/javascript" src="js/reviewdetail.js"></script>
 </head>
 <body>
 	<div class="review-wrap">
-		<c:forEach var="r" items="${reveiws }">
-			<div>
-				<div>
-					<div class="review-reg-col">NAME</div>
-					<div class="review-reg-col2">
-						<input name="title" value="${r.r_name }" disabled="disabled">
-					</div>
-				</div>
-				<div>
-					<div class="review-reg-col">title</div>
-					<div class="review-reg-col2">
-						<input name="title" value="${r.r_title }" disabled="disabled">
-					</div>
-				</div>
-				<div>
-					<div class="review-reg-col">img</div>
-					<div class="review-reg-col2">
-						<input name="img" value="${r.r_img }" disabled="disabled">
-					</div>
-				</div>
-				<div>
-					<div class="review-reg-col">sub</div>
-					<div class="review-reg-col2">
-						<textarea name="sub" maxlength="100" disabled="disabled">${r.r_sub }</textarea>
-						<br> <span id="cntSpan">0</span> /200
-					</div>
-				</div>
-				<div>
-					<div class="review-reg-col">text</div>
-					<div class="review-reg-col2">
-						<textarea name="text" maxlength="100" disabled="disabled">${r.r_text }</textarea>
-						<br> <span id="cntSpan">0</span> /200
-					</div>
-				</div>
-				<div>
-					<div>
-						<fmt:formatDate value="${r.r_date }" />
-					</div>
-				</div>
+		<!-- 목차 -->
+		<div class="toc" id="toc">
+			<h3>
+				목차
+				<button onclick="toggleTOC()">접기/펼치기</button>
+			</h3>
+			<c:forEach var="r" items="${reviews }" varStatus="status">
+				<a href="#review${status.index}">${r.r_sub }</a>
+			</c:forEach>
+		</div>
+
+		<div class="review-wrap">
+			<!-- 목차 -->
+			<div class="toc" id="toc">
+				<h3>
+					목차
+					<button onclick="toggleTOC()">접기/펼치기</button>
+				</h3>
+				<c:forEach var="r" items="${reviews }" varStatus="status">
+					<a href="#review${status.index}">${r.r_sub }</a>
+				</c:forEach>
 			</div>
-		</c:forEach>
-	</div>
+
+			<div class="review-content">
+				<c:forEach var="r" items="${reviews }" varStatus="status">
+					<div id="review${status.index}" class="review-item">
+						<div>
+							<div class="review-reg-col">NAME</div>
+							<div class="review-reg-col2">
+								<input name="name" value="${r.r_name }" disabled="disabled">
+							</div>
+						</div>
+						<div>
+							<div class="review-reg-col">Title</div>
+							<div class="review-reg-col2">
+								<input name="title" value="${r.r_title }" disabled="disabled">
+							</div>
+						</div>
+						<div>
+							<div class="review-reg-col">Image</div>
+							<div class="review-reg-col2">
+								<img src="${r.r_img }" alt="Review Image">
+							</div>
+						</div>
+						<div>
+							<div class="review-reg-col">Summary</div>
+							<div class="review-reg-col2">
+								<textarea name="sub" maxlength="100" disabled="disabled">${r.r_sub }</textarea>
+								<br> <span id="cntSpan">0</span> /200
+							</div>
+						</div>
+						<div>
+							<div class="review-reg-col">Text</div>
+							<div class="review-reg-col2">
+								<textarea name="text" maxlength="100" disabled="disabled">${r.r_text }</textarea>
+								<br> <span id="cntSpan">0</span> /200
+							</div>
+						</div>
+						<div>
+							<div class="review-reg-col">Date</div>
+							<div class="review-reg-col2">
+								<fmt:formatDate value="${r.r_date }" pattern="yyyy-MM-dd" />
+							</div>
+						</div>
+					</div>
+				</c:forEach>
+			</div>
+		</div>
 </body>
 </html>
