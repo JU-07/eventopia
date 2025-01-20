@@ -8,8 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>自由投稿</title>
-<link rel="stylesheet" href="css/ny_freePost.css">
-<link rel="stylesheet" href="css/ny_postsTable.css">
+<link rel="stylesheet" href="css/ny_community.css">
 <script src="js/ny_community.js" defer></script>
 
 </head>
@@ -47,5 +46,13 @@
 			</table>
 		</div>
 	</div>
+
+	<!-- 下部: 戻るボタン -->
+	<!-- 投稿ボタン -->
+	<div class="button-container"
+		style="text-align: center; margin-top: 20px;">
+		<button onclick="location.href='CommunityC'" class="back-button">戻る</button>
+	</div>
+
 </body>
 </html>

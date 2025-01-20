@@ -6,7 +6,7 @@
 <table>
 	<thead>
 		<tr>
-			<th>名前</th>
+			<th>題名</th>
 			<th>画像</th>
 			<th>内容</th>
 			<th>日付</th>

@@ -17,10 +17,10 @@
 	/*	min-width: 300px;*/
 	max-width: 30%;
 	padding: 20px;
-/*	background-color: rgba(255, 255, 255, 0.8);*/
-/*	 白色で80%透明 */
-/*	border: 1px solid rgba(204, 204, 204, 0.8);*/
-/*	 枠線も少し透明に */
+	/*	background-color: rgba(255, 255, 255, 0.8);*/
+	/*	 白色で80%透明 */
+	/*	border: 1px solid rgba(204, 204, 204, 0.8);*/
+	/*	 枠線も少し透明に */
 }
 
 .form-container h1 {
@@ -128,4 +128,22 @@
 	.posts-container table {
 		font-size: 12px;
 	}
+}
+
+/* ボタンの基本スタイル */
+.button-container {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	margin: 20px 0;
+	font-family: 'Note Serif JP', serif;
+}
+
+.button-container button {
+	padding: 10px 20px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
 }

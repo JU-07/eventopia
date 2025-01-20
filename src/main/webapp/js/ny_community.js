@@ -67,4 +67,18 @@ document.getElementById("postForm").addEventListener("submit", function(event) {
 		.catch(error => console.error("投稿処理でエラーが発生しました:", error));
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+	const backButton = document.getElementById("backButton");
 
+	backButton.addEventListener("click", () => {
+		// 遷移先のページを指定
+		window.location.href = "community/CommunityC";
+	});
+});
+
+//chat 
+
+function openChat() {
+	// サーブレットにGETリクエストを送信
+	window.location.href = "/FreePostC2";
+}
