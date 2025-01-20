@@ -51,6 +51,7 @@ public class EventDAO {
 						rs.getDate(6), rs.getInt(7));
 				events.add(event);
 			}
+
 			request.setAttribute("events", events);
 
 		} catch (Exception e) {
@@ -77,14 +78,15 @@ public class EventDAO {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 
-			String name = request.getParameter("name");
-			String title = request.getParameter("title");
-			String image_url = request.getParameter("image_url");
-			String story = request.getParameter("story");
-			System.out.println(name);
-			System.out.println(title);
-			System.out.println(image_url);
-			System.out.println(story);
+			String name = mr.getParameter("name");
+			String title = mr.getParameter("title");
+			String image_url = mr.getFilesystemName("image_url");
+			String story = mr.getParameter("story");
+			System.out.println("name: " + name);
+			System.out.println("title: " + title);
+			System.out.println("image_url: " + image_url); // 업로드된 파일의 이름 확인
+			System.out.println("story: " + story);
+			System.out.println("Upload path: " + path);
 
 			pstmt.setString(1, name);
 			pstmt.setString(2, title);
@@ -93,6 +95,8 @@ public class EventDAO {
 
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("Registion complete");
+			} else {
+				System.out.println("Registration failed");
 			}
 
 		} catch (Exception e) {

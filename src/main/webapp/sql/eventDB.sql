@@ -77,7 +77,7 @@ create table event_test
 create sequence event_test_seq;
 
 insert into event_test
-values (event_test_seq.nextval, '1', '2', '3', '4',sysdate, '5');
+values (event_test_seq.nextval, '1', '2', '3', '4',sysdate, 5);
 
 select * from event_test;
 
@@ -112,9 +112,6 @@ values (review_test_seq.nextval, '세븐일레븐', 'mr.greenapple',
         '로손과 mr.greenapple콜라보', sysdate);
 
 select * from review_test;
-
-drop table review_test cascade constraint purge;
-DROP SEQUENCE review_test_seq CASCADE CONSTRAINTS PURGE;
 
 CREATE SEQUENCE review_test_seq
     START WITH 1

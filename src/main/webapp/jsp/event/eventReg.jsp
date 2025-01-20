@@ -13,7 +13,7 @@
 	</div>
 	<br>
 	<div class="event-form-container">
-		<form action="EventRegC" method="post">
+		<form action="EventRegC" method="post" enctype="multipart/form-data">
 			<div class="event-form">
 
 				<div class="form-group">

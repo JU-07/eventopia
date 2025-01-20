@@ -9,7 +9,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>event page</title>
 <link rel="stylesheet" href="css/event.css">
-<link rel="stylesheet" href="review.css">
 <script src="https://code.jquery.com/jquery-3.7.1.js"
 	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 	crossorigin="anonymous"></script>
@@ -17,17 +16,17 @@
 </head>
 <body>
 	<div class="event-container">
-
-		<div class="event-content lawson">
-			<div class="event-title">이벤트 제목</div>
-			<img src="icon/main/lawson_event1.jpg" class="event-img" />
-			<div class="event-txt">이벤트 내용</div>
-			<div class="event-user">
-				<div>좋아요</div>
-				<div>공유</div>
+		<c:forEach items="${events }" var="e">
+			<div class="event-content lawson">
+				<div class="event-title">이벤트 제목</div>
+				<img src="icon/main/lawson_event1.jpg" class="event-img" />
+				<div class="event-txt">이벤트 내용</div>
+				<div class="event-user">
+					<div>좋아요</div>
+					<div>공유</div>
+				</div>
 			</div>
-		</div>
-
+		</c:forEach>
 		<c:if test="${empty events}">
 			<h2 style="text-align: center">すみません、現在レビューがありません。</h2>
 		</c:if>

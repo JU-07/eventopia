@@ -7,6 +7,7 @@
 <meta charset="UTF-8" />
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/main.css">
+<script type="text/javascript" src="js/main.js" defer></script>
 </head>
 <body>
 	<div style="position: relative;">
