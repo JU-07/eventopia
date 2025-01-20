@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+/* コンテナ全体を左右に分ける */
+.container {
+	display: flex;
+	gap: 20px;
+	padding: 20px;
+	background-color: #f4f4f4;
+	min-height: 400px;
+	height: auto;
+}
+
+/* 投稿フォームセクション */
+.form-container {
+	flex: 1;
+	/* フレキシブルにサイズ調整 */
+	/*	min-width: 300px;*/
+	max-width: 30%;
+	padding: 20px;
+	/*	background-color: rgba(255, 255, 255, 0.8);*/
+	/*	 白色で80%透明 */
+	/*	border: 1px solid rgba(204, 204, 204, 0.8);*/
+	/*	 枠線も少し透明に */
+}
+
+.form-container h1 {
+	font-size: 30px;
+	margin-bottom: 20px;
+	color: #333;
+}
+
+.form-container form label {
+	font-weight: bold;
+	margin-bottom: 5px;
+	display: block;
+}
+
+.form-container form input,
+.form-container form textarea {
+	width: 94%;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #ddd;
+	font-size: 12px;
+	background-color: white;
+}
+
+.form-container form button {
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	background-color: darksalmon;
+	color: white;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.form-container form button:hover {
+	background-color: lightsalmon;
+}
+
+/* 投稿一覧セクション */
+.posts-container {
+	flex: 2;
+	/* 比率を増やして投稿掲示板を大きくする */
+	/* 全体の最低高さを設定 */
+	min-width: 400px;
+	max-width: 100%;
+	padding: 20px;
+	background-color: white;
+	border: 1px solid #ccc;
+	overflow-y: auto;
+	/* 内容が多い場合スクロールを可能にする */
+	height: auto;
+}
+
+.posts-container h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: #333;
+	border-bottom: 2px solid lightgray;
+	padding-bottom: 10px;
+}
+
+.posts-container table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 14px;
+	text-align: left;
+}
+
+.posts-container th {
+	background-color: darksalmon;
+	color: white;
+	padding: 10px;
+	border: 1px solid #ddd;
+}
+
+.posts-container td {
+	padding: 10px;
+	border: 1px solid #ddd;
+	vertical-align: middle;
+}
+
+.posts-container img {
+	width: 50px;
+	height: 50px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+	.container {
+		flex-direction: column;
+		/* 縦に並べる */
+	}
+
+	.form-container,
+	.posts-container {
+		max-width: 100%;
+		/* 画面幅いっぱいに */
+	}
+
+	.form-container form button {
+		font-size: 14px;
+	}
+
+	.posts-container table {
+		font-size: 12px;
+	}
+}
+
+/* ボタンの基本スタイル */
+.button-container {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	margin: 20px 0;
+	font-family: 'Note Serif JP', serif;
+}
+
+.button-container button {
+	padding: 10px 20px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}

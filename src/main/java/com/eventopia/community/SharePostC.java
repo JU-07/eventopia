@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class SharePostC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("content", "community/ny_sharePost.jsp");
+		request.setAttribute("content", "jsp/community/ny_sharePost.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 
 	}

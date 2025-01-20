@@ -2,15 +2,13 @@ package com.eventopia.community;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/FreePostC")
-@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 1, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 15)
-public class FreePostC extends HttpServlet {
+@WebServlet("/FreePostC2")
+public class FreePostC2 extends HttpServlet {
 	private CommunityDAO dao = new CommunityDAO();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -21,7 +19,8 @@ public class FreePostC extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 
 		dao.showAllPost(request);
-		request.setAttribute("content", "jsp/community/ny_freePost.jsp");
+		
+		request.setAttribute("content", "jsp/community/ny_freePost2.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
@@ -32,10 +31,5 @@ public class FreePostC extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 
-		dao.addPost(request);
-		dao.showAllPost(request);
-
-		// jsp/community/postsTable.jsp をレスポンスとして返す
-		request.getRequestDispatcher("jsp/community/postsTable.jsp").forward(request, response);
 	}
 }
