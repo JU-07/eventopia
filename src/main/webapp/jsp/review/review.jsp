@@ -181,7 +181,7 @@ div.review-wrap div {
 		<c:forEach var="r" items="${reviews }">
 			<div class="review-wrap">
 				<h3>편의점 이름</h3>
-				<div>${r.r_name}</div>
+				<div onclick="location.href='ReviewDetailC?no=${r.r_no}'">${r.r_name}</div>
 				<h3>제목</h3>
 				<div>${r.r_title}</div>
 				<h3>이미지</h3>
@@ -196,9 +196,6 @@ div.review-wrap div {
 				<div>${e.e_good}</div>
 			</div>
 		</c:forEach>
-		<c:if test="${empty event}">
-			<h2 style="text-align: center">すみません、現在レビューがありません。</h2>
-		</c:if>
 	</div>
 	<section class="pagination-section">
 		<div class="pagination">

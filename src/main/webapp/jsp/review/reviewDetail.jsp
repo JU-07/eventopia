@@ -50,19 +50,20 @@
 				<div>
 					<div class="review-reg-col">img</div>
 					<div class="review-reg-col2">
-						<input name="title" value="${r.r_img }" disabled="disabled">
+						<input name="img" value="${r.r_img }" disabled="disabled">
 					</div>
 				</div>
 				<div>
 					<div class="review-reg-col">sub</div>
 					<div class="review-reg-col2">
-						<input name="title" value="${r.r_sub }" disabled="disabled">
+						<textarea name="sub" maxlength="100" disabled="disabled">${r.r_sub }</textarea>
+						<br> <span id="cntSpan">0</span> /200
 					</div>
 				</div>
 				<div>
 					<div class="review-reg-col">text</div>
 					<div class="review-reg-col2">
-						<textarea name="txt" maxlength="100" disabled="disabled">${r.r_text }</textarea>
+						<textarea name="text" maxlength="100" disabled="disabled">${r.r_text }</textarea>
 						<br> <span id="cntSpan">0</span> /200
 					</div>
 				</div>

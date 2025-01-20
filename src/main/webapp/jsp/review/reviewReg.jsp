@@ -76,14 +76,14 @@ body {
 		<h2 style="font-size: 30pt">レビュー登録</h2>
 	</div>
 	<div class="review-form-container">
-		<form action="ReviewRegC" method="post">
+		<form action="ReviewRegC" method="post" enctype="multipart/form-data">
 			<div class="form-group">
-				<label for="title">편의점</label> <input id="name" name="name"
+				<label for="name">편의점</label> <input id="name" name="name"
 					type="text" placeholder="イベント タイトル" value="${r.r_name }">
 			</div>
 
 			<div class="form-group">
-				<label for="name">商品名</label> <input id="title" name="title"
+				<label for="title">商品名</label> <input id="title" name="title"
 					type="text" placeholder="商品名" required>
 			</div>
 
