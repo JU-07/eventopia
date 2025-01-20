@@ -6,95 +6,135 @@ import com.google.gson.Gson;
 
 public class EventDTO {
 
-	private int no;
-	private String title;
-	private String name;
-	private String img;
-	private String sub;
-	private String text;
-	private Date date;
 
-	public EventDTO() {
-		// TODO Auto-generated constructor stub
-	}
+	int e_no;
+	String e_name;
+	String e_title;
+	String e_image_url;
+	String e_short_story;
+	String e_story;
+	Date e_date;
+	int e_good;
+	
+public EventDTO() {
+	// TODO Auto-generated constructor stub
+}
 
-	public EventDTO(int no, String title, String name, String img, String sub, String text, Date date, String good) {
-		super();
-		this.no = no;
-		this.title = title;
-		this.name = name;
-		this.img = img;
-		this.sub = sub;
-		this.text = text;
-		this.date = date;
 
-	}
 
-	public int getNo() {
-		return no;
-	}
+public int getE_no() {
+	return e_no;
+}
 
-	public void setNo(int no) {
-		this.no = no;
-	}
 
-	public String getTitle() {
-		return title;
-	}
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+public void setE_no(int e_no) {
+	this.e_no = e_no;
+}
 
-	public String getName() {
-		return name;
-	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
 
-	public String getImg() {
-		return img;
-	}
+public String getE_name() {
+	return e_name;
+}
 
-	public void setImg(String img) {
-		this.img = img;
-	}
 
-	public String getSub() {
-		return sub;
-	}
 
-	public void setSub(String sub) {
-		this.sub = sub;
-	}
+public void setE_name(String e_name) {
+	this.e_name = e_name;
+}
 
-	public String getText() {
-		return text;
-	}
 
-	public void setText(String text) {
-		this.text = text;
-	}
 
-	public Date getDate() {
-		return date;
-	}
+public String getE_title() {
+	return e_title;
+}
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
 
-	@Override
-	public String toString() {
-		return "EventDTO [no=" + no + ", title=" + title + ", name=" + name + ", img=" + img + ", sub=" + sub
-				+ ", text=" + text + ", date=" + date + "]";
-	}
 
-	public String toJsonByMe() {
-		Gson gson = new Gson();
-		return gson.toJson(this);
-	}
+public void setE_title(String e_title) {
+	this.e_title = e_title;
+}
 
+
+
+public String getE_image_url() {
+	return e_image_url;
+}
+
+
+
+public void setE_image_url(String e_image_url) {
+	this.e_image_url = e_image_url;
+}
+
+
+
+public String getE_short_story() {
+	return e_short_story;
+}
+
+
+
+public void setE_short_story(String e_short_story) {
+	this.e_short_story = e_short_story;
+}
+
+
+
+public String getE_story() {
+	return e_story;
+}
+
+
+
+public void setE_story(String e_story) {
+	this.e_story = e_story;
+}
+
+
+
+public Date getE_date() {
+	return e_date;
+}
+
+
+
+public void setE_date(Date e_date) {
+	this.e_date = e_date;
+}
+
+
+
+public int getE_good() {
+	return e_good;
+}
+
+
+
+public void setE_good(int e_good) {
+	this.e_good = e_good;
+}
+
+
+
+public EventDTO(int e_no, String e_name, String e_title, String e_image_url, String e_short_story, String e_story,
+		Date e_date, int e_good) {
+	super();
+	this.e_no = e_no;
+	this.e_name = e_name;
+	this.e_title = e_title;
+	this.e_image_url = e_image_url;
+	this.e_short_story = e_short_story;
+	this.e_story = e_story;
+	this.e_date = e_date;
+	this.e_good = e_good;
+}
+
+
+
+public String toJsonByMe() {
+	Gson gson = new Gson();
+	return gson.toJson(this);
+}
 }

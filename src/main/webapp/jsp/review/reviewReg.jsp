@@ -4,94 +4,114 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>등록 페이지</title>
+<title>レビュー登録</title>
 <link rel="stylesheet" href="css/review.css">
 <style>
-.container {
-	width: 100%;
-	margin: 20px auto;
-	background-color: #ffffff;
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f9f9f9;
+	margin: 0;
+	padding: 20px;
+}
+
+.review-form-container {
+	max-width: 600px;
+	margin: 0 auto;
+	background: #fff;
+	padding: 20px;
 	border-radius: 8px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.review-form-container h2 {
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 24px;
+	color: #333;
 }
 
 .form-group {
-	margin-bottom: 10px; /* 위아래 요소 간격 최소화 */
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
+	margin-bottom: 15px;
 }
 
 .form-group label {
-	font-size: 14px;
-	margin-bottom: 2px; /* label과 input 사이 간격 최소화 */
+	display: block;
+	margin-bottom: 8px;
+	font-weight: bold;
+	color: #555;
 }
 
 .form-group input, .form-group textarea {
-	width: 100%; /* 너비를 100%로 수정 */
-	padding: 6px; /* 내부 여백 */
-	font-size: 14px;
-	border: 1px solid #ccc;
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ddd;
 	border-radius: 4px;
-	box-sizing: border-box; /* 패딩과 테두리 포함 */
+	font-size: 14px;
 }
 
 .form-group textarea {
 	resize: none;
-	height: 50px; /* 텍스트 영역 높이를 조금 더 줄임 */
+	height: 100px;
 }
 
-.submit-btn {
+.form-group button {
+	width: 100%;
+	padding: 10px;
 	background-color: #007bff;
-	color: #ffffff;
+	color: #fff;
 	border: none;
-	padding: 10px; /* 버튼 크기 줄임 */
-	font-size: 14px;
+	border-radius: 4px;
+	font-size: 16px;
 	cursor: pointer;
-	border-radius: 5px;
-	width: 100%; /* 버튼 너비를 폼에 맞춤 */
 	transition: background-color 0.3s;
-	margin-top: 10px; /* 버튼과 상단 요소 간 간격 줄임 */
 }
 
-.submit-btn:hover {
+.form-group button:hover {
 	background-color: #0056b3;
 }
 </style>
 </head>
 <body>
 	<div style="text-align: center">
-		<h1>등록 페이지</h1>
+		<h2 style="font-size: 30pt">レビュー登録</h2>
 	</div>
-	<div class="container">
-
+	<div class="review-form-container">
 		<form action="ReviewRegC" method="post">
 			<div class="form-group">
-				<label for="title">Event Title</label> <input type="text" id="title"
-					name="title">
+				<label for="title">편의점</label> <input id="name" name="name"
+					type="text" placeholder="イベント タイトル" value="${r.r_name }">
 			</div>
 
 			<div class="form-group">
-				<label for="company">Company</label> <input type="text" id="company"
-					name="company">
+				<label for="name">商品名</label> <input id="title" name="title"
+					type="text" placeholder="商品名" required>
 			</div>
 
 			<div class="form-group">
-				<label for="img">Image</label> <input type="file" id="img"
-					name="img">
+				<label for="file">ファイルアップロード</label> <input id="file" name="img"
+					type="file">
 			</div>
 
 			<div class="form-group">
-				<label for="sub">Sub</label>
-				<textarea id="sub" name="sub"></textarea>
+				<label for="sub">요약</label>
+				<textarea id="sub" name="sub" placeholder="요약설명" maxlength="200"
+					required></textarea>
 			</div>
 
 			<div class="form-group">
-				<label for="text">Text</label>
-				<textarea id="text" name="text"></textarea>
+				<label for="text">내용</label>
+				<textarea id="text" name="text" placeholder="商品説明" maxlength="200"
+					required></textarea>
 			</div>
 
-			<button type="submit" class="submit-btn">Add</button>
+			<div class="form-group">
+					<label for="date">날짜</label>
+					<textarea id="date" name="date" placeholder="날짜" required></textarea>
+				</div>
+
+			<div class="form-group">
+				<button type="submit">登録</button>
+			</div>
 		</form>
 	</div>
 </body>

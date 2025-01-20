@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="9374c510-5ef3-46b0-ac95-c9687a27eb29" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eventopia/community/BulletinBoardC.java" beforeDir="false" />
@@ -18,6 +19,9 @@
       <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/community/ny_sharePost.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/sql/eventDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sql/eventDB.sql" afterDir="false" />
     </list>
+=======
+    <list default="true" id="9374c510-5ef3-46b0-ac95-c9687a27eb29" name="Changes" comment="" />
+>>>>>>> 8af1faf1704a564f8c1e3dd8ad53e866c06d43db
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,15 +42,23 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+<<<<<<< HEAD
     "git-widget-placeholder": "ny",
+=======
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "hh__new",
+>>>>>>> 8af1faf1704a564f8c1e3dd8ad53e866c06d43db
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/KDY/DB",
+    "last_opened_file_path": "/Users/ahahyun/sbt10/eventopia",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -75,6 +87,8 @@
       <workItem from="1736391113244" duration="14000" />
       <workItem from="1736391134707" duration="12986000" />
       <workItem from="1736500303234" duration="202000" />
+      <workItem from="1737013975354" duration="3366000" />
+      <workItem from="1737075803206" duration="3286000" />
     </task>
     <servers />
   </component>
