@@ -88,5 +88,3 @@ create table event_test(
 
 
                  );
-
-

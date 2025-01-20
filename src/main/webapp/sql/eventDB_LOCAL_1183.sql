@@ -36,57 +36,23 @@ select * from post_test;
 
 delete from post_test where p_no=7;
 
-create table event_test(
-    e_no number(3) primary key ,
-    e_name varchar2(300 char) not null ,
-    e_title varchar2(300 char) not not null,
-    e_image_url varchar2(500 char) not null,
-    e_short_story varchar2(300 char) not null,
-    e_story varchar2(5000 char) not null,
-    e_date date not null,
-    e_good number(5) NOT NULL
+-----
+
+-- community_postテーブルの作成
+CREATE TABLE community_post (
+                                p_id INT AUTO_INCREMENT PRIMARY KEY,         -- 投稿ID (主キー、自動採番)
+                                p_name VARCHAR(255) NOT NULL,                -- 名前
+                                p_img VARCHAR(500) DEFAULT '画像なし',        -- 画像パス (デフォルト値: 画像なし)
+                                p_content TEXT NOT NULL,                     -- 投稿内容
+                                p_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP   -- 投稿日時 (デフォルトで現在時刻)
 );
 
-alter table event_test modify e_title varchar(300);
-alter table event_test modify e_story varchar(300);
-
-create sequence event_test_seq;
-
-insert into event_test values(event_test_seq.nextval,'1','2','3','4','5',sysdate,'6');
-
-create table review_test(
-  r_no number(3) primary key,
-  r_name varchar2(20 char) not null,
-  r_title varchar2(50 char) not null,
-  r_img varchar2(500 char) not null,
-  r_sub varchar2(20 char) not null,
-  r_text varchar2(20 char) not null,
-  r_date date not null
-);
-ALTER TABLE review_test MODIFY  r_text VARCHAR2(200);
-ALTER TABLE review_test MODIFY  r_sub varchar2(200);
-alter table review_test modify  r_img varchar2(1000);
-ALTER TABLE review_test MODIFY r_sub VARCHAR2(200);
-ALTER TABLE review_test MODIFY r_text VARCHAR2(200);
-
-create sequence review_test_seq;
-
-insert into review_test values(review_test_seq.nextval,'세븐일레븐','mr.greenapple','https://www.lawson.co.jp/lab/campaign/mrsgreenapple/img/main_keyvisual01.png','mr.greenapple과의 콜라보','로손과 mr.greenapple콜라보',sysdate);
-
-select * from review_test;
-
-drop table review_test cascade constraint purge;
-DROP SEQUENCE review_test_seq CASCADE CONSTRAINTS PURGE;
-
-CREATE SEQUENCE review_test_seq
-    START WITH 1
-    INCREMENT BY 1
-    NOCACHE
-    NOCYCLE;
-
-create table event_test(
+-- 初期データ挿入 (必要なら削除または変更可能)
+INSERT INTO community_post (p_name, p_img, p_content, p_date)
+VALUES
+    ('User1', '画像なし', 'This is a sample post.', '2025-01-17 17:41:29'),
+    ('User2', '/uploads/sample.jpg', 'Another example post.', '2025-01-17 17:41:34');
 
 
-                 );
 
 
