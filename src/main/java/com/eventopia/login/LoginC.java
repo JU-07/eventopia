@@ -1,6 +1,8 @@
 package com.eventopia.login;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,12 +31,23 @@ public class LoginC extends HttpServlet {
 
         // 로그인 처리
         String result = LoginDAO.login(id, pw);
-
+        
         if ("Login Success".equals(result)) {
+            // 세션에 사용자 ID 저장
             request.getSession().setAttribute("userId", id);
-            response.sendRedirect("login.jsp");
+
+            // 성공 메시지를 설정하고 index.jsp로 포워드
+            request.setAttribute("message", "Login Success");
+            request.setAttribute("content", "jsp/mypage/mypage.jsp");	// mypage로
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+            
         } else {
-            response.sendRedirect("login?error=" + result);  // 다시 로그인 페이지로
+        	
+        	// 로그인 실패 시 다시 로그인 페이지로 리다이렉트
+            request.setAttribute("message", "Login Failed");
+            request.setAttribute("content", "jsp/login/login.jsp");	// mypage로
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+            
         }
 	}
 

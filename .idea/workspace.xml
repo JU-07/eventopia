@@ -4,7 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9374c510-5ef3-46b0-ac95-c9687a27eb29" name="Changes" comment="" />
+    <list default="true" id="9374c510-5ef3-46b0-ac95-c9687a27eb29" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/sql/userDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/04a95bb6-7d2c-4a1f-b35f-25c4e417d2af.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/04a95bb6-7d2c-4a1f-b35f-25c4e417d2af.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventopia/login/LoginC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventopia/login/LoginC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventopia/login/LoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventopia/login/LoginDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventopia/login/RegisterC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventopia/login/RegisterC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventopia/mypage/MyPageC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventopia/mypage/MyPageC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/index/heart-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/index/heart-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/index/heart.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/index/heart.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/index/list.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/index/list.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/index/search-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/index/search-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/index/search.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/index/search.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/index/sidebar-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/index/sidebar-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/index/user-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/index/user-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/index/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/index/user.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/login/facebook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/login/google.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/login/line.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/login/yahoo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/logo/eventopia-logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/logo/eventopia-logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/logo/eventopia_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/logo/eventopia_logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/logo/f_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/logo/f_logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/logo/l_logo.webp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/logo/l_logo.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/logo/s_logo.webp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/logo/s_logo.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/main/arr_visual.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/main/arr_visual.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/main/famima_event1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/main/famima_event1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/main/famima_event2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/main/famima_event2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/main/lawson_event1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/main/lawson_event1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/main/seven_event1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/main/seven_event1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/main/seven_event2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/main/seven_event2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/login/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/login/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/login/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/login/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/sql/testDB.sql" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +107,7 @@
       <workItem from="1736391134707" duration="12986000" />
       <workItem from="1736500303234" duration="202000" />
       <workItem from="1737013975354" duration="3366000" />
-      <workItem from="1737075803206" duration="3286000" />
+      <workItem from="1737075803206" duration="13380000" />
     </task>
     <servers />
   </component>

@@ -3,6 +3,7 @@ package com.eventopia.login;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLIntegrityConstraintViolationException;
 
 import com.eventopia.main.DBManager;
 
@@ -14,7 +15,7 @@ public class LoginDAO {
     	Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        String sql = "SELECT * FROM USER_INF WHERE USER_ID=?";
+        String sql = "SELECT * FROM USER_INFO WHERE USER_ID=?";
         String result = null;
 
         try {
@@ -64,23 +65,41 @@ public class LoginDAO {
     }
 
     // 회원가입 메서드
-    public static boolean register(String userId, String userPw, String userName) {
-        boolean isRegistered = false;
-        String sql = "INSERT INTO USER_INF (USER_ID, USER_PW, USER_NAME, USER_CREATE_AT) VALUES (?, ?, ?, SYSDATE)";
+    public static String register(String userId, String userPw, String userName, String userProfile) {
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        String sql = "INSERT INTO USER_INF (USER_ID, USER_PW, USER_NAME, USER_CREATE_AT, USER_PROFILE) VALUES (?, ?, ?, SYSDATE, ?)";
+        String result = null;
 
-        try (Connection conn = DBManager.connect();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try {
+            con = DBManager.connect();
+            pstmt = con.prepareStatement(sql);
 
+            // 파라미터 바인딩
             pstmt.setString(1, userId);
             pstmt.setString(2, userPw);
             pstmt.setString(3, userName);
+            pstmt.setString(4, userProfile);
 
-            int result = pstmt.executeUpdate();
-            isRegistered = result > 0;
+            // SQL 실행
+            int rows = pstmt.executeUpdate();	
+
+            if (rows > 0) {
+                result = "Registration Success";
+            } else {
+                result = "Registration Failed";
+            }
+
+        } catch (SQLIntegrityConstraintViolationException e) {
+            // 중복된 user_id 에러 처리
+            result = "User ID Already Exists";
         } catch (Exception e) {
             e.printStackTrace();
+            result = "Database Error";
+        } finally {
+            DBManager.close(con, pstmt, null);
         }
 
-        return isRegistered;
+        return result;
     }
 }

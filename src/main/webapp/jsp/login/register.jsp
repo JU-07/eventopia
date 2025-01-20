@@ -19,7 +19,7 @@
                 <h2>Welcome to Eventopia!</h2>
                 <p>Join us and explore the best events around you.</p>
                 <div class="logo-wrapper">
-                    <img src="Icon/eventopia-logo.png" alt="Eventopia Logo">
+                    <img src="icon/eventopia-logo.png" alt="Eventopia Logo">
                 </div>
             </div>
 
@@ -30,7 +30,7 @@
                     <!-- ID -->
                     <div class="input-group">
                         <i class="fas fa-user"></i>
-                        <input type="text" id="userId" name="userId" placeholder="Username" required>
+                        <input type="text" id="userId" name="userId" placeholder="UserID" required>
                         <button type="button" id="checkIdBtn" class="round-btn">Check</button>
                     </div>
                     <p id="idCheckMsg" style="color:red;"></p>
@@ -51,13 +51,13 @@
                     <!-- Name -->
                     <div class="input-group">
                         <i class="fas fa-user-tag"></i>
-                        <input type="text" id="userName" name="userName" placeholder="Full Name" required>
+                        <input type="text" id="userName" name="userName" placeholder="User Name" required>
                     </div>
 
                     <!-- Profile Picture Upload -->
                     <div class="input-group">
                         <i class="fas fa-image"></i>
-                        <input type="file" id="profilePic" name="profilePic" accept="image/*">
+                        <input type="file" id="profilePic" name="userProfile" accept="image/*">
                         <label for="profilePic" class="upload-btn">Choose File</label>
                         <span id="fileName">No file chosen</span>
                     </div>

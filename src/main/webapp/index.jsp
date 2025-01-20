@@ -36,7 +36,7 @@
 							alt="User Icon" class="user-img" /></a>
 					</div>
 					<div>
-						<img src="icon/index/heart-icon.png" alt="Heart Icon"
+						<a href="MyPageC"><img src="icon/index/heart-icon.png" alt="Heart Icon"
 							class="heart-img" />
 					</div>
 					<div>
