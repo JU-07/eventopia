@@ -83,3 +83,40 @@ leftBtn.addEventListener("click", () => {
 		intervalId = setInterval(moveToNextSlide, 3000);
 	}, 3000);
 });
+
+// 버튼 요소 가져오기
+const scrollToTopBtn = document.getElementById('scrollToTop');
+
+// 스크롤 이벤트
+window.addEventListener('scroll', () => {
+	if (window.scrollY > 100) {
+		scrollToTopBtn.style.display = 'block';
+	} else {
+		scrollToTopBtn.style.display = 'none';
+	}
+});
+
+// 버튼 클릭 이벤트
+scrollToTopBtn.addEventListener('click', () => {
+	// 호환성을 위해 requestAnimationFrame으로 부드러운 스크롤 처리
+	smoothScrollTo(0, 300); // 500ms 동안 부드럽게 이동
+});
+
+// 부드러운 스크롤 함수
+function smoothScrollTo(targetPosition, duration) {
+	const start = window.scrollY; // 현재 스크롤 위치
+	const distance = targetPosition - start; // 이동 거리
+	const startTime = performance.now();
+
+	function animation(currentTime) {
+		const elapsedTime = currentTime - startTime;
+		const progress = Math.min(elapsedTime / duration, 1); // 진행률 (0~1)
+		window.scrollTo(0, start + distance * progress); // 스크롤 이동
+
+		if (elapsedTime < duration) {
+			requestAnimationFrame(animation); // 애니메이션 반복 호출
+		}
+	}
+
+	requestAnimationFrame(animation);
+}

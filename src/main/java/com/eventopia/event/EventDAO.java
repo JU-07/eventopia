@@ -15,8 +15,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 public class EventDAO {
 
-	public static final  EventDAO EDAO = new EventDAO();
-
+	public static final EventDAO EDAO = new EventDAO();
 
 	private Connection con = null;
 
@@ -38,7 +37,6 @@ public class EventDAO {
 
 		String sql = "select * from event_test order by e_date";
 
-
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
@@ -49,7 +47,8 @@ public class EventDAO {
 			EventDTO event = null;
 
 			while (rs.next()) {
-				event = new EventDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getDate(7), rs.getInt(8));
+				event = new EventDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),
+						rs.getDate(6), rs.getInt(7));
 				events.add(event);
 			}
 			request.setAttribute("events", events);
@@ -64,38 +63,33 @@ public class EventDAO {
 
 	public void addEvent(HttpServletRequest request) throws UnsupportedEncodingException {
 		request.setCharacterEncoding("UTF-8");
-		
-		
+
 		PreparedStatement pstmt = null;
-		String sql = "insert into event_test values(event_test_seq.nextval,?,?,?,?,?,sysdate,0)";
+		String sql = "insert into event_test values(event_test_seq.nextval,?,?,?,?,sysdate,0)";
 
 		String path = request.getServletContext().getRealPath("");
 		System.out.println(path);
-		
 
 		try {
-			MultipartRequest mr = new MultipartRequest(request, path, 1024 * 1024 * 30,"UTF-8", new DefaultFileRenamePolicy());
-			
+			MultipartRequest mr = new MultipartRequest(request, path, 1024 * 1024 * 30, "UTF-8",
+					new DefaultFileRenamePolicy());
+
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 
 			String name = request.getParameter("name");
 			String title = request.getParameter("title");
 			String image_url = request.getParameter("image_url");
-			String short_story = request.getParameter("short_story");
 			String story = request.getParameter("story");
 			System.out.println(name);
 			System.out.println(title);
 			System.out.println(image_url);
-			System.out.println(short_story);
 			System.out.println(story);
-			
+
 			pstmt.setString(1, name);
 			pstmt.setString(2, title);
 			pstmt.setString(3, image_url);
-			pstmt.setString(4, short_story);
-			pstmt.setString(5, story);
-	
+			pstmt.setString(4, story);
 
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("Registion complete");
@@ -103,10 +97,10 @@ public class EventDAO {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			DBManager.close(con, pstmt, null);
 
+		}
+
 	}
-	
-	}
-	}
+}

@@ -48,6 +48,7 @@
 .img {
 	font-size: 5px;
 }
+
 .SNS {
 	display: flex;
 	justify-content: center; /* 가운데 정렬 */
@@ -84,7 +85,7 @@
 }
 </style>
 
-<div 　style="text-align: center">
+<div style="text-align: center">
 	<h2>現在のローソンコラボレーションイヴェント</h2>
 </div>
 

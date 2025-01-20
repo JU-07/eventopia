@@ -81,7 +81,10 @@
 				<jsp:include page="${content }"></jsp:include>
 			</div>
 		</div>
-
+		<div class="btnPageBtn" style="display: block;">
+			<a href="#" id="scrollToTop"><img src="icon/main/btn_pagetop.png"
+				alt="Scroll to Top"></a>
+		</div>
 		<!-- 푸터 -->
 		<div class="footer-bg">
 			<div class="footer">
