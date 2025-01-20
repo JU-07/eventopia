@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/index.css" />
 <link rel="stylesheet" href="css/main.css" />
-<link rel="stylesheet" href="css/login.css" />
+
 <link rel="stylesheet" href="css/rank.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -11,9 +11,22 @@
 	crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="css/rank.css">
+
 </head>
 <body>
-	<a href="RankPageC">역대랭킹</a>
+<div class="nav-bar">
+<div class="nav-items">
+<a href="RankC">콜라보 랭킹</a>
+<a href="#">콜라보 랭킹</a>
+<a href="RankPageC">역대 콜라보 랭킹</a>
+<a href="LimitedPageC">역대 기간한정 랭킹</a>
+<a href="#">미니 게임</a>
+<a href="RankRegC">게시물 등록</a>
+</div>
+</div>
+
+
 	<h1>랭킹 순위</h1>
 
 	<div class="container">
@@ -30,7 +43,7 @@
 				</div>
 			</c:forEach>
 		</div>
-
+	<canvas id="myChart" width="500" height="500"></canvas>
 	</div>
 
 
@@ -53,6 +66,7 @@
 						</c:forEach>
 
 					</div>
+
 				</div>
 
 
@@ -63,7 +77,6 @@
 			</div>
 		</div>
 	</form>
-	<canvas id="myChart" width="200px" height="200px"></canvas>
 	<script>
 		// 모달 열기 
 		function openModal() {
@@ -127,6 +140,7 @@
                 }]
             },
             options: {
+            	responsive: false,
                 scales: {
                     y: {
                         beginAtZero: true

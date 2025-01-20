@@ -6,13 +6,28 @@ body {
 	padding: 0;
 	background-color: #f9f9f9;
 }
-
-h1 {
-	text-align: center;
-	color: #333;
-	margin-top: 20px;
+h1{text-align: center;
+margin-top: 10px;
+}
+.nav-bar {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+.nav-items {
+    display: flex
+;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.nav-items a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
 .container {
 	display: flex;
 	justify-content: space-between;
