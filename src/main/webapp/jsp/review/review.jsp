@@ -9,7 +9,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>로손 이벤트 페이지</title>
 <link rel="stylesheet" href="css/review.css">
-<script type="text/javascript" src="js/reviewdetail.js"></script>
+<link rel="stylesheet" href="css/reviewmodal.css">
+<script type="text/javascript" src="js/review.js"></script>
 <style>
 </style>
 </head>
@@ -18,36 +19,50 @@
 	<div class="review-container">
 		<c:forEach var="r" items="${reviews}">
 			<div class="review-content">
-				<div class="review-title" onclick="location.href='ReviewDetailC?no=${r.r_no}'">${r.r_title }</div>
+				<div class="review-title"
+					onclick="location.href='ReviewDetailC?no=${r.r_no}'">${r.r_title }</div>
 				<div class="review-img">
-				<img alt="" src="${r.r_img }">
+					<img alt="" src="${r.r_img }">
 				</div>
 				<div class="review-sub">${r.r_sub }</div>
-				<div class="review-txt">${r.r_text }</div>
 				<div class="review-user">
 					<div>좋아요</div>
-					<div>공유</div>
+					<!-- 공유 버튼 -->
+					<div class="SNS">
+						<button type="button" onclick="openShareModal()">공유</button>
+					</div>
+
+					<!-- 모달창 -->
+					<div id="shareModal" class="modal">
+						<div class="modal-content">
+							<span class="close" onclick="closeShareModal()">&times;</span>
+							<h4>SNS 공유</h4>
+							<button type="button" class="btn-share-tw"
+								onclick="shareToSNS('twitter')">
+								<img
+									src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/X_icon.svg/2048px-X_icon.svg.png"
+									alt="Twitter"> Twitter
+							</button>
+							<button type="button" class="btn-share-fb"
+								onclick="shareToSNS('facebook')">
+								<img
+									src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+									alt="Facebook"> Facebook
+							</button>
+							<button type="button" class="btn-share-ln"
+								onclick="shareToSNS('line')">
+								<img
+									src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/LINE_logo.svg/1024px-LINE_logo.svg.png"
+									alt="Line"> Line
+							</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</c:forEach>
 	</div>
-	<div class="SNS">
-		<button type="button" class="btn-share-tw" data-url="${event.link}">
-			<img
-				src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/X_icon.svg/2048px-X_icon.svg.png"
-				alt="X">
-		</button>
-		<button type="button" class="btn-share-fb" data-url="${event.link}">
-			<img
-				src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-				alt="Facebook">
-		</button>
-		<button type="button" class="btn-share-ln" data-url="${event.link}">
-			<img
-				src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/LINE_logo.svg/1024px-LINE_logo.svg.png"
-				alt="Line">
-		</button>
-	</div>
+
+
 	<section class="pagination-section">
 		<div class="pagination">
 			<a href="ReviewPageC?p=1">初</a>

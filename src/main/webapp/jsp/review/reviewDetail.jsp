@@ -11,63 +11,38 @@
 <script type="text/javascript" src="js/reviewdetail.js"></script>
 </head>
 <body>
-	<div class="review-wrap">
-		<!-- 목차 -->
-		<div class="toc" id="toc">
-			<h3>
-				목차
-				<button onclick="toggleTOC()">접기/펼치기</button>
-			</h3>
+		<div class="review-content">
 			<c:forEach var="r" items="${reviews }" varStatus="status">
-				<a href="#review${status.index}">${r.r_sub }</a>
-			</c:forEach>
-		</div>
-
-		<div class="review-wrap">
-			<!-- 목차 -->
-			<div class="toc" id="toc">
-				<h3>
-					목차
-					<button onclick="toggleTOC()">접기/펼치기</button>
-				</h3>
-				<c:forEach var="r" items="${reviews }" varStatus="status">
-					<a href="#review${status.index}">${r.r_sub }</a>
-				</c:forEach>
-			</div>
-
-			<div class="review-content">
-				<c:forEach var="r" items="${reviews }" varStatus="status">
-					<div id="review${status.index}" class="review-item">
-						<div>
-							<div class="review-reg-col">NAME</div>
-							<div class="review-reg-col2">
-								<input name="name" value="${r.r_name }" disabled="disabled">
-							</div>
+				<div id="review${status.index}" class="review-item">
+					<div>
+						<div class="review-reg-col">NAME</div>
+						<div class="review-reg-col2">
+							<div name="name" value="${r.r_name }" disabled="disabled">
+								${r.r_name }</div>
 						</div>
 						<div>
 							<div class="review-reg-col">Title</div>
 							<div class="review-reg-col2">
-								<input name="title" value="${r.r_title }" disabled="disabled">
+								<div name="title" value="${r.r_title }" disabled="disabled">
+									${r.r_title }</div>
 							</div>
-						</div>
-						<div>
-							<div class="review-reg-col">Image</div>
-							<div class="review-reg-col2">
-								<img src="${r.r_img }" alt="Review Image">
+							<div>
+								<div class="review-reg-col">Image</div>
+								<div class="review-reg-col2">
+									<img src="${r.r_img }" alt="Review Image">
+								</div>
 							</div>
-						</div>
-						<div>
-							<div class="review-reg-col">Summary</div>
-							<div class="review-reg-col2">
-								<textarea name="sub" maxlength="100" disabled="disabled">${r.r_sub }</textarea>
-								<br> <span id="cntSpan">0</span> /200
+							<div>
+								<div class="review-reg-col">Summary</div>
+								<div class="review-reg-col2">
+									<div name="sub" value="${r.r_sub }">${r.r_sub}</div>
+								</div>
 							</div>
-						</div>
-						<div>
-							<div class="review-reg-col">Text</div>
-							<div class="review-reg-col2">
-								<textarea name="text" maxlength="100" disabled="disabled">${r.r_text }</textarea>
-								<br> <span id="cntSpan">0</span> /200
+							<div>
+								<div class="review-reg-col">Text</div>
+								<div class="review-reg-col2">
+									<div name="text" value="${r.r_text}">${r.r_text}</div>
+								</div>
 							</div>
 						</div>
 						<div>
@@ -77,8 +52,8 @@
 							</div>
 						</div>
 					</div>
-				</c:forEach>
-			</div>
+			</c:forEach>
 		</div>
+	</div>
 </body>
 </html>
