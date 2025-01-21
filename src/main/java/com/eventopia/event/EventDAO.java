@@ -107,4 +107,30 @@ public class EventDAO {
 		}
 
 	}
+
+	public void deleteEvent(HttpServletRequest request) {
+		
+		PreparedStatement pstmt = null;
+		String sql = "delete event_test where e_no=?";
+
+		try {
+			con = DBManager.connect();
+			
+			String no = request.getParameter("no");
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, no);
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("삭제 성공");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+		
+	}
+	
 }

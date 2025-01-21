@@ -17,8 +17,12 @@
 			<div class="event-form">
 
 				<div class="form-group">
-					<label for="name">コンビ二社名</label> <input id="name" name="name"
-						type="text" placeholder="コンビ二社名" value="${e.e_name }">
+					<label for="name">コンビ二社名</label>
+					<select name="name">
+						<option value="ローソン">ローソン</option>
+						<option value="セブンイレブン">セブンイレブン</option>
+						<option value="ファミリーマート">ファミリーマート</option>
+					</select>
 				</div>
 
 				<div class="form-group">
@@ -40,7 +44,7 @@
 				<div class="form-group">
 					<button type="submit" class="review-btn">登録</button>
 				</div>
-				
+
 			</div>
 		</form>
 	</div>
