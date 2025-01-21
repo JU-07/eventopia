@@ -13,12 +13,23 @@
 	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 	crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/event.js"></script>
+<script type="text/javascript">
+	function deleteEvent(no) {
+		let ok = confirm("삭제하시겠습니까?");
+		if (ok) {
+			location.href = "EventDelC?no=" + no;
+		}
+	}
+</script>
 </head>
 <body>
 	<div class="event-container">
 		<c:forEach items="${events }" var="e">
 			<div
 				class="event-content-e ${e.e_name == 'ローソン' ? 'lawson' : e.e_name == 'セブンイレブン' ? 'seven' : e.e_name == 'ファミリーマート' ? 'family' : ''}">
+				<button class="close-btn" onclick="deleteEvent(${e.e_no})">
+					<span>×</span>
+				</button>
 				<div class="event-title">${e.e_title }</div>
 				<img src="icon/main/lawson_event1.jpg" class="event-img" />
 				<div class="event-txt">${e.e_story }</div>
@@ -34,15 +45,15 @@
 	</div>
 	<section class="pagination-section">
 		<div class="pagination">
-			<a href="EventPageC?p=1"><span><</span></a>
+			<a href="EventPageC?p=1"><span><<</span></a>
 			<c:forEach begin="1" end="${pageCount}" var="i">
 				<a href="EventPageC?p=${i}">[${i}]</a>
 			</c:forEach>
-			<a href="EventPageC?p=${pageCount}">></a>
+			<a href="EventPageC?p=${pageCount}">>></a>
 		</div>
 	</section>
 	<div class="add-event">
-		<a href="EventRegC" id="add_btn"><span>登録</span></a> <a href="EventUpdateC" id="update_btn"><span>編集</span></a>
+		<a href="EventRegC" id="add_btn"><span>登録</span></a> <a href="EventC" id="back_btn"><span>戻る</span></a>
 	</div>
 </body>
 </html>
