@@ -196,9 +196,6 @@ div.event-wrap div {
 				<div>${e.e_good}</div>
 			</div>
 		</c:forEach>
-		<c:if test="${empty event}">
-			<h2 style="text-align: center">すみません、現在レビューがありません。</h2>
-		</c:if>
 	</div>
 	<section class="pagination-section">
 		<div class="pagination">
@@ -225,9 +222,6 @@ div.event-wrap div {
 				src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/LINE_logo.svg/1024px-LINE_logo.svg.png"
 				alt="Line">
 		</button>
-	</div>
-	<div class="add-event">
-		<a href="EventRegC">登録</a>
 	</div>
 </body>
 </html>

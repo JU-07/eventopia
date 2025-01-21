@@ -11,19 +11,19 @@
 <body>
 	<div style="position: relative;">
 		<button class="slider-btn left-btn">
-			<img src="icon/main/arr_visual.png" alt="" />
+			<img src="Icon/main/arr_visual.png" alt="" />
 		</button>
 		<div class="slider-container">
 			<div class="slider">
-				<img src="icon/main/famima_event1.jpg" alt="Slide 1" /> <img
-					src="icon/main/seven_event1.jpg" alt="Slide 2" /> <img
-					src="icon/main/seven_event2.jpg" alt="Slide 3" /> <img
-					src="icon/main/lawson_event1.jpg" alt="Slide 4" /> <img
-					src="icon/main/famima_event2.jpg" alt="Slide 5" />
+				<img src="Icon/main/famima_event1.jpg" alt="Slide 1" /> <img
+					src="Icon/main/seven_event1.jpg" alt="Slide 2" /> <img
+					src="Icon/main/seven_event2.jpg" alt="Slide 3" /> <img
+					src="Icon/main/lawson_event1.jpg" alt="Slide 4" /> <img
+					src="Icon/main/famima_event2.jpg" alt="Slide 5" />
 			</div>
 		</div>
 		<button class="slider-btn right-btn">
-			<img src="icon/main/arr_visual.png" alt="" />
+			<img src="Icon/main/arr_visual.png" alt="" />
 		</button>
 	</div>
 	<div class="EMoving">
