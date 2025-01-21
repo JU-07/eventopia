@@ -6,7 +6,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
     // 유효성 검사: 아이디와 비밀번호 공백 검사
     if (username === "" || password === "") {
-        event.preventDefault();  // 폼 제출 방지
+        event.preventDefault(); // 폼 제출 방지
         errorMsg.textContent = "Please enter both Username and Password.";
         return;
     }
@@ -29,3 +29,16 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     // 에러가 없을 경우 에러 메시지 초기화
     errorMsg.textContent = "";
 });
+
+// JSP에서 서버 메시지를 가져옴
+window.onload = function () {
+    const message = '<%= request.getAttribute("message") != null ? request.getAttribute("message") : "" %>';
+    if (message === "Login Failed") {
+        document.getElementById("login-failed-modal").style.display = "flex"; // 실패 시 모달 표시
+    }
+};
+
+// 모달 닫기 기능
+function closeModal() {
+    document.getElementById("login-failed-modal").style.display = "none";
+}
