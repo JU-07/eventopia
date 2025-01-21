@@ -3,7 +3,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 .container {
@@ -18,8 +17,8 @@
 /* 왼쪽 패널 */
 .left-panel {
     width: 50%;
-    background-color: #cababa;
-    color: #4B3621;
+    background-color: #1b2c3e;
+    color: #fff;
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -31,7 +30,7 @@
 .left-panel .logo-wrapper {
     width: 180px;
     height: 180px;
-    background-color: #F8F1EB;
+    background-color: #ebf0f6;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -82,20 +81,27 @@
     padding: 10px;
 }
 
+.right-panel h2 {
+	font-weight: 600;
+	margin-bottom: 20px;
+	color: #1b2c3e;
+}
+
 /* 회원가입 버튼 */
 .signup-btn {
     width: 100%;
     padding: 12px;
-    background-color: #cababa;
+    background-color: #1b2c3e;
     color: #fff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-weight: 400;
+    font-weight: 800;
+    font-size: 16px; /* 글자 크기 설정 */
 }
 
 .signup-btn:hover {
-    background-color: #8f6f6f ;
+    background-color: #04080b;
 }
 
 /* 로그인 링크 */
@@ -105,7 +111,7 @@
 }
 
 .login-link a {
-    color: #cababa;
+    color: #888;
     text-decoration: none;
 }
 
@@ -116,23 +122,24 @@
 
 /* Check ID 버튼 둥글게 */
 .round-btn {
-    background-color: #cababa;
+    background-color: #1b2c3e;
     color: #fff;
     border: none;
     padding: 10px 15px;
     border-radius: 20px; /* 둥글게 */
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 6;
     margin-left: 10px;
+    font-size: 14px; /* 글자 크기 설정 */
 }
 
 .round-btn:hover {
-    background-color: #8f6f6f ;
+    background-color: #04080b;
 }
 
 /* 파일 업로드 버튼 디자인 */
 .upload-btn {
-    background-color: #cababa;
+    background-color: #1b2c3e;
     color: #fff;
     padding: 8px 15px;
     border-radius: 20px;
@@ -140,10 +147,11 @@
     font-weight: 400;
     margin-left: 10px;
     display: inline-block;
+    font-size: 14px; /* 글자 크기 설정 */
 }
 
 .upload-btn:hover {
-    background-color: #8f6f6f ;
+    background-color: #04080b;
 }
 
 #profilePic {
@@ -154,5 +162,5 @@
 #fileName {
     margin-left: 10px;
     font-size: 14px;
-    color: #555;
+    color: #888;
 }

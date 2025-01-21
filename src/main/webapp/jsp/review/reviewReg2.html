@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+   <script src="js/ckeditor.js"></script>
+    <title>글 작성</title>
+</head>
+<body>
+    <form action="ReviewRegDC" method="post">
+        <label>제목:</label>
+        <input type="text" name="title" required><br><br>
+
+        <label>부연설명:</label>
+        <input name="sub" id="sub"><br><br>
+
+        <label>image:</label>
+        <input name="img"><br><br>
+
+        <textarea name="content" id="editor"></textarea>
+        <br>
+        <button type="submit">등록</button>
+
+
+
+
+
+    </form>
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'), {
+                toolbar: [
+                    'heading', '|', 'bold', 'italic', '|', 'alignment', '|', 'link', 'bulletedList', 'numberedList', '|', 'imageUpload', '|', 'undo', 'redo'
+                ],
+                alignment: {
+                    options: ['left', 'center', 'right', 'justify'] // 정렬 옵션 추가
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+</body>
+</html>

@@ -7,7 +7,6 @@ pageEncoding="UTF-8"%>
     <title>Insert title here</title>
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/main.css" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,6 +14,7 @@ pageEncoding="UTF-8"%>
       rel="stylesheet"
     />
   </head>
+
   <body style="position: relative; z-index: 0">
     <div id="wrap">
       <!-- 헤더 -->
@@ -31,7 +31,6 @@ pageEncoding="UTF-8"%>
               <span>EVENTOPIA</span>
             </a>
           </div>
-
           <!-- 오른쪽: 아이콘 그룹 -->
           <div class="side-info">
             <div>
@@ -43,11 +42,12 @@ pageEncoding="UTF-8"%>
               /></a>
             </div>
             <div>
-              <img
-                src="icon/index/heart-icon.png"
-                alt="Heart Icon"
-                class="heart-img"
-              />
+              <a href="MyPageC"
+                ><img
+                  src="icon/index/heart-icon.png"
+                  alt="Heart Icon"
+                  class="heart-img"
+              /></a>
             </div>
             <div>
               <img
