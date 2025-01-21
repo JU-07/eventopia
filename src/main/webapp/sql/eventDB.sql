@@ -81,6 +81,8 @@ values (event_test_seq.nextval, '1', '2', '3', '4',sysdate, 5);
 
 select * from event_test;
 
+TRUNCATE TABLE event_test;
+
 drop table event_test;
 
 create table review_test
