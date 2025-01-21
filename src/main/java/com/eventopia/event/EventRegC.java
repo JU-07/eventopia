@@ -15,6 +15,7 @@ public class EventRegC extends HttpServlet {
 
 		request.setAttribute("content", "jsp/event/eventReg.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

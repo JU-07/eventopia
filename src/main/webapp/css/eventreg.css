@@ -1,94 +1,83 @@
-@charset "UTF-8";
-/* 전체 페이지 스타일 */
+/* 기본 스타일 설정 */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f7fa;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
 }
 
-/* 폼 컨테이너 */
+/* 제목 중앙 정렬 */
+h2 {
+    color: black;
+}
+
+/* 폼 컨테이너 중앙 배치 */
 .event-form-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     max-width: 600px;
-    width: 100%;
-    padding: 40px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin: 50px auto;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 폼 스타일 */
+/* 폼 내부 정렬 */
 .event-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 100%;
 }
 
-/* 입력 필드 그룹 */
+/* 개별 폼 그룹 */
 .form-group {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    gap: 10px;
 }
 
 /* 레이블 스타일 */
 label {
-    font-size: 14px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
 }
 
-/* 입력 필드와 텍스트 영역 스타일 */
-input[type="text"], input[type="file"], textarea {
-    padding: 12px;
-    font-size: 14px;
+/* 입력 필드 스타일 */
+input[type="text"],
+input[type="file"],
+textarea {
+    padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 6px;
-    background-color: #fafafa;
-    color: #333;
-    width: 100%;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
 }
 
-/* 포커스 상태 스타일 */
-input[type="text"]:focus, textarea:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+input[type="text"]:focus,
+input[type="file"]:focus,
+textarea:focus {
+    border-color: #4CAF50;
 }
 
 /* 텍스트 영역 스타일 */
 textarea {
-    resize: vertical;
-    min-height: 150px;
+    resize: none;
 }
 
-/* 제출 버튼 스타일 */
-button.event-btn {
-    padding: 12px 20px;
-    background-color: #007bff;
-    color: white;
+/* 버튼 스타일 */
+.review-btn {
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: #fff;
     font-size: 16px;
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
-/* 버튼 호버 효과 */
-button.event-btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-}
-
-/* 버튼 클릭 효과 */
-button.event-btn:active {
-    transform: translateY(0);
+.review-btn:hover {
+    background-color: #45a049;
 }

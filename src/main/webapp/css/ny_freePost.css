@@ -35,8 +35,7 @@
 	display: block;
 }
 
-.form-container form input,
-.form-container form textarea {
+.form-container form input, .form-container form textarea {
 	width: 94%;
 	padding: 10px;
 	margin-bottom: 15px;
@@ -109,22 +108,18 @@
 }
 
 /* レスポンシブ対応 */
-@media (max-width: 768px) {
+@media ( max-width : 768px) {
 	.container {
 		flex-direction: column;
 		/* 縦に並べる */
 	}
-
-	.form-container,
-	.posts-container {
+	.form-container, .posts-container {
 		max-width: 100%;
 		/* 画面幅いっぱいに */
 	}
-
 	.form-container form button {
 		font-size: 14px;
 	}
-
 	.posts-container table {
 		font-size: 12px;
 	}

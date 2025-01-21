@@ -8,13 +8,11 @@
 <link rel="stylesheet" href="css/index.css" />
 <link rel="stylesheet" href="css/main.css" />
 <link rel="stylesheet" href="css/login.css" />
-<link rel="stylesheet" href="css/rank.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
 	href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 	rel="stylesheet">
-<script type="text/javascript" src="js/main.js" defer></script>
 </head>
 <body style="position: relative; z-index: 0;">
 	<div id="wrap">
@@ -24,7 +22,7 @@
 				<!-- 왼쪽: 로고 -->
 				<div class="logo-container">
 					<a href="MainC" class="Elogo"> <img
-						src="Icon/logo/eventopia_logo.png" alt="Eventopia logo"
+						src="icon/logo/eventopia_logo.png" alt="Eventopia logo"
 						class="evetopia-logo" /> <span>EVENTOPIA</span>
 					</a>
 				</div>
@@ -81,7 +79,10 @@
 				<jsp:include page="${content }"></jsp:include>
 			</div>
 		</div>
-
+		<div class="btnPageBtn" style="display: block;">
+			<a href="#" id="scrollToTop"><img src="icon/main/btn_pagetop.png"
+				alt="Scroll to Top"></a>
+		</div>
 		<!-- 푸터 -->
 		<div class="footer-bg">
 			<div class="footer">

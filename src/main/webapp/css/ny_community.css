@@ -4,14 +4,13 @@
 .container {
 	display: flex;
 	gap: 20px;
-	padding: 20px;
 	background-color: #f4f4f4;
 	min-height: 400px;
 	height: auto;
+	width: 100%
 }
 
-.community-container,
-.attention-container {
+.community-container, .attention-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -20,8 +19,7 @@
 }
 
 /* タイトル */
-.text,
-h1 {
+.text, h1 {
 	text-align: center;
 	font-size: 30px;
 	/* 統一したフォントサイズ */
@@ -45,8 +43,7 @@ h1 {
 	display: block;
 }
 
-.form-container form input,
-.form-container form textarea {
+.form-container form input, .form-container form textarea {
 	width: 94%;
 	padding: 10px;
 	margin-bottom: 15px;
@@ -221,27 +218,22 @@ h3 {
 }
 
 /* レスポンシブ対応 */
-@media (max-width: 768px) {
+@media ( max-width : 768px) {
 	.container {
 		flex-direction: column;
 	}
-
-	.form-container,
-	.posts-container {
+	.form-container, .posts-container {
 		max-width: 100%;
 	}
-
 	.form-container form button {
 		font-size: 14px;
 	}
-
 	.posts-container table {
 		font-size: 12px;
 	}
 }
 
 /*チャットボタン*/
-
 .chat-button-container {
 	position: fixed;
 	bottom: 20px;
