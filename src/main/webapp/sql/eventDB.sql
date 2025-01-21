@@ -120,3 +120,28 @@ CREATE SEQUENCE review_test_seq
     INCREMENT BY 1
     NOCACHE
     NOCYCLE;
+
+    create table review_post(
+    id number primary key ,
+
+    title varchar2(255),
+    r_sub varchar2(500 char) not null ,
+    r_img varchar2(400 char) not null ,
+      content CLOB,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+create sequence review_post_seq
+start with 1
+increment by 1
+nocache ;
+
+create or replace trigger review_post_trigger
+    before insert on review_post
+    for each row
+    begin
+        :NEW.id := review_post_seq.nextval;
+    end;
+/
+
+select * from review_post;
