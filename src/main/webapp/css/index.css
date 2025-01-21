@@ -150,6 +150,7 @@ a:hover {
 .content-bg {
 	background-color: #ffffff;
 	flex: 1; /* 남는 공간을 채우도록 설정 */
+	min-height: 700px;
 }
 
 .content-container {
