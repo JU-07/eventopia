@@ -17,7 +17,7 @@ public class LimitedC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		RankDAO.RDAO.productAllSelect(request, response);
+		RankDAO.RDAO.limitAllSelect(request);
 		  
 		request.setAttribute("content", "jsp/rank/limited.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
@@ -27,7 +27,7 @@ public class LimitedC extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		RankDAO.RDAO.productAllSelect(request, response);
+		RankDAO.RDAO.limitAllSelect(request);
 		RankDAO.RDAO.rankCount(request);
 		
 		request.setAttribute("content", "jsp/rank/limited.jsp");
