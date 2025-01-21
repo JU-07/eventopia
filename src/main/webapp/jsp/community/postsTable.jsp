@@ -15,7 +15,7 @@
 	<tbody>
 		<c:forEach var="post" items="${posts}">
 			<tr>
-				<td>${post.name}</td>
+				<td><a href="EditPostC?p_id=${post.id}">${post.name}</a></td>
 				<td><c:choose>
 						<c:when test="${post.img != '画像なし'}">
 							<img src="${pageContext.request.contextPath}${post.img}" alt="画像"
