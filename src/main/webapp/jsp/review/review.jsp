@@ -28,33 +28,23 @@
 				<div class="review-user">
 					<div>좋아요</div>
 					<!-- 공유 버튼 -->
-					<div class="SNS">
-						<button type="button" onclick="openShareModal()">공유</button>
-					</div>
+					<div class="SNS" onclick="openShareModal()">공유</div>
 
-					<!-- 모달창 -->
-					<div id="shareModal" class="modal">
+					<div class="modal" id="sns-modal">
 						<div class="modal-content">
-							<span class="close" onclick="closeShareModal()">&times;</span>
-							<h4>SNS 공유</h4>
-							<button type="button" class="btn-share-tw"
-								onclick="shareToSNS('twitter')">
-								<img
-									src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/X_icon.svg/2048px-X_icon.svg.png"
-									alt="Twitter"> Twitter
-							</button>
-							<button type="button" class="btn-share-fb"
-								onclick="shareToSNS('facebook')">
-								<img
-									src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-									alt="Facebook"> Facebook
-							</button>
-							<button type="button" class="btn-share-ln"
-								onclick="shareToSNS('line')">
-								<img
-									src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/LINE_logo.svg/1024px-LINE_logo.svg.png"
-									alt="Line"> Line
-							</button>
+							<span class="close-btn" onclick="closeModal()">×</span>
+							<h4>공유하기</h4>
+							<div id="sns-buttons">
+								<button>
+									<img src="twitter-icon.png" alt="Twitter"> <span>Twitter</span>
+								</button>
+								<button>
+									<img src="facebook-icon.png" alt="Facebook"> <span>Facebook</span>
+								</button>
+								<button>
+									<img src="line-icon.png" alt="Line"> <span>Line</span>
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -67,7 +57,7 @@
 		<div class="pagination">
 			<a href="ReviewPageC?p=1">初</a>
 			<c:forEach begin="1" end="${pageCount}" var="i">
-				<a href="ReviewPageC?p=${i}">[${i}]</a>
+				<a href="ReviewPageC?p=${i}">${i}</a>
 			</c:forEach>
 			<a href="ReviewPageC?p=${pageCount}">終</a>
 		</div>

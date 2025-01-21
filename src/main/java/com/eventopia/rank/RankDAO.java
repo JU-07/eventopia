@@ -132,6 +132,40 @@ public class RankDAO {
 
 	}
 
+	
+	
+	public void limitAllSelect(HttpServletRequest request) throws UnsupportedEncodingException {
+		request.setCharacterEncoding("utf-8");
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT id, title, p_actor, p_img FROM limited_post ";
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			ArrayList<LimitedDTO> limitedPages = new ArrayList<LimitedDTO>();
+			LimitedDTO limitedPage = null;
+			while (rs.next()) {
+				limitedPage = new LimitedDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), null, null);
+
+				limitedPages.add(limitedPage);
+			}
+
+			request.setAttribute("limited", limitedPages);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+
+	}
+
+	
+	
+	
 	public void rankAdd(HttpServletRequest request) throws UnsupportedEncodingException {
 
 		request.setCharacterEncoding("utf-8");
@@ -146,10 +180,7 @@ public class RankDAO {
 			String image = request.getParameter("image");
 			String story = request.getParameter("story");
 
-			System.out.println(title);
-			System.out.println(title);
-			System.out.println(title);
-			System.out.println(title);
+		
 
 			pstmt.setString(1, title);
 			pstmt.setString(2, actor);
@@ -169,6 +200,42 @@ public class RankDAO {
 
 	}
 
+	
+	public void rankAdd2(HttpServletRequest request) throws UnsupportedEncodingException {
+		request.setCharacterEncoding("utf-8");
+		PreparedStatement pstmt = null;
+		
+		String sql = "INSERT INTO limited_post (title, p_actor, p_img, content,  created_at) VALUES (?, ?, ?, ?, sysdate)";
+		try {
+			Connection con = DBManager.connect();
+			String title = request.getParameter("title");
+			String actor = request.getParameter("actor");
+			String image = request.getParameter("image");
+			String content = request.getParameter("content"); // HTML 데이터 포함
+			System.out.println(title);
+			System.out.println(actor);
+			System.out.println(image);
+			System.out.println(content);
+			
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, title);
+			pstmt.setString(2, actor);
+			pstmt.setString(3, image);
+			pstmt.setString(4, content);
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("글 등록 성공");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
+
+	
 	public void rankDetail(HttpServletRequest request) {
 
 		PreparedStatement pstmt = null;
@@ -201,5 +268,39 @@ public class RankDAO {
 			DBManager.close(con, pstmt, rs);
 		}
 	}
+	
 
-}
+	public void showLimited(HttpServletRequest request) throws IOException {
+		request.setCharacterEncoding("utf-8");
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int limitedid = Integer.parseInt(request.getParameter("id"));
+		
+		String sql = "SELECT title, content FROM limited_post WHERE id = ?";
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, limitedid);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				String title = rs.getString("title");
+	            String content = rs.getString("content"); 
+				request.setAttribute("title", title);
+		            request.setAttribute("content", content);
+		   
+		}
+
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+	}}
+	
+
+	
+	
+	
