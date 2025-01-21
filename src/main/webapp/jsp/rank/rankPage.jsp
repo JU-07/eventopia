@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/rankPage.css">
 </head>
+
 <body>
 <div class="nav-bar">
 <div class="nav-items">
@@ -32,6 +33,8 @@
 			</div>
 		</c:forEach>
 	</div>
+
+
 
 </body>
 </html>
