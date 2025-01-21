@@ -16,19 +16,16 @@
 
 </head>
 <body>
-<div class="nav-bar">
-<div class="nav-items">
-<a href="RankC">콜라보 랭킹</a>
-<a href="#">콜라보 랭킹</a>
-<a href="RankPageC">역대 콜라보 랭킹</a>
-<a href="LimitedPageC">역대 기간한정 랭킹</a>
-<a href="#">미니 게임</a>
-<a href="RankRegC">게시물 등록</a>
-</div>
-</div>
+	<div class="nav-bar">
+		<div class="nav-items">
+			<a href="RankC">콜라보 랭킹</a> <a href="#">콜라보 랭킹</a> <a href="RankPageC">역대
+				콜라보 랭킹</a> <a href="LimitedPageC">역대 기간한정 랭킹</a> <a href="#">미니 게임</a> <a
+				href="RankRegC">게시물 등록</a>
+		</div>
+	</div>
 
 
-	<h1>랭킹 순위</h1>
+	<h1 class="h1rank">랭킹 순위</h1>
 	<div class="container">
 		<div>
 			<div style="text-align: center;; margin-bottom: 20px; color: #666;">콜라보
@@ -43,7 +40,7 @@
 				</div>
 			</c:forEach>
 		</div>
-	<canvas id="myChart" width="500" height="500"></canvas>
+		<canvas id="myChart" width="500" height="500"></canvas>
 	</div>
 
 
