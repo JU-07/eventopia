@@ -17,8 +17,8 @@
 /* 왼쪽 패널 */
 .left-panel {
 	width: 50%;
-	background-color: #cababa;
-	color: #4B3621;
+	background-color: #1b2c3e;
+	color: #fff;
 	padding: 50px;
 	display: flex;
 	flex-direction: column;
@@ -31,7 +31,7 @@
 .left-panel .logo-wrapper {
 	width: 180px;
 	height: 180px;
-	background-color: #F8F1EB; /* 반투명 흰색 배경 */
+	background-color: #ebf0f6; /* 반투명 흰색 배경 */
 	border-radius: 50%; /* 동그라미 형태 */
 	display: flex;
 	justify-content: center;
@@ -56,11 +56,9 @@
 .right-panel h2 {
 	font-weight: 600;
 	margin-bottom: 20px;
+	color: #1b2c3e;
 }
 
-h2 {
-	color: #4B3621;
-}
 
 #login-form input {
 	padding: 8px;
@@ -97,16 +95,17 @@ h2 {
 .login-btn {
 	width: 100%;
 	padding: 12px;
-	background-color: #cababa;
+	background-color: #1b2c3e;
 	color: #fff;
 	border: none;
 	border-radius: 8px;
 	cursor: pointer;
 	font-weight: 600;
+	font-size : 16px;
 }
 
 .login-btn:hover {
-    background-color: #8f6f6f ;
+    background-color: #162433 ;
 }
 
 /* 소셜 로그인 */
@@ -129,7 +128,7 @@ h2 {
 }
 
 .social-icons i:hover {
-	color: #cababa;
+	color: #162433;
 }
 
 /* 회원가입 링크 */
@@ -139,10 +138,68 @@ h2 {
 }
 
 .signup-link a {
-	color: #cababa;
+	color: #888;
 	text-decoration: none;
 }
 
 .signup-link a:hover {
 	text-decoration: underline;
+}
+
+
+/* 모달 창 스타일 */
+.modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검은색 배경 */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #ffffff; /* 흰색 배경 */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 300px; /* 적당한 너비 설정 */
+}
+
+.modal-content h2 {
+    color: #e74c3c; /* 강렬한 빨간색으로 실패 강조 */
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    color: #333; /* 기본 텍스트 색상 */
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.modal-content button {
+    background-color: #1b2c3e; /* 오른쪽 패널과 같은 버튼 색 */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.modal-content button:hover {
+    background-color: #162433; /* 버튼 호버 색상 */
+}
+
+/* 에러 메시지 */
+#errorMsg {
+    color: #e74c3c; /* 강렬한 빨간색 */
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: left;
 }

@@ -3,7 +3,7 @@ document.getElementById("checkIdBtn").addEventListener("click", function () {
     const userId = document.getElementById("userId").value;
     const idCheckMsg = document.getElementById("idCheckMsg");
 
-    fetch("checkId?userId=" + userId)
+    fetch("RegisterC?userId=" + encodeURIComponent(userId))
         .then(response => response.text())
         .then(data => {
             if (data === "duplicate") {
@@ -13,26 +13,24 @@ document.getElementById("checkIdBtn").addEventListener("click", function () {
                 idCheckMsg.textContent = "ID is available!";
                 idCheckMsg.style.color = "green";
             }
+        })
+        .catch(error => {
+            console.error("Error checking ID:", error);
         });
 });
 
-// 비밀번호 일치 확인
+// 비밀번호 일치 확인 및 회원가입
 document.getElementById("registerForm").addEventListener("submit", function (event) {
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
     const pwCheckMsg = document.getElementById("pwCheckMsg");
 
     if (password !== confirmPassword) {
-        event.preventDefault();
+        event.preventDefault(); // 폼 제출 방지
         pwCheckMsg.textContent = "Passwords do not match.";
-    } else {
-        pwCheckMsg.textContent = "";
+        pwCheckMsg.style.color = "red";
+        return;
     }
+
+    pwCheckMsg.textContent = "";
 });
-
-
-// 파일 선택 시 파일명 표시
-//document.getElementById("profilePic").addEventListener("change", function() {
-//    const fileName = this.files[0]?.name || "No file chosen";
-//    document.getElementById("fileName").textContent = fileName;
-//});

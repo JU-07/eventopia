@@ -6,58 +6,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-.rnakPage-container {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-	gap: 16px;
-	max-width: 1280px;
-	width: 100%;
-	margin: 0 auto;
-}
-
-.rankPage-wrap {
-	background: #ffffff;
-	border: 1px solid #e0e0e0;
-	border-radius: 8px;
-	overflow: hidden;
-	text-align: center;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-	cursor: pointer;
-	padding: 12px;
-}
-
-.rankPage-wrap:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.rankPage-img img {
-	width: 100%;
-	height: 180px;
-	object-fit: cover;
-	border-radius: 4px;
-}
-
-.movie-title {
-	font-size: 16px;
-	font-weight: bold;
-	color: #333333;
-	margin: 10px 0 5px;
-}
-
-.rnakPage-actor {
-	font-size: 14px;
-	color: #777777;
-	word-wrap: break-word; /* 단어가 길 경우 줄바꿈 */
-	white-space: normal; /* 텍스트가 칸을 넘어가면 자동 줄바꿈 */
-	line-height: 1.4; /* 줄 간격 조절 */
-	overflow-wrap: break-word; /* 추가로 긴 단어를 잘라서 줄바꿈 */
-}
-</style>
+<link rel="stylesheet" href="css/rankPage.css">
 </head>
+
 <body>
-	<a href="RankRegC">게시글 등록</a>
+<div class="nav-bar">
+<div class="nav-items">
+<a href="RankC">콜라보 랭킹</a>
+<a href="LimitedC">콜라보 랭킹</a>
+<a href="RankPageC">역대 콜라보 랭킹</a>
+<a href="LimitedPageC">역대 기간한정 랭킹</a>
+<a href="#">미니 게임</a>
+<a href="RankRegC">게시물 등록</a>
+</div>
+</div>
+
 	<div class="rnakPage-container">
 		<c:forEach var="r" items="${rank}">
 			<div class="rankPage-wrap"
@@ -70,6 +33,8 @@
 			</div>
 		</c:forEach>
 	</div>
+
+
 
 </body>
 </html>

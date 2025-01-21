@@ -12,6 +12,7 @@ body {
 	/* background-color: #f4f4f4; */
 	/* color: #333; */
 	overflow-x: hidden; /* x축 스크롤 숨김 */
+	height: 100%;
 }
 
 a {
@@ -28,6 +29,7 @@ a:hover {
 .header-bg {
 	background-color: #0A152F;
 	width: 100%;
+	height: 80px
 }
 
 /* 헤더 */
@@ -37,7 +39,7 @@ a:hover {
 	display: flex;
 	justify-content: space-between; /* 양쪽 끝 정렬 */
 	align-items: center;
-	padding: 15px 0; /* 여백 추가 */
+	padding: 20px 0; /* 여백 추가 */
 }
 
 /* 로고 */
@@ -76,7 +78,7 @@ a:hover {
 }
 
 .Elogo span {
-	font-size: 18px; /* 텍스트 크기 */
+	font-size: 25px; /* 텍스트 크기 */
 	font-weight: 600; /* 텍스트 강조 */
 	letter-spacing: 1.5px;
 	color: white; /* 텍스트 색상 고정 */
@@ -128,7 +130,7 @@ a:hover {
 	display: flex;
 	justify-content: center;
 	gap: 70px; /* 메뉴 간격 */
-	padding: 24.5px 0;
+	padding: 23.25px 0;
 }
 
 .nav div {
@@ -148,6 +150,7 @@ a:hover {
 .content-bg {
 	background-color: #ffffff;
 	flex: 1; /* 남는 공간을 채우도록 설정 */
+	min-height: 700px;
 }
 
 .content-container {
@@ -158,8 +161,7 @@ a:hover {
 
 /* 푸터 배경 */
 .footer-bg {
-	background-color: #333;
-	border-top: 2px solid #555;
+	background-color: #0A152F;
 	padding: 20px 0; /* 위아래 여백을 좀 더 추가 */
 }
 

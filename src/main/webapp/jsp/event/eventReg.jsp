@@ -9,17 +9,20 @@
 </head>
 <body>
 	<div style="text-align: center">
-		<h2 style="font-size: 30pt">レビュー登録</h2>
+		<h2 style="font-size: 30pt">イベント登録</h2>
 	</div>
 	<br>
 	<div class="event-form-container">
-		<form action="EventRegC" method="post">
+		<form action="EventRegC" method="post" enctype="multipart/form-data">
 			<div class="event-form">
 
-
 				<div class="form-group">
-					<label for="name">편의점</label> <input id="name" name="name"
-						type="text" placeholder="イベント タイトル" value="${e.e_name }">
+					<label for="name">コンビ二社名</label>
+					<select name="name">
+						<option value="ローソン">ローソン</option>
+						<option value="セブンイレブン">セブンイレブン</option>
+						<option value="ファミリーマート">ファミリーマート</option>
+					</select>
 				</div>
 
 				<div class="form-group">
@@ -33,23 +36,15 @@
 				</div>
 
 				<div class="form-group">
-					<label for="short_story">요약내용</label> <input id="short_story"
-						name="short_story" type="text" placeholder="요약내용" required>
-				</div>
-
-				<div class="form-group">
-					<label for="story">내용</label>
+					<label for="story">内容</label>
 					<textarea id="story" name="story" rows="5" maxlength="200"
-						placeholder="내용" required></textarea>
-				</div>
-				<div class="form-group">
-					<label for="date">날짜</label>
-					<textarea id="date" name="date" placeholder="날짜" required></textarea>
+						placeholder="内容" required></textarea>
 				</div>
 
 				<div class="form-group">
 					<button type="submit" class="review-btn">登録</button>
 				</div>
+
 			</div>
 		</form>
 	</div>
