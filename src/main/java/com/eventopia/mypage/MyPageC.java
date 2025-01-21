@@ -15,7 +15,10 @@ public class MyPageC extends HttpServlet {
   
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		
+		request.setAttribute("content", "jsp/mypage/mypage.jsp");
+		
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	
 	}
 

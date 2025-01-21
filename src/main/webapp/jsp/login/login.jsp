@@ -1,11 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eventopia Login</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eventopia Login</title>
@@ -30,35 +26,35 @@
 				<div class="logo-wrapper">
 					<img src="icon/logo/eventopia-logo.png" alt="Eventopia Logo">
 				</div>
-				<!-- <img src="Icon/eventopia-logo.png" alt="Eventopia Illustration"> -->
 			</div>
 
 			<div class="right-panel">
 				<h2>Login</h2>
-				<form action="#" method="post">
+				<form id="loginForm" action="LoginC" method="post"> <!-- 서블릿 경로 수정 -->
 					<div class="input-group">
 						<i class="fas fa-user"></i>
-						<!-- 아이디 아이콘 자리 -->
-						<input type="text" name="id" placeholder="Username">
+						<input type="text" id="username" name="id" placeholder="Username"> <!-- id 속성 추가 -->
 					</div>
 					<div class="input-group">
 						<i class="fas fa-lock"></i>
-						<!-- 비밀번호 아이콘 자리 -->
-						<input type="password" name="pw" placeholder="Password">
+						<input type="password" id="password" name="pw" placeholder="Password"> <!-- id 속성 추가 -->
 					</div>
+					<p id="errorMsg" class="error-msg"></p> <!-- 에러 메시지 -->
 					<button type="submit" class="login-btn">Login</button>
 					<p class="signup-link">
 						Don't have an account? <a href="RegisterC">Sign Up</a>
 					</p>
-					<div class="social-login">
-						<p>Or sign in with</p>
-						<div class="social-icons">
-							<i class="fab fa-google"></i> <i class="fab fa-facebook-f"></i> <i
-								class="fab fa-twitter"></i> <i class="fab fa-linkedin-in"></i>
-						</div>
-					</div>
 				</form>
 			</div>
+		</div>
+	</div>
+
+	<!-- 모달 창 -->
+	<div id="login-failed-modal" class="modal">
+		<div class="modal-content">
+			<h2>Login Failed</h2>
+			<p>Please check your username and password.</p>
+			<button onclick="closeModal()">Close</button>
 		</div>
 	</div>
 </body>
