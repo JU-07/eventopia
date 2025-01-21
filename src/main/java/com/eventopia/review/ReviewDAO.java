@@ -1,5 +1,6 @@
 package com.eventopia.review;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,6 +8,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import com.eventopia.main.DBManager;
 import com.oreilly.servlet.MultipartRequest;
@@ -61,13 +63,13 @@ public class ReviewDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String no = request.getParameter("no");
+		String id = request.getParameter("id");
 
 		try {
-			String sql = "select * from review_test where r_no=?";
+			String sql = "select * from review_test where id=?";
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, no);
+			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
@@ -162,7 +164,7 @@ public class ReviewDAO {
 		  request.setAttribute("curPageNum", pageNum);
 
 	        int total = reviews.size();
-	        int count = 3;
+	        int count = 2;
 
 	        // 페이지수
 
@@ -187,4 +189,34 @@ public class ReviewDAO {
 
 	    }
 		
+	public void showPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        int postId = Integer.parseInt(request.getParameter("id"));
+
+        String sql = "SELECT title, content FROM review_post WHERE id = ?";
+        try (Connection con = DBManager.connect();
+             PreparedStatement pstmt = con.prepareStatement(sql)) {
+            pstmt.setInt(1, postId);
+
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                String title = rs.getString("title");
+                String content = rs.getString("content");
+
+                // JSP에 데이터를 전달
+                request.setAttribute("title", title);
+                request.setAttribute("contentt", content);
+
+                // JSP로 포워드
+            } else {
+                // 데이터가 없을 경우 처리
+                response.getWriter().write("No post found with the provided ID.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.getWriter().write("An error occurred while retrieving the post.");
+        }
+    }
 }
+	
+	
+	

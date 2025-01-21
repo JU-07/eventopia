@@ -12,12 +12,12 @@ public class ReviewRegDC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-				
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-			ReviewDAO.RDAO.reviewAdd2(request);
+		ReviewDAO.RDAO.reviewAdd2(request);
 		response.sendRedirect("ReviewC");
 
 	}

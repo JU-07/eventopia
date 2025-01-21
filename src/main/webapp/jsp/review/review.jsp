@@ -62,9 +62,6 @@
 			<a href="ReviewPageC?p=${pageCount}">終</a>
 		</div>
 	</section>
-	<div class="add-review">
-		<a href="ReviewRegC">登録</a>
-	</div>
 </body>
 </html>
 
