@@ -1,68 +1,52 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Page</title>
-    <link rel="stylesheet" href="mypage.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Page</title>
+<link rel="stylesheet" type="text/css" href="css/mypage.css">
 </head>
 <body>
-    <div class="sidebar">
-        <div class="profile">
-            <img src="profile.jpg" alt="Profile Picture" class="profile-img">
-            <h2>Welcome, User</h2>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#settings">Settings</a></li>
-            </ul>
-        </nav>
-    </div>
-    
-    <div class="main-content">
-        <!-- 메인 홈 -->
-        <section id="home">
-            <h1>Main Home</h1>
-            <div class="card-container">
-                <div class="card">
-                    <h3>Likes</h3>
-                    <p>Check your likes here.</p>
-                </div>
-                <div class="card">
-                    <h3>Favorites</h3>
-                    <p>Check your favorites here.</p>
-                </div>
-                <div class="card">
-                    <h3>Reviews / Posts</h3>
-                    <p>View your reviews and posts here.</p>
-                </div>
-                <div class="card">
-                    <h3>Follow</h3>
-                    <button>Add/Check Followers</button>
-                </div>
-            </div>
-        </section>
 
-        <!-- 설정 -->
-        <section id="settings">
-            <h1>Settings</h1>
-            <div class="card-container">
-                <div class="card">
-                    <h3>Account Settings</h3>
-                    <button>Change ID/PW</button>
-                    <button>Change Profile</button>
-                </div>
-                <div class="card">
-                    <h3>Follower Management</h3>
-                    <button>Manage Followers</button>
-                </div>
-                <div class="card">
-                    <h3>Delete Account</h3>
-                    <button class="danger">Delete Account</button>
-                </div>
+	<div class="container">
+		 <div class="sidebar">
+            <div class="slidebar-wrap">
+                <a onclick="showTab('home')" class="icon-circle">
+                    <img src="icon/login/home.png" alt="Home Icon">
+                </a>
             </div>
-        </section>
-    </div>
+            <div class="slidebar-wrap">
+                <a onclick="showTab('settings')" class="icon-circle">
+                    <img src="icon/login/setting.png" alt="Settings Icon">
+                </a>
+            </div>
+        </div>
+        <div class="main-content">
+			<!-- 메인홈 탭 -->
+			<div id="home" class="tab-content">
+				<button class="content-button" onclick="alert('좋아요 페이지로 이동')">좋아요</button>
+				<button class="content-button" onclick="alert('즐겨찾기 페이지로 이동')">즐겨찾기</button>
+				<button class="content-button" onclick="alert('게시글 확인 페이지로 이동')">게시글
+					확인</button>
+				<button class="content-button" onclick="alert('팔로워 추가/해제 페이지로 이동')">팔로우
+					추가 / 해제</button>
+			</div>
+
+			<!-- 설정 탭 -->
+			<div id="settings" class="tab-content hidden">
+				<button class="content-button" onclick="alert('회원 탈퇴 페이지로 이동')">회원
+					탈퇴</button>
+				<button class="content-button" onclick="alert('ID/PW 변경 페이지로 이동')">ID
+					/ PW 변경</button>
+				<button class="content-button" onclick="alert('프로필 변경 페이지로 이동')">프로필
+					변경</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- JavaScript 연결 -->
+	<script src="js/mypage.js"></script>
 </body>
 </html>

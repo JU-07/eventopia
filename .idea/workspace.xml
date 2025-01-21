@@ -5,45 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9374c510-5ef3-46b0-ac95-c9687a27eb29" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/sql/userDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/04a95bb6-7d2c-4a1f-b35f-25c4e417d2af.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/04a95bb6-7d2c-4a1f-b35f-25c4e417d2af.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventopia/login/LoginC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventopia/login/LoginC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventopia/login/LoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventopia/login/LoginDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventopia/login/RegisterC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventopia/login/RegisterC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventopia/mypage/MyPageC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventopia/mypage/MyPageC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/index/heart-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/index/heart-icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/index/heart.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/index/heart.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/index/list.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/index/list.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/index/search-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/index/search-icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/index/search.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/index/search.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/index/sidebar-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/index/sidebar-icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/index/user-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/index/user-icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/index/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/index/user.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/login/facebook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/login/google.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/login/line.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/login/yahoo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/logo/eventopia-logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/logo/eventopia-logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/logo/eventopia_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/logo/eventopia_logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/logo/f_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/logo/f_logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/logo/l_logo.webp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/logo/l_logo.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/logo/s_logo.webp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/logo/s_logo.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/main/arr_visual.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/main/arr_visual.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/main/famima_event1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/main/famima_event1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/main/famima_event2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/main/famima_event2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/main/lawson_event1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/main/lawson_event1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/main/seven_event1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/main/seven_event1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Icon/main/seven_event2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/icon/main/seven_event2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/login/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/login/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/login/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/login/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/sql/testDB.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/mypage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/mypage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/mypage/mypage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/mypage/mypage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,31 +25,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "hh__new",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/ahahyun/sbt10/eventopia",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;hh__new&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ahahyun/sbt10/eventopia&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "oracle"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;oracle&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -108,6 +72,7 @@
       <workItem from="1736500303234" duration="202000" />
       <workItem from="1737013975354" duration="3366000" />
       <workItem from="1737075803206" duration="13380000" />
+      <workItem from="1737417465706" duration="1229000" />
     </task>
     <servers />
   </component>
