@@ -32,7 +32,7 @@ public class ReviewDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
-		String sql = "select * from review_test order by r_date";
+		String sql = "select * from review_post order by created_at";
 
 		try {
 			con = DBManager.connect();
@@ -43,7 +43,7 @@ public class ReviewDAO {
 			ReviewDTO review = null;
 
 			while (rs.next()) {
-				review = new ReviewDTO(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getDate(7));
+				review = new ReviewDTO(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getDate(6));
 				reviews.add(review);
 			}
 			request.setAttribute("reviews", reviews);
@@ -84,6 +84,37 @@ public class ReviewDAO {
 
 	}
 
+	public void reviewAdd2(HttpServletRequest request) throws UnsupportedEncodingException {
+        request.setCharacterEncoding("utf-8");
+        PreparedStatement pstmt = null;
+        String sql = "INSERT INTO review_post (title, r_sub, r_img, content,  created_at) VALUES (?, ?, ?, ?, sysdate)";
+        try {
+            Connection con = DBManager.connect();
+            String title = request.getParameter("title");
+            String sub = request.getParameter("sub");
+            String img = request.getParameter("img");
+            String content = request.getParameter("content"); // HTML 데이터 포함
+      
+
+
+            pstmt = con.prepareStatement(sql);
+
+            pstmt.setString(1, title);
+            pstmt.setString(2, sub);
+            pstmt.setString(3, img);
+            pstmt.setString(4, content);
+
+            if (pstmt.executeUpdate() == 1) {
+                System.out.println("글 등록 성공");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBManager.close(con, pstmt, null);
+        }
+    }
+	
+	
 	public void addReview(HttpServletRequest request) throws UnsupportedEncodingException {
 		request.setCharacterEncoding("UTF-8");
 

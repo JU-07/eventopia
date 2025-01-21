@@ -7,19 +7,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/ReviewRegC2")
-public class ReviewRegC2 extends HttpServlet {
+@WebServlet("/ReviewRegDC")
+public class ReviewRegDC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-				request.setAttribute("content", "jsp/review/reviewReg2.html");
-	
-					request.getRequestDispatcher("index.jsp").forward(request, response);
+				
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+			ReviewDAO.RDAO.reviewAdd2(request);
+		response.sendRedirect("ReviewC");
 
 	}
 

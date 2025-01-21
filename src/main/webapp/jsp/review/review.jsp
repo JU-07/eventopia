@@ -20,7 +20,7 @@
 		<c:forEach var="r" items="${reviews}">
 			<div class="review-content">
 				<div class="review-title"
-					onclick="location.href='ReviewDetailC?no=${r.r_no}'">${r.r_title }</div>
+					onclick="location.href='ReviewDetailC?id=${r.id}'">${r.title }</div>
 				<div class="review-img">
 					<img alt="" src="${r.r_img }">
 				</div>
