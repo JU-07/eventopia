@@ -37,11 +37,20 @@ public class LimitedDetailC2 extends HttpServlet {
                 String content = rs.getString("content");
 
                 response.setContentType("text/html; charset=UTF-8");
-                response.getWriter().write("<html><head><title>" + title + "</title></head>");
+                response.getWriter().write("<html>");
+                response.getWriter().write("<head>");
+                response.getWriter().write("<title>" + title + "</title>");
+                response.getWriter().write("<style>");
+                response.getWriter().write("body { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }");
+                response.getWriter().write("h1 { text-align: center; }");
+                response.getWriter().write("div { text-align: center; max-width: 600px; }");
+                response.getWriter().write("</style>");
+                response.getWriter().write("</head>");
                 response.getWriter().write("<body>");
                 response.getWriter().write("<h1>" + title + "</h1>");
                 response.getWriter().write("<div>" + content + "</div>");
-                response.getWriter().write("</body></html>");
+                response.getWriter().write("</body>");
+                response.getWriter().write("</html>");
             }
         } catch (Exception e) {
             e.printStackTrace();
