@@ -195,41 +195,41 @@ public class RankDAO {
 	
 	
 	
+	
+	
 	public void rankAdd(HttpServletRequest request) throws UnsupportedEncodingException {
-
 		request.setCharacterEncoding("utf-8");
-
 		PreparedStatement pstmt = null;
-		String sql = "insert into post_test values(post_test_seq.nextval, ?, ?, ?, ?, sysdate)";
+		
+		String sql = "INSERT INTO limited_post (title, p_actor, p_img, content,  created_at) VALUES (?, ?, ?, ?, sysdate)";
 		try {
-			con = DBManager.connect();
-			pstmt = con.prepareStatement(sql);
+			Connection con = DBManager.connect();
 			String title = request.getParameter("title");
 			String actor = request.getParameter("actor");
 			String image = request.getParameter("image");
-			String story = request.getParameter("story");
-
-		
-
+			String content = request.getParameter("content"); // HTML 데이터 포함
+			System.out.println(title);
+			System.out.println(actor);
+			System.out.println(image);
+			System.out.println(content);
+			
+			
+			pstmt = con.prepareStatement(sql);
+			
 			pstmt.setString(1, title);
 			pstmt.setString(2, actor);
 			pstmt.setString(3, image);
-			pstmt.setString(4, story);
-
+			pstmt.setString(4, content);
+			
 			if (pstmt.executeUpdate() == 1) {
-				System.out.println("등록성공");
+				System.out.println("글 등록 성공");
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
-
 		} finally {
 			DBManager.close(con, pstmt, null);
 		}
-
 	}
-
-	
 	public void rankAdd2(HttpServletRequest request) throws UnsupportedEncodingException {
 		request.setCharacterEncoding("utf-8");
 		PreparedStatement pstmt = null;
