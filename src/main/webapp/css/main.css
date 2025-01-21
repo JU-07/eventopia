@@ -74,7 +74,7 @@ li {
   line-height: 1em;
   letter-spacing: -0.01em;
   white-space: nowrap;
-  animation: movebg 15s linear infinite;
+  animation: movebg 35s linear infinite;
 }
 
 @keyframes movebg {
@@ -153,6 +153,11 @@ li {
 }
 
 .event-content:hover {
+  transform: translateY(-5px); /* hover 시 살짝 올라가는 효과 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.event-content-e:hover {
   transform: translateY(-5px); /* hover 시 살짝 올라가는 효과 */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }

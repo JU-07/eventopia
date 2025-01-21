@@ -38,7 +38,7 @@ pageEncoding="UTF-8"%>
 					</div>
 					<div>
 						<a href="MyPageC"><img src="icon/index/heart-icon.png" alt="Heart Icon"
-							class="heart-img" />
+							class="heart-img" /></a>
 					</div>
 					<div>
 						<img src="icon/index/search-icon.png" alt="Search Icon"
