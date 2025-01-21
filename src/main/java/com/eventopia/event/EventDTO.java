@@ -2,70 +2,98 @@ package com.eventopia.event;
 
 import java.util.Date;
 
+import com.google.gson.Gson;
+
 public class EventDTO {
 
-	private String title;
-	private String name;
-	private String text;
-	private String link;
-	private Date sysdate;
+	private int e_no;
+	private String e_name;
+	private String e_title;
+	private String e_image_url;
+	private String e_story;
+	private Date e_date;
+	private int e_good;
 
 	public EventDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public EventDTO(String title, Date sysdate, String name, String text, String link) {
+	public EventDTO(int e_no, String e_name, String e_title, String e_image_url, String e_story, Date e_date,
+			int e_good) {
 		super();
-		this.title = title;
-		this.sysdate = sysdate;
-		this.name = name;
-		this.text = text;
-		this.link = link;
+		this.e_no = e_no;
+		this.e_name = e_name;
+		this.e_title = e_title;
+		this.e_image_url = e_image_url;
+		this.e_story = e_story;
+		this.e_date = e_date;
+		this.e_good = e_good;
 	}
 
-	public String getTitle() {
-		return title;
+	public int getE_no() {
+		return e_no;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setE_no(int e_no) {
+		this.e_no = e_no;
 	}
 
-	public Date getSysdate() {
-		return sysdate;
+	public String getE_name() {
+		return e_name;
 	}
 
-	public void setSysdate(Date sysdate) {
-		this.sysdate = sysdate;
+	public void setE_name(String e_name) {
+		this.e_name = e_name;
 	}
 
-	public String getName() {
-		return name;
+	public String getE_title() {
+		return e_title;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setE_title(String e_title) {
+		this.e_title = e_title;
 	}
 
-	public String getText() {
-		return text;
+	public String getE_image_url() {
+		return e_image_url;
 	}
 
-	public void setText(String text) {
-		this.text = text;
+	public void setE_image_url(String e_image_url) {
+		this.e_image_url = e_image_url;
 	}
 
-	public String getLink() {
-		return link;
+	public String getE_story() {
+		return e_story;
 	}
 
-	public void setLink(String link) {
-		this.link = link;
+	public void setE_story(String e_story) {
+		this.e_story = e_story;
+	}
+
+	public Date getE_date() {
+		return e_date;
+	}
+
+	public void setE_date(Date e_date) {
+		this.e_date = e_date;
+	}
+
+	public int getE_good() {
+		return e_good;
+	}
+
+	public void setE_good(int e_good) {
+		this.e_good = e_good;
 	}
 
 	@Override
 	public String toString() {
-		return "EventDTO [title=" + title + ", sysdate=" + sysdate + ", name=" + name + ", text=" + text + ", link="
-				+ link + "]";
+		return "EventDTO [e_no=" + e_no + ", e_name=" + e_name + ", e_title=" + e_title + ", e_image_url=" + e_image_url
+				+ ", e_story=" + e_story + ", e_date=" + e_date + ", e_good=" + e_good + "]";
+	}
+
+	public String toJsonByMe() {
+		Gson gson = new Gson();
+		return gson.toJson(this);
 	}
 }

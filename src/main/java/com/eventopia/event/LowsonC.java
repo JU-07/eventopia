@@ -13,7 +13,10 @@ public class LowsonC extends HttpServlet {
 
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 
+		
+		
+		EventDAO.EDAO.showAllEvent(request);
+		
 		request.setAttribute("content", "jsp/event/lowson.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}

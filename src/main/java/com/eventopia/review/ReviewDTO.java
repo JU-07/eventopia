@@ -1,73 +1,93 @@
 package com.eventopia.review;
 
+import java.util.Date;
 
+import com.google.gson.Gson;
 
 public class ReviewDTO {
 
-	int p_no;
-	String p_name;
-	int p_price;
-	String p_category;
-	String image_url;
+private	int r_no;
+private	String r_name;
+private	String r_title;
+private	String r_img;
+private	String r_sub;
+private	String r_text;
+private	Date r_date;
 
-	public ReviewDTO() {
-		// TODO Auto-generated constructor stub
-	}
+public ReviewDTO() {
+	// TODO Auto-generated constructor stub
+}
 
-	public int getP_no() {
-		return p_no;
-	}
+public int getR_no() {
+	return r_no;
+}
 
-	public void setP_no(int p_no) {
-		this.p_no = p_no;
-	}
+public void setR_no(int r_no) {
+	this.r_no = r_no;
+}
 
-	public String getP_name() {
-		return p_name;
-	}
+public String getR_name() {
+	return r_name;
+}
 
-	public void setP_name(String p_name) {
-		this.p_name = p_name;
-	}
+public void setR_name(String r_name) {
+	this.r_name = r_name;
+}
 
-	public int getP_price() {
-		return p_price;
-	}
+public String getR_title() {
+	return r_title;
+}
 
-	public void setP_price(int p_price) {
-		this.p_price = p_price;
-	}
+public void setR_title(String r_title) {
+	this.r_title = r_title;
+}
 
-	public String getP_category() {
-		return p_category;
-	}
+public String getR_img() {
+	return r_img;
+}
 
-	public void setP_category(String p_category) {
-		this.p_category = p_category;
-	}
+public void setR_img(String r_img) {
+	this.r_img = r_img;
+}
 
-	public String getImage_url() {
-		return image_url;
-	}
+public String getR_sub() {
+	return r_sub;
+}
 
-	public void setImage_url(String image_url) {
-		this.image_url = image_url;
-	}
+public void setR_sub(String r_sub) {
+	this.r_sub = r_sub;
+}
 
-	public ReviewDTO(int p_no, String p_name, int p_price, String p_category, String image_url) {
-		super();
-		this.p_no = p_no;
-		this.p_name = p_name;
-		this.p_price = p_price;
-		this.p_category = p_category;
-		this.image_url = image_url;
-	}
+public String getR_text() {
+	return r_text;
+}
 
-	@Override
-	public String toString() {
-		return "ReviewDTO [p_no=" + p_no + ", p_name=" + p_name + ", p_price=" + p_price + ", p_category=" + p_category
-				+ ", image_url=" + image_url + "]";
-	}
-	
+public void setR_text(String r_text) {
+	this.r_text = r_text;
+}
+
+public Date getR_date() {
+	return r_date;
+}
+
+public void setR_date(Date r_date) {
+	this.r_date = r_date;
+}
+
+public ReviewDTO(int r_no, String r_name, String r_title, String r_img, String r_sub, String r_text, Date r_date) {
+	super();
+	this.r_no = r_no;
+	this.r_name = r_name;
+	this.r_title = r_title;
+	this.r_img = r_img;
+	this.r_sub = r_sub;
+	this.r_text = r_text;
+	this.r_date = r_date;
+}
+
+public String toJsonByMe() {
+	Gson gson = new Gson();
+	return gson.toJson(this);
+}
 
 }

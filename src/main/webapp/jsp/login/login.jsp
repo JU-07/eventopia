@@ -23,7 +23,10 @@
 		<div class="container">
 			<div class="left-panel">
 				<h2>Welcome to Eventopia!</h2>
-				<p>Join us and explore the best events around you.</p>
+				<br>
+				<p>
+					Join us and explore <br> the best events around you.
+				</p>
 				<div class="logo-wrapper">
 					<img src="icon/logo/eventopia-logo.png" alt="Eventopia Logo">
 				</div>
@@ -45,7 +48,7 @@
 					</div>
 					<button type="submit" class="login-btn">Login</button>
 					<p class="signup-link">
-						Don't have an account? <a href="#">Sign Up</a>
+						Don't have an account? <a href="RegisterC">Sign Up</a>
 					</p>
 					<div class="social-login">
 						<p>Or sign in with</p>

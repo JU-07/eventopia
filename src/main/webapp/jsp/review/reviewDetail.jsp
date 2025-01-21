@@ -1,55 +1,58 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.btn-share-tw').forEach(button => {
-        button.addEventListener('click', (event) => {
-            const sendText = '편의점 콜라보';
-            const pageUrl = event.target.dataset.url;
-            window.open(`https://twitter.com/intent/tweet?text=${sendText}&url=${pageUrl}`);
-        });
-    });
-    document.querySelectorAll('.btn-share-fb').forEach(button => {
-        button.addEventListener('click', (event) => {
-            const pageUrl = event.target.dataset.url;
-            window.open(`http://www.facebook.com/sharer/sharer.php?u=${pageUrl}`);
-        });
-    });
-    document.querySelectorAll('.btn-share-ln').forEach(button => {
-        button.addEventListener('click', (event) => {
-            const pageUrl = event.target.dataset.url;
-            window.open(`https://social-plugins.line.me/lineit/share?url=${pageUrl}`);
-        });
-    });
-});
-</script>
+<title>Review Page</title>
+<link rel="stylesheet" href="css/reviewDetail.css">
+<script type="text/javascript" src="js/reviewdetail.js"></script>
 </head>
 <body>
-	<div class="review-wrap">
-		<div>
-			<div>
-				<div class="review-reg-col">title</div>
-				<div class="review-reg-col2">
-					<input name="title" value="${review.p_title }" disabled="disabled">
-				</div>
-			</div>
-			<div>
-				<div class="review-reg-col">text</div>
-				<div class="review-reg-col2">
-					<textarea name="txt" maxlength="100" disabled="disabled">${review.p_txt }</textarea>
-					<br> <span id="cntSpan">0</span> /200
-				</div>
-			</div>
-			<div>
-				<div>
-					<fmt:formatDate value="${review.p_sysdate }" />
-				</div>
-			</div>
+		<div class="review-content">
+			<c:forEach var="r" items="${reviews }" varStatus="status">
+				<div id="review${status.index}" class="review-item">
+					<div>
+						<div class="review-reg-col">NAME</div>
+						<div class="review-reg-col2">
+							<div name="name" value="${r.r_name }" disabled="disabled">
+								${r.r_name }</div>
+						</div>
+						<div>
+							<div class="review-reg-col">Title</div>
+							<div class="review-reg-col2">
+								<div name="title" value="${r.r_title }" disabled="disabled">
+									${r.r_title }</div>
+							</div>
+							<div>
+								<div class="review-reg-col">Image</div>
+								<div class="review-reg-col2">
+									<img src="${r.r_img }" alt="Review Image">
+								</div>
+							</div>
+							<div>
+								<div class="review-reg-col">Summary</div>
+								<div class="review-reg-col2">
+									<div name="sub" value="${r.r_sub }">${r.r_sub}</div>
+								</div>
+							</div>
+							<div>
+								<div class="review-reg-col">Text</div>
+								<div class="review-reg-col2">
+									<div name="text" value="${r.r_text}">${r.r_text}</div>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div class="review-reg-col">Date</div>
+							<div class="review-reg-col2">
+								<fmt:formatDate value="${r.r_date }" pattern="yyyy-MM-dd" />
+							</div>
+						</div>
+					</div>
+			</c:forEach>
 		</div>
 	</div>
 </body>

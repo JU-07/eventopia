@@ -1,0 +1,83 @@
+/* 기본 스타일 설정 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* 제목 중앙 정렬 */
+h2 {
+    color: black;
+}
+
+/* 폼 컨테이너 중앙 배치 */
+.event-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 폼 내부 정렬 */
+.event-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 개별 폼 그룹 */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 레이블 스타일 */
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* 입력 필드 스타일 */
+input[type="text"],
+input[type="file"],
+textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus,
+textarea:focus {
+    border-color: #4CAF50;
+}
+
+/* 텍스트 영역 스타일 */
+textarea {
+    resize: none;
+}
+
+/* 버튼 스타일 */
+.review-btn {
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.review-btn:hover {
+    background-color: #45a049;
+}
