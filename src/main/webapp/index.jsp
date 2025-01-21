@@ -22,7 +22,7 @@
 				<!-- 왼쪽: 로고 -->
 				<div class="logo-container">
 					<a href="MainC" class="Elogo"> <img
-						src="Icon/logo/eventopia_logo.png" alt="Eventopia logo"
+						src="icon/logo/eventopia_logo.png" alt="Eventopia logo"
 						class="evetopia-logo" /> <span>EVENTOPIA</span>
 					</a>
 				</div>
