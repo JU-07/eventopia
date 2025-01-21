@@ -14,7 +14,7 @@ public class ReviewDetailC extends HttpServlet {
 
 		ReviewDAO.RDAO.ReviewDetail(request);
 
-		request.setAttribute("content", "jsp/review/review.jsp");
+		request.setAttribute("content", "jsp/review/reviewDetail.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 
 	}
