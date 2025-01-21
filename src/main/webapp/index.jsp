@@ -14,6 +14,7 @@ pageEncoding="UTF-8"%>
       rel="stylesheet"
     />
   </head>
+
   <body style="position: relative; z-index: 0">
     <div id="wrap">
       <!-- 헤더 -->
@@ -31,26 +32,40 @@ pageEncoding="UTF-8"%>
             </a>
           </div>
           <!-- 오른쪽: 아이콘 그룹 -->
-				<div class="side-info">
-					<div>
-						<a href="LoginC"><img src="icon/index/user-icon.png"
-							alt="User Icon" class="user-img" /></a>
-					</div>
-					<div>
-						<a href="MyPageC"><img src="icon/index/heart-icon.png" alt="Heart Icon"
-							class="heart-img" /></a>
-					</div>
-					<div>
-						<img src="icon/index/search-icon.png" alt="Search Icon"
-							class="search-img" />
-					</div>
-					<div>
-						<img src="icon/index/sidebar-icon.png" alt="Menu Icon"
-							class="sidebar-img" />
-					</div>
-				</div>
-			</div>
-		</div>
+          <div class="side-info">
+            <div>
+              <a href="LoginC"
+                ><img
+                  src="icon/index/user-icon.png"
+                  alt="User Icon"
+                  class="user-img"
+              /></a>
+            </div>
+            <div>
+              <a href="MyPageC"
+                ><img
+                  src="icon/index/heart-icon.png"
+                  alt="Heart Icon"
+                  class="heart-img"
+              /></a>
+            </div>
+            <div>
+              <img
+                src="icon/index/search-icon.png"
+                alt="Search Icon"
+                class="search-img"
+              />
+            </div>
+            <div>
+              <img
+                src="icon/index/sidebar-icon.png"
+                alt="Menu Icon"
+                class="sidebar-img"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- 네비게이션 -->
       <div class="nav-bg">
