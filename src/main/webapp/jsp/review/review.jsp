@@ -15,7 +15,7 @@
 </style>
 </head>
 <body>
-
+<a href="ReviewRegC2">게시물 등록</a>
 	<div class="review-container">
 		<c:forEach var="r" items="${reviews}">
 			<div class="review-content">
