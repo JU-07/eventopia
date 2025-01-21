@@ -90,11 +90,11 @@ public class ReviewDAO {
 		PreparedStatement pstmt = null;
 		String sql = "insert insert into review_test values(review_test_seq.nextval,?,?,?,?,?,sysdate)";
 
-		String path = request.getServletContext().getRealPath("");
-		System.out.println(path);
+		//String path = request.getServletContext().getRealPath("");
+		//System.out.println(path);
 		
 		try {
-			MultipartRequest mr = new MultipartRequest(request, path, 1024 * 1024 * 30,"UTF-8", new DefaultFileRenamePolicy());
+			//MultipartRequest mr = new MultipartRequest(request, path, 1024 * 1024 * 30,"UTF-8", new DefaultFileRenamePolicy());
 			
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);

@@ -6,14 +6,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eventopia Login</title>
 <link rel="stylesheet" href="css/login.css">
-<script src="js/login.js" defer></script> <!-- JavaScript 파일 -->
+<!-- 구글 폰트 및 아이콘 사용을 위한 링크 -->
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link rel="stylesheet" href="css/login.css" />
 </head>
 <body>
 	<div class="container-wrapper">
 		<div class="container">
 			<div class="left-panel">
 				<h2>Welcome to Eventopia!</h2>
-				<p>Join us and explore the best events around you.</p>
+				<br>
+				<p>
+					Join us and explore <br> the best events around you.
+				</p>
 				<div class="logo-wrapper">
 					<img src="icon/logo/eventopia-logo.png" alt="Eventopia Logo">
 				</div>
