@@ -54,12 +54,12 @@
     "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "oracle"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;oracle&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -81,7 +81,8 @@
       <workItem from="1736391134707" duration="12986000" />
       <workItem from="1736500303234" duration="202000" />
       <workItem from="1737013975354" duration="3366000" />
-      <workItem from="1737075803206" duration="3286000" />
+      <workItem from="1737075803206" duration="13380000" />
+      <workItem from="1737417465706" duration="1229000" />
     </task>
     <servers />
   </component>
