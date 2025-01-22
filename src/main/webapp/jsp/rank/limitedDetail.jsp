@@ -3,22 +3,30 @@
 <head>
     <title>${title}</title>
      <style>
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            	
-            margin: 0;
-        }
-       .a1 {
-            text-align: center;
-        }
-        .a2 {
-            text-align: center;
-            max-width: 600px;
-        }
-    </style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+    .a1 {
+        text-align: center;
+    }
+    .a2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        
+    }
+    .a2 img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+</style>
 </head>
 <body>
     <div class="container">

@@ -11,9 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/LimitedPageC")
 public class LimitedPageC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		RankDAO.RDAO.limitAllSelect(request);  
-	
+		
 		request.setAttribute("content", "jsp/rank/limitedPage.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		

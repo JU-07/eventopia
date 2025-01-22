@@ -12,45 +12,75 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="stylesheet" href="css/rank.css">
+<style type="text/css">
 
+.top-ranked {
+    background-color: #f7e7ce; /* 황금색 배경 */
+    border: 2px solid #ffcc00; /* 강조된 테두리 */
+    font-weight: bold;
+}
+
+
+.product-image {
+    width: 250px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+
+
+
+
+</style>
 </head>
 <body>
 <div class="nav-bar"> 	
 <div class="nav-items">
 <a href="RankC">콜라보 랭킹</a>
-<a href="LimitedC">콜라보 랭킹</a>
+<a href="LimitedC">기간한정 랭킹</a>
 <a href="RankPageC">역대 콜라보 랭킹</a>
 <a href="LimitedPageC">역대 기간한정 랭킹</a>
-<a href="#">미니 게임</a>
-<a href="RankRegC">게시물 등록</a>
 </div>
 </div>
 
 
-	<h1>랭킹 순위</h1>
+	<h1 class="h1rank">랭킹 순위</h1>
 
 	<div class="container">
 		<div>
-			<div style="text-align: center;; margin-bottom: 20px; color: #666;">콜라보
+			<div style="text-align: center;; margin-bottom: 20px; color: #666;">기간한정
 				Top 5</div>
-			<c:forEach items="${product }" var="p">
-				<div class="review-row">
-					<img src="${p.image_url}" alt="Sample Image" width="200"
-						height="200" />
+			<c:forEach items="${product }" var="p" varStatus="status">
+				<div class="review-row ${status.index < 3 ? 'top-ranked' : ''}" onclick="window.location.href='${p.p_category}';">
+				<c:choose>
+            <c:when test="${status.index == 0}">
+                <div class="rank-label">🥇</div>
+            </c:when>
+            <c:when test="${status.index == 1}">
+                <div class="rank-label">🥈</div>
+            </c:when>
+            <c:when test="${status.index == 2}">
+                <div class="rank-label">🥉</div>
+            </c:when>
+        </c:choose>
+				
+					<img src="${p.image_url}" alt="Sample Image" class="product-image" /> 
+						
 					<div class="span-container">
-						<span>${p.p_name}</span> <span>${p.p_price}円</span> <span>${p.p_exp}</span>
+						<span>${p.p_name}</span> <span>${p.p_price}円</span> <span>${p.p_exp}</span> 
+				
 					</div>
 				</div>
 			</c:forEach>
 		</div>
-	<canvas id="myChart" width="500" height="500"></canvas>
+	<canvas id="myChart" width="650" height="600"></canvas>
 	</div>
 
 
 	<button class="fixed-button" onclick="openModal()">투표하기</button>
 
 	<div class="modal-overlay" id="modal-overlay"></div>
-	<form id="voteForm" action="RankC" method="POST">
+	<form id="voteForm" action="LimitedC" method="POST">
 		<div class="modal" id="modal">
 			<div class="modal-header">투표 페이지</div>
 			<div class="modal-body">
@@ -58,7 +88,7 @@
 					<div style="color: black;">
 						<c:forEach items="${product }" var="p">
 							<div class="review-row">
-								<span>${p.p_name}</span> <span>${p.p_price}원</span> <span>${p.p_category}</span>
+								<span>${p.p_name}</span> 
 								<img src="${p.image_url}" alt="Sample Image" width="70"
 									height="70" /> <span><input type="checkbox"
 									name="check" value="${p.p_no}" /></span>
