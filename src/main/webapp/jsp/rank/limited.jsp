@@ -13,43 +13,23 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="stylesheet" href="css/rank.css">
 <style type="text/css">
-/* 기본 스타일 */
 
 .top-ranked {
-    background-color: #fff5cc; /* 황금색 배경 */
+    background-color: #f7e7ce; /* 황금색 배경 */
     border: 2px solid #ffcc00; /* 강조된 테두리 */
     font-weight: bold;
 }
 
-
-
-.rank {
-    align-self: center;
-}
-
-.review-row {
-    position: relative;
-   
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.rank-label {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 50px;  /* 아이콘 크기 조정 */
-    line-height: 1;
-    z-index: 10;
-}
 
 .product-image {
     width: 250px;
     height: 200px;
     border-radius: 10px;
 }
+
+
+
+
 
 </style>
 </head>
@@ -73,7 +53,7 @@
 			<div style="text-align: center;; margin-bottom: 20px; color: #666;">기간한정
 				Top 5</div>
 			<c:forEach items="${product }" var="p" varStatus="status">
-				<div class="review-row ${status.index < 3 ? 'top-ranked' : ''}">
+				<div class="review-row ${status.index < 3 ? 'top-ranked' : ''}" onclick="window.location.href='${p.p_category}';">
 				<c:choose>
             <c:when test="${status.index == 0}">
                 <div class="rank-label">🥇</div>
@@ -86,10 +66,10 @@
             </c:when>
         </c:choose>
 				
-					<img src="${p.image_url}" alt="Sample Image" style= "width: 250px; height: 200px " /> 
+					<img src="${p.image_url}" alt="Sample Image" class="product-image" /> 
 						
 					<div class="span-container">
-						<span>${p.p_name}</span> <span>${p.p_price}円</span> <span>${p.p_exp}</span> <span>${p.p_category }</span>
+						<span>${p.p_name}</span> <span>${p.p_price}円</span> <span>${p.p_exp}</span> 
 				
 					</div>
 				</div>
@@ -110,7 +90,7 @@
 					<div style="color: black;">
 						<c:forEach items="${product }" var="p">
 							<div class="review-row">
-								<span>${p.p_name}</span> <span>${p.p_price}원</span> <span>${p.p_category}</span>
+								<span>${p.p_name}</span> <span>${p.p_price}원</span> 
 								<img src="${p.image_url}" alt="Sample Image" width="70"
 									height="70" /> <span><input type="checkbox"
 									name="check" value="${p.p_no}" /></span>

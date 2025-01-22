@@ -36,6 +36,7 @@ public class RankDAO {
 		}
 	}
 
+	
 	public void productAllSelect(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		request.setCharacterEncoding("utf-8");
 				
@@ -383,6 +384,8 @@ public class RankDAO {
             response.getWriter().write("An error occurred while retrieving the post.");
         }
     }
+
+
 }
 
 

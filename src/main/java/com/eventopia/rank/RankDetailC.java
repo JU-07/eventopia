@@ -19,7 +19,9 @@ public class RankDetailC extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // GET 요청을 처리
+    	
         RankDAO.RDAO.showPost(request, response);
+        
       
         request.setAttribute("content", "jsp/rank/rankDetail.jsp");
         request.getRequestDispatcher("index.jsp").forward(request, response);

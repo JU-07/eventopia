@@ -15,6 +15,18 @@ prefix="c"%>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="css/rank.css" />
+ <style type="text/css">
+ .product-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+ .top-ranked {
+    border: 2px solid #ffcc00; /* 강조된 테두리 */
+    font-weight: bold;
+}
+ 
+ </style>
   </head>
   <body>
     <div class="nav-bar">
@@ -35,12 +47,23 @@ prefix="c"%>
         <div style="text-align: center; margin-bottom: 20px; color: #666">
           콜라보 Top 5
         </div>
-        <c:forEach items="${product }" var="p">
-         <div class="review-row" onclick="window.location.href='${p.p_category}';">
+        <c:forEach items="${product }" var="p" varStatus="status">
+         <div class="review-row ${status.index < 3 ? 'top-ranked' : ''}" onclick="window.location.href='${p.p_category}';">
+           <c:choose>
+            <c:when test="${status.index == 0}">
+                <div class="rank-label">🥇</div>
+            </c:when>
+            <c:when test="${status.index == 1}">
+                <div class="rank-label">🥈</div>
+            </c:when>
+            <c:when test="${status.index == 2}">
+                <div class="rank-label">🥉</div>
+            </c:when>
+        </c:choose>
             <img
               src="${p.image_url}"
               alt="Sample Image"
-             style= "width: 200px; height: 200px"   />
+           class="product-image" />
             <div class="span-container">
               <span>${p.p_name}</span> <span>${p.p_price}円</span>
               <span>${p.p_exp}</span>

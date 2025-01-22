@@ -76,6 +76,9 @@
 </div>
 </div>
 
+
+
+
 	<div class="rnakPage-container">
 		<c:forEach var="c" items="${collaboPages}">
 			<div class="rankPage-wrap"
