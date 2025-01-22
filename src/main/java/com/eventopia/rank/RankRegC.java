@@ -12,7 +12,7 @@ public class RankRegC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		request.setAttribute("content", "jsp/rank/rankReg2.html");
+		request.setAttribute("content", "jsp/rank/rankReg.html");
 		
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
