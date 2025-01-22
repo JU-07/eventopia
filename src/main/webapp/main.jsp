@@ -33,12 +33,12 @@
 	<div class="event-container" id="event-container">
 		<div class="event-item">
 			<div class="event-logo">
-				<img src="Icon/logo/l_logo.webp" alt="Lawson Logo"
+				<img src="icon/logo/l_logo.webp" alt="Lawson Logo"
 					onclick="location.href='LowsonC'" />
 			</div>
 			<div class="event-content lawson">
 				<div class="event-title">이벤트 제목</div>
-				<img src="Icon/main/lawson_event1.jpg" class="event-img" />
+				<img src="icon/main/lawson_event1.jpg" class="event-img" />
 				<div class="event-txt">이벤트 내용</div>
 				<div class="event-user">
 					<div>좋아요</div>
@@ -48,12 +48,12 @@
 		</div>
 		<div class="event-item">
 			<div class="event-logo">
-				<img src="lcon/logo/s_logo.webp" alt="Seven Logo"
+				<img src="icon/logo/s_logo.webp" alt="Seven Logo"
 					onclick="location.href='SevenC'" />
 			</div>
 			<div class="event-content seven">
 				<div class="event-title">이벤트 제목</div>
-				<img src="Icon/main/seven_event1.jpg" class="event-img" />
+				<img src="icon/main/seven_event1.jpg" class="event-img" />
 				<div class="event-txt">이벤트 내용</div>
 				<div class="event-user">
 					<div>좋아요</div>
@@ -64,12 +64,12 @@
 
 		<div class="event-item">
 			<div class="event-logo">
-				<img src="Icon/logo/f_logo.png" alt="Family Logo"
+				<img src="icon/logo/f_logo.png" alt="Family Logo"
 					onclick="location.href='FamilyC'" />
 			</div>
 			<div class="event-content family">
 				<div class="event-title">이벤트 제목</div>
-				<img src="Icon/main/famima_event1.jpg" class="event-img" />
+				<img src="icon/main/famima_event1.jpg" class="event-img" />
 				<div class="event-txt">이벤트 내용</div>
 				<div class="event-user">
 					<div>좋아요</div>
