@@ -20,7 +20,7 @@ body {
 
 .nav-items {
 	display: flex;
-	justify-content: space-between;
+gap: 30px;
 	align-items: center;
 }
 
@@ -42,20 +42,24 @@ body {
 .review-row {
 	display: flex;
 	align-items: center;
+	position: relative;
 	justify-content: space-between;
-	width: 100%;
+	
 	margin: 3px auto;
 	padding: 10px;
 	background-color: #fff;
 	border: 1px solid #ddd;
 	border-radius: 8px;
+	margin-bottom: 10px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .review-row img {
 	border-radius: 4px;
 }
-
+span{
+text-align: center;
+}
 .span-container {
 	display: flex;
 	flex-direction: column; /* 세로로 텍스트 배치 */
@@ -170,3 +174,19 @@ body {
 	color: white;
 	font-weight: bold;
 }
+
+
+
+.rank {
+    align-self: center;
+}
+
+.rank-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 50px;  /* 아이콘 크기 조정 */
+    line-height: 1;
+    z-index: 10;
+}
+
