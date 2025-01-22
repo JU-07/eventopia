@@ -18,7 +18,7 @@ public class RankRegAC extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		RankDAO.RDAO.rankAdd2(request);
+		RankDAO.RDAO.rankAdd(request);
 
 		response.sendRedirect("LimitedPageC");
 		

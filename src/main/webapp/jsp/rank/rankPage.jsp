@@ -77,14 +77,14 @@
 </div>
 
 	<div class="rnakPage-container">
-		<c:forEach var="r" items="${rank}">
+		<c:forEach var="c" items="${collaboPages}">
 			<div class="rankPage-wrap"
-				onclick="location.href='RankDetailC?no=${r.p_no}'">
+				onclick="location.href='RankDetailC?id=${c.id}'">
 				<div class="rankPage-img">
-					<img alt="${r.p_title}" src="${r.p_img}">
+					<img alt="${c.title}" src="${c.p_img}">
 				</div>
-				<div class="movie-title">${r.p_title}</div>
-				<div class="rnakPage-actor">${r.p_actor}</div>
+				<div class="movie-title">${c.title}</div>
+				<div class="rnakPage-actor">${c.p_actor}</div>
 			</div>
 		</c:forEach>
 	</div>

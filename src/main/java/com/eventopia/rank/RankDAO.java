@@ -70,7 +70,7 @@ public class RankDAO {
 		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from product_test order by p_count desc";
+		String sql = "select * from product_test2 order by p_count desc";
 		
 		products = new ArrayList<ProductDTO>();
 		ProductDTO product = null;
@@ -105,12 +105,41 @@ public class RankDAO {
 
 	public void rankCount(HttpServletRequest request) throws UnsupportedEncodingException {
 		request.setCharacterEncoding("utf-8");
-
+		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String[] selectedNos = request.getParameterValues("check");
 		if (selectedNos != null && selectedNos.length > 0) {
 			String sql = "UPDATE product_test SET p_count = p_count + 1 WHERE p_no = ?";
+			try {
+				con = DBManager.connect();
+				pstmt = con.prepareStatement(sql);
+				
+				for (String no : selectedNos) {
+					pstmt.setString(1, no); // p_no에 해당하는 값 바인딩
+					if (pstmt.executeUpdate() == 1) {
+						System.out.println("수정 성공! p_no = " + no);
+					}
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(con, pstmt, rs);
+			}
+		} else {
+			System.out.println("선택된 항목이 없습니다.");
+		}
+	}
+	
+	public void rankCount2(HttpServletRequest request) throws UnsupportedEncodingException {
+		request.setCharacterEncoding("utf-8");
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String[] selectedNos = request.getParameterValues("check");
+		if (selectedNos != null && selectedNos.length > 0) {
+			String sql = "UPDATE product_test2 SET p_count = p_count + 1 WHERE p_no = ?";
 			try {
 				con = DBManager.connect();
 				pstmt = con.prepareStatement(sql);
@@ -132,37 +161,37 @@ public class RankDAO {
 		}
 	}
 
+	
+	
+	
 	public void rankPageAllSelect(HttpServletRequest request) throws UnsupportedEncodingException {
 		request.setCharacterEncoding("utf-8");
-
+		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from post_test";
+		String sql = "SELECT id, title, c_sub, c_img FROM collabo_post ";
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			ArrayList<RankPageDTO> rankPages = new ArrayList<RankPageDTO>();
-			RankPageDTO rankPage = null;
+			ArrayList<LimitedDTO> collaboPages = new ArrayList<LimitedDTO>();
+			LimitedDTO collaboPage = null;
 			while (rs.next()) {
-				rankPage = new RankPageDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
-						rs.getString(5), rs.getDate(6));
-				rankPages.add(rankPage);
+				collaboPage = new LimitedDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), null, null);
+				
+				collaboPages.add(collaboPage);
 			}
-
-			request.setAttribute("rank", rankPages);
-
+			
+			request.setAttribute("collaboPages", collaboPages);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
-
+			
 		} finally {
 			DBManager.close(con, pstmt, rs);
 		}
-
+		
 	}
-
-	
-	
 	public void limitAllSelect(HttpServletRequest request) throws UnsupportedEncodingException {
 		request.setCharacterEncoding("utf-8");
 
@@ -201,7 +230,7 @@ public class RankDAO {
 		request.setCharacterEncoding("utf-8");
 		PreparedStatement pstmt = null;
 		
-		String sql = "INSERT INTO limited_post (title, p_actor, p_img, content,  created_at) VALUES (?, ?, ?, ?, sysdate)";
+		String sql = "INSERT INTO collabo_post (title, c_sub, c_img, content,  created_at) VALUES (?, ?, ?, ?, sysdate)";
 		try {
 			Connection con = DBManager.connect();
 			String title = request.getParameter("title");
@@ -265,38 +294,7 @@ public class RankDAO {
 	}
 
 	
-	public void rankDetail(HttpServletRequest request) {
-
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-
-		String sql = "select * from post_test where p_no=?";
-		try {
-			con = DBManager.connect();
-			RankPageDTO rankDetail = new RankPageDTO();
-			int no = Integer.parseInt(request.getParameter("no"));
-
-			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, no);
-			rs = pstmt.executeQuery();
-
-			if (rs.next()) {
-				rankDetail.setP_no(rs.getInt(1));
-				rankDetail.setP_title(rs.getString(2));
-				rankDetail.setP_actor(rs.getString(3));
-				rankDetail.setP_img(rs.getString(4));
-				rankDetail.setP_story(rs.getString(5));
-				rankDetail.setP_date(rs.getDate(6));
-
-				request.setAttribute("rank", rankDetail);
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			DBManager.close(con, pstmt, rs);
-		}
-	}
+	
 	
 
 	public void showLimited(HttpServletRequest request) throws IOException {
@@ -331,6 +329,34 @@ public class RankDAO {
 	
 
 	public void showPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		int post2Id = Integer.parseInt(request.getParameter("id"));
+		
+		String sql = "SELECT title, content FROM collabo_post WHERE id = ?";
+		try (Connection con = DBManager.connect();
+				PreparedStatement pstmt = con.prepareStatement(sql)) {
+			pstmt.setInt(1, post2Id);
+			
+			ResultSet rs = pstmt.executeQuery();
+			if (rs.next()) {
+				String title = rs.getString("title");
+				String content = rs.getString("content");
+				
+				// JSP에 데이터를 전달
+				request.setAttribute("title", title);
+				request.setAttribute("contentt", content);
+				
+				// JSP로 포워드
+			} else {
+				// 데이터가 없을 경우 처리
+				response.getWriter().write("No post found with the provided ID.");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			response.getWriter().write("An error occurred while retrieving the post.");
+		}
+	}
+
+	public void showPost2(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int postId = Integer.parseInt(request.getParameter("id"));
 
         String sql = "SELECT title, content FROM limited_post WHERE id = ?";

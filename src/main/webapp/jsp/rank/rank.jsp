@@ -36,13 +36,11 @@ prefix="c"%>
           콜라보 Top 5
         </div>
         <c:forEach items="${product }" var="p">
-          <div class="review-row">
+         <div class="review-row" onclick="window.location.href='${p.p_category}';">
             <img
               src="${p.image_url}"
               alt="Sample Image"
-              width="200"
-              height="200"
-            />
+             style= "width: 200px; height: 200px"   />
             <div class="span-container">
               <span>${p.p_name}</span> <span>${p.p_price}円</span>
               <span>${p.p_exp}</span>
@@ -50,7 +48,7 @@ prefix="c"%>
           </div>
         </c:forEach>
       </div>
-      <canvas id="myChart" width="500" height="500"></canvas>
+      <canvas id="myChart" width="650" height="600"></canvas>
     </div>
 
     <button class="fixed-button" onclick="openModal()">투표하기</button>

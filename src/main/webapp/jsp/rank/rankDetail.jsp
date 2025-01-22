@@ -1,37 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <title>${title}</title>
+     <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            	
+            margin: 0;
+        }
+       .a1 {
+            text-align: center;
+        }
+        .a2 {
+            text-align: center;
+            max-width: 600px;
+        }
+    </style>
 </head>
 <body>
-
-<div style="text-align: center;"><h1> 콜라보페이지 상세</h1></div>
-<div style="display: flex; justify-content: center;">
-<div class="rank-detail">
-<div>
-<div class="col-1">NO </div>
-<div class="col-2">${rank.p_no } </div>
-</div>
-
-<div>
-<div> <img alt="" src="${rank.p_img }"></div>
-</div>
-<div>
-<div class="col-1">제목 </div>
-<div class="col-2">${rank.p_title } </div>
-</div>
-<div>
-<div class="col-1">부연설명  </div>
-<div class="col-2">${rank.p_actor } </div>
-</div>
-<div>
-<div class="col-1">스토리 </div>
-<div class="col-2">${rank.p_story } </div>
-</div>
-</div>
-</div>
+    <div class="container">
+   <div class="a1"><h1>${title}</h1></div>
+    <div class="a2">${contentt}</div>
+    </div>
 </body>
 </html>

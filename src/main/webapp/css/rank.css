@@ -43,7 +43,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 100%;
+	width: 500px;
 	margin: 3px auto;
 	padding: 10px;
 	background-color: #fff;
@@ -55,7 +55,9 @@ body {
 .review-row img {
 	border-radius: 4px;
 }
-
+span{
+text-align: center;
+}
 .span-container {
 	display: flex;
 	flex-direction: column; /* 세로로 텍스트 배치 */
