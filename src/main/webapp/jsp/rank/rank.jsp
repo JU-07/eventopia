@@ -16,16 +16,18 @@ prefix="c"%>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="css/rank.css" />
  <style type="text/css">
- .product-image {
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-}
  .top-ranked {
+    background-color: #f7e7ce; /* 황금색 배경 */
     border: 2px solid #ffcc00; /* 강조된 테두리 */
     font-weight: bold;
 }
- 
+
+
+.product-image {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+}
  </style>
   </head>
   <body>
