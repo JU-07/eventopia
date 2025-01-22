@@ -65,49 +65,118 @@
 			font-size: 1rem;
 			cursor: pointer;
 			transition: background-color 0.3s ease;
+			text-align: center;
 		}
 
 		/* 버튼 호버 효과 */
 		button:hover {
 			background-color: #5961b3;
 		}
+
+		/* 접기/펼치기 스타일 */
+		.toggle-content {
+			display: none;
+			margin-top: 10px;
+			background-color: #f9f9f9;
+			padding: 10px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
+
+		form {
+			background-color: #fff;
+			padding: 30px;
+			border-radius: 8px;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+			width: 100%;
+			max-width: 800px;
+			box-sizing: border-box;
+			justify-content: center;
+			margin-top: 20px;
+			/* 폼 위쪽 간격 */
+		}
+
+		/* 주의점 버튼 */
+		.toggle-button {
+			display: block;
+
+			color: #fff;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			text-align: center;
+			cursor: pointer;
+			width: 200px;
+			margin: 20px auto 40px auto;
+		}
+
+		.toggle-button:hover {
+			background-color: #5961b3;
+		}
 	</style>
 </head>
 
 <body>
+	<!-- 접기/펼치기 버튼은 form 외부로 이동 -->
+	<button type="button" class="toggle-button" onclick="toggleContent()">レビュー作成時の注意点</button>
+
+	<!-- 접혀있는 내용 -->
+	<div class="toggle-content" id="toggleContent">
+		<p>レビュー登録時の注意事項</p>
+		<ul>
+			<ul>
+				<li>1. 必須項目をすべて作成する必要があります。</li>
+				<li>2. 画像アドレスを取得したり、直接コピーしても登録されます。</li>
+				<li>3. 自分が本当に経験したコラボだけレビューしましょう..
+					<span style="color: red;">嘘の場合、削除される可能性があることを明示します。</span>
+				</li>
+				<li>4. <span style="color: red;">卑俗語及び不適切な内容は作成できません。必ず覚えておいてください..</span></li>
+				<li>5.卑俗語及び不適切な内容は、作成された場合、 <span style="color: red;">永久遮断及び永久加入不可処理が発生することがあります。</span></li>
+			</ul>
+
+		</ul>
+	</div>
+	<br>
 	<form action="ReviewRegDC" method="post">
 		<h1>レビュー作成</h1>
 
-		<form action="ReviewRegDC" method="post">
-			<label>題目</label>
-			<input type="text" name="title" required><br><br>
+		<label>題目</label>
+		<input type="text" name="title" required><br><br>
 
-			<label>説明</label>
-			<input name="sub" id="sub"><br><br>
+		<label>説明</label>
+		<input name="sub" id="sub"><br><br>
 
-			<label>イメージ</label>
-			<input name="img"><br><br>
+		<label>イメージ</label>
+		<input name="img"><br><br>
 
-			<textarea name="content" id="editor"></textarea>
-			<br>
-			<button type="submit">登録</button>
+		<textarea name="content" id="editor"></textarea>
+		<br>
 
+		<button type="submit">登録</button>
+	</form>
 
+	<script>
+		ClassicEditor.create(document.querySelector('#editor'), {
+			toolbar: [
+				'heading', '|', 'bold', 'italic', '|', 'alignment', '|', 'link', 'bulletedList', 'numberedList', '|', 'imageUpload', '|', 'undo', 'redo'
+			],
+			alignment: {
+				options: ['left', 'center', 'right', 'justify']
+			}
+		}).catch(error => {
+			console.error(error);
+		});
 
-			<script>
-				ClassicEditor
-					.create(document.querySelector('#editor'), {
-						toolbar: [
-							'heading', '|', 'bold', 'italic', '|', 'alignment', '|', 'link', 'bulletedList', 'numberedList', '|', 'imageUpload', '|', 'undo', 'redo'
-						],
-						alignment: {
-							options: ['left', 'center', 'right', 'justify']
-						}
-					})
-					.catch(error => {
-						console.error(error);
-					});
-			</script>
+		// 접기/펼치기 기능
+		function toggleContent() {
+			const content = document.getElementById('toggleContent');
+			if (content.style.display === "none" || content.style.display === "") {
+				content.style.display = "block";
+			} else {
+				content.style.display = "none";
+			}
+		}
+	</script>
 </body>
 
 </html>
