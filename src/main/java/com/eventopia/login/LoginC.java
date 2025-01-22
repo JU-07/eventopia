@@ -38,14 +38,14 @@ public class LoginC extends HttpServlet {
 
             // 성공 메시지를 설정하고 index.jsp로 포워드
             request.setAttribute("message", "Login Success");
-            request.setAttribute("content", "jsp/mypage/mypage.jsp");	// mypage로
+            request.setAttribute("content", "jsp/mypage/mypage.jsp");	// mypage
             request.getRequestDispatcher("index.jsp").forward(request, response);
             
         } else {
-        	
+        	System.out.println("login failed!");
         	// 로그인 실패 시 다시 로그인 페이지로 리다이렉트
-            request.setAttribute("message", "Login Failed");
-            request.setAttribute("content", "jsp/login/login.jsp");	// mypage로
+            request.setAttribute("loginError", "This account is not registered.");
+            request.setAttribute("content", "jsp/login/login.jsp");	// login page
             request.getRequestDispatcher("index.jsp").forward(request, response);
             
         }
