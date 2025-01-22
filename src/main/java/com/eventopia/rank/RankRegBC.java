@@ -20,7 +20,7 @@ public class RankRegBC extends HttpServlet {
 		
 		RankDAO.RDAO.rankAdd2(request);
 
-		response.sendRedirect("RankPageC");
+		response.sendRedirect("LimitedPageC");
 		
 		
 		

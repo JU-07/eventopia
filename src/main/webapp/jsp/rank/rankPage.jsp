@@ -8,11 +8,12 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/rankPage.css">
 </head>
+
 <body>
 <div class="nav-bar">
 <div class="nav-items">
 <a href="RankC">콜라보 랭킹</a>
-<a href="#">콜라보 랭킹</a>
+<a href="LimitedC">콜라보 랭킹</a>
 <a href="RankPageC">역대 콜라보 랭킹</a>
 <a href="LimitedPageC">역대 기간한정 랭킹</a>
 <a href="#">미니 게임</a>
@@ -32,6 +33,8 @@
 			</div>
 		</c:forEach>
 	</div>
+
+
 
 </body>
 </html>
