@@ -1,46 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
-   <script src="js/ckeditor.js"></script>
-    <title>글 작성</title>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+	<script src="js/ckeditor.js"></script>
+	<title>글 작성</title>
+	<style>
+		/* 폼 컨테이너 */
+		form {
+			background-color: #fff;
+			padding: 30px;
+			border-radius: 8px;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+			width: 100%;
+			max-width: 800px;
+			box-sizing: border-box;
+			justify-content: center;
+		}
+
+		/* 제목 */
+		h1 {
+			text-align: center;
+			color: #4A4A4A;
+			font-size: 2rem;
+			margin-bottom: 20px;
+		}
+
+		/* 라벨 스타일 */
+		label {
+			font-size: 1rem;
+			font-weight: bold;
+			color: #333;
+			display: block;
+			margin-bottom: 8px;
+		}
+
+		/* 입력 필드 */
+		input[type="text"],
+		input[type="file"],
+		textarea {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			margin-bottom: 20px;
+			font-size: 1rem;
+			box-sizing: border-box;
+		}
+
+		/* 텍스트에디터 */
+		#editor {
+			height: 300px;
+		}
+
+		/* 제출 버튼 */
+		button {
+			background-color: #6c7ae0;
+			color: #fff;
+			padding: 12px 30px;
+			border: none;
+			border-radius: 5px;
+			font-size: 1rem;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		/* 버튼 호버 효과 */
+		button:hover {
+			background-color: #5961b3;
+		}
+	</style>
 </head>
+
 <body>
-    <form action="ReviewRegDC" method="post">
-        <label>제목:</label>
-        <input type="text" name="title" required><br><br>
+	<form action="ReviewRegDC" method="post">
+		<h1>レビュー作成</h1>
 
-        <label>부연설명:</label>
-        <input name="sub" id="sub"><br><br>
+		<form action="ReviewRegDC" method="post">
+			<label>題目</label>
+			<input type="text" name="title" required><br><br>
 
-        <label>image:</label>
-        <input name="img"><br><br>
+			<label>説明</label>
+			<input name="sub" id="sub"><br><br>
 
-        <textarea name="content" id="editor"></textarea>
-        <br>
-        <button type="submit">등록</button>
+			<label>イメージ</label>
+			<input name="img"><br><br>
+
+			<textarea name="content" id="editor"></textarea>
+			<br>
+			<button type="submit">登録</button>
 
 
 
-
-
-    </form>
-
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'), {
-                toolbar: [
-                    'heading', '|', 'bold', 'italic', '|', 'alignment', '|', 'link', 'bulletedList', 'numberedList', '|', 'imageUpload', '|', 'undo', 'redo'
-                ],
-                alignment: {
-                    options: ['left', 'center', 'right', 'justify'] // 정렬 옵션 추가
-                }
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
+			<script>
+				ClassicEditor
+					.create(document.querySelector('#editor'), {
+						toolbar: [
+							'heading', '|', 'bold', 'italic', '|', 'alignment', '|', 'link', 'bulletedList', 'numberedList', '|', 'imageUpload', '|', 'undo', 'redo'
+						],
+						alignment: {
+							options: ['left', 'center', 'right', 'justify']
+						}
+					})
+					.catch(error => {
+						console.error(error);
+					});
+			</script>
 </body>
+
 </html>

@@ -1,6 +1,7 @@
 package com.eventopia.review;
 
 import java.io.IOException;
+
 import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -161,38 +162,37 @@ public class ReviewDAO {
 	}
 
 	public void paging(int pageNum, HttpServletRequest request) {
-		  request.setAttribute("curPageNum", pageNum);
+        request.setAttribute("curPageNum", pageNum);
 
-	        int total = reviews.size();
-	        int count = 2;
+        int total = reviews.size();
+        int count = 3;
 
-	        // 페이지수
+        // 페이지수
 
-	        int pageCount = (int) Math.ceil((double)total / count);
-	        System.out.println(pageCount); //페이지 개수 (총페이지수)
-	        request.setAttribute("pageCount", pageCount);
+        int pageCount = (int) Math.ceil((double)total / count);
+        System.out.println(pageCount); //페이지 개수 (총페이지수)
+        request.setAttribute("pageCount", pageCount);
 
-	        // start, end
-	        int start = total - (count * (pageNum - 1));
-//	        int 시작데이터번호2 = 총데이터수 - (한페이지당보여줄개수 * (페이지번호 - 1));
-	        // 4 = 4 - 
+        // start, end
+        int start = total - (count * (pageNum - 1));
+//        int 시작데이터번호2 = 총데이터수 - (한페이지당보여줄개수 * (페이지번호 - 1));
+        // 4 = 4 - 
 
-	        int end = (pageNum == pageCount) ? -1 : start - (count + 1);
-//	        int 끝데이터번호2 = (체이지번호 == 총페이지수) ? -1 : 시작데이터번호2 - (한페이지당보여줄개수 + 1);
+        int end = (pageNum == pageCount) ? -1 : start - (count + 1);
+//        int 끝데이터번호2 = (체이지번호 == 총페이지수) ? -1 : 시작데이터번호2 - (한페이지당보여줄개수 + 1);
 
-	        ArrayList<ReviewDTO> items = new ArrayList<ReviewDTO>();
+        ArrayList<ReviewDTO> items = new ArrayList<ReviewDTO>();
 
-	        for (int i = start -1; i > end; i--) {
-	            items.add(reviews.get(i));
-	        }
-	        request.setAttribute("reviews", items);
+        for (int i = start -1; i > end; i--) {
+            items.add(reviews.get(i));
+        }
+        request.setAttribute("reviews", items);
 
-	    }
-		
+    }
 	public void showPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int postId = Integer.parseInt(request.getParameter("id"));
 
-        String sql = "SELECT title, content FROM review_post WHERE id = ?";
+        String sql = "SELECT title, content, r_img, r_sub FROM review_post WHERE id = ?";
         try (Connection con = DBManager.connect();
              PreparedStatement pstmt = con.prepareStatement(sql)) {
             pstmt.setInt(1, postId);
@@ -201,10 +201,14 @@ public class ReviewDAO {
             if (rs.next()) {
                 String title = rs.getString("title");
                 String content = rs.getString("content");
+                String img = rs.getString("r_img");
+                String sub = rs.getString("r_sub");
 
                 // JSP에 데이터를 전달
                 request.setAttribute("title", title);
                 request.setAttribute("contentt", content);
+                request.setAttribute("img" ,img );
+                request.setAttribute("sub", sub);
 
                 // JSP로 포워드
             } else {

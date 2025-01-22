@@ -1,96 +1,86 @@
 @charset "UTF-8";
-/* 모달창 배경 */
+/* 모달 스타일 */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 어두운 배경 */
-    padding-top: 80px;
-    transition: all 0.3s ease;
+  display: none; /* 기본적으로 숨김 */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 화면 중앙에 위치 */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 어두운 배경 */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s 0.3s; /* 애니메이션 적용 */
 }
 
-/* 모달 콘텐츠 스타일 */
+.modal.active {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease; /* 활성화시 부드럽게 나타남 */
+}
+
 .modal-content {
-    background-color: white;
-    margin: auto;
-    padding: 20px;
-    border-radius: 10px; /* 부드러운 둥근 모서리 */
-    width: 320px; /* 컴팩트한 모달창 크기 */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
-    text-align: center;
-    position: relative;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%; /* 반응형 디자인 */
+  text-align: center;
+  position: relative;
 }
 
 /* 닫기 버튼 */
 .close-btn {
-    color: #aaa;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    transition: color 0.3s ease;
+  color: #aaa;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 }
 
-.close-btn:hover {
-    color: #333;
+.close-btn:hover,
+.close-btn:focus {
+  color: #333;
 }
 
-/* 모달 헤더 */
-h4 {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    font-size: 16px;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-/* SNS 버튼 컨테이너 */
+/* SNS 버튼 스타일 */
 #sns-buttons {
-    display: flex;
-    flex-wrap: wrap; /* 버튼을 여러 줄로 배치 */
-    gap: 10px; /* 버튼 간격 */
-    justify-content: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
 }
 
-/* SNS 버튼 */
 #sns-buttons button {
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 6px 10px; /* 버튼 크기 줄이기 */
-    font-size: 12px; /* 텍스트 크기 축소 */
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80px; /* 버튼 너비 고정 */
-    height: 40px; /* 버튼 높이 고정 */
+  flex: 1;
+  max-width: 120px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-/* 버튼 호버 효과 */
 #sns-buttons button:hover {
-    background-color: #e0e0e0;
-    transform: scale(1.05);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #e0e0e0;
+  transform: scale(1.05);
 }
 
-/* SNS 아이콘 */
 #sns-buttons img {
-    width: 16px; /* 아이콘 크기 축소 */
-    height: 16px;
-    margin-right: 5px; /* 아이콘과 텍스트 간격 */
-}
-
-/* 버튼 텍스트 */
-#sns-buttons button span {
-    font-weight: 500;
-    color: #333;
-    text-align: left;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px; /* 아이콘과 텍스트 간격 */
 }
