@@ -169,7 +169,7 @@ public class ReviewDAO {
 		request.setAttribute("curPageNum", pageNum);
 
 		int total = reviews.size();
-		int count = 2;
+		int count = 3;
 
 		// 페이지수
 

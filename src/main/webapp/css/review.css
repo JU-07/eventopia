@@ -48,7 +48,7 @@ body {
 .review-img {
 	width: 100%;
 	/* 이미지가 부모에 맞게 채워짐 */
-	height: 200px;
+	height: 170px;
 	/* 고정 높이 */
 	background-color: #ddd;
 	/* 임시 배경색 */
@@ -101,7 +101,7 @@ body {
 }
 
 .review-user div:hover {
-	background-color: #007bff;
+	background-color: #6c7ae0;
 	/* 호버 시 배경색 변경 */
 	color: #fff;
 	/* 호버 시 글자색 변경 */
@@ -115,7 +115,7 @@ body {
 }
 
 .review-content {
-	background-color: darkgoldenrod;
+	background-color: bisque;
 	/* 로손 색상 */
 	padding: 20px;
 	margin-bottom: 20px;
@@ -144,19 +144,6 @@ body {
 	/* 수평 정렬 */
 	padding: 20px;
 }
-
-.review-content {
-	flex: 1 1 calc(33.333% - 40px);
-	/* 한 줄에 최대 3개씩 배치, 간격 포함 */
-	box-sizing: border-box;
-	border: 1px solid #ddd;
-	border-radius: 8px;
-	padding: 20px;
-	background-color: #fff;
-	text-align: center;
-	/* 텍스트 중앙 정렬 */
-}
-
 .review-img img {
 	max-width: 100%;
 	/* 이미지 크기 조정 */
@@ -239,6 +226,7 @@ body {
 	/* 둥근 모서리 */
 	transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 	box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+	justify-content: center;
 }
 
 /* 처음과 끝 버튼에 다르게 적용 */
@@ -290,75 +278,62 @@ body {
 	}
 }
 
+/* 등록 버튼 */
 .register-btn {
 	text-decoration: none;
 	font-weight: bold;
 	padding: 12px 25px;
-	background-color: #F2F3F4;
-	border-radius: 8px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	margin: 20px 0;
+	background: linear-gradient(135deg, #e3e3e3, #cfcfcf);
+	color: #333;
+	border-radius: 30px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 	display: inline-block;
 }
 
-/* 리뷰 컨테이너 */
-.review-container {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 20px;
-	justify-content: space-between;
+.register-btn:hover {
+	background: linear-gradient(135deg, #cfcfcf, #b0b0b0);
+	transform: translateY(-3px);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* 각 리뷰 카드 */
-.review-content {
-	width: calc(33.33% - 20px);
-	background-color: #fff;
-	padding: 20px;
-	border-radius: 8px;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-	transition: transform 0.2s ease;
+.register-btn:active {
+	transform: translateY(1px);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.review-content:hover {
-	transform: translateY(-5px);
-}
-
-
-/* 사용자 인터페이스 */
-.review-user {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	font-size: 0.9em;
-}
-
-/* 공유 버튼 */
-.SNS {
-	cursor: pointer;
-	color: gray;
-
-}
-
-/* 페이지 네비게이션 */
 .pagination {
-	text-align: center;
-	margin-top: 20px;
+    text-align: center;
 }
-
+/* 페이지 버튼 */
 .pagination a {
 	text-decoration: none;
-	color: gray;
-	padding: 8px 18px;
-	background-color: #F9F9F9;
-	border-radius: 5px;
+	padding: 10px 20px;
+	color: #fff;
+	background: linear-gradient(135deg, #666, #444);
+	border-radius: 30px;
 	margin: 0 5px;
+	font-size: 0.9rem;
 	font-weight: bold;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;\
 }
 
 .pagination a:hover {
-	background-color: #F1F1F1;
+	background: linear-gradient(135deg, #444, #222);
+	transform: translateY(-3px);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.add-review a:hover {
-	color: orange;
+.pagination a:active {
+	transform: translateY(1px);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 선택된 페이지 버튼 스타일 (활성화된 경우) */
+.pagination a.active {
+	background: linear-gradient(135deg, #444, #333);
+	color: #fff;
+	font-weight: bold;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }

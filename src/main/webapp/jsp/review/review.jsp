@@ -14,8 +14,9 @@
 <script type="text/javascript" src="js/reviewModal.js"></script>
 </head>
 <body>
-	<a href="ReviewRegC2" class="register-btn">登録</a>
-
+	<div class="register-container">
+		<a href="ReviewRegC2" class="register-btn">登録</a>
+	</div>
 	<div class="review-container">
 		<c:forEach var="r" items="${reviews}">
 			<div class="review-content">
@@ -42,7 +43,7 @@
 								<img src="Icon/sns/images.png" alt="Twitter">
 							</button>
 							<button onclick="shareOnFacebook(${r.id})">
-								<img src="Icon/sns/124010.png" alt="Facebook">
+								<img src="Icon/sns/images (1).png" alt="Facebook">
 							</button>
 							<button onclick="shareOnLine(${r.id})">
 								<img
