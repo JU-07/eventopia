@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f29040f-031f-48ed-8d5e-a60d23a61478" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/04a95bb6-7d2c-4a1f-b35f-25c4e417d2af.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/04a95bb6-7d2c-4a1f-b35f-25c4e417d2af.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventopia/login/LoginC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventopia/login/LoginC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/login/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/login/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/mypage/mypage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/mypage/mypage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventopia/login/LoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventopia/login/LoginDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eventopia/login/RegisterC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eventopia/login/RegisterC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/login/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/login/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/sql/userDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sql/userDB.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -19,3 +19,8 @@ delete from user_info where user_no=1;
 drop table user_info;
 
 drop sequence user_info_seq;
+
+// user_id 유효성 검사
+SELECT COUNT(*)
+FROM user_info
+WHERE LOWER(user_id) = 'admin';

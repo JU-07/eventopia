@@ -64,9 +64,9 @@
 					<!-- Profile Picture Upload -->
 					<div class="input-group">
 						<i class="fas fa-image"></i> <input type="file" id="profilePic"
-							name="profilePic" accept="image/*"> <label
-							for="profilePic" class="upload-btn">Choose File</label> <span
-							id="fileName">No file chosen</span>
+							name="userProfile" accept="image/*"> <label
+							for="profilePic" class="upload-btn">Choose File</label> 
+							<span id="fileName">No file chosen</span>
 					</div>
 
 					<!-- Error Message -->
