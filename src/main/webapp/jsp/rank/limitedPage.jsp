@@ -31,7 +31,6 @@
     }
     .settings-icon {
         cursor: pointer;
-        font-size: 20px;
         position: relative;
     }
 </style>
@@ -63,9 +62,8 @@
 <a href="#">기간한정 랭킹</a>
 <a href="RankPageC">역대 콜라보 랭킹</a>
 <a href="LimitedPageC">역대 기간한정 랭킹</a>
-<a href="#">미니 게임</a>
 <div class="settings">
-    <span class="settings-icon" onclick="toggleSettingsMenu(event)">⚙</span>
+    <span class="settings-icon" onclick="toggleSettingsMenu(event)">게시물</span>
     <div id="settingsMenu" class="settings-menu">
         <button onclick="location.href='RankRegC2'">글쓰기</button>
         <button onclick="location.href='edit.jsp'">수정하기</button>

@@ -20,7 +20,7 @@ body {
 
 .nav-items {
 	display: flex;
-	justify-content: space-between;
+gap: 30px;
 	align-items: center;
 }
 
@@ -44,7 +44,7 @@ body {
 	align-items: center;
 	position: relative;
 	justify-content: space-between;
-	width: 550px;
+	
 	margin: 3px auto;
 	padding: 10px;
 	background-color: #fff;

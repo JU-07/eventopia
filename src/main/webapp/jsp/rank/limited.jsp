@@ -37,11 +37,9 @@
 <div class="nav-bar"> 	
 <div class="nav-items">
 <a href="RankC">콜라보 랭킹</a>
-<a href="LimitedC">콜라보 랭킹</a>
+<a href="LimitedC">기간한정 랭킹</a>
 <a href="RankPageC">역대 콜라보 랭킹</a>
 <a href="LimitedPageC">역대 기간한정 랭킹</a>
-<a href="#">미니 게임</a>
-<a href="RankRegC">게시물 등록</a>
 </div>
 </div>
 
@@ -90,7 +88,7 @@
 					<div style="color: black;">
 						<c:forEach items="${product }" var="p">
 							<div class="review-row">
-								<span>${p.p_name}</span> <span>${p.p_price}원</span> 
+								<span>${p.p_name}</span> 
 								<img src="${p.image_url}" alt="Sample Image" width="70"
 									height="70" /> <span><input type="checkbox"
 									name="check" value="${p.p_no}" /></span>
