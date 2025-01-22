@@ -1,23 +1,28 @@
-// 페이지가 완전히 로드된 후에 실행
-document.addEventListener("DOMContentLoaded", function() {
-	// 모달 열기
-	window.openShareModal = function(reviewId) {
-		// 모든 모달을 숨기기
-		const modals = document.querySelectorAll('.modal');
-		modals.forEach(modal => modal.style.display = 'none');
+// 모달 열기
+function openShareModal(reviewId) {
+  document.getElementById('sns-modal-' + reviewId).style.display = "block";
+}
 
-		// 해당 리뷰 ID에 맞는 모달을 열기
-		const modal = document.getElementById('sns-modal-' + reviewId);
-		if (modal) {
-			modal.style.display = 'block';
-		}
-	}
+// 모달 닫기
+function closeModal(reviewId) {
+  document.getElementById('sns-modal-' + reviewId).style.display = "none";
+}
 
-	// 모달 닫기
-	window.closeModal = function(reviewId) {
-		const modal = document.getElementById('sns-modal-' + reviewId);
-		if (modal) {
-			modal.style.display = 'none';
-		}
-	}
-});
+// SNS 공유 기능
+function shareOnTwitter(reviewId) {
+  const url = encodeURIComponent(window.location.href); // 현재 페이지 URL
+  const tweetUrl = `https://twitter.com/intent/tweet?url=${url}`;
+  window.open(tweetUrl, "_blank");
+}
+
+function shareOnFacebook(reviewId) {
+  const url = encodeURIComponent(window.location.href); // 현재 페이지 URL
+  const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+  window.open(fbUrl, "_blank");
+}
+
+function shareOnLine(reviewId) {
+  const url = encodeURIComponent(window.location.href); // 현재 페이지 URL
+  const lineUrl = `https://social-plugins.line.me/lineit/share?url=${url}`;
+  window.open(lineUrl, "_blank");
+}

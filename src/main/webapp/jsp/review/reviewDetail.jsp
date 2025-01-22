@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -22,7 +23,6 @@ body {
 	padding: 20px;
 	background-color: #fff;
 	border-radius: 8px;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* 타이틀 스타일 */
@@ -70,6 +70,35 @@ body {
 	margin-top: 20px;
 }
 
+.custom-button {
+	background-color: #2c3e50; /* 차분한 다크 블루 */
+	color: #ecf0f1; /* 밝은 톤의 텍스트 */
+	border: none; /* 테두리 제거 */
+	border-radius: 5px; /* 약간의 둥근 모서리 */
+	padding: 10px 20px; /* 버튼 크기 조정 */
+	font-size: 16px; /* 적당한 글자 크기 */
+	cursor: pointer; /* 클릭 가능한 포인터 */
+	text-align: center;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+	/* 부드러운 전환 효과 */
+}
+
+.center-container {
+	display: flex;
+	justify-content: center; /* 가로 중앙 정렬 */
+	align-items: center; /* 세로 중앙 정렬 */
+	height: 100vh; /* 화면 전체 높이를 사용 */
+}
+
+.custom-button:hover {
+	background-color: #34495e; /* 호버 시 약간 밝아지는 효과 */
+	transform: scale(1.05); /* 약간 확대 효과 */
+}
+
+.custom-button:active {
+	background-color: #1a252f; /* 클릭 시 더 어두워짐 */
+}
+
 /* 반응형 디자인 */
 @media ( max-width : 768px) {
 	.a1 h1 {
@@ -94,18 +123,21 @@ body {
 
 		<!-- 본문 내용 -->
 		<div class="a2">
-			<h2>상세 내용</h2>
 			<p>${contentt}</p>
 		</div>
 
 		<!-- 서브 콘텐츠 -->
 		<div class="a3">
-			<h2>요약 내용</h2>
+			<h2>このコラボについてのレビュー</h2>
 			<p>${sub}</p>
+		</div>
+		<div class="a3">
+			<h2>作成日付</h2>
+			<p>${created_at}</p>
 		</div>
 	</div>
 	<div>
-		<button onclick="location.href='ReviewC'">돌아가기</button>
+		<button class="custom-button" onclick="location.href='ReviewC'">돌아가기</button>
 	</div>
 </body>
 </html>
