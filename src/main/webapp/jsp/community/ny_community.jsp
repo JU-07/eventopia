@@ -53,7 +53,7 @@
 	<!-- chat -->
 	<div class="chat-button-container">
 		<button class="chat-button" onclick="openChat()">
-			<img alt="chat" src="Icon/community/chat.png"
+			<img alt="chat" src="icon/community/chat.png"
 				style="width: 100%; height: 100%; object-fit: cover;">
 		</button>
 	</div>

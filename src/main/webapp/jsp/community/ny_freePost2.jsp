@@ -8,21 +8,22 @@
 <head>
 <meta charset="UTF-8">
 <title>自由投稿</title>
-<link rel="stylesheet" href="css/ny_freePost.css">
-<link rel="stylesheet" href="css/ny_postsTable2.css">
+
+<link rel="stylesheet" href="css/ny_community.css">
 
 </head>
 <body>
-		<input id="username" value="test">
+	<input id="username" value="test">
 	<div class="container">
-		
+
 		<!-- 채팅 화면 -->
-		<div style="position:relative; width:100%;">
-		<button onclick="sendToIframe(this)" class="chat-btn">Start chat</button>
-		<div class="chat-container">
-			<iframe id="chatIframe" style="width: 100%; height: 100%;"
-				src="http://192.168.2.118:8080/chat"></iframe>
-		</div>
+		<div style="position: relative; width: 100%;">
+			<button onclick="sendToIframe(this)" class="chat-btn">Start
+				chat</button>
+			<div class="chat-container">
+				<iframe id="chatIframe" style="width: 100%; height: 100%;"
+					src="http://192.168.2.118:8080/chat"></iframe>
+			</div>
 		</div>
 
 		<script>

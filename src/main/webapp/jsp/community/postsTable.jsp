@@ -18,8 +18,8 @@
 				<td><a href="EditPostC?p_id=${post.id}">${post.name}</a></td>
 				<td><c:choose>
 						<c:when test="${post.img != '画像なし'}">
-							<img src="${pageContext.request.contextPath}${post.img}" alt="画像"
-								width="50" height="50">
+							<img src="${pageContext.request.contextPath}${post.img}"
+								alt="${post.name}" width="50" height="50">
 						</c:when>
 						<c:otherwise>画像なし</c:otherwise>
 					</c:choose></td>

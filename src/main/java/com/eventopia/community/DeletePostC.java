@@ -19,7 +19,7 @@ public class DeletePostC extends HttpServlet {
 			CommunityDAO.deletePost(postId);
 
 			// 投稿一覧にリダイレクト
-			response.sendRedirect("CommunityC");
+			response.sendRedirect("FreePostC");
 
 		} catch (Exception e) {
 			e.printStackTrace();

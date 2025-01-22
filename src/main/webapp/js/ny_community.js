@@ -1,38 +1,3 @@
-// 指定した要素のクリックイベントを設定
-document.querySelectorAll(".attention-title").forEach((title) => {
-	if (title) {
-		title.addEventListener("click", () => {
-			const targetId = title.getAttribute("data-target");
-			const content = document.getElementById(targetId);
-
-			if (content) {
-				content.classList.toggle("open");
-				title.textContent = content.classList.contains("open")
-					? title.textContent.replace("▽", "△")
-					: title.textContent.replace("△", "▽");
-			}
-		});
-	}
-});
-
-// 上に戻るボタンの設定
-const backToTopButton = document.getElementById('backToTop');
-
-if (backToTopButton) {
-	// スクロール位置に応じてボタンを表示・非表示
-	window.addEventListener('scroll', function() {
-		backToTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
-	});
-
-	// クリックでスムーズスクロール
-	backToTopButton.addEventListener('click', function() {
-		window.scrollTo({
-			top: 0,
-			behavior: 'smooth'
-		});
-	});
-}
-
 // 投稿一覧の更新
 function updatePosts() {
 	fetch('/PostsTable') // 必要なエンドポイントに変更してください
@@ -136,3 +101,5 @@ document.getElementById('editForm').addEventListener('submit', function(event) {
 		alert('名前と内容は必須です。'); // エラー通知
 	}
 });
+
+//写真のモダール

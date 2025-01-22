@@ -56,7 +56,7 @@
 	width: 100%;
 	padding: 10px;
 	font-size: 16px;
-	background-color: darksalmon;
+	background-color: rgb(170, 200, 196);
 	color: white;
 	border: none;
 	cursor: pointer;
@@ -64,7 +64,7 @@
 }
 
 .form-container form button:hover {
-	background-color: lightsalmon;
+	background-color: cadetblue;
 }
 
 /* 投稿一覧セクション */
@@ -81,7 +81,7 @@
 .posts-container h2 {
 	font-size: 24px;
 	margin-bottom: 20px;
-	color: #333;
+	color: darkblue;
 	border-bottom: 2px solid lightgray;
 	padding-bottom: 10px;
 }
@@ -94,7 +94,7 @@
 }
 
 .posts-container th {
-	background-color: darksalmon;
+	background-color: rgb(170, 200, 196);
 	color: white;
 	padding: 10px;
 	border: 1px solid #ddd;
@@ -129,11 +129,11 @@
 }
 
 .free-post {
-	background-color: rgb(255, 189, 189);
+	background-color: rgb(170, 200, 196);
 }
 
 .free-post:hover {
-	background-color: hotpink;
+	background-color: cadetblue;
 }
 
 .share-post {
@@ -199,23 +199,14 @@ h3 {
 	padding: 10px;
 }
 
-/* 上に戻るボタン */
-#backToTop {
-	position: fixed;
-	bottom: 40px;
-	right: 40px;
-	padding: 15px 30px;
-	font-size: 15px;
-	background-color: white;
-	border: 1px solid lightgray;
-	cursor: pointer;
-	display: none;
-	z-index: 1000;
+.back-button {
+	background-color: rgb(170, 200, 196);
 }
 
-#backToTop:hover {
-	background-color: darkgray;
+.back-button:hover {
+	background-color: cadetblue;	
 }
+
 
 /* レスポンシブ対応 */
 @media ( max-width : 768px) {
@@ -250,7 +241,7 @@ h3 {
 	border-radius: 50%;
 	/* 丸くする */
 	border: none;
-	background-color: #ff7f50;
+	background-color: rgb(170, 200, 196);
 	/* ボタンの背景色 */
 	color: white;
 	/* ボタンの文字色 */
@@ -263,7 +254,7 @@ h3 {
 }
 
 .chat-button:hover {
-	background-color: #ff6347;
+	background-color: cadetblue;
 	/* ボタンのホバー時の背景色 */
 	transform: scale(1.1);
 	/* ボタンを少し拡大 */
@@ -338,3 +329,20 @@ h3 {
 .edit-container button.delete-btn:hover {
 	background-color: #c82333;
 }
+
+/*chat*/
+.chat-btn{
+	position: absolute;
+	left: 45%;
+	top: 50%;
+	padding: 20px 10px;
+	z-index: 9;
+}
+
+.chat-container{
+	width: 100%;
+	opacity: 0.1;
+	height: 100%;
+}
+
+

@@ -20,7 +20,7 @@
 			<form id="postForm" method="post" enctype="multipart/form-data"
 				action="FreePostC">
 				<div>
-					<label for="name">名前:</label> <input type="text" id="name"
+					<label for="name">題名:</label> <input type="text" id="name"
 						name="name" value="${post != null ? post.name : ''}" required>
 				</div>
 				<div>
@@ -50,7 +50,11 @@
 		</div>
 	</div>
 
-	<!-- 下部: 戻るボタン -->
+	<!-- モーダルのHTMLを追加 -->
+
+
+
+
 	<!-- 投稿ボタン -->
 	<div class="button-container"
 		style="text-align: center; margin-top: 20px;">
@@ -60,7 +64,7 @@
 	<!-- chat -->
 	<div class="chat-button-container">
 		<button class="chat-button" onclick="openChat()">
-			<img alt="chat" src="Icon/community/chat.png"
+			<img alt="chat" src="icon/community/chat.png"
 				style="width: 100%; height: 100%; object-fit: cover;">
 		</button>
 	</div>
