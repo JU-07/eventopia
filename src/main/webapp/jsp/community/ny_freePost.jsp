@@ -13,12 +13,6 @@
 
 </head>
 <body>
-
-	<div style="margin-bottom: 20px;">
-		<input type="text" id="searchBox" placeholder="キーワードで検索"
-			onkeyup="filterPosts()">
-	</div>
-
 	<div class="container">
 		<!-- 左側: 投稿フォーム -->
 		<div class="form-container">
