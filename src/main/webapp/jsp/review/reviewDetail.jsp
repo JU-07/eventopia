@@ -138,7 +138,7 @@ body {
 		</div>
 	</div>
 	<div>
-		<button class="custom-button" onclick="location.href='ReviewC'">돌아가기</button>
+		<button class="custom-button" onclick="location.href='ReviewC'">戻る</button>
 	</div>
 </body>
 </html>
