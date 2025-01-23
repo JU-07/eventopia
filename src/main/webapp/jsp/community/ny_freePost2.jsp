@@ -7,13 +7,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>自由投稿</title>
+<title>チャットルーム</title>
 
 <link rel="stylesheet" href="css/ny_community.css">
 
 </head>
 <body>
-	<input id="username" value="test">
 	<div class="container">
 
 		<!-- 채팅 화면 -->

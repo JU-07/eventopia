@@ -13,6 +13,12 @@
 
 </head>
 <body>
+
+	<div style="margin-bottom: 20px;">
+		<input type="text" id="searchBox" placeholder="キーワードで検索"
+			onkeyup="filterPosts()">
+	</div>
+
 	<div class="container">
 		<!-- 左側: 投稿フォーム -->
 		<div class="form-container">
@@ -42,16 +48,13 @@
 		<!-- 右側: 投稿一覧 -->
 		<div class="posts-container" id="postsContainer">
 			<h2>投稿一覧</h2>
-			<table>
+			<table id="postsTable">
 				<tbody>
 					<jsp:include page="postsTable.jsp" />
 				</tbody>
 			</table>
 		</div>
 	</div>
-
-	<!-- モーダルのHTMLを追加 -->
-
 
 
 

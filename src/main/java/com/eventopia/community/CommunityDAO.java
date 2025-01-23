@@ -6,14 +6,17 @@ import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.Part;
 import com.eventopia.main.DBManager;
 
 public class CommunityDAO {
 
-	public static void showAllPost(HttpServletRequest request) {
+	public static List<CommunityDTO> showAllPost(HttpServletRequest request) {
 		String sql = "SELECT p_id, p_name, p_img, p_content, p_date FROM community_post ORDER BY p_date DESC";
 
 		try (Connection con = DBManager.connect();
@@ -35,6 +38,7 @@ public class CommunityDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return null;
 	}
 
 	public static void addPost(HttpServletRequest request) {
@@ -125,4 +129,42 @@ public class CommunityDAO {
 			e.printStackTrace();
 		}
 	}
+
+	public List<CommunityDTO> searchPostsByKeyword(String keyword) {
+		List<CommunityDTO> posts = new ArrayList<>();
+		String sql = "SELECT * FROM posts WHERE name LIKE ? OR content LIKE ?";
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		try {
+			con = DBManager.connect(); // コネクションの取得
+			pstmt = con.prepareStatement(sql);
+
+			// プレースホルダーに値を設定
+			String query = "%" + keyword + "%";
+			pstmt.setString(1, query);
+			pstmt.setString(2, query);
+
+			// クエリを実行
+			rs = pstmt.executeQuery();
+
+			// 結果をリストに追加
+			while (rs.next()) {
+				CommunityDTO post = new CommunityDTO();
+				post.setId(rs.getInt("id"));
+				post.setName(rs.getString("name"));
+				post.setContent(rs.getString("content"));
+				post.setImg(rs.getString("img"));
+				posts.add(post);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace(); // エラーログを出力
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+
+		return posts; // 結果を返す
+	}
+
 }

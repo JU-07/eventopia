@@ -102,4 +102,29 @@ document.getElementById('editForm').addEventListener('submit', function(event) {
 	}
 });
 
-//写真のモダール
+//検索機能
+function filterPosts() {
+	const searchBox = document.getElementById("searchBox");
+	const filter = searchBox.value.toLowerCase(); // 入力値を小文字に変換
+	const postsTable = document.getElementById("postsTable");
+	const rows = postsTable.getElementsByTagName("tr"); // テーブルの各行を取得
+
+	for (let i = 0; i < rows.length; i++) {
+		const cells = rows[i].getElementsByTagName("td");
+		let rowContainsKeyword = false;
+
+		for (let j = 0; j < cells.length; j++) {
+			if (cells[j]) {
+				const text = cells[j].textContent || cells[j].innerText;
+				if (text.toLowerCase().includes(filter)) {
+					rowContainsKeyword = true;
+					break;
+				}
+			}
+		}
+
+		rows[i].style.display = rowContainsKeyword ? "" : "none";
+	}
+}
+
+
