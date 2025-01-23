@@ -34,6 +34,7 @@
 				<h2>Sign Up</h2>
 				<form id="registerForm" action="RegisterC" method="post"
 					enctype="multipart/form-data">
+					
 					<!-- ID -->
 					<div class="input-group">
 						<i class="fas fa-user"></i> <input type="text" id="userId"
@@ -64,9 +65,9 @@
 					<!-- Profile Picture Upload -->
 					<div class="input-group">
 						<i class="fas fa-image"></i> <input type="file" id="profilePic"
-							name="profilePic" accept="image/*"> <label
+							name="userProfile" accept="image/*"> <label
 							for="profilePic" class="upload-btn">Choose File</label> <span
-							id="fileName">No file chosen</span>
+							id="fileName"></span>
 					</div>
 
 					<!-- Error Message -->

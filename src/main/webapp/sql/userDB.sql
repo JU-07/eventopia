@@ -10,6 +10,17 @@ CREATE TABLE user_info
 create sequence user_info_seq;
 
 INSERT INTO user_info
-VALUES (user_info_seq.NEXTVAL, 'gkgus234', 'qwer1234', '김하현', NULL);
+VALUES (user_info_seq.NEXTVAL, 'admin', 'qwer1234', '김하현', NULL);
 
 select * from user_info;
+
+delete from user_info where user_no=1;
+
+drop table user_info;
+
+drop sequence user_info_seq;
+
+// user_id 유효성 검사
+SELECT COUNT(*)
+FROM user_info
+WHERE LOWER(user_id) = 'admin';

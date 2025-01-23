@@ -66,10 +66,23 @@ public class LoginDAO {
 
     // 회원가입 메서드
     public static String register(String userId, String userPw, String userName, String userProfile) {
-        Connection con = null;
+        
+    	
+    	System.out.println("userId : " + userId);
+    	System.out.println("userPW : " + userPw);
+    	System.out.println("userName : " + userName);
+    	System.out.println("userProfile : " +userProfile);
+    	
+    	Connection con = null;
         PreparedStatement pstmt = null;
-        String sql = "INSERT INTO USER_INF (USER_ID, USER_PW, USER_NAME, USER_CREATE_AT, USER_PROFILE) VALUES (?, ?, ?, SYSDATE, ?)";
         String result = null;
+ 
+        // userProfile이 null이거나 빈 문자열("")일 경우 "null" 넣어주기
+	     if (userProfile == null || userProfile.trim().isEmpty()) {
+	    	 String sql = "INSERT INTO user_info VALUES (user_info_seq.nextval, ?, ?, ?, null)";
+	     }
+	     
+        String sql = "INSERT INTO user_info VALUES (user_info_seq.nextval, ?, ?, ?, ?)";
 
         try {
             con = DBManager.connect();
@@ -101,5 +114,31 @@ public class LoginDAO {
         }
 
         return result;
+    }
+
+    // 아이디 중복 확인 메서드
+    public static boolean isUserIdExists(String userId) {
+       
+    	Connection con = null;
+        PreparedStatement pstmt = null;
+        
+    	String sql = "SELECT COUNT(*) FROM user_info WHERE user_id = ?";
+    	
+        boolean exists = false;
+
+        try {
+            con = DBManager.connect();
+            pstmt = con.prepareStatement(sql);
+            
+            pstmt.setString(1, userId);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                exists = rs.getInt(1) > 0; // 결과가 1 이상이면 아이디 존재
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return exists;
     }
 }

@@ -147,54 +147,35 @@
 }
 
 
-/* 모달 창 스타일 */
+/* Modal 스타일 */
 .modal {
     display: none; /* 기본적으로 숨김 */
     position: fixed;
-    z-index: 9999;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검은색 배경 */
+    background-color: rgba(0, 0, 0, 0.5); /* 배경 어둡게 */
     justify-content: center;
     align-items: center;
 }
 
 .modal-content {
-    background-color: #ffffff; /* 흰색 배경 */
+    background-color: #fff;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 8px;
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    width: 300px; /* 적당한 너비 설정 */
 }
 
-.modal-content h2 {
-    color: #e74c3c; /* 강렬한 빨간색으로 실패 강조 */
+.close-btn {
     font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.modal-content p {
-    color: #333; /* 기본 텍스트 색상 */
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.modal-content button {
-    background-color: #1b2c3e; /* 오른쪽 패널과 같은 버튼 색 */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+    color: #aaa;
     cursor: pointer;
-    font-weight: 600;
+    float: right;
 }
 
-.modal-content button:hover {
-    background-color: #162433; /* 버튼 호버 색상 */
-}
+
 
 /* 에러 메시지 */
 #errorMsg {
