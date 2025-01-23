@@ -21,6 +21,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.chrono.JapaneseChronology;
 import java.time.chrono.JapaneseDate;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 
@@ -170,33 +171,31 @@ public class ReviewDAO {
 	}
 
 	public void paging(int pageNum, HttpServletRequest request) {
-		request.setAttribute("curPageNum", pageNum);
+	    request.setAttribute("curPageNum", pageNum);
 
-		int total = reviews.size();
-		int count = 3;
+	    int total = reviews.size(); // 총 데이터 수
+	    int count = 3; // 한 페이지에 표시할 데이터 수
 
-		// 페이지수
+	    // 페이지 수 계산
+	    int pageCount = (int) Math.ceil((double) total / count);
+	    request.setAttribute("pageCount", pageCount);
 
-		int pageCount = (int) Math.ceil((double) total / count);
-		System.out.println(pageCount); // 페이지 개수 (총페이지수)
-		request.setAttribute("pageCount", pageCount);
+	    // start, end 계산 (역순으로 데이터를 출력하도록 수정)
+	    int start = total - (count * (pageNum - 1)); // 시작 인덱스
+	    int end = (pageNum == pageCount) ? -1 : start - (count + 1); // 끝 인덱스 (마지막 페이지는 -1로 처리)
 
-		// start, end
-		int start = total - (count * (pageNum - 1));
-//        int 시작데이터번호2 = 총데이터수 - (한페이지당보여줄개수 * (페이지번호 - 1));
-		// 4 = 4 -
+	    // 해당 페이지에 맞는 데이터를 추출 (역순)
+	    ArrayList<ReviewDTO> items = new ArrayList<>();
+	    for (int i = start - 1; i > end; i--) {
+	        items.add(reviews.get(i)); // 역순으로 데이터를 추가
+	    }
+	    request.setAttribute("reviews", items);
 
-		int end = (pageNum == pageCount) ? -1 : start - (count + 1);
-//        int 끝데이터번호2 = (체이지번호 == 총페이지수) ? -1 : 시작데이터번호2 - (한페이지당보여줄개수 + 1);
-
-		ArrayList<ReviewDTO> items = new ArrayList<ReviewDTO>();
-
-		for (int i = start - 1; i > end; i--) {
-			items.add(reviews.get(i));
-		}
-		request.setAttribute("reviews", items);
-
+	    // 페이지 네비게이션 활성화 설정
+	    request.setAttribute("hasNext", pageNum < pageCount); // "다음 페이지" 버튼 활성화 여부
+	    request.setAttribute("hasPrev", pageNum > 1); // "이전 페이지" 버튼 활성화 여부
 	}
+
 
 	public void showPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		int postId = Integer.parseInt(request.getParameter("id"));
