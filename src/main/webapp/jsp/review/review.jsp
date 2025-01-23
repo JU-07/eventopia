@@ -65,7 +65,7 @@
     
     <!-- 이전 페이지 버튼 -->
     <c:if test="${hasPrev}">
-        <a href="ReviewPageC?p=${curPageNum - 1}"><</a>
+        <a href="ReviewPageC?p=${curPageNum - 1}">←</a>
     </c:if>
     
     <!-- 페이지 번호들 -->
@@ -75,7 +75,7 @@
     
     <!-- 다음 페이지 버튼 -->
     <c:if test="${hasNext}">
-        <a href="ReviewPageC?p=${curPageNum + 1}">></a>
+        <a href="ReviewPageC?p=${curPageNum + 1}">→</a>
     </c:if>
     
     <!-- 맨 마지막 페이지로 가는 버튼 -->
