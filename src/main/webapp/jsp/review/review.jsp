@@ -40,14 +40,14 @@
 						<h4>공유하기</h4>
 						<div id="sns-buttons">
 							<button onclick="shareOnTwitter(${r.id})">
-								<img src="Icon/sns/images.png" alt="Twitter">
+								<img src="icon/sns/images.png" alt="Twitter">
 							</button>
 							<button onclick="shareOnFacebook(${r.id})">
-								<img src="Icon/sns/images (1).png" alt="Facebook">
+								<img src="icon/sns/images(1).png" alt="Facebook">
 							</button>
 							<button onclick="shareOnLine(${r.id})">
 								<img
-									src="Icon/sns/png-transparent-line-messaging-apps-logo-sticker-line-text-rectangle-logo-thumbnail.png"
+									src="icon/sns/png-transparent-line-messaging-apps-logo-sticker-line-text-rectangle-logo-thumbnail.png"
 									alt="Line">
 							</button>
 						</div>
