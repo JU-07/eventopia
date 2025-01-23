@@ -36,7 +36,7 @@ pageEncoding="UTF-8"%>
             <div>
               <a href="LoginC"
                 ><img
-                  src="Icon/index/user-icon.png"
+                  src="icon/index/user-icon.png"
                   alt="User Icon"
                   class="user-img"
               /></a>
@@ -44,14 +44,14 @@ pageEncoding="UTF-8"%>
             <div>
               <a href="MyPageC"
                 ><img
-                  src="Icon/index/heart-icon.png"
+                  src="icon/index/heart-icon.png"
                   alt="Heart Icon"
                   class="heart-img"
               /></a>
             </div>
             <div>
               <img
-                src="Icon/index/search-icon.png"
+                src="icon/index/search-icon.png"
                 alt="Search Icon"
                 class="search-img"
               />

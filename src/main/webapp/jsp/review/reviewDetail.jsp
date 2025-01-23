@@ -128,16 +128,17 @@ body {
 
 		<!-- 서브 콘텐츠 -->
 		<div class="a3">
-			<h2>このコラボについてのレビュー</h2>
+			<h2>このコラボについてのあなたのレビュー</h2>
 			<p>${sub}</p>
 		</div>
 		<div class="a3">
 			<h2>作成日付</h2>
 			<p>${created_at}</p>
+			(${created_at_era})
 		</div>
 	</div>
 	<div>
-		<button class="custom-button" onclick="location.href='ReviewC'">돌아가기</button>
+		<button class="custom-button" onclick="location.href='ReviewC'">戻る</button>
 	</div>
 </body>
 </html>
