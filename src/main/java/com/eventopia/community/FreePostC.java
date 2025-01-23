@@ -23,6 +23,10 @@ public class FreePostC extends HttpServlet {
 		dao.showAllPost(request);
 		request.setAttribute("content", "jsp/community/ny_freePost.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
+		
+		
+		
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -38,4 +42,5 @@ public class FreePostC extends HttpServlet {
 		// jsp/community/postsTable.jsp をレスポンスとして返す
 		request.getRequestDispatcher("jsp/community/postsTable.jsp").forward(request, response);
 	}
+	
 }

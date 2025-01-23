@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+/*.content-bg {*/
+/*	background-color: #ffffff;*/
+/*	flex: 1;  남는 공간을 채우도록 설정 */
+/*	min-height: 0%;*/
+/*}*/
+
 /* 共通設定: 背景とコンテナ */
 .container {
 	display: flex;
@@ -10,7 +16,8 @@
 	width: 100%
 }
 
-.community-container, .attention-container {
+.community-container,
+.attention-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -19,7 +26,8 @@
 }
 
 /* タイトル */
-.text, h1 {
+.text,
+h1 {
 	text-align: center;
 	font-size: 30px;
 	/* 統一したフォントサイズ */
@@ -43,7 +51,8 @@
 	display: block;
 }
 
-.form-container form input, .form-container form textarea {
+.form-container form input,
+.form-container form textarea {
 	width: 94%;
 	padding: 10px;
 	margin-bottom: 15px;
@@ -56,7 +65,7 @@
 	width: 100%;
 	padding: 10px;
 	font-size: 16px;
-	background-color: darksalmon;
+	background-color: rgb(170, 200, 196);
 	color: white;
 	border: none;
 	cursor: pointer;
@@ -64,7 +73,7 @@
 }
 
 .form-container form button:hover {
-	background-color: lightsalmon;
+	background-color: cadetblue;
 }
 
 /* 投稿一覧セクション */
@@ -81,7 +90,7 @@
 .posts-container h2 {
 	font-size: 24px;
 	margin-bottom: 20px;
-	color: #333;
+	color: darkblue;
 	border-bottom: 2px solid lightgray;
 	padding-bottom: 10px;
 }
@@ -94,7 +103,7 @@
 }
 
 .posts-container th {
-	background-color: darksalmon;
+	background-color: rgb(170, 200, 196);
 	color: white;
 	padding: 10px;
 	border: 1px solid #ddd;
@@ -129,11 +138,11 @@
 }
 
 .free-post {
-	background-color: rgb(255, 189, 189);
+	background-color: rgb(170, 200, 196);
 }
 
 .free-post:hover {
-	background-color: hotpink;
+	background-color: cadetblue;
 }
 
 .share-post {
@@ -199,35 +208,30 @@ h3 {
 	padding: 10px;
 }
 
-/* 上に戻るボタン */
-#backToTop {
-	position: fixed;
-	bottom: 40px;
-	right: 40px;
-	padding: 15px 30px;
-	font-size: 15px;
-	background-color: white;
-	border: 1px solid lightgray;
-	cursor: pointer;
-	display: none;
-	z-index: 1000;
+.back-button {
+	background-color: rgb(170, 200, 196);
 }
 
-#backToTop:hover {
-	background-color: darkgray;
+.back-button:hover {
+	background-color: cadetblue;
 }
+
 
 /* レスポンシブ対応 */
-@media ( max-width : 768px) {
+@media (max-width : 768px) {
 	.container {
 		flex-direction: column;
 	}
-	.form-container, .posts-container {
+
+	.form-container,
+	.posts-container {
 		max-width: 100%;
 	}
+
 	.form-container form button {
 		font-size: 14px;
 	}
+
 	.posts-container table {
 		font-size: 12px;
 	}
@@ -250,7 +254,7 @@ h3 {
 	border-radius: 50%;
 	/* 丸くする */
 	border: none;
-	background-color: #ff7f50;
+	background-color: rgb(170, 200, 196);
 	/* ボタンの背景色 */
 	color: white;
 	/* ボタンの文字色 */
@@ -263,8 +267,130 @@ h3 {
 }
 
 .chat-button:hover {
-	background-color: #ff6347;
+	background-color: cadetblue;
 	/* ボタンのホバー時の背景色 */
 	transform: scale(1.1);
 	/* ボタンを少し拡大 */
+}
+
+
+/* 編集フォームのコンテナ */
+.edit-container {
+	width: 100%;
+	/* 幅はレスポンシブ対応 */
+	max-width: 400px;
+	/* 最大幅を制限 */
+	padding: 30px;
+	background-color: #ffffff;
+	border-radius: 12px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+	/* シャドウで立体感 */
+	text-align: center;
+	border: 4px solid #ffd6e8;
+	/* ピンクの縁取り */
+}
+
+/* ヘッダー */
+.edit-container h1 {
+	font-size: 28px;
+	margin-bottom: 20px;
+	color: #9b59b6;
+	/* パープル */
+}
+
+/* 入力欄 */
+.edit-container label {
+	display: block;
+	margin-bottom: 10px;
+	font-weight: bold;
+	text-align: left;
+	color: #555;
+}
+
+.edit-container input[type="text"],
+.edit-container textarea {
+	width: 90%;
+	padding: 12px;
+	margin-bottom: 15px;
+	border: 2px solid #d1cfe2;
+	/* ラベンダーブルー */
+	border-radius: 6px;
+	background-color: #fdf4ff;
+	/* 淡いピンク */
+}
+
+.edit-container textarea {
+	height: 120px;
+	resize: none;
+	/* サイズ変更不可 */
+}
+
+/* ボタン */
+.edit-container button {
+	width: 100px;
+	margin: 10px 5px;
+	padding: 10px;
+	border-radius: 6px;
+	font-size: 14px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+/* 更新ボタン */
+.edit-container .update-btn {
+	background-color: #c3f5d5;
+	/* パステルグリーン */
+}
+
+.edit-container .update-btn:hover {
+	background-color: #b0e3c4;
+	/* 濃い緑 */
+}
+
+/* 戻るボタン */
+.edit-container .back-btn {
+	background-color: #b3e5fc;
+	/* パステルブルー */
+}
+
+.edit-container .back-btn:hover {
+	background-color: #a1d4ea;
+	/* 濃い青 */
+}
+
+/* 削除ボタン */
+.edit-container .delete-btn {
+	background-color: #ffc1cc;
+	/* パステルピンク */
+}
+
+.edit-container .delete-btn:hover {
+	background-color: #ff9eaa;
+	/* 濃いピンク */
+}
+
+/*chat*/
+.chat-btn {
+	position: absolute;
+	left: 45%;
+	top: 50%;
+	padding: 20px 10px;
+	z-index: 9;
+	background-color: cadetblue;
+	color: white;
+}
+
+.chat-container {
+	width: auto;
+	opacity: 0.1;
+	height: 720px;
+}
+
+/*検索css*/
+#searchBox {
+	width: 100%;
+	padding: 10px;
+	font-size: 14px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
 }
