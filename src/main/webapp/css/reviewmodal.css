@@ -49,3 +49,33 @@
 	background-color: gray;
 	transform: scale(0.9);
 }
+
+#sns-buttons {
+    display: flex; /* 버튼을 가로로 나란히 배치 */
+    justify-content: center; /* 버튼을 중앙 정렬 */
+    gap: 10px; /* 버튼 간의 간격 설정 */
+}
+
+#sns-buttons button {
+    padding: 5px; /* 버튼 내부 여백 */
+    background-color: transparent; /* 배경 제거 */
+    border: none; /* 테두리 제거 */
+    cursor: pointer; /* 클릭 가능한 버튼 스타일 */
+    display: flex; /* 버튼 안의 아이콘 정렬을 위해 flexbox 사용 */
+    align-items: center; /* 아이콘을 수직 가운데 정렬 */
+    justify-content: center; /* 아이콘을 수평 가운데 정렬 */
+    width: 40px; /* 버튼 크기 설정 */
+    height: 40px; /* 버튼 크기 설정 */
+    border-radius: 8px; /* 버튼에 약간의 둥근 모서리 추가 */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#sns-buttons button:hover {
+    transform: scale(1.1); /* 버튼을 살짝 확대 */
+    background-color: rgba(0, 0, 0, 0.1); /* 호버 시 배경색 추가 */
+}
+
+#sns-buttons img {
+    width: 24px; /* 아이콘 크기 조정 */
+    height: auto; /* 아이콘의 비율을 유지 */
+}

@@ -43,7 +43,7 @@
 								<img src="icon/sns/images.png" alt="Twitter">
 							</button>
 							<button onclick="shareOnFacebook(${r.id})">
-								<img src="icon/sns/images(1).png" alt="Facebook">
+								<img src="icon/sns/124010.png" alt="Facebook">
 							</button>
 							<button onclick="shareOnLine(${r.id})">
 								<img
