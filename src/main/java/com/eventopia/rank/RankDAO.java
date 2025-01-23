@@ -384,7 +384,28 @@ public class RankDAO {
             response.getWriter().write("An error occurred while retrieving the post.");
         }
     }
+	public  void limitedDelete(HttpServletRequest request) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 
+		String sql = "delete limited_post where id=?";
+		try {
+			con =	DBManager.connect();
+			String id = request.getParameter("id");
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("삭제성공!");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+
+	}
 
 }
 
