@@ -25,30 +25,31 @@
         </div>
         
         <!-- 기능 섹션 -->
-        <div class="action-sidebar">
-            <!-- Home -->
-            <div id="home-buttons" class="tab-buttons">
-                <div class="user-profile">
-                    <img src="icon/login/user.jpeg" alt="User Test">
-                    <div>TEST USER</div>
-                </div>
-                <button class="content-button" onclick="alert('게시글 확인 페이지로 이동')">게시글 확인</button>
-                <button class="content-button" onclick="alert('좋아요 / 즐겨찾기 페이지로 이동')">좋아요 / 즐겨찾기</button>
-                <button class="content-button" onclick="alert('팔로워 추가/해제 페이지로 이동')">팔로우 추가 / 해제</button>
-            </div>
-            
-            <!-- Settings -->
-            <div id="settings-buttons" class="tab-buttons hidden">
-                <div class="user-profile">
-                    <img src="icon/login/user.jpeg" alt="User Test">
-                    <div>TEST USER</div>
-                </div>
-                <button class="content-button" onclick="alert('회원 탈퇴 페이지로 이동')">회원 탈퇴</button>
-                <button class="content-button" onclick="alert('ID/PW 변경 페이지로 이동')">ID / PW 변경</button>
-                <button class="content-button" onclick="alert('프로필 변경 페이지로 이동')">프로필 변경</button>
-            </div>
-        </div>
-        
+       	<div class="action-sidebar">
+	    <!-- Home 버튼 그룹 -->
+	    <div id="home-buttons" class="tab-buttons">
+	        <div class="user-profile">
+	            <img src="icon/login/user.jpeg" alt="User Test">
+	            <div>TEST USER</div>
+	        </div>
+	        <button class="content-button" onclick="alert('게시글 확인 페이지로 이동')">게시글 확인</button>
+	        <button class="content-button" onclick="alert('좋아요 / 즐겨찾기 페이지로 이동')">좋아요 / 즐겨찾기</button>
+	        <button class="content-button" onclick="alert('팔로워 추가 / 해제 페이지로 이동')">팔로우 추가 / 해제</button>
+	    </div>
+	    
+	    <!-- Settings 버튼 그룹 -->
+	    <div id="settings-buttons" class="tab-buttons hidden">
+	        <div class="user-profile">
+	            <img src="icon/login/user.jpeg" alt="User Test">
+	            <div>TEST USER</div>
+	        </div>
+	        <button class="content-button"><a href="ProfileC"> 프로필 변경 </a></button>
+	        <button class="content-button"><a href="AccountChangeC"> ID / PW 변경 </a></button>
+	        <button class="content-button"><a href="AccountDeleteC"> 회원 탈퇴</button>
+	        <button class="content-button"><a href="Adminc"> 회원 관리</button>
+	    </div>
+	</div>
+
         <!-- 메인 콘텐츠 -->
         <div class="main-content">
             <div id="home" class="tab-content">

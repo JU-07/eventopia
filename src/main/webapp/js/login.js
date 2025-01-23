@@ -30,15 +30,31 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     errorMsg.textContent = "";
 });
 
-// JSP에서 서버 메시지를 가져옴
-window.onload = function () {
-    const message = '<%= request.getAttribute("message") != null ? request.getAttribute("message") : "" %>';
-    if (message === "Login Failed") {
-        document.getElementById("login-failed-modal").style.display = "flex"; // 실패 시 모달 표시
-    }
-};
+// DOM 로드 후 실행
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("errorModal");
+    const modalMessage = document.getElementById("modalMessage");
+    const closeModal = document.querySelector(".close-btn");
 
-// 모달 닫기 기능
-function closeModal() {
-    document.getElementById("login-failed-modal").style.display = "none";
-}
+    if (loginErrorMessage) {
+        modalMessage.textContent = loginErrorMessage;
+        modal.style.display = "flex";
+        
+         // 1초 후 모달 닫기
+        setTimeout(function () {
+            modal.style.display = "none";
+        }, 2000); // 1000ms = 1초
+    }
+
+    closeModal.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function (e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});
+
+
