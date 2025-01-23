@@ -128,12 +128,13 @@ body {
 
 		<!-- 서브 콘텐츠 -->
 		<div class="a3">
-			<h2>このコラボについてのレビュー</h2>
+			<h2>このコラボについてのあなたのレビュー</h2>
 			<p>${sub}</p>
 		</div>
 		<div class="a3">
 			<h2>作成日付</h2>
 			<p>${created_at}</p>
+			(${created_at_era})
 		</div>
 	</div>
 	<div>

@@ -58,11 +58,11 @@
 	</div>
 
 	<div class="pagination">
-		<a href="ReviewPageC?p=1">初</a>
+		<a href="ReviewPageC?p=1"><<</a>
 		<c:forEach begin="1" end="${pageCount}" var="i">
 			<a href="ReviewPageC?p=${i}">${i}</a>
 		</c:forEach>
-		<a href="ReviewPageC?p=${pageCount}">末</a>
+		<a href="ReviewPageC?p=${pageCount}">>></a>
 	</div>
 
 </body>
