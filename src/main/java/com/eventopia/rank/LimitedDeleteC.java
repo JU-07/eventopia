@@ -17,6 +17,8 @@ public class LimitedDeleteC extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RankDAO.RDAO.limitedDelete(request);
+	response.sendRedirect("LimitedDeleteC");
 	}
 
 }

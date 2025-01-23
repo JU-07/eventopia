@@ -99,7 +99,8 @@
         
 <div class="rnakPage-container">
     <c:forEach var="l" items="${limited}">
-        <div class="rankPage-wrap" onclick="deletePost(event, '${l.id}')">
+        <form action="LimitedDeleteC?id=${l.id} " method="post">
+        <div class="rankPage-wrap" onclick="">
             <button class="delete-btn" >×</button>
             <div class="rankPage-img">
                 <img alt="${l.title}" src="${l.p_img}">
@@ -107,30 +108,10 @@
             <div class="movie-title">${l.title}</div>
             <div class="rnakPage-actor">${l.p_actor}</div>
         </div>
+        </form>
     </c:forEach>
 </div>
 
-<script>
-    function deletePost(event, postId) {
-        event.stopPropagation(); // 부모 요소 클릭 방지
-
-        if (confirm("정말 삭제하시겠습니까?")) {
-            // AJAX 요청으로 삭제 처리 (예시)
-            fetch(`LimitedDeleteC2?id=${postId}`, {
-                method: 'POST',
-            }).then(response => {
-                if (response.ok) {
-                    alert("삭제되었습니다.");
-                    event.target.closest('.rankPage-wrap').remove(); // 화면에서 제거
-                } else {
-                    alert("삭제에 실패했습니다.");
-                }
-            }).catch(error => {
-                console.error("삭제 오류:", error);
-            });
-        }
-    }
-</script>
 
 
 
