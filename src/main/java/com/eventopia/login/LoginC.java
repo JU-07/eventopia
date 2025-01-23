@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet("/LoginC")
@@ -34,7 +35,12 @@ public class LoginC extends HttpServlet {
         
         if ("Login Success".equals(result)) {
             // 세션에 사용자 ID 저장
-            request.getSession().setAttribute("userId", id);
+//            request.getSession().setAttribute("userId", id);
+
+            // 로그인 세션 유지
+            HttpSession session = request.getSession();
+            session.setAttribute("userId", id); // 사용자 ID 세션에 저장
+            session.setMaxInactiveInterval(30 * 60); // 세션 유지 시간: 30분
 
             // 성공 메시지를 설정하고 index.jsp로 포워드
             request.setAttribute("message", "Login Success");

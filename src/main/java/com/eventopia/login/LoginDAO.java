@@ -116,26 +116,29 @@ public class LoginDAO {
         return result;
     }
 
-	public static boolean isIdDuplicate(String userId) {
-		 Connection con = null;
-	     PreparedStatement pstmt = null;
-		 
-	     String sql = "SELECT COUNT(*) FROM user_info WHERE user_id = ?";
-		 
-	     try {
-	    	 	con = DBManager.connect();
-	            pstmt = con.prepareStatement(sql);
-	            
-		        pstmt.setString(1, userId);
-		        ResultSet rs = pstmt.executeQuery();
-		        
-		        if (rs.next()) {
-		            return rs.getInt(1) > 0; // 1 이상이면 중복
-		        }
-		        
-		    } catch (Exception e) {
-		        e.printStackTrace();
-		    }
-		return false;
-	}
+    // 아이디 중복 확인 메서드
+    public static boolean isUserIdExists(String userId) {
+       
+    	Connection con = null;
+        PreparedStatement pstmt = null;
+        
+    	String sql = "SELECT COUNT(*) FROM user_info WHERE user_id = ?";
+    	
+        boolean exists = false;
+
+        try {
+            con = DBManager.connect();
+            pstmt = con.prepareStatement(sql);
+            
+            pstmt.setString(1, userId);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                exists = rs.getInt(1) > 0; // 결과가 1 이상이면 아이디 존재
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return exists;
+    }
 }

@@ -32,7 +32,9 @@
 			<!-- Right Panel (Sign Up Form) -->
 			<div class="right-panel">
 				<h2>Sign Up</h2>
-				<form id="registerForm" action="RegisterC" method="post" enctype="multipart/form-data">
+				<form id="registerForm" action="RegisterC" method="post"
+					enctype="multipart/form-data">
+					
 					<!-- ID -->
 					<div class="input-group">
 						<i class="fas fa-user"></i> <input type="text" id="userId"
@@ -64,8 +66,8 @@
 					<div class="input-group">
 						<i class="fas fa-image"></i> <input type="file" id="profilePic"
 							name="userProfile" accept="image/*"> <label
-							for="profilePic" class="upload-btn">Choose File</label> 
-							<span id="fileName"></span>
+							for="profilePic" class="upload-btn">Choose File</label> <span
+							id="fileName"></span>
 					</div>
 
 					<!-- Error Message -->

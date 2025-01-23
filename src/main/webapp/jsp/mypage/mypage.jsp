@@ -43,10 +43,10 @@
 	            <img src="icon/login/user.jpeg" alt="User Test">
 	            <div>TEST USER</div>
 	        </div>
-	        <button class="content-button" href="profileC">프로필 변경</button>
-	        <button class="content-button" onclick="alert('ID / PW 변경 페이지로 이동')">ID / PW 변경</button>
-	        <button class="content-button" onclick="alert('회원 탈퇴 페이지로 이동')">회원 탈퇴</button>
-	        <button class="content-button" onclick="alert('회원 관리 페이지')">회원 관리</button>
+	        <button class="content-button"><a href="ProfileC"> 프로필 변경 </a></button>
+	        <button class="content-button"><a href="AccountChangeC"> ID / PW 변경 </a></button>
+	        <button class="content-button"><a href="AccountDeleteC"> 회원 탈퇴</button>
+	        <button class="content-button"><a href="Adminc"> 회원 관리</button>
 	    </div>
 	</div>
 

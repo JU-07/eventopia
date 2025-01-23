@@ -36,37 +36,44 @@
 //});
 
 
-// ID 중복 체크
 document.getElementById("checkIdBtn").addEventListener("click", function () {
-    const userId = document.getElementById("user_id").value;
+    const userId = document.getElementById("userId").value.trim(); // 입력된 아이디 값 가져오기
+    const idCheckMsg = document.getElementById("idCheckMsg");
 
-    fetch("/checkId", {
+    if (!userId) {
+        idCheckMsg.textContent = "Please enter a username.";
+        idCheckMsg.style.color = "red";
+        return;
+    }
+
+	console.log(userId);
+	
+    // AJAX 요청
+    fetch("CheckIdServlet", {
         method: "POST",
         headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            "Content-Type": "application/x-www-form-urlencoded"
         },
-        body: `user_id=${encodeURIComponent(userId)}`,
+        body: `userId=${encodeURIComponent(userId)}`
     })
-        .then(response => response.json())
+        .then(response => response.text())
         .then(data => {
-            if (data.isDuplicate) {
-                alert("이미 사용 중인 ID입니다."); // 중복 메시지
+			console.log(data);
+            if (data === "exists") {
+                idCheckMsg.textContent = "Username is already taken.";
+                idCheckMsg.style.color = "red";
+            } else if (data === "not_exists") {
+                idCheckMsg.textContent = "Username is available!";
+                idCheckMsg.style.color = "green";
             } else {
-                alert("사용 가능한 ID입니다."); // 사용 가능 메시지
+                idCheckMsg.textContent = "Error checking username.";
+                idCheckMsg.style.color = "red";
             }
         })
-        .catch(error => console.error("Error:", error));
-});
-
-// 비밀번호 확인 로직
-document.getElementById("confirmPassword").addEventListener("input", function () {
-    const password = document.getElementById("password").value;
-    const confirmPassword = document.getElementById("confirmPassword").value;
-
-    if (password !== confirmPassword) {
-        document.getElementById("pwCheckMsg").innerText = "Passwords do not match.";
-    } else {
-        document.getElementById("pwCheckMsg").innerText = "";
-    }
+        .catch(error => {
+            console.error("Error:", error);
+            idCheckMsg.textContent = "Server error. Please try again.";
+            idCheckMsg.style.color = "red";
+        });
 });
 

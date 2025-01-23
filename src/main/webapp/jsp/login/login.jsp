@@ -37,7 +37,7 @@
 					</div>
 					<div class="input-group">
 						<i class="fas fa-lock"></i>
-						<input type="password" id="password" name="pw" placeholder="Password"> <!-- id 속성 추가 -->
+						<input type="password" id="password" name="pw" placeholder="Password"> <!--  pw 속성 추가 --> 
 					</div>
 					<p id="errorMsg" class="error-msg"></p> <!-- 에러 메시지 -->
 					<button type="submit" class="login-btn">Login</button>
