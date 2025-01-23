@@ -67,7 +67,7 @@
     <div id="settingsMenu" class="settings-menu">
         <button onclick="location.href='RankRegC2'">글쓰기</button>
         <button onclick="location.href='edit.jsp'">수정하기</button>
-        <button onclick="location.href='delete.jsp'">글삭제하기</button>
+        <button onclick="location.href='LimitedDeleteC'">글삭제하기</button>
     </div>
 </div>
 </div>
