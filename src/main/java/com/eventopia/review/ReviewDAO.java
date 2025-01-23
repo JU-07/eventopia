@@ -16,9 +16,13 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import java.text.SimpleDateFormat;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.chrono.JapaneseChronology;
+import java.time.chrono.JapaneseDate;
 import java.util.Date;
+import java.util.Locale;
 import java.util.TimeZone;
-
 
 public class ReviewDAO {
 
@@ -195,48 +199,55 @@ public class ReviewDAO {
 	}
 
 	public void showPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-	    int postId = Integer.parseInt(request.getParameter("id"));
+		int postId = Integer.parseInt(request.getParameter("id"));
 
-	    String sql = "SELECT title, content, r_img, r_sub, created_at FROM review_post WHERE id = ?";
-	    try (Connection con = DBManager.connect(); PreparedStatement pstmt = con.prepareStatement(sql)) {
-	        pstmt.setInt(1, postId);
+		String sql = "SELECT title, content, r_img, r_sub, created_at FROM review_post WHERE id = ?";
+		try (Connection con = DBManager.connect(); PreparedStatement pstmt = con.prepareStatement(sql)) {
+			pstmt.setInt(1, postId);
 
-	        ResultSet rs = pstmt.executeQuery();
-	        if (rs.next()) {
-	            String title = rs.getString("title");
-	            String content = rs.getString("content");
-	            String img = rs.getString("r_img");
-	            String sub = rs.getString("r_sub");
-	            String createdAt = rs.getString("created_at"); // DB의 UTC 시간
+			ResultSet rs = pstmt.executeQuery();
+			if (rs.next()) {
+				String title = rs.getString("title");
+				String content = rs.getString("content");
+				String img = rs.getString("r_img");
+				String sub = rs.getString("r_sub");
+				String createdAt = rs.getString("created_at"); // DB의 UTC 시간
 
-	            // 1. UTC 시간 -> 일본 도쿄 시간으로 변환
-	            SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	            inputFormat.setTimeZone(TimeZone.getTimeZone("UTC")); // DB 시간이 UTC 기준
+				// 1. UTC 시간 -> 일본 도쿄 시간으로 변환
+				SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+				inputFormat.setTimeZone(TimeZone.getTimeZone("UTC")); // DB 시간이 UTC 기준
 
-	            Date date = inputFormat.parse(createdAt); // UTC 시간 -> Date 객체
+				Date date = inputFormat.parse(createdAt); // UTC 시간 -> Date 객체
 
-	            SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	            outputFormat.setTimeZone(TimeZone.getTimeZone("Asia/Tokyo")); // 도쿄 시간으로 변환
+				// Date 객체를 ZonedDateTime으로 변환
+				ZonedDateTime zonedDateTime = date.toInstant().atZone(TimeZone.getTimeZone("Asia/Tokyo").toZoneId());
 
-	            String japanTime = outputFormat.format(date); // 변환된 도쿄 시간
+				// 일본 도쿄 시간의 포맷 지정 (한글로 표시)
+				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy年 M月 d日 H時 m分 s秒");
 
-	            // 2. JSP에 데이터를 전달
-	            request.setAttribute("title", title);
-	            request.setAttribute("contentt", content);
-	            request.setAttribute("img", img);
-	            request.setAttribute("sub", sub);
-	            request.setAttribute("created_at", japanTime);
+				// 변환된 시간 문자열
+				String japanTime = zonedDateTime.format(formatter);
+				JapaneseDate japaneseDate = JapaneseDate.from(zonedDateTime);
+				DateTimeFormatter japaneseFormatter = DateTimeFormatter
+						.ofPattern("GGGG y年 M月 d日", Locale.JAPAN).withChronology(JapaneseChronology.INSTANCE);
+				String japaneseEraDate = japaneseFormatter.format(japaneseDate);
 
-	  
-	           
-	        } else {
-	            // 데이터가 없을 경우 처리
-	            response.getWriter().write("No post found with the provided ID.");
-	        }
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	        response.getWriter().write("An error occurred while retrieving the post.");
-	    }
+				// 2. JSP에 데이터를 전달
+				request.setAttribute("title", title);
+				request.setAttribute("contentt", content);
+				request.setAttribute("img", img);
+				request.setAttribute("sub", sub);
+				request.setAttribute("created_at", japanTime);
+				request.setAttribute("created_at_era", japaneseEraDate); // 일본 연호 날짜
+
+			} else {
+				// 데이터가 없을 경우 처리
+				response.getWriter().write("No post found with the provided ID.");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			response.getWriter().write("An error occurred while retrieving the post.");
+		}
 	}
 
 }

@@ -1,11 +1,12 @@
-/* 전역 스타일 */
 body {
     margin: 0;
     padding: 0;
     font-size: 14px;
     background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
     box-sizing: border-box;
 }
+
 
 /* 전체 컨테이너 */
 .container {
@@ -14,12 +15,16 @@ body {
     width: 100%;
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
-    margin: 0;
+    margin: 0 auto; /* 가운데 정렬을 위한 설정 */
     padding: 0;
     box-sizing: border-box;
+
+    /* 둥근 모서리 추가 */
+    border-radius: 20px; /* 원하는 값으로 조정 */
+    overflow: hidden; /* 둥근 모서리 바깥으로 내용이 삐져나오지 않도록 설정 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 약간의 그림자 */
 }
 
-/* 사이드바 */
 .sidebar {
     width: 80px;
     background-color: #1b2c3e;
@@ -31,26 +36,13 @@ body {
     box-sizing: border-box;
 }
 
-/* Home 버튼 전체 */
-#home-buttons {
+.slidebar-wrap {
+    margin: 15px 0;
     display: flex;
-    flex-direction: column;
-    align-items: center; /* 가로 가운데 정렬 */
-    height: 100%; /* 부모 높이를 가득 채워 세로 정렬 가능 */
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    gap: 15px; /* 버튼 간 간격 */
 }
-
-/* Home 버튼 전체 */
-#settings-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* 가로 가운데 정렬 */
-    height: 100%; /* 부모 높이를 가득 채워 세로 정렬 가능 */
-    text-align: center;
-    gap: 15px; /* 버튼 간 간격 */
-}
-
 
 /* 아이콘 배경 및 스타일 */
 .slidebar-wrap {
@@ -70,7 +62,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
+    cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -122,6 +114,26 @@ body {
     box-sizing: border-box;
 }
 
+#home-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 가로 방향 가운데 정렬 */
+    justify-content: center; /* 세로 방향 가운데 정렬 */
+    height: 100%; /* 부모 높이 기준으로 정렬 */
+    text-align: center;
+    gap: 25px; /* 버튼 간의 간격 */
+}
+
+#settings-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 가로 방향 가운데 정렬 */
+    justify-content: center; /* 세로 방향 가운데 정렬 */
+    height: 100%; /* 부모 높이 기준으로 정렬 */
+    text-align: center;
+    gap: 25px; /* 버튼 간의 간격 */
+}
+
 /* 버튼 스타일 */
 .content-button {
     width: 150px;
@@ -134,7 +146,14 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 약간의 그림자 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    /* 버튼 간 간격 */
+    margin-bottom: 15px; /* 마지막 버튼은 따로 조정 필요 */
+}
+
+.content-button:last-child {
+    margin-bottom: 0; /* 마지막 버튼의 간격 제거 */
 }
 
 .content-button:hover {
@@ -167,6 +186,9 @@ body {
     text-align: center;
 }
 
-.hidden {
+.tab-content.hidden {
+    display: none;
+}
+.tab-buttons.hidden {
     display: none;
 }

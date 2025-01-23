@@ -1,13 +1,4 @@
 @charset "UTF-8";
-
-body {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-	background-color: #f9f9f9;
-	color: #333;
-}
-
 .review-content {
 	display: flex;
 	flex-direction: column;
@@ -336,4 +327,7 @@ body {
 	color: #fff;
 	font-weight: bold;
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.register-container{
+	padding: 20px;
 }

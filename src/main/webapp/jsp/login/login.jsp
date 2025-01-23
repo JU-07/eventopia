@@ -37,7 +37,7 @@
 					</div>
 					<div class="input-group">
 						<i class="fas fa-lock"></i>
-						<input type="password" id="password" name="pw" placeholder="Password"> <!-- id 속성 추가 -->
+						<input type="password" id="password" name="pw" placeholder="Password"> <!--  pw 속성 추가 --> 
 					</div>
 					<p id="errorMsg" class="error-msg"></p> <!-- 에러 메시지 -->
 					<button type="submit" class="login-btn">Login</button>
@@ -49,13 +49,22 @@
 		</div>
 	</div>
 
-	<!-- 모달 창 -->
-	<div id="login-failed-modal" class="modal">
-		<div class="modal-content">
-			<h2>Login Failed</h2>
-			<p>Please check your username and password.</p>
-			<button onclick="closeModal()">Close</button>
-		</div>
-	</div>
+	<!-- Modal -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <p id="modalMessage"></p>
+        </div>
+    </div>
+    
+    <!-- JavaScript 연결 -->
+    <script> 
+    	const loginErrorMessage = "<%= request.getAttribute("loginError") != null ? request.getAttribute("loginError") : "" %>";
+    	console.log("Login Error Message:", loginErrorMessage); // 디버깅용 콘솔 출력
+    </script>
+    <script src="js/login.js"> </script>
+    
+
+    
 </body>
 </html>
