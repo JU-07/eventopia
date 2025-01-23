@@ -24,7 +24,7 @@ pageEncoding="UTF-8"%>
           <div class="logo-container">
             <a href="MainC" class="Elogo">
               <img
-                src="icon/logo/eventopia_logo.png"
+                src="Icon/logo/eventopia_logo.png"
                 alt="Eventopia logo"
                 class="evetopia-logo"
               />
@@ -36,7 +36,7 @@ pageEncoding="UTF-8"%>
             <div>
               <a href="LoginC"
                 ><img
-                  src="icon/index/user-icon.png"
+                  src="Icon/index/user-icon.png"
                   alt="User Icon"
                   class="user-img"
               /></a>
@@ -44,14 +44,14 @@ pageEncoding="UTF-8"%>
             <div>
               <a href="MyPageC"
                 ><img
-                  src="icon/index/heart-icon.png"
+                  src="Icon/index/heart-icon.png"
                   alt="Heart Icon"
                   class="heart-img"
               /></a>
             </div>
             <div>
               <img
-                src="icon/index/search-icon.png"
+                src="Icon/index/search-icon.png"
                 alt="Search Icon"
                 class="search-img"
               />

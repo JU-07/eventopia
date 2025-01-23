@@ -1,265 +1,339 @@
 @charset "UTF-8";
 
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f9f9f9;
+	color: #333;
 }
 
 .review-content {
-  display: flex;
-  flex-direction: column;
-  /* 내용물을 세로로 정렬 */
-  align-items: center;
-  width: 255px;
-  /* 부모 너비에 맞춤 */
-  border-radius: 10px;
-  color: gray;
-  font-size: 18px;
-  /* 글자 크기 */
-  font-weight: bold;
-  text-align: center;
-  padding: 20px;
-  gap: 10px;
-  /* 내용 간 간격 */
-  transition: transform 0.3s, box-shadow 0.3s;
+	display: flex;
+	flex-direction: column;
+	/* 내용물을 세로로 정렬 */
+	align-items: center;
+	width: 255px;
+	/* 부모 너비에 맞춤 */
+	border-radius: 10px;
+	color: gray;
+	font-size: 18px;
+	/* 글자 크기 */
+	font-weight: bold;
+	text-align: center;
+	padding: 20px;
+	gap: 10px;
+	/* 내용 간 간격 */
+	transition: transform 0.3s, box-shadow 0.3s;
+	width: calc(30% - 20px);
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+
 }
 
 .review-content:hover {
-  transform: translateY(-5px);
-  /* hover 시 살짝 올라가는 효과 */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+	transform: translateY(-5px);
+	/* hover 시 살짝 올라가는 효과 */
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* 제목 */
 .review-title {
-  font-size: 22px;
-  /* 제목 크기 */
-  font-weight: bold;
+	font-size: 22px;
+	/* 제목 크기 */
+	font-weight: bold;
 }
 
 /* 이미지 */
 .review-img {
-  width: 100%;
-  /* 이미지가 부모에 맞게 채워짐 */
-  height: 250px;
-  /* 고정 높이 */
-  background-color: #ddd;
-  /* 임시 배경색 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  overflow: hidden;
+	width: 100%;
+	/* 이미지가 부모에 맞게 채워짐 */
+	height: 170px;
+	/* 고정 높이 */
+	background-color: #ddd;
+	/* 임시 배경색 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 8px;
+	overflow: hidden;
 }
 
 /* 텍스트 */
 .review-txt {
-  font-size: 16px;
-  color: #333;
-  text-align: left;
-  word-wrap: break-word;
+	font-size: 16px;
+	color: #333;
+	text-align: left;
+	word-wrap: break-word;
 }
 
-/* 사용자 버튼 */
 .review-user {
-  display: flex;
-  justify-content: space-between;
-  /* 버튼 간 간격 확보 */
-  gap: 8px;
-  /* 버튼 사이 간격 줄이기 */
-  margin-top: 10px;
+	display: flex;
+	/* 내부 요소를 가로로 정렬 */
+	justify-content: space-between;
+	/* 버튼 간격을 최대한 벌림 */
+	align-items: center;
+	/* 버튼 수직 정렬 */
+	gap: 10px;
+	/* 버튼 간 간격 */
 }
 
 .review-user div {
-  flex: 1;
-  /* 버튼 크기 동일하게 설정 */
-  text-align: center;
-  padding: 10px 0;
-  /* 높이를 줄이기 위해 여백 축소 */
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  /* 둥근 모서리 크기 조정 */
-  background-color: #f9f9f9;
-  color: #333;
-  font-size: 13px;
-  /* 글자 크기 축소 */
-  transition: background-color 0.3s, color 0.3s;
+	flex: none;
+	/* 버튼 크기 고정 */
+	width: 50px;
+	/* 정사각형 크기 설정 */
+	height: 50px;
+	/* 정사각형 크기 설정 */
+	text-align: center;
+	line-height: 50px;
+	/* 높이에 맞춰 텍스트 중앙 정렬 */
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	/* 둥근 모서리 */
+	background-color: #f9f9f9;
+	color: #333;
+	font-size: 12px;
+	/* 글자 크기 조정 */
+	transition: background-color 0.3s, color 0.3s;
+	cursor: pointer;
+	/* 클릭 가능 커서 */
 }
 
-/* hover 효과 */
 .review-user div:hover {
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
+	background-color: #6c7ae0;
+	/* 호버 시 배경색 변경 */
+	color: #fff;
+	/* 호버 시 글자색 변경 */
 }
+
 
 /* 버튼 간격이 너무 크지 않도록 설정 */
 .review-user div:not(:last-child) {
-  margin-right: 5px;
-  /* 버튼 사이의 간격 설정 */
+	margin-right: 5px;
+	/* 버튼 사이의 간격 설정 */
 }
 
 .review-content {
-  background-color: darkgoldenrod;
-  /* 로손 색상 */
-  padding: 20px;
-  margin-bottom: 20px;
-  /* 아래쪽에 여백 추가 */
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	background-color: bisque;
+	/* 로손 색상 */
+	padding: 20px;
+	margin-bottom: 20px;
+	/* 아래쪽에 여백 추가 */
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* 기본적인 레이아웃 설정 */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+	margin: 0;
+	padding: 0;
 }
 
 .review-container {
-  display: flex;
-  /* Flexbox를 사용해 수평 정렬 */
-  flex-wrap: wrap;
-  /* 화면 크기에 따라 줄바꿈 허용 */
-  gap: 20px;
-  /* 항목 간격 설정 */
-  justify-content: center;
-  /* 수평 정렬 */
-  padding: 20px;
+	display: flex;
+	/* Flexbox를 사용해 수평 정렬 */
+	flex-wrap: wrap;
+	/* 화면 크기에 따라 줄바꿈 허용 */
+	gap: 20px;
+	/* 항목 간격 설정 */
+	justify-content: center;
+	/* 수평 정렬 */
+	padding: 20px;
 }
-
-.review-content {
-  flex: 1 1 calc(33.333% - 40px);
-  /* 한 줄에 최대 3개씩 배치, 간격 포함 */
-  box-sizing: border-box;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  background-color: #fff;
-  text-align: center;
-  /* 텍스트 중앙 정렬 */
-}
-
 .review-img img {
-  max-width: 100%;
-  /* 이미지 크기 조정 */
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 10px;
+	max-width: 100%;
+	/* 이미지 크기 조정 */
+	height: auto;
+	border-radius: 8px;
+	margin-bottom: 10px;
 }
 
 .review-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  cursor: pointer;
-  color: #333;
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 10px;
+	cursor: pointer;
+	color: #333;
 }
 
 .review-sub,
 .review-txt {
-  font-size: 0.9rem;
-  margin-bottom: 10px;
-  color: #666;
+	font-size: 0.9rem;
+	margin-bottom: 10px;
+	color: #666;
 }
 
 .review-user {
-  display: flex;
-  /* 내부 버튼을 수평 정렬 */
-  justify-content: space-around;
-  margin-top: 10px;
-  size: 10px;
-  display: flex; /* 내부 버튼을 수평 정렬 */
-  justify-content: space-around;
+	display: flex;
+	/* 내부 버튼을 수평 정렬 */
+	justify-content: space-around;
+	margin-top: 10px;
+	size: 10px;
+	display: flex;
+	/* 내부 버튼을 수평 정렬 */
+	justify-content: space-around;
 }
 
 .SNS {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin: 20px 0;
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin: 20px 0;
 }
 
 .pagination-section {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
+	display: flex;
+	justify-content: center;
+	margin: 20px 0;
 }
 
 .add-review {
-  text-align: center;
-  margin-top: 20px;
+	text-align: center;
+	margin-top: 20px;
 }
 
 .add-review a {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #007bff;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 5px;
 }
 
-/* 페이지네이션 컨테이너 */
-.pagination-section {
-  display: flex;
-  justify-content: center;
-  /* 중앙 정렬 */
-  margin: 20px 0;
-  padding: 10px;
+/* 페이지 네비게이션 컨테이너 */
+.pagination-container {
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 30px;
 }
 
-/* 페이지네이션 버튼 */
-.pagination a {
-  display: inline-block;
-  margin: 0 5px;
-  /* 버튼 간격 */
-  padding: 8px 12px;
-  /* 버튼 내부 여백 */
-  font-size: 14px;
-  font-weight: bold;
-  color: #007bff;
-  text-decoration: none;
-  /* 밑줄 제거 */
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #fff;
-  transition: all 0.3s ease;
-  /* 부드러운 애니메이션 효과 */
+/* 페이지 버튼 기본 스타일 */
+.pagination-button {
+	display: inline-block;
+	padding: 10px 20px;
+	margin: 5px;
+	text-decoration: none;
+	color: #fff;
+	background: linear-gradient(145deg, #6c7ae0, #5961b3);
+	/* 부드러운 블루 그라디언트 */
+	font-size: 1rem;
+	border-radius: 30px;
+	/* 둥근 모서리 */
+	transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+	box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+	justify-content: center;
 }
 
-/* 버튼 hover 효과 */
-.pagination a:hover {
-  background-color: #007bff;
-  /* 배경색 변경 */
-  color: #fff;
-  /* 텍스트 색상 변경 */
-  border-color: #0056b3;
-  /* 테두리 색상 변경 */
+/* 처음과 끝 버튼에 다르게 적용 */
+.pagination-button.first,
+.pagination-button.last {
+	background: linear-gradient(145deg, #ff9a8b, #ff6a88);
+	/* 부드러운 핑크-레드 그라디언트 */
+	font-weight: bold;
 }
 
-/* 현재 페이지 강조 */
-.pagination a.current {
-  background-color: #0056b3;
-  color: #fff;
-  border-color: #004080;
-  pointer-events: none;
-  /* 클릭 불가능하게 설정 */
+/* 페이지 버튼 호버 효과 */
+.pagination-button:hover {
+	background: linear-gradient(145deg, #5961b3, #6c7ae0);
+	/* 호버 시 그라디언트 반전 */
+	transform: translateY(-3px);
+	/* 살짝 올라가는 효과 */
+	box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.1);
+	/* 그림자 강조 */
 }
 
-/* 반응형: 작은 화면에서 버튼 크기 조정 */
+/* 클릭 시 효과 */
+.pagination-button:active {
+	transform: translateY(1px);
+	/* 클릭 시 눌리는 느낌 */
+	box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+	/* 그림자 약간 강조 */
+}
+
+/* 첫 번째와 마지막 버튼 스타일 */
+.pagination-button.first {
+	margin-left: 0;
+}
+
+.pagination-button.last {
+	margin-right: 0;
+}
+
+/* 페이지 번호 버튼들 간격 */
+.pagination-button:not(.first):not(.last) {
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+/* 모바일 반응형 */
 @media (max-width: 768px) {
-  .pagination a {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
+	.pagination-button {
+		font-size: 0.9rem;
+		padding: 8px 18px;
+	}
+}
 
-  .pagination-section {
-    padding: 5px;
-  }
+/* 등록 버튼 */
+.register-btn {
+	text-decoration: none;
+	font-weight: bold;
+	padding: 12px 25px;
+	background: linear-gradient(135deg, #e3e3e3, #cfcfcf);
+	color: #333;
+	border-radius: 30px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+	display: inline-block;
+}
+
+.register-btn:hover {
+	background: linear-gradient(135deg, #cfcfcf, #b0b0b0);
+	transform: translateY(-3px);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.register-btn:active {
+	transform: translateY(1px);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pagination {
+    text-align: center;
+}
+/* 페이지 버튼 */
+.pagination a {
+	text-decoration: none;
+	padding: 10px 20px;
+	color: #fff;
+	background: linear-gradient(135deg, #666, #444);
+	border-radius: 30px;
+	margin: 0 5px;
+	font-size: 0.9rem;
+	font-weight: bold;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pagination a:hover {
+	background: linear-gradient(135deg, #444, #222);
+	transform: translateY(-3px);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.pagination a:active {
+	transform: translateY(1px);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 선택된 페이지 버튼 스타일 (활성화된 경우) */
+.pagination a.active {
+	background: linear-gradient(135deg, #444, #333);
+	color: #fff;
+	font-weight: bold;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }

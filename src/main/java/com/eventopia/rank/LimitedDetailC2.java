@@ -19,7 +19,7 @@ public class LimitedDetailC2 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // GET 요청을 처리
-        RankDAO.RDAO.showPost(request, response);
+        RankDAO.RDAO.showPost2(request, response);
       
         request.setAttribute("content", "jsp/rank/limitedDetail.jsp");
         request.getRequestDispatcher("index.jsp").forward(request, response);
